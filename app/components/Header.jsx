@@ -2,7 +2,10 @@ import {Suspense} from 'react';
 import {Await, NavLink, useAsyncValue} from '@remix-run/react';
 import {useAnalytics, useOptimisticCart} from '@shopify/hydrogen';
 import {useAside} from '~/components/Aside';
-
+import searchIcon from '~/assets/searchLogo.svg';
+import userIcon from '~/assets/account.svg';
+import cartIcon from '~/assets/cart.svg';
+import close_Icon from '~/assets/closeIcon.svg';
 /**
  * @param {HeaderProps}
  */
@@ -10,19 +13,24 @@ export function Header({header, isLoggedIn, cart, publicStoreDomain}) {
   const {shop, menu} = header;
   return (
     <header className="header">
+      <div className='order-2'>
       <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
-        <strong>{shop.name}</strong>
-      </NavLink>
+        <div className='header-main-logo'>
+        <img src="https://cdn.shopify.com/s/files/1/0584/8688/2388/files/atp-logo.png?v=1721229325"/>
+        </div>
+      </NavLink></div>
       <HeaderMenu
         menu={menu}
         viewport="desktop"
         primaryDomainUrl={header.shop.primaryDomain.url}
         publicStoreDomain={publicStoreDomain}
       />
+       
       <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
     </header>
   );
 }
+
 
 /**
  * @param {{
@@ -41,6 +49,7 @@ export function HeaderMenu({
   const className = `header-menu-${viewport}`;
   const {close} = useAside();
 
+
   return (
     <nav className={className} role="navigation">
       {viewport === 'mobile' && (
@@ -56,6 +65,7 @@ export function HeaderMenu({
       )}
       {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
         if (!item.url) return null;
+
 
         // if the url is internal, we strip the domain
         const url =
@@ -82,6 +92,7 @@ export function HeaderMenu({
   );
 }
 
+
 /**
  * @param {Pick<HeaderProps, 'isLoggedIn' | 'cart'>}
  */
@@ -92,15 +103,25 @@ function HeaderCtas({isLoggedIn, cart}) {
       <NavLink prefetch="intent" to="/account" style={activeLinkStyle}>
         <Suspense fallback="Sign in">
           <Await resolve={isLoggedIn} errorElement="Sign in">
-            {(isLoggedIn) => (isLoggedIn ? 'Account' : 'Sign in')}
+            {(isLoggedIn) => (isLoggedIn ? 'Account' : <img
+      src={userIcon}
+      alt="Sign In"
+      width="24"
+      height="24"
+    />)}
           </Await>
         </Suspense>
       </NavLink>
       <SearchToggle />
+ 
       <CartToggle cart={cart} />
+   
     </nav>
   );
 }
+
+
+
 
 function HeaderMenuMobileToggle() {
   const {open} = useAside();
@@ -114,14 +135,20 @@ function HeaderMenuMobileToggle() {
   );
 }
 
+
 function SearchToggle() {
   const {open} = useAside();
   return (
     <button className="reset" onClick={() => open('search')}>
-      Search
+     <img src={searchIcon} alt='Search' className='search-icon'/>
     </button>
   );
 }
+
+
+
+
+
 
 /**
  * @param {{count: number | null}}
@@ -130,8 +157,9 @@ function CartBadge({count}) {
   const {open} = useAside();
   const {publish, shop, cart, prevCart} = useAnalytics();
 
+
   return (
-    <a
+    <a className='cart-icon'
       href="/cart"
       onClick={(e) => {
         e.preventDefault();
@@ -144,10 +172,12 @@ function CartBadge({count}) {
         });
       }}
     >
-      Cart {count === null ? <span>&nbsp;</span> : count}
+      <img className='cart-icon-img' src={cartIcon} alt='Cart'/>
+      <p className='cart-count'>{count === null ? <span>&nbsp;</span> : count}</p>
     </a>
   );
 }
+
 
 /**
  * @param {Pick<HeaderProps, 'cart'>}
@@ -162,11 +192,13 @@ function CartToggle({cart}) {
   );
 }
 
+
 function CartBanner() {
   const originalCart = useAsyncValue();
   const cart = useOptimisticCart(originalCart);
   return <CartBadge count={cart?.totalQuantity ?? 0} />;
 }
+
 
 const FALLBACK_HEADER_MENU = {
   id: 'gid://shopify/Menu/199655587896',
@@ -210,6 +242,7 @@ const FALLBACK_HEADER_MENU = {
   ],
 };
 
+
 /**
  * @param {{
  *   isActive: boolean;
@@ -223,6 +256,7 @@ function activeLinkStyle({isActive, isPending}) {
   };
 }
 
+
 /** @typedef {'desktop' | 'mobile'} Viewport */
 /**
  * @typedef {Object} HeaderProps
@@ -231,6 +265,7 @@ function activeLinkStyle({isActive, isPending}) {
  * @property {Promise<boolean>} isLoggedIn
  * @property {string} publicStoreDomain
  */
+
 
 /** @typedef {import('@shopify/hydrogen').CartViewPayload} CartViewPayload */
 /** @typedef {import('storefrontapi.generated').HeaderQuery} HeaderQuery */

@@ -16,6 +16,7 @@ import appStyles from '~/styles/app.css?url';
 import {PageLayout} from '~/components/PageLayout';
 import {FOOTER_QUERY, HEADER_QUERY} from '~/lib/fragments';
 import tailwindCss from './styles/tailwind.css?url';
+import Banner from './components/Banner';
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
  * @type {ShouldRevalidateFunction}
@@ -156,7 +157,10 @@ export function Layout({children}) {
             shop={data.shop}
             consent={data.consent}
           >
-            <PageLayout {...data}>{children}</PageLayout>
+            <PageLayout {...data}>
+            <Banner/>
+            {children}
+            </PageLayout>
           </Analytics.Provider>
         ) : (
           children
