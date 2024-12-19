@@ -1,6 +1,6 @@
 import {Suspense} from 'react';
 import {Await, NavLink} from '@remix-run/react';
-import LOGO from '~/assets/footer-logo.svg';
+import LOGO from '~/assets/Footer-logo.svg';
 
 /**
  * @param {FooterProps}
