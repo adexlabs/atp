@@ -12,19 +12,21 @@ import close_Icon from '~/assets/closeIcon.svg';
 export function Header({header, isLoggedIn, cart, publicStoreDomain}) {
   const {shop, menu} = header;
   return (
-    <header className="header">
-      <div className='order-2'>
-      <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
-        <div className='header-main-logo'>
-        <img src="https://cdn.shopify.com/s/files/1/0584/8688/2388/files/atp-logo.png?v=1721229325"/>
-        </div>
-      </NavLink></div>
-      <HeaderMenu
+    <header className="header page-width custom-header">
+    <HeaderMenu
         menu={menu}
         viewport="desktop"
         primaryDomainUrl={header.shop.primaryDomain.url}
         publicStoreDomain={publicStoreDomain}
       />
+      <div className='order-2'>
+      <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
+        <div className='header-main-logo'>
+        <img src="https://cdn.shopify.com/s/files/1/0584/8688/2388/files/atp-logo.png?v=1721229325"/>
+        </div>
+      </NavLink>
+      </div>
+      
        
       <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
     </header>
