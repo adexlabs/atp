@@ -17,6 +17,7 @@ import {PageLayout} from '~/components/PageLayout';
 import {FOOTER_QUERY, HEADER_QUERY} from '~/lib/fragments';
 import tailwindCss from './styles/tailwind.css?url';
 import Banner from './components/Banner';
+import ImageTextSection from './components/ImageTextSection';
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
  * @type {ShouldRevalidateFunction}
@@ -160,6 +161,7 @@ export function Layout({children}) {
             <PageLayout {...data}>
             <Banner/>
             {children}
+            <ImageTextSection/>
             </PageLayout>
           </Analytics.Provider>
         ) : (
