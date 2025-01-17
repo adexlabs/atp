@@ -144,7 +144,7 @@ function loadDeferredData({context}) {
 export function Layout({children}) {
   const nonce = useNonce();
   const location = useLocation();
-  const isProductPage = location.pathname.startsWith('/products');
+  const isProductPage = location.pathname.startsWith('/product');
   /** @type {RootLoader} */
   const data = useRouteLoaderData('root');
 

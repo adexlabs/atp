@@ -1109,41 +1109,95 @@ components/Footer.CSS
   }
 
   
-/* Logo Slider Section */
-.logo-slider-section {
-  text-align: center;
+/* logo slider Container styling */
+/* Container for heading and slider */
+.custom .container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: #333;
+  color: white;
   padding: 20px;
-  background-color: #f9f9f9;
+  height: 200px; /* Adjust height as needed */
+}
+
+
+.custom .heading .custom-title{
+   font-size: 1.8rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    margin-top: 30px;
+}
+.custom .slider {
+  width: 100%;
+  height: 130px; /* Adjust height based on your need */
   overflow: hidden;
   position: relative;
-}
-
-.slider-heading {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-/* Logo Slider */
-.logo-slider {
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.logo-track {
   display: flex;
-  animation: slide 20s linear infinite;
+  align-items: center;
+  background-color: #fff; /* Optional background color */
 }
 
-/* Logo Item */
-.logo-item {
-  width: 100px; /* Adjust based on logo size */
-  margin: 0 20px; /* Adjust spacing */
-  object-fit: contain;
+.custom .slide-track {
+  display: flex;
+  width: calc(200%); /* To handle seamless scrolling */
+  animation: scroll 20s linear infinite;
 }
 
-/* Keyframe Animation */
-@keyframes slide {
+.custom .slide {
+  flex: 0 0 auto;
+  width: 25%; /* Divide equally for 4 images */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.custom .container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  height: 200px; /* Adjust height as needed */
+}
+
+/* Heading styles */
+.custom .heading {
+  flex: 0 0 20%; /* Occupy 20% of the width */
+  text-align: center;
+}
+.custom img {
+  width: 150px; /* Adjust image size */
+  height: auto;
+}
+@media(max-width: 990px){
+  .custom .heading .custom-title {
+    font-size: 1.6rem;
+  }
+}
+@media(max-width: 767px){
+  .custom .heading .custom-title {
+    font-size: 1.4rem;
+  }
+}
+@media(max-width: 549px){
+  .custom .slide{
+    width: 60%;
+  }
+  .custom .slide-track {
+    animation: scroll 10s linear infinite;
+  }
+  .custom img {
+    width: 125px;
+  }
+  .custom .heading .custom-title{
+    font-size: 1.2rem;
+  }
+}
+
+/* Keyframes for smooth scrolling */
+@keyframes scroll {
   0% {
     transform: translateX(0);
   }
@@ -1152,14 +1206,178 @@ components/Footer.CSS
   }
 }
 
-/* Responsive Adjustments */
+
+/* Text-Banner  (Lost your data? Don't fret.) */
+
+.text-banner .banner-container{
+  width: 100%;
+   max-width: 1320px;
+   margin: 0 auto;
+   border-radius: 8px;
+   margin-bottom: 30px;
+}
+.text-banner .banner-container .banner-button{
+margin-top: 30px;
+}
+
+.text-banner .banner-container .banner-content .banner-title{
+ max-width: 900px;
+ color: #000;
+ margin-bottom: 30px;
+ font-size: 4.5rem;
+ letter-spacing: normal;
+}
+
+.text-banner .banner-container .banner-content p{
+ max-width: 800px;
+ margin: 0 auto;
+ margin-top: 20px;
+ color: #000;
+ font-size: 17px;
+ letter-spacing: 0.6px;
+}
+@media(max-width: 990px){
+ /* .text-banner .banner-container{
+   height: 510px;
+ } */
+ .text-banner .banner-container .banner-content .banner-title {
+   font-size: 3.5rem;
+   margin-bottom: 15px;
+ }
+ .text-banner .banner-container .banner-content p{
+   margin-top: 10px;
+   font-size: 16px;
+ }
+ .text-banner .banner-container .banner-button {
+   margin-top: 25px;
+}
+/* .text-banner  .banner-container .banner-button {
+ padding: 13px 40px
+} */
+}
+
+@media(max-width: 767px){
+ .text-banner .banner-container{
+   height: 510px;
+ }
+ .text-banner .banner-container .banner-content .banner-title {
+   font-size: 2.5rem;
+   margin-bottom: 15px;
+ }
+ .text-banner .banner-container .banner-content p{
+   margin-top: 10px;
+   font-size: 14px;
+ }
+ .text-banner .banner-container .banner-button {
+   margin-top: 15px;
+}
+.text-banner  .banner-container .banner-button {
+ padding: 13px 40px
+}
+}
+
+/* NewBanner CSS (Recover your most important digital assets today.)*/
+
+.banner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents background image from repeating */
+}
+
+.banner-container .banner-content .banner-title {
+  font-size: 3.75rem;
+    line-height: 1.2;
+    margin-bottom: 40px;
+    letter-spacing: .05em;
+    overflow-wrap: anywhere;
+    font-weight: normal;
+  max-width: 700px;
+  margin: 0 auto;
+
+}
+
+.banner-container .banner-content p {
+  font-size: 1.2em;
+  margin-top: 10px;
+  letter-spacing: 1.1px;
+  margin-bottom: 15px;
+}
+
+.banner-container .banner-button {
+  padding: 15px 60px;
+  font-size: 16px;
+  margin-top: 20px;
+  background-color: #5878ee;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 50px;
+}
+/* 
+.banner-container .banner-button:hover {
+  background-color: #ff3d00;
+} */
+
+/* Responsive design for mobile screens */
 @media (max-width: 768px) {
-  .logo-item {
-    width: 70px;
-    margin: 0 10px;
+
+  .banner-container {
+   height: 480px;
+    padding: 15px;
   }
 
-  .slider-heading {
-    font-size: 20px;
-  }  
+  .banner-container .banner-content .banner-title {
+    font-size: 2.7em;
+  }
+
+  .banner-container .banner-content p {
+    font-size: 1em;
+  }
+
+  .banner-container .banner-button {
+    padding: 15px 48px;
+    font-size: 14px;
+  }
+}
+
+/* Smaller screens */
+@media (max-width: 480px) {
+  .banner-container .banner-container {
+    height: 200px;
+    padding: 10px;
+  }
+
+  .banner-container .banner-content .banner-title  {
+    font-size: 2.3em;
+  }
+
+  .banner-container .banner-content p {
+    font-size: 0.9em;
+  }
+
+  .banner-container .banner-button {
+    padding: 16px 40px;
+    font-size: 13px;
+  }
+}
+
+/* RECOVER DIGITAL ASSETS */
+
+.digital-assets .banner-container .banner-content .banner-title{
+  max-width: 900PX;
+}
+
+.digital-assets .banner-container .banner-button {
+  margin-top: 40px;
 }
