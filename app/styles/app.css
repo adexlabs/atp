@@ -447,6 +447,40 @@ button.reset:hover:not(:has(> *)) {
   margin-top: 170px;
 }
 
+.product form{
+  color: #fff;
+  background-color: #5878ee;
+  border-color: #5878ee;
+  font-family: DM Mono, sans-serif;
+  font-size: .875rem;
+  line-height: 1.25rem;
+  line-height: 100%;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  position: relative;
+  margin: 0;
+  display: inline-flex;
+  height: 3.125rem;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  white-space: nowrap;
+  border-radius: 9999px;
+  border-width: 1px;
+  border-style: solid;
+  padding: .75rem 1.25rem;
+  text-align: center;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-duration: .15s;
+}
+
+@media(max-width: 767px){
+  .product form{
+   max-width: 70%;
+  }
+}
 /*
 * --------------------------------------------------
 * routes/blog._index.tsx
