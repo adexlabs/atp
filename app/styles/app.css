@@ -445,6 +445,7 @@ button.reset:hover:not(:has(> *)) {
 }
 .product{
   margin-top: 170px;
+  padding: 0 3rem;
 }
 
 .product form button{
@@ -482,9 +483,9 @@ button.reset:hover:not(:has(> *)) {
   }
   .product{
     margin-top: 20px;
+    padding: 0 1.5rem;
   }
   .product .product-main{
-    padding: 0 1.5rem;
     margin-top: 30px;
   }
 }
@@ -1439,7 +1440,7 @@ margin-top: 30px;
   text-align: left;
   margin-bottom: 50px;
   margin-top: 50px;
-  padding: 0 1.5rem;
+  padding: 0 3rem;
 }
 
 
