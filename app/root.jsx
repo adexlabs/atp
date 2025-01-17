@@ -9,6 +9,7 @@ import {
   useRouteLoaderData,
   ScrollRestoration,
   isRouteErrorResponse,
+  useLocation,
 } from '@remix-run/react';
 import favicon from '~/assets/favicon.svg';
 import resetStyles from '~/styles/reset.css?url';
@@ -19,6 +20,7 @@ import tailwindCss from './styles/tailwind.css?url';
 import Banner from './components/Banner';
 import ImageTextSection from './components/ImageTextSection';
 import LogoSlider from './components/LogoSlider';
+import HomePageRoute from './components/HomePageRoute';
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
  * @type {ShouldRevalidateFunction}
@@ -141,6 +143,8 @@ function loadDeferredData({context}) {
  */
 export function Layout({children}) {
   const nonce = useNonce();
+  const location = useLocation();
+  const isProductPage = location.pathname.startsWith('/products');
   /** @type {RootLoader} */
   const data = useRouteLoaderData('root');
 
@@ -160,10 +164,9 @@ export function Layout({children}) {
             consent={data.consent}
           >
             <PageLayout {...data}>
-            <Banner/>
+            {location.pathname !== '/product' && ( <Banner/>)}
             {children}
-            <ImageTextSection/>
-            <LogoSlider/>
+         <HomePageRoute/>
             </PageLayout>
           </Analytics.Provider>
         ) : (
