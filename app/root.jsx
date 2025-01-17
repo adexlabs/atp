@@ -144,7 +144,7 @@ function loadDeferredData({context}) {
 export function Layout({children}) {
   const nonce = useNonce();
   const location = useLocation();
-  const isProductPage = location.pathname.startsWith('/product');
+  const isProductPage = location.pathname.startsWith('/products');
   /** @type {RootLoader} */
   const data = useRouteLoaderData('root');
 
@@ -164,9 +164,15 @@ export function Layout({children}) {
             consent={data.consent}
           >
             <PageLayout {...data}>
-            {location.pathname !== '/product' && ( <Banner/>)}
+            {location.pathname !== '/products' && <Banner />}
             {children}
-         <HomePageRoute/>
+            {location.pathname === '/products' ? (
+          <HomePageRoute>
+            <LogoSlider />
+          </HomePageRoute>
+        ) : (
+          <HomePageRoute />
+        )}
             </PageLayout>
           </Analytics.Provider>
         ) : (
