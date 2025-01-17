@@ -166,13 +166,14 @@ export function Layout({children}) {
             <PageLayout {...data}>
             {!isProductPage && <Banner />}
             {children}
-            {location.pathname === '/products' ? (
-          <HomePageRoute>
-            <LogoSlider />
-          </HomePageRoute>
-        ) : (
-          <HomePageRoute />
-        )}
+            {isProductPage ? (
+  <HomePageRoute>
+    <LogoSlider />
+  </HomePageRoute>
+) : (
+  <HomePageRoute />
+)}
+
             </PageLayout>
           </Analytics.Provider>
         ) : (
