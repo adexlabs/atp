@@ -447,7 +447,7 @@ button.reset:hover:not(:has(> *)) {
   margin-top: 170px;
 }
 
-.product form{
+.product form button{
   color: #fff;
   background-color: #5878ee;
   border-color: #5878ee;
@@ -477,7 +477,7 @@ button.reset:hover:not(:has(> *)) {
 }
 
 @media(max-width: 767px){
-  .product form{
+  .product form button{
    max-width: 70%;
   }
 }
