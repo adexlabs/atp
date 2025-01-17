@@ -1170,8 +1170,8 @@ components/Footer.CSS
   color: white;
   padding: 20px;
   height: 200px; /* Adjust height as needed */
-  padding-top: 30px;
-  padding-bottom: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 
@@ -1268,8 +1268,8 @@ components/Footer.CSS
    margin: 0 auto;
    border-radius: 8px;
    margin-bottom: 30px;
-   padding-top: 30px;
-   padding-bottom: 30px;
+   margin-top: 30px;
+   margin-bottom: 30px;
 }
 .text-banner .banner-container .banner-button{
 margin-top: 30px;
@@ -1345,8 +1345,8 @@ margin-top: 30px;
   background-size: cover; /* Ensures the image covers the entire container */
   background-position: center; /* Centers the background image */
   background-repeat: no-repeat; /* Prevents background image from repeating */
-  padding-top: 30px;
-  padding-bottom: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .banner-container .banner-content .banner-title {
