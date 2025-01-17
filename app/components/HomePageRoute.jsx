@@ -5,6 +5,16 @@ import LogoSlider from './LogoSlider'
 import NewBanner from "./NewBanner";
 import recover from '~/assets/d-hero2-atp.jpg';
 export default function HomePageRoute() {
+    const handleButtonClick = () => {
+        setBannerText("Enjoy special discounts!");
+      };
+    
+      const images = [
+        "https://via.placeholder.com/1200x400?text=Slide+1",
+        "https://via.placeholder.com/1200x400?text=Slide+2",
+        "https://via.placeholder.com/1200x400?text=Slide+3",
+        "https://via.placeholder.com/1200x400?text=Slide+4",
+      ];
   return (
     <>
 <ImageTextSection/>
