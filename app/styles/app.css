@@ -1384,3 +1384,62 @@ margin-top: 30px;
 .digital-assets .banner-container .banner-button {
   margin-top: 40px;
 }
+
+
+/******** Product Trust Badges CSS ***********/
+
+.badges{
+  text-align: left;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  padding: 0 1.5rem;
+}
+
+
+.badges .product-badge-wrapper .product-badge-text {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.badges .badges-wrapper {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.badges .product-badge-wrapper {
+  flex: 0 1 calc(33.33% - 20px);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.badges .badge-img{
+  flex-shrink: 0; 
+  margin-right: auto; 
+  width: 35px;
+  height: auto;
+}
+
+@media(max-width: 990px){
+  .badges .badges-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+  .badges .product-badge-wrapper {
+    flex: 0 1 calc(50% - 20px);
+  }
+  .badges .product-badge-wrapper .product-badge-text {
+    font-size: 18px;
+  }
+}
+
+@media(max-width: 649px){
+  .badges .badges-wrapper {
+    grid-template-columns: 1fr ;
+  }
+  .badges .product-badge-wrapper {
+    flex: 0 1 calc(100% - 20px);
+  }
+}
