@@ -167,8 +167,11 @@ export function Layout({children}) {
             <PageLayout {...data}>
             {!isProductPage && <Banner />}
             {children}
-            {isProductPage ? <ProductPageRoute/> : <HomePageRoute/>}
-
+            {isProductPage ? (
+  <ProductPageRoute />
+) : (
+  <HomePageRoute />
+)}
             </PageLayout>
           </Analytics.Provider>
         ) : (
