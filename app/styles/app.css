@@ -480,6 +480,19 @@ button.reset:hover:not(:has(> *)) {
   .product form button{
    max-width: 70%;
   }
+  .product{
+    margin-top: 20px;
+  }
+  .product .product-main{
+    padding: 0 1.5rem;
+    margin-top: 30px;
+  }
+}
+
+@media(max-width: 549px){
+  .product form button{
+   max-width: 100%;
+  }
 }
 /*
 * --------------------------------------------------
