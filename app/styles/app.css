@@ -1107,3 +1107,59 @@ components/Footer.CSS
       padding: 0 1.5rem;
     }
   }
+
+  
+/* Logo Slider Section */
+.logo-slider-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Logo Slider */
+.logo-slider {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.logo-track {
+  display: flex;
+  animation: slide 20s linear infinite;
+}
+
+/* Logo Item */
+.logo-item {
+  width: 100px; /* Adjust based on logo size */
+  margin: 0 20px; /* Adjust spacing */
+  object-fit: contain;
+}
+
+/* Keyframe Animation */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .logo-item {
+    width: 70px;
+    margin: 0 10px;
+  }
+
+  .slider-heading {
+    font-size: 20px;
+  }  
+}
