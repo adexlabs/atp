@@ -164,7 +164,7 @@ export function Layout({children}) {
             consent={data.consent}
           >
             <PageLayout {...data}>
-            {location.pathname !== '/products' && <Banner />}
+            {!isProductPage && <Banner />}
             {children}
             {location.pathname === '/products' ? (
           <HomePageRoute>
