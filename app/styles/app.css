@@ -190,7 +190,9 @@ button.reset:hover:not(:has(> *)) {
   grid-gap: 1rem;
   margin-left: auto;
 }
-
+.header .header-menu-mobile-toggle h3{
+  font-size: 24px;
+}
 /*
 * --------------------------------------------------
 * components/Footer
