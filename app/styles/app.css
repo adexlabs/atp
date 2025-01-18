@@ -1556,7 +1556,7 @@ margin-top: 30px;
   }
   
   /***********Product-page Trust Badges CSS ***********/
-  
+
   .product .product-description p{
     max-width: 500px;
   }
@@ -1575,4 +1575,8 @@ margin-top: 30px;
     max-width: none;
     margin: 0;
   }
-  
+  .product-badges .trust-badges-container {
+    /* text-align: center; */
+  padding-top: 15px;
+  padding-bottom: 30px;
+  }
