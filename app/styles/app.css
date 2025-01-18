@@ -1156,8 +1156,8 @@ components/Footer.CSS
       }
   }
   
-  @media(max-width: 850px){
-    image-text-wrapper .image-heading {
+  @media(max-width: 990px){
+    .image-text-wrapper .image-heading {
   font-size: 1.8rem;
     }
   }
