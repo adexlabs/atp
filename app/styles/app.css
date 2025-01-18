@@ -373,7 +373,7 @@ button.reset:hover:not(:has(> *)) {
 }
 
 .collection{
-  padding: 80px 1.5rem;
+  padding: 5rem 1.5rem;
 }
 
 @media(max-width: 767px){
