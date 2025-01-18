@@ -4,12 +4,39 @@ import ImageTextSection from './ImageTextSection'
 import LogoSlider from './LogoSlider'
 import NewBanner from "./NewBanner";
 import recover from '~/assets/d-hero2-atp.jpg';
+import TrustBadges from './TrustBadges';
+import favicon1 from '~/assets/svg_money.svg';
+import favicon2 from '~/assets/svg_award.svg';
+import favicon3 from '~/assets/svg_lock.svg';
+import favicon4 from '~/assets/svg_folder.svg';
 export default function HomePageRoute() {
     const handleButtonClick = () => {
         setBannerText("Enjoy special discounts!");
       };
     
-    
+      const customBadges = [
+        {
+          src: favicon3,
+          alt: 'Custom SSL Secured',
+          text: 'Includes password protected return media',
+        },
+        {
+          src: favicon4,
+          alt: 'Custom PayPal Accepted',
+          text: 'Decades of data recovery experience',
+        },
+        {
+          src: favicon1,
+          alt: 'Custom Privacy Protection',
+          text: 'Fixed, up front pricing',
+        },
+        {
+          src: favicon2,
+          alt: 'Custom Privacy Protection',
+          text: '100% Money-back guarantee',
+        },
+      ];
+      
   return (
     <>
 <ImageTextSection/>
@@ -38,6 +65,7 @@ export default function HomePageRoute() {
   highlightWordCount={0} 
 />
   </div>
+  <TrustBadges badges={customBadges} count={4} />
     </>
   )
 }

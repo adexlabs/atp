@@ -1497,3 +1497,82 @@ margin-top: 30px;
     flex: 0 1 calc(100% - 20px);
   }
 }
+
+  /*********** Trust Badges CSS ***********/
+
+  .trust-badges-container {
+    /* text-align: center; */
+  padding-top: 30px;
+  padding-bottom: 30px;
+  }
+  
+   .trust-badges {
+    display: flex;
+    justify-content: space-between;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    /* justify-content: center; */
+    gap: 10px; /* Adjusts spacing between badges */
+    flex-wrap: wrap;
+    /* max-width: 1300px;
+    margin: 0 auto; */
+    padding: 0 1.5rem;
+  }
+  
+   .trust-badge {
+    width: 30px;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  /* .trust-badge-wrapper img{
+    border: 1px solid rgb(88, 120, 238);
+  } */
+  .trust-badges-container .trust-badge:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
+  
+  .trust-badges-container h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .trust-badge-wrapper {
+  display: flex;
+  /* flex-direction: column; */
+  gap: 7px;
+  align-items: center;
+  }
+  
+  .trust-badge-wrapper .badge-text{
+    font-size: 1rem;
+    /* max-width: 275px;
+    margin: 0 auto; */
+  }
+  
+  @media(max-width: 549px){
+  .trust-badge-wrapper .badge-text{
+    font-size: .9rem;
+  }
+  }
+  
+  /***********Product-page Trust Badges CSS ***********/
+  
+  .product .product-description p{
+    max-width: 500px;
+  }
+  .product-badges .trust-badge-wrapper {
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    margin-top: 0;
+  }
+  .product-badges .trust-badges {
+    display: grid;
+    grid-template-columns: 1fr;
+  
+  }
+  .product-badges .trust-badge-wrapper .badge-text {
+    max-width: none;
+    margin: 0;
+  }
+  
