@@ -145,6 +145,7 @@ function loadDeferredData({context}) {
 export function Layout({children}) {
   const nonce = useNonce();
   const location = useLocation();
+  const isCollectionPage = location.pathname.startsWith('/collection');
   const isProductPage = location.pathname.startsWith('/products');
   /** @type {RootLoader} */
   const data = useRouteLoaderData('root');
@@ -165,13 +166,13 @@ export function Layout({children}) {
             consent={data.consent}
           >
             <PageLayout {...data}>
-            {!isProductPage && <Banner />}
+            {!isProductPage && !isCollectionPage && ( <Banner />)}
             {children}
-            {isProductPage ? (
+            {!isCollectionPage && (isProductPage ? (
   <ProductPageRoute />
 ) : (
   <HomePageRoute />
-)}
+))}
             </PageLayout>
           </Analytics.Provider>
         ) : (

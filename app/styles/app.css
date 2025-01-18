@@ -372,6 +372,15 @@ button.reset:hover:not(:has(> *)) {
   height: auto;
 }
 
+.collections{
+  margin-top: 150px;
+}
+
+@media(max-width: 767px){
+  .collections{
+    margin-top: 20px;
+  }
+}
 /*
 * --------------------------------------------------
 * routes/collections.$handle.tsx
