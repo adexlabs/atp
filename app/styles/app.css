@@ -1508,6 +1508,9 @@ margin-top: 30px;
   .badges .product-badge-wrapper {
     flex: 0 1 calc(100% - 20px);
   }
+  .badges {
+    padding: 0 1.5rem;
+  }
 }
 
   /*********** Trust Badges CSS ***********/
