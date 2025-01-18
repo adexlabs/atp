@@ -578,6 +578,7 @@ button.reset:hover:not(:has(> *)) {
   padding: 0 2rem;
   position: fixed;
   top: 4%;
+  box-shadow: 0 0 12px #0000001a;
 }
 
 
