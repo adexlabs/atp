@@ -13,6 +13,7 @@ import {ProductForm} from '~/components/ProductForm';
 import favicon1 from '~/assets/svg_money.svg';
 import favicon2 from '~/assets/svg_award.svg';
 import favicon3 from '~/assets/svg_lock.svg';
+import TrustBadges from '~/components/TrustBadges';
 /**
  * @type {MetaFunction<typeof loader>}
  */
