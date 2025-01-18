@@ -372,12 +372,12 @@ button.reset:hover:not(:has(> *)) {
   height: auto;
 }
 
-.collections{
+.collection{
   margin-top: 150px;
 }
 
 @media(max-width: 767px){
-  .collections{
+  .collection{
     margin-top: 20px;
   }
 }
