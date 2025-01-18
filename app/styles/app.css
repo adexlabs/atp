@@ -1237,6 +1237,9 @@ components/Footer.CSS
   .custom .heading .custom-title {
     font-size: 1.6rem;
   }
+  .custom .slide {
+    width: 40%;
+  }
 }
 @media(max-width: 767px){
   .custom .heading .custom-title {
