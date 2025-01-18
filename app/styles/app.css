@@ -1578,7 +1578,7 @@ margin-top: 30px;
   .product-badges .trust-badges {
     display: grid;
     grid-template-columns: 1fr;
-  
+    padding: 0;
   }
   .product-badges .trust-badge-wrapper .badge-text {
     max-width: none;
