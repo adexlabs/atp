@@ -176,7 +176,7 @@ export function Layout({children}) {
   <HomePageRoute />
 ))}
 
-<Routes><Route><Link to="/faq" element={<FAQ/>}/></Route></Routes>
+<Link to="/faq" element={<FAQ/>}/>
             </PageLayout>
           </Analytics.Provider>
         ) : (
