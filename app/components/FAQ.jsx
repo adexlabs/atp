@@ -1,7 +1,7 @@
 // Import React and CSS
 import React, { useState } from "react";
 import Section_Banner from "./Section_Banner";
-import bnnrImg from '~/assets/faq-2655310_640.jpg';
+import bnnrImg from '~/assets/d-hero-seagate (1).jpg';
 import {useShopQuery, gql} from '@shopify/hydrogen';
 export default function FAQ () {
   const [activeIndex, setActiveIndex] = useState(null);
