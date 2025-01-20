@@ -179,7 +179,7 @@ export function Layout({children}) {
 <Link to="/faq" element={<FAQ/>}/> */}
   <Routes>
               <Route path="/" element={!isCollectionPage && (isProductPage ? <ProductPageRoute /> : <HomePageRoute />)} />
-              <Route path="/faq" element={<FAQ />} />
+              {/* <Route path="/faq" element={<FAQ />} /> */}
             </Routes>
             </PageLayout>
           </Analytics.Provider>
