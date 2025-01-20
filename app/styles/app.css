@@ -1753,3 +1753,61 @@ Section-Banner CSS
   text-transform: uppercase;
   font-weight: 600;
 }
+
+
+/*About_Us css  */
+
+.about-text-section{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+  }
+  .about-text-section .two-text-section {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 16px; 
+    box-sizing: border-box;
+  }
+  .about-text-section .about-text-heading{
+    font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 1rem;
+      font-weight: normal;
+      text-align: center;
+  }
+  
+  .about-text-section .text-content{
+    font-size: 1.1rem;
+    line-height: 1.4;
+    max-width: 480px;
+    text-align: left;
+    /* margin: 0 auto; */
+  }
+  .about-text-section .text-heading{
+    font-size: 16px;
+    text-align: left;
+    text-transform: uppercase;
+    /* padding: 10px; */
+    margin: 0;
+  }
+  .about-text-section .text-block {
+    flex: 1 1 45%; 
+    box-sizing: border-box;
+    border-radius: 8px;
+    color: #333;
+    font-size: 16px;
+    line-height: 3;
+    text-align: center;
+    /* padding: 10px; */
+  }
+  .about-text-section .about-text-list{
+    margin-top: 30px;
+    font-size: 18px;
+  }
+  
+  @media (max-width: 768px) {
+    .about-text-section .text-block {
+        flex: 1 1 100%; 
+    }
+  }

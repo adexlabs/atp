@@ -26,6 +26,7 @@ import LogoSlider from './components/LogoSlider';
 import HomePageRoute from './components/HomePageRoute';
 import ProductPageRoute from './components/ProductPageRoute';
 import FAQ from './components/FAQ';
+import About_Us from './components/About_Us';
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
  * @type {ShouldRevalidateFunction}
@@ -177,8 +178,12 @@ export function Layout({children}) {
 ) : (
   <HomePageRoute />
 ))}
+       <Routes>
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/about" element={<About_Us />} />
 
-<Link to="/faq" element={<FAQ/>}/>
+        </Routes>
+
             </PageLayout>
           </Analytics.Provider>
         ) : (
