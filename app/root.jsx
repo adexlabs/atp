@@ -189,11 +189,11 @@ export function Layout({children}) {
 ) : (
   <HomePageRoute />
 ))}
-       <Routes>
+       {/* <Routes>
           <Route path="/faq" element={<FAQ />} />
           <Route path="/about" element={<About_Us />} />
 
-        </Routes>
+        </Routes> */}
 
             </PageLayout>
           </Analytics.Provider>
