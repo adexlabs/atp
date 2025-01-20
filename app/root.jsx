@@ -10,6 +10,8 @@ import {
   ScrollRestoration,
   isRouteErrorResponse,
   useLocation,
+  Routes,
+  Route,
 } from '@remix-run/react';
 import favicon from '~/assets/favicon.svg';
 import resetStyles from '~/styles/reset.css?url';
@@ -173,6 +175,8 @@ export function Layout({children}) {
 ) : (
   <HomePageRoute />
 ))}
+
+<Routes><Route><Link to="/faq" element={<FAQ/>}/></Route></Routes>
             </PageLayout>
           </Analytics.Provider>
         ) : (

@@ -1598,3 +1598,124 @@ margin-top: 30px;
   padding-top: 10px;
   padding-bottom: 30px;
   }
+
+
+  /* 
+**************
+(FAQ.css): 
+
+***************
+*/
+
+.faq-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  display: grid;
+  grid-template-columns: 25% auto;
+  gap: 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  
+}
+.faq-container .faq-heading{
+font-size: 3rem;
+font-weight: normal;
+position: sticky;
+  top: 0; 
+  align-self: start; 
+}
+.faq-container .faq-list {
+  margin-top: 20px;
+}
+
+.faq-container .faq-item {
+  margin-bottom: 15px;
+  border: none;
+}
+
+.faq-container .faq-question {
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  font-size: 20px;
+  font-weight: normal;
+  padding-bottom: 20px;
+}
+
+.faq-container .faq-question.active {
+  border-bottom: none;
+}
+
+.faq-container .faq-icon {
+  display: flex;
+  align-items: center;
+}
+.faq-container .faq-answer .atp-address{
+  margin-top: 20px;
+  line-height: 2;
+  font-size: 17px;
+}
+.faq-container .faq-answer{
+  padding: 6px 10px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;/* Add a bottom border to the answer field */
+  font-size: 18px;
+  font-weight: normal;
+  padding-bottom: 20px;
+  max-width: 930px;
+}
+.faq-container .faq-answer .custom-list{
+  padding: 0px 40px;
+}
+.faq-container .faq-answer .second-list{
+  padding: 0px 40px;
+  margin-top: 15px;
+}
+.faq-container .faq-answer p{
+  background-color: #fff;
+  font-size: 18px;
+  font-weight: normal;
+}
+ .faq-container .third-list {
+ padding: 0px 40px;
+ margin-top: 15px;
+ margin-bottom: 15px;
+}
+ .faq-container .third-list li{
+  list-style-type: disc;
+  font-size: 18px;
+}
+
+.faq-container .second-list li{
+  list-style-type: disc;
+  font-size: 18px;
+} 
+
+.faq-container .custom-list li{
+  list-style-type: decimal;
+}
+
+
+@media(max-width: 990px){
+  .faq-container {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0 1.5rem;
+  }
+  .faq-container .faq-heading{
+    position: relative;
+    font-size: 2rem;
+  }
+  
+}
+@media(max-width: 549px){
+
+  .faq-container .faq-question {
+    font-size: 18px;
+  }
+}

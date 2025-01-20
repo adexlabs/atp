@@ -9,6 +9,7 @@ import favicon1 from '~/assets/svg_money.svg';
 import favicon2 from '~/assets/svg_award.svg';
 import favicon3 from '~/assets/svg_lock.svg';
 import favicon4 from '~/assets/svg_folder.svg';
+import { Link, Route, Routes } from '@remix-run/react';
 export default function HomePageRoute() {
     const handleButtonClick = () => {
         setBannerText("Enjoy special discounts!");
@@ -39,10 +40,11 @@ export default function HomePageRoute() {
       
   return (
     <>
-<ImageTextSection/>
-<LogoSlider/>
+    <Routes>
+<Route><Link to="/imgtextsection" element={<ImageTextSection/>}/></Route>
+<Route><Link to="/slider" element={<LogoSlider/>}/></Route>
 <div className="text-banner">
-    <NewBanner
+<Route><Link to="/banner" element={ <NewBanner
        title="Lost your data? Don't fret."
        caption=""
        buttonText="Have a Query?"
@@ -51,11 +53,11 @@ export default function HomePageRoute() {
        backgroundImage="" // Background image URL
        highlightWordCount={2} 
        paragraph="ATP Data Services to the rescue to get your indispensable data back! Our team of data recovery experts has many years of experience working in the storage and recovery industry.  We are dedicated to providing the best possible service to our clients. We pride ourselves on our professionalism, confidentiality, and commitment to excellence.  You can count on us!"
-      />
+      />}/></Route>
     </div>
 
     <div className="digital-assets">
-<NewBanner
+    <Route><Link to="/banner" element={<NewBanner
   title="Recover your most important digital assets today."
   caption=""
   buttonText="Get Started"
@@ -63,9 +65,10 @@ export default function HomePageRoute() {
   bannerStyle={{ height: "520px", backgroundColor: "#f6f6f8" }} // adjustable banner style
   backgroundImage={recover} 
   highlightWordCount={0} 
-/>
+/>}/></Route>
   </div>
-  <TrustBadges badges={customBadges} count={4} />
+  <Route><Link to="/trustbadges" element={<TrustBadges badges={customBadges} count={4} />}/></Route>
+  </Routes>
     </>
   )
 }
