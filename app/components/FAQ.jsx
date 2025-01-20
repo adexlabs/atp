@@ -2,23 +2,9 @@
 import React, { useState } from "react";
 import Section_Banner from "./Section_Banner";
 import bnnrImg from '~/assets/d-hero-seagate (1).jpg';
-import {useShopQuery, gql} from '@shopify/hydrogen';
 export default function FAQ () {
   const [activeIndex, setActiveIndex] = useState(null);
-  const {data} = useShopQuery({
-    query: gql`
-      query FAQMenu {
-        menu(handle: "faq") {
-          items {
-            title
-            url
-          }
-        }
-      }
-    `,
-  });
 
-  const menuItems = data?.menu?.items || [];
   const faqData = [
     {
       question: "What is the end-to-end data recovery services process?",
