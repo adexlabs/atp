@@ -1,6 +1,5 @@
 import React , { useState } from "react";
 import bnnrImg from '~/assets/d-hero-seagate.jpg';
-import bnnrImg2 from '~/assets/hero_desktop.png';
 import Section_Banner from "./Section_Banner";
 import NewBanner from "./NewBanner";
 export default function About_Us(){

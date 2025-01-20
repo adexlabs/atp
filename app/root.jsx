@@ -25,8 +25,6 @@ import ImageTextSection from './components/ImageTextSection';
 import LogoSlider from './components/LogoSlider';
 import HomePageRoute from './components/HomePageRoute';
 import ProductPageRoute from './components/ProductPageRoute';
-import FAQ from './components/FAQ';
-import About_Us from './components/About_Us';
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
  * @type {ShouldRevalidateFunction}
@@ -173,15 +171,8 @@ export function Layout({children}) {
             <PageLayout {...data}>
             {!isProductPage && !isCollectionPage && ( <Banner />)}
             {children}
-            {!isCollectionPage && (isProductPage ? (
-  <ProductPageRoute />
-) : (
-  <HomePageRoute />
-))}
-
-  
-
-            </PageLayout>
+            {!isCollectionPage && (isProductPage ? ( <ProductPageRoute />) : ( <HomePageRoute />))}
+             </PageLayout>
           </Analytics.Provider>
         ) : (
           children
