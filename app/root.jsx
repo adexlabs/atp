@@ -12,6 +12,7 @@ import {
   useLocation,
   Routes,
   Route,
+  Link,
 } from '@remix-run/react';
 import favicon from '~/assets/favicon.svg';
 import resetStyles from '~/styles/reset.css?url';
@@ -177,7 +178,7 @@ export function Layout({children}) {
   <HomePageRoute />
 ))}
 
-<FAQ/>
+<Link to="/faq" element={<FAQ/>}/>
             </PageLayout>
           </Analytics.Provider>
         ) : (
