@@ -172,17 +172,6 @@ export function Layout({children}) {
           >
             <PageLayout {...data}>
             {!isProductPage && !isCollectionPage && ( <Banner />)}
-            <nav>
-          <ul>
-            <li>
-              <Link to="/faq">FAQ</Link> {/* Link to FAQ */}
-            </li>
-            <li>
-              <Link to="/about">About Us</Link> {/* Link to About Us */}
-            </li>
-            {/* Add more links here */}
-          </ul>
-        </nav>
             {children}
             {!isCollectionPage && (isProductPage ? (
   <ProductPageRoute />
