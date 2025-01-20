@@ -10,8 +10,6 @@ export default function About_Us(){
   const handleButtonClick = () => {
     setBannerText("Enjoy special discounts!");
   };
-
-
     return(
         <>
           <Section_Banner
