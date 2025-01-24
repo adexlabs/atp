@@ -358,7 +358,14 @@ button.reset:hover:not(:has(> *)) {
 .recommended-product img {
   height: auto;
 }
-
+.recommended-products h2{
+font-size: 1.8rem;
+}
+@media(max-width: 549px){
+  .recommended-products h2{
+    font-size: 1.4rem;
+    }
+}
 /*
 * --------------------------------------------------
 * routes/collections._index.tsx
