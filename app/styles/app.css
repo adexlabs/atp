@@ -358,11 +358,11 @@ button.reset:hover:not(:has(> *)) {
 .recommended-product img {
   height: auto;
 }
-.recommended-products h2{
+.recommended-products .recommended-products-heading{
 font-size: 1.8rem;
 }
 @media(max-width: 549px){
-  .recommended-products h2{
+  .recommended-products .recommended-products-heading{
     font-size: 1.4rem;
     }
 }
@@ -1202,7 +1202,7 @@ components/Footer.CSS
 
 
 .custom .heading .custom-title{
-   font-size: 1.4rem;
+   font-size: 1.8rem;
     line-height: 1.4;
     margin-bottom: 1rem;
     text-transform: uppercase;
