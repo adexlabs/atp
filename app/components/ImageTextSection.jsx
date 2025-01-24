@@ -25,8 +25,8 @@ export default function ImageTextSection  () {
 </div>
   <div className='image-content'>
     <p className='caption'>zero-risk guarantee</p>
-    <h2 className='image-heading'>Our zero-risk guarantee means you’ll only pay for successful recovery.</h2>
- <button className='img-text-btn'>Read More</button>
+    <h2 className='image-heading'>Our <span className='color-text'>zero-risk guarantee </span> means you’ll only pay for successful recovery.</h2>
+     <button className='img-text-btn'>Read More</button>
     </div>
     </div> 
 </div>

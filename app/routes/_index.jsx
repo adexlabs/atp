@@ -81,7 +81,8 @@ function FeaturedCollection({collection}) {
   return (
     <Link
       className="featured-collection"
-      to={`/collections/${collection.handle}`}
+      // to={`/collections/${collection.handle}`}
+      to={`/${collection.handle}`}
     >
       {image && (
         <div className="featured-collection-image">

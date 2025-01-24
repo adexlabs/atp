@@ -1152,6 +1152,10 @@ components/Footer.CSS
     transition-timing-function: cubic-bezier(.4,0,.2,1);
     transition-duration: .15s;
   }
+
+  .image-text-wrapper .color-text{
+   color: #5878ee; 
+  }
   
   @media(max-width: 850px){
     .image-text-wrapper{
