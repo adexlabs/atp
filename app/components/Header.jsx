@@ -119,9 +119,9 @@ export function HeaderMenu({
       // Add query string conditionally for specific menu titles
       let modifiedUrl = url;
       if (item.title === 'FAQ') {
-        modifiedUrl = `${url}?source=faq`;
+        modifiedUrl = `${url}?/faq=faq`;
       } else if (item.title === 'ABOUT') {
-        modifiedUrl = `${url}?source=about`;
+        modifiedUrl = `${url}?/about=about`;
       }
       // No modification for other menu items
   
