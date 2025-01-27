@@ -174,7 +174,7 @@ export function Layout({children}) {
             {children}
             {!isCollectionPage && (isProductPage ? ( <ProductPageRoute />) : ( <HomePageRoute />))}
             <Routes>
-            <Route path="/faq" element={<FAQ />} />
+            <Route path="faq" element={<FAQ />} />
            </Routes>
              </PageLayout>
           </Analytics.Provider>
