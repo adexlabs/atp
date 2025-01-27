@@ -69,7 +69,6 @@ export default function HomePageRoute() {
   </div>
   <TrustBadges badges={customBadges} count={4} />
      <Routes>
-    <Route path="/about" element={<AboutUs />} />
     <Route path="/faq" element={<FAQ />} />
     </Routes>
     </>
