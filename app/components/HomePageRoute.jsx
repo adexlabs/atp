@@ -9,6 +9,8 @@ import favicon1 from '~/assets/svg_money.svg';
 import favicon2 from '~/assets/svg_award.svg';
 import favicon3 from '~/assets/svg_lock.svg';
 import favicon4 from '~/assets/svg_folder.svg';
+import { Route, Routes } from '@remix-run/react';
+import FAQ from './FAQ';
 export default function HomePageRoute() {
     const handleButtonClick = () => {
         setBannerText("Enjoy special discounts!");
@@ -66,6 +68,10 @@ export default function HomePageRoute() {
 />
   </div>
   <TrustBadges badges={customBadges} count={4} />
+     <Routes>
+    <Route path="/about" element={<AboutUs />} />
+    <Route path="/faq" element={<FAQ />} />
+    </Routes>
     </>
   )
 }
