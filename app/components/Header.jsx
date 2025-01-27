@@ -100,7 +100,7 @@ export function HeaderMenu({
       onClick={close}
       prefetch="intent"
       style={activeLinkStyle}
-      to="/?source=new"
+      to="/"
     >
       Home
     </NavLink>
