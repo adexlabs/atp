@@ -53,44 +53,95 @@ export function HeaderMenu({
 
 
   return (
+    // <nav className={className} role="navigation">
+    //   {viewport === 'mobile' && (
+    //     <NavLink
+    //       end
+    //       onClick={close}
+    //       prefetch="intent"
+    //       style={activeLinkStyle}
+    //       to="/"
+    //     >
+    //       Home
+    //     </NavLink>
+    //   )}
+    //   {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
+    //     if (!item.url) return null;
+
+
+    //     // if the url is internal, we strip the domain
+    //     const url =
+    //       item.url.includes('myshopify.com') ||
+    //       item.url.includes(publicStoreDomain) ||
+    //       item.url.includes(primaryDomainUrl)
+    //         ? new URL(item.url).pathname
+    //         : item.url;
+    //     return (
+    //       <NavLink
+    //         className="header-menu-item"
+    //         end
+    //         key={item.id}
+    //         onClick={close}
+    //         prefetch="intent"
+    //         style={activeLinkStyle}
+    //         to={url}
+    //       >
+    //         {item.title}
+    //       </NavLink>
+    //     );
+    //   })}
+    // </nav>
+
+    // comment original nav
     <nav className={className} role="navigation">
-      {viewport === 'mobile' && (
-        <NavLink
-          end
-          onClick={close}
-          prefetch="intent"
-          style={activeLinkStyle}
-          to="/"
-        >
-          Home
-        </NavLink>
-      )}
-      {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
-        if (!item.url) return null;
+  {viewport === 'mobile' && (
+    <NavLink
+      end
+      onClick={close}
+      prefetch="intent"
+      style={activeLinkStyle}
+      to="/?source=new"
+    >
+      Home
+    </NavLink>
+  )}
+  {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
+    if (!item.url) return null;
 
+    // Normalize URL
+    const url =
+      item.url.includes('myshopify.com') ||
+      item.url.includes(publicStoreDomain) ||
+      item.url.includes(primaryDomainUrl)
+        ? new URL(item.url).pathname
+        : item.url;
 
-        // if the url is internal, we strip the domain
-        const url =
-          item.url.includes('myshopify.com') ||
-          item.url.includes(publicStoreDomain) ||
-          item.url.includes(primaryDomainUrl)
-            ? new URL(item.url).pathname
-            : item.url;
-        return (
-          <NavLink
-            className="header-menu-item"
-            end
-            key={item.id}
-            onClick={close}
-            prefetch="intent"
-            style={activeLinkStyle}
-            to={url}
-          >
-            {item.title}
-          </NavLink>
-        );
-      })}
-    </nav>
+    // Add conditional logic for specific URLs
+    let modifiedUrl = url;
+    if (url === '/faq') {
+      modifiedUrl = `${url}?source=faq`;
+    } else if (url === '/about') {
+      modifiedUrl = `${url}?source=about`;
+    } else {
+      modifiedUrl = `${url}?source=new`;
+    }
+
+    return (
+      <NavLink
+        className="header-menu-item"
+        end
+        key={item.id}
+        onClick={close}
+        prefetch="intent"
+        style={activeLinkStyle}
+        to={modifiedUrl} // Use the modified URL
+      >
+        {item.title}
+      </NavLink>
+    );
+  })}
+</nav>
+
   );
 }
 
