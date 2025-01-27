@@ -94,53 +94,53 @@ export function HeaderMenu({
 
     // comment original nav
     <nav className={className} role="navigation">
-  {viewport === 'mobile' && (
-    <NavLink
-      end
-      onClick={close}
-      prefetch="intent"
-      style={activeLinkStyle}
-      to="/"
-    >
-      Home
-    </NavLink>
-  )}
-  {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
-    if (!item.url) return null;
-
-    // Normalize URL
-    const url =
-      item.url.includes('myshopify.com') ||
-      item.url.includes(publicStoreDomain) ||
-      item.url.includes(primaryDomainUrl)
-        ? new URL(item.url).pathname
-        : item.url;
-
-    // Add conditional logic for specific URLs
-    let modifiedUrl = url;
-    if (url === '/faq') {
-      modifiedUrl = `${url}?source=faq`;
-    } else if (url === '/about') {
-      modifiedUrl = `${url}?source=about`;
-    } else {
-      modifiedUrl = `${url}?source=new`;
-    }
-
-    return (
+    {viewport === 'mobile' && (
       <NavLink
-        className="header-menu-item"
         end
-        key={item.id}
         onClick={close}
         prefetch="intent"
         style={activeLinkStyle}
-        to={modifiedUrl} // Use the modified URL
+        to="/"
       >
-        {item.title}
+        Home
       </NavLink>
-    );
-  })}
-</nav>
+    )}
+    {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
+      if (!item.url) return null;
+  
+      // Normalize URL
+      const url =
+        item.url.includes('myshopify.com') ||
+        item.url.includes(publicStoreDomain) ||
+        item.url.includes(primaryDomainUrl)
+          ? new URL(item.url).pathname
+          : item.url;
+  
+      // Add query string conditionally for specific menu titles
+      let modifiedUrl = url;
+      if (item.title === 'FAQ') {
+        modifiedUrl = `${url}?source=faq`;
+      } else if (item.title === 'ABOUT') {
+        modifiedUrl = `${url}?source=about`;
+      }
+      // No modification for other menu items
+  
+      return (
+        <NavLink
+          className="header-menu-item"
+          end
+          key={item.id}
+          onClick={close}
+          prefetch="intent"
+          style={activeLinkStyle}
+          to={modifiedUrl} // Use the modified URL
+        >
+          {item.title}
+        </NavLink>
+      );
+    })}
+  </nav>
+  // END COMMENT 
 
   );
 }
