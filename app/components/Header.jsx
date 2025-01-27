@@ -120,7 +120,7 @@ export function HeaderMenu({
       let modifiedUrl = url;
       if (item.title === 'FAQ') {
         modifiedUrl = `${url}?/faq=faq`;
-      } else if (item.title === 'ABOUT') {
+      } else if (item.title === 'ABOUT US') {
         modifiedUrl = `${url}?/about=about`;
       }
       // No modification for other menu items
