@@ -25,7 +25,6 @@ import ImageTextSection from './components/ImageTextSection';
 import LogoSlider from './components/LogoSlider';
 import HomePageRoute from './components/HomePageRoute';
 import ProductPageRoute from './components/ProductPageRoute';
-import AboutUs from './components/AboutUs';
 import FAQ from './components/FAQ';
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
@@ -178,7 +177,6 @@ export function Layout({children}) {
                     <Routes>
                         <Route path="/" element={<HomePageRoute />} />
                         <Route path="/product" element={<ProductPageRoute />} />
-                        <Route path="/about" element={<AboutUs />} />
                         <Route path="/faq" element={<FAQ />} />
                     </Routes>
              </PageLayout>
