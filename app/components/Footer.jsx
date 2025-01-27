@@ -180,19 +180,19 @@ function FooterLogoAddress({ logoUrl, address }) {
     </div>
   );
 }
-// const FALLBACK_FOOTER_MENU = [
-//   {
-//     columnTitle: "Quick Links",
-//     items: [
-//       { id: '1', title: 'All Products', url: '/' },
-//       { id: '2', title: 'Contact Us', url: '/contact' },
-//       { id: '3', title: 'FAQ', url: '/faq' },
-//       { id: '4', title: 'Seagate Customers', url: '/' },
-//       { id: '5', title: 'Blog', url: '/blog' },
-//       { id: '6', title: 'Privacy Policy', url: '/policies/privacy-policy' },
-//       { id: '7', title: 'Terms of Service', url: '/policies/terms-of-service' },
-//     ],
-//   },
+const FALLBACK_FOOTER_MENU = [
+  {
+    columnTitle: "Quick Links",
+    items: [
+      { id: '1', title: 'All Products', url: '/' },
+      { id: '2', title: 'Contact Us', url: '/contact' },
+      { id: '3', title: 'FAQ', url: '/faq' },
+      { id: '4', title: 'Seagate Customers', url: '/' },
+      { id: '5', title: 'Blog', url: '/blog' },
+      { id: '6', title: 'Privacy Policy', url: '/policies/privacy-policy' },
+      { id: '7', title: 'Terms of Service', url: '/policies/terms-of-service' },
+    ],
+  },
   // {
   //   columnTitle: "Support",
   //   items: [
@@ -208,7 +208,7 @@ function FooterLogoAddress({ logoUrl, address }) {
   //     { id: '8', title: 'Terms of Service', url: '/policies/terms-of-service' },
   //   ],
   // },
-// ];
+];
 
 
 /**
