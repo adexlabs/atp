@@ -25,6 +25,8 @@ import ImageTextSection from './components/ImageTextSection';
 import LogoSlider from './components/LogoSlider';
 import HomePageRoute from './components/HomePageRoute';
 import ProductPageRoute from './components/ProductPageRoute';
+import AboutUs from './components/AboutUs';
+import FAQ from './components/FAQ';
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
  * @type {ShouldRevalidateFunction}
@@ -161,7 +163,7 @@ export function Layout({children}) {
         <Meta />
         <Links />
       </head>
-      <body>
+      {/* <body>
         {data ? (
           <Analytics.Provider
             cart={data.cart}
@@ -179,7 +181,34 @@ export function Layout({children}) {
         )}
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />
-      </body>
+      </body> */}
+
+<body>
+    {data ? (
+        <Analytics.Provider
+            cart={data.cart}
+            shop={data.shop}
+            consent={data.consent}
+        >
+            <Router>
+                <PageLayout {...data}>
+                    {!isProductPage && !isCollectionPage && <Banner />}
+                    <Routes>
+                        <Route path="/" element={<HomePageRoute />} />
+                        <Route path="/product" element={<ProductPageRoute />} />
+                        <Route path="/aboutus" element={<AboutUs />} />
+                        <Route path="/faq" element={<FAQ />} />
+                    </Routes>
+                    {children}
+                </PageLayout>
+            </Router>
+        </Analytics.Provider>
+    ) : (
+        children
+    )}
+    <ScrollRestoration nonce={nonce} />
+    <Scripts nonce={nonce} />
+</body>
     </html>
   );
 }
