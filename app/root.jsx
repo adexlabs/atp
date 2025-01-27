@@ -163,7 +163,7 @@ export function Layout({children}) {
         <Meta />
         <Links />
       </head>
-      {/* <body>
+      <body>
         {data ? (
           <Analytics.Provider
             cart={data.cart}
@@ -173,7 +173,14 @@ export function Layout({children}) {
             <PageLayout {...data}>
             {!isProductPage && !isCollectionPage && ( <Banner />)}
             {children}
-            {!isCollectionPage && (isProductPage ? ( <ProductPageRoute />) : ( <HomePageRoute />))}
+            {/* {!isCollectionPage && (isProductPage ? ( <ProductPageRoute />) : ( <HomePageRoute />))} */}
+          
+                    <Routes>
+                        <Route path="/" element={<HomePageRoute />} />
+                        <Route path="/product" element={<ProductPageRoute />} />
+                        <Route path="/about" element={<AboutUs />} />
+                        <Route path="/faq" element={<FAQ />} />
+                    </Routes>
              </PageLayout>
           </Analytics.Provider>
         ) : (
@@ -181,34 +188,7 @@ export function Layout({children}) {
         )}
         <ScrollRestoration nonce={nonce} />
         <Scripts nonce={nonce} />
-      </body> */}
-
-<body>
-    {data ? (
-        <Analytics.Provider
-            cart={data.cart}
-            shop={data.shop}
-            consent={data.consent}
-        >
-            <Router>
-                <PageLayout {...data}>
-                    {!isProductPage && !isCollectionPage && <Banner />}
-                    <Routes>
-                        <Route path="/" element={<HomePageRoute />} />
-                        <Route path="/product" element={<ProductPageRoute />} />
-                        <Route path="/aboutus" element={<AboutUs />} />
-                        <Route path="/faq" element={<FAQ />} />
-                    </Routes>
-                    {children}
-                </PageLayout>
-            </Router>
-        </Analytics.Provider>
-    ) : (
-        children
-    )}
-    <ScrollRestoration nonce={nonce} />
-    <Scripts nonce={nonce} />
-</body>
+      </body>
     </html>
   );
 }
