@@ -1,14 +1,17 @@
 import React , { useState } from "react";
-import bnnrImg from '~/assets/d-hero-seagate.jpg';
+import bnnrImg from '~/assets/d-hero-seagate (1).jpg';
+import bnnrImg2 from '~/assets/hero_desktop.png';
 import Section_Banner from "./Section_Banner";
 import NewBanner from "./NewBanner";
-export default function AboutUs(){
+export default function About_Us(){
  
   const [bannerText, setBannerText] = useState("Welcome to our store!");
 
   const handleButtonClick = () => {
     setBannerText("Enjoy special discounts!");
   };
+
+
     return(
         <>
           <Section_Banner
@@ -38,6 +41,9 @@ export default function AboutUs(){
         </ul>
         </div>
 
+    
+   
+   
         </>
     )
 }
