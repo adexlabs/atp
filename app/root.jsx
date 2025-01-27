@@ -173,13 +173,13 @@ export function Layout({children}) {
             {!isProductPage && !isCollectionPage && ( <Banner />)}
             {children}
             {/* {!isCollectionPage && (isProductPage ? ( <ProductPageRoute />) : ( <HomePageRoute />))} */}
-            <Router>
+           
                     <Routes>
                         <Route path="/" element={<HomePageRoute />} />
                         <Route path="/product" element={<ProductPageRoute />} />
                         <Route path="/about" element={<AboutUs />} />
                         <Route path="/faq" element={<FAQ />} />
-                    </Routes></Router>
+                    </Routes>
              </PageLayout>
           </Analytics.Provider>
         ) : (
