@@ -177,6 +177,7 @@ export function Layout({children}) {
                     <Routes>
                         <Route path="/" element={<HomePageRoute />} />
                         <Route path="/product" element={<ProductPageRoute />} />
+                        <Route path="/about" element={<AboutUs />} />
                         <Route path="/faq" element={<FAQ />} />
                     </Routes>
              </PageLayout>
