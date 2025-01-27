@@ -93,22 +93,11 @@ export function HeaderMenu({
     // </nav>
 
     // comment original nav
-    <nav className={className} role="navigation">
-    {viewport === 'mobile' && (
-      <NavLink
-        end
-        onClick={close}
-        prefetch="intent"
-        style={activeLinkStyle}
-        to="/"
-      >
-        Home
-      </NavLink>
-    )}
+    <nav className="header-menu-desktop" role="navigation">
     {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
-      if (!item.url) return null;
+      if (!item.url) return null; // Skip items without URLs
   
-      // Normalize URL
+      // Get normalized URL (strip unnecessary domain parts)
       const url =
         item.url.includes('myshopify.com') ||
         item.url.includes(publicStoreDomain) ||
@@ -116,30 +105,31 @@ export function HeaderMenu({
           ? new URL(item.url).pathname
           : item.url;
   
-      // Add query string conditionally for specific menu titles
+      // Custom URL modifications based on title
       let modifiedUrl = url;
-      if (item.title === 'FAQ') {
-        modifiedUrl = `${url}?/faq=faq`;
-      } else if (item.title === 'ABOUT US') {
-        modifiedUrl = `${url}?/about=about`;
+      if (item.title === 'Service Pricing') {
+        modifiedUrl = `${url}?source=pricing`;
+      } else if (item.title === 'About') {
+        modifiedUrl = `${url}?source=about`;
+      } else if (item.title === 'FAQ') {
+        modifiedUrl = `${url}?source=faq`;
       }
-      // No modification for other menu items
   
+      // Render each menu item
       return (
-        <NavLink
+        <a
+          data-discover="true"
           className="header-menu-item"
-          end
+          href={modifiedUrl} // Set the dynamic href
+          style={{ color: 'black' }}
           key={item.id}
-          onClick={close}
-          prefetch="intent"
-          style={activeLinkStyle}
-          to={modifiedUrl} // Use the modified URL
         >
           {item.title}
-        </NavLink>
+        </a>
       );
     })}
   </nav>
+  
   // END COMMENT 
 
   );
@@ -253,49 +243,56 @@ function CartBanner() {
 }
 
 
+// const FALLBACK_HEADER_MENU = {
+//   id: 'gid://shopify/Menu/199655587896',
+//   items: [
+//     {
+//       id: 'gid://shopify/MenuItem/461609500728',
+//       resourceId: null,
+//       tags: [],
+//       title: 'Collections',
+//       type: 'HTTP',
+//       url: '/collections',
+//       items: [],
+//     },
+//     {
+//       id: 'gid://shopify/MenuItem/461609533496',
+//       resourceId: null,
+//       tags: [],
+//       title: 'Blog',
+//       type: 'HTTP',
+//       url: '/blogs/journal',
+//       items: [],
+//     },
+//     {
+//       id: 'gid://shopify/MenuItem/461609566264',
+//       resourceId: null,
+//       tags: [],
+//       title: 'Policies',
+//       type: 'HTTP',
+//       url: '/policies',
+//       items: [],
+//     },
+//     {
+//       id: 'gid://shopify/MenuItem/461609599032',
+//       resourceId: 'gid://shopify/Page/92591030328',
+//       tags: [],
+//       title: 'About',
+//       type: 'PAGE',
+//       url: '/pages/about',
+//       items: [],
+//     }
+//   ],
+// };
+
 const FALLBACK_HEADER_MENU = {
   id: 'gid://shopify/Menu/199655587896',
   items: [
-    {
-      id: 'gid://shopify/MenuItem/461609500728',
-      resourceId: null,
-      tags: [],
-      title: 'Collections',
-      type: 'HTTP',
-      url: '/collections',
-      items: [],
-    },
-    {
-      id: 'gid://shopify/MenuItem/461609533496',
-      resourceId: null,
-      tags: [],
-      title: 'Blog',
-      type: 'HTTP',
-      url: '/blogs/journal',
-      items: [],
-    },
-    {
-      id: 'gid://shopify/MenuItem/461609566264',
-      resourceId: null,
-      tags: [],
-      title: 'Policies',
-      type: 'HTTP',
-      url: '/policies',
-      items: [],
-    },
-    {
-      id: 'gid://shopify/MenuItem/461609599032',
-      resourceId: 'gid://shopify/Page/92591030328',
-      tags: [],
-      title: 'About',
-      type: 'PAGE',
-      url: '/pages/about',
-      items: [],
-    }
+    { id: '1', title: 'Service Pricing', url: '/service-pricing', items: [] },
+    { id: '2', title: 'About', url: '/about', items: [] },
+    { id: '3', title: 'FAQ', url: '/faq', items: [] },
   ],
 };
-
-
 /**
  * @param {{
  *   isActive: boolean;
