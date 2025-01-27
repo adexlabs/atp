@@ -172,14 +172,14 @@ export function Layout({children}) {
             <PageLayout {...data}>
             {!isProductPage && !isCollectionPage && ( <Banner />)}
             {children}
-            {/* {!isCollectionPage && (isProductPage ? ( <ProductPageRoute />) : ( <HomePageRoute />))} */}
+            {!isCollectionPage && (isProductPage ? ( <ProductPageRoute />) : ( <HomePageRoute />))}
            
-                    <Routes>
+                    {/* <Routes>
                         <Route path="/" element={<HomePageRoute />} />
                         <Route path="/product" element={<ProductPageRoute />} />
                         <Route path="/about" element={<AboutUs />} />
                         <Route path="/faq" element={<FAQ />} />
-                    </Routes>
+                    </Routes> */}
              </PageLayout>
           </Analytics.Provider>
         ) : (
