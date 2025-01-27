@@ -53,84 +53,46 @@ export function HeaderMenu({
 
 
   return (
-    // <nav className={className} role="navigation">
-    //   {viewport === 'mobile' && (
-    //     <NavLink
-    //       end
-    //       onClick={close}
-    //       prefetch="intent"
-    //       style={activeLinkStyle}
-    //       to="/"
-    //     >
-    //       Home
-    //     </NavLink>
-    //   )}
-    //   {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
-    //     if (!item.url) return null;
-
-
-    //     // if the url is internal, we strip the domain
-    //     const url =
-    //       item.url.includes('myshopify.com') ||
-    //       item.url.includes(publicStoreDomain) ||
-    //       item.url.includes(primaryDomainUrl)
-    //         ? new URL(item.url).pathname
-    //         : item.url;
-    //     return (
-    //       <NavLink
-    //         className="header-menu-item"
-    //         end
-    //         key={item.id}
-    //         onClick={close}
-    //         prefetch="intent"
-    //         style={activeLinkStyle}
-    //         to={url}
-    //       >
-    //         {item.title}
-    //       </NavLink>
-    //     );
-    //   })}
-    // </nav>
-
-    // comment original nav
-    <nav className="header-menu-desktop" role="navigation">
-    {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
-      if (!item.url) return null; // Skip items without URLs
-  
-      // Get normalized URL (strip unnecessary domain parts)
-      const url =
-        item.url.includes('myshopify.com') ||
-        item.url.includes(publicStoreDomain) ||
-        item.url.includes(primaryDomainUrl)
-          ? new URL(item.url).pathname
-          : item.url;
-  
-      // Custom URL modifications based on title
-      let modifiedUrl = url;
-      if (item.title === 'Service Pricing') {
-        modifiedUrl = `${url}?source=pricing`;
-      } else if (item.title === 'About') {
-        modifiedUrl = `${url}?source=about`;
-      } else if (item.title === 'FAQ') {
-        modifiedUrl = `${url}?source=faq`;
-      }
-  
-      // Render each menu item
-      return (
-        <a
-          data-discover="true"
-          className="header-menu-item"
-          href={modifiedUrl} // Set the dynamic href
-          style={{ color: 'black' }}
-          key={item.id}
+    <nav className={className} role="navigation">
+      {viewport === 'mobile' && (
+        <NavLink
+          end
+          onClick={close}
+          prefetch="intent"
+          style={activeLinkStyle}
+          to="/"
         >
-          {item.title}
-        </a>
-      );
-    })}
-  </nav>
+          Home
+        </NavLink>
+      )}
+      {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
+        if (!item.url) return null;
+
+
+        // if the url is internal, we strip the domain
+        const url =
+          item.url.includes('myshopify.com') ||
+          item.url.includes(publicStoreDomain) ||
+          item.url.includes(primaryDomainUrl)
+            ? new URL(item.url).pathname
+            : item.url;
+        return (
+          <NavLink
+            className="header-menu-item"
+            end
+            key={item.id}
+            onClick={close}
+            prefetch="intent"
+            style={activeLinkStyle}
+            to={url}
+          >
+            {item.title}
+          </NavLink>
+        );
+      })}
+    </nav>
+
   
-  // END COMMENT 
 
   );
 }
@@ -243,56 +205,49 @@ function CartBanner() {
 }
 
 
-// const FALLBACK_HEADER_MENU = {
-//   id: 'gid://shopify/Menu/199655587896',
-//   items: [
-//     {
-//       id: 'gid://shopify/MenuItem/461609500728',
-//       resourceId: null,
-//       tags: [],
-//       title: 'Collections',
-//       type: 'HTTP',
-//       url: '/collections',
-//       items: [],
-//     },
-//     {
-//       id: 'gid://shopify/MenuItem/461609533496',
-//       resourceId: null,
-//       tags: [],
-//       title: 'Blog',
-//       type: 'HTTP',
-//       url: '/blogs/journal',
-//       items: [],
-//     },
-//     {
-//       id: 'gid://shopify/MenuItem/461609566264',
-//       resourceId: null,
-//       tags: [],
-//       title: 'Policies',
-//       type: 'HTTP',
-//       url: '/policies',
-//       items: [],
-//     },
-//     {
-//       id: 'gid://shopify/MenuItem/461609599032',
-//       resourceId: 'gid://shopify/Page/92591030328',
-//       tags: [],
-//       title: 'About',
-//       type: 'PAGE',
-//       url: '/pages/about',
-//       items: [],
-//     }
-//   ],
-// };
-
 const FALLBACK_HEADER_MENU = {
   id: 'gid://shopify/Menu/199655587896',
   items: [
-    { id: '1', title: 'Service Pricing', url: '/service-pricing', items: [] },
-    { id: '2', title: 'About', url: '/about', items: [] },
-    { id: '3', title: 'FAQ', url: '/faq', items: [] },
+    {
+      id: 'gid://shopify/MenuItem/461609500728',
+      resourceId: null,
+      tags: [],
+      title: 'Collections',
+      type: 'HTTP',
+      url: '/collections',
+      items: [],
+    },
+    {
+      id: 'gid://shopify/MenuItem/461609533496',
+      resourceId: null,
+      tags: [],
+      title: 'Blog',
+      type: 'HTTP',
+      url: '/blogs/journal',
+      items: [],
+    },
+    {
+      id: 'gid://shopify/MenuItem/461609566264',
+      resourceId: null,
+      tags: [],
+      title: 'Policies',
+      type: 'HTTP',
+      url: '/policies',
+      items: [],
+    },
+    {
+      id: 'gid://shopify/MenuItem/461609599032',
+      resourceId: 'gid://shopify/Page/92591030328',
+      tags: [],
+      title: 'About',
+      type: 'PAGE',
+      url: '/pages/about',
+      items: [],
+    }
   ],
 };
+
+
 /**
  * @param {{
  *   isActive: boolean;
