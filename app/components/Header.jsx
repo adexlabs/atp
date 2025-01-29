@@ -6,26 +6,12 @@ import searchIcon from '~/assets/searchLogo.svg';
 import userIcon from '~/assets/account.svg';
 import cartIcon from '~/assets/cart.svg';
 import close_Icon from '~/assets/closeIcon.svg';
-import { NavLink, useNavigate, useLocation } from "react-router-dom";
-import { useEffect } from "react";
 /**
  * @param {HeaderProps}
  */
 
-const menuRoutes = {
-  home: "/",
-  about: "/about",
-  faq: "/faq"
-};
 export function Header({header, isLoggedIn, cart, publicStoreDomain}) {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  useEffect(() => {
-    if (location.pathname === menuRoutes.home) {
-      navigate(menuRoutes.home); 
-    }
-  }, [location, navigate]);
+ 
   const {shop, menu} = header;
   return (
     <header className="header page-width custom-header">
@@ -36,7 +22,7 @@ export function Header({header, isLoggedIn, cart, publicStoreDomain}) {
         publicStoreDomain={publicStoreDomain}
       />
       <div className='order-2'>
-      <NavLink prefetch="intent" to="menuRoutes.home" style={activeLinkStyle} end>
+      <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
         <div className='header-main-logo'>
         <img src="https://cdn.shopify.com/s/files/1/0584/8688/2388/files/atp-logo.png?v=1721229325"/>
         </div>
