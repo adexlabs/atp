@@ -28,8 +28,6 @@ export function Header({header, isLoggedIn, cart, publicStoreDomain}) {
         </div>
       </NavLink>
       </div>
-      
-       
       <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
     </header>
   );
@@ -127,9 +125,6 @@ function HeaderCtas({isLoggedIn, cart}) {
   );
 }
 
-
-
-
 function HeaderMenuMobileToggle() {
   const {open} = useAside();
   return (
@@ -151,10 +146,6 @@ function SearchToggle() {
     </button>
   );
 }
-
-
-
-
 
 
 /**

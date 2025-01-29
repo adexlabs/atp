@@ -42,7 +42,7 @@ setBannerText("Enjoy special discounts!");
       />
     </div>
 
-    <div className="digital-assets">
+<div className="digital-assets">
 <NewBanner
   title="Recover your most important digital assets today."
   caption=""

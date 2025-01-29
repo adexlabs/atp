@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Section_Banner from "./Section_Banner";
 import bnnrImg from '~/assets/d-hero-seagate (1).jpg';
+import { Link } from "@remix-run/react";
 export default function FAQ () {
   const [activeIndex, setActiveIndex] = useState(null);
  
@@ -10,7 +11,7 @@ export default function FAQ () {
       question: "What is the end-to-end data recovery services process?",
       answer: (
         <>
-            <ul className="custom-list">
+     <ul className="custom-list">
                 <li>You submit a case and pay for the services upfront.</li>
                 <li>You package your media and incur the cost of shipping it to our lab, information you will receive via email.</li>
                 <li>We keep you updated on the status of your recovery via email.</li>
@@ -122,6 +123,10 @@ export default function FAQ () {
  
   return (
     <>
+          <Link
+      className="faq-section"
+       to={`/faq`}>
+          
      <Section_Banner
   backgroundImage={bnnrImg} 
   height="350px"
@@ -162,6 +167,7 @@ export default function FAQ () {
         ))}
       </div>
     </div>
+    </Link>
     </>
   );
 };

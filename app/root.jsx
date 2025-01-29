@@ -176,8 +176,6 @@ export function Layout({children}) {
             {!isProductPage && !isCollectionPage && ( <Banner />)}
             {children}
             {!isCollectionPage && (isProductPage ? ( <ProductPageRoute />) : ( <HomePageRoute />))}
-           
-        {isSeagateRoute && <SegateProductRoute />}
             <Routes>
             <Route path="/faq" element={<FAQ />} />
             <Route path="/aboutus" element={<About_Us />} />
