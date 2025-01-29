@@ -152,6 +152,7 @@ export function Layout({children}) {
   const location = useLocation();
   const isCollectionPage = location.pathname.startsWith('/collection');
   const isProductPage = location.pathname.startsWith('/products');
+  const isSeagateRoute = location.pathname === "/seagate-customers";
   /** @type {RootLoader} */
   const data = useRouteLoaderData('root');
 
@@ -171,13 +172,17 @@ export function Layout({children}) {
             consent={data.consent}
           >
             <PageLayout {...data}>
+              
             {!isProductPage && !isCollectionPage && ( <Banner />)}
             {children}
             {!isCollectionPage && (isProductPage ? ( <ProductPageRoute />) : ( <HomePageRoute />))}
+           
+        {isSeagateRoute && <SegateProductRoute />}
             <Routes>
             <Route path="/faq" element={<FAQ />} />
-            <Route path="/about" element={<About_Us />} />
+            <Route path="/aboutus" element={<About_Us />} />
            </Routes>
+           
              </PageLayout>
           </Analytics.Provider>
         ) : (
