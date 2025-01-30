@@ -27,6 +27,7 @@ import HomePageRoute from './components/HomePageRoute';
 import ProductPageRoute from './components/ProductPageRoute';
 import FAQ from './components/FAQ';
 import About_Us from './components/About_Us';
+import SegateProductRoute from './components/SegateProductRoute';
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
  * @type {ShouldRevalidateFunction}
@@ -188,6 +189,7 @@ export function Layout({children}) {
             <Routes>
             <Route path="/faq" element={<FAQ />} />
             <Route path="/aboutus" element={<About_Us />} />
+            <Route path='/seagate-product' element={<SegateProductRoute/>}/>
            </Routes>
            
              </PageLayout>

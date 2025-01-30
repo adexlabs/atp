@@ -50,12 +50,45 @@ function FooterMenu({menu, primaryDomainUrl, publicStoreDomain}) {
       {(menu || FALLBACK_FOOTER_MENU).items.map((item) => {
         if (!item.url) return null;
         // if the url is internal, we strip the domain
-        const url =
-          item.url.includes('myshopify.com') ||
-          item.url.includes(publicStoreDomain) ||
-          item.url.includes(primaryDomainUrl)
-            ? new URL(item.url).pathname
-            : item.url;
+
+    let customUrl = item.url;
+    // Setting custom URLs based on index
+
+    if (index === 1) {
+
+      customUrl = "/aboutus"; // For About Us page
+
+      item.title = "About Us"; // Change title to ABOUT
+
+    } else if (index === 4) {
+
+      customUrl = "/faq"; // For FAQ page
+
+      item.title = "FAQ"; // Change title to FAQ
+
+    } else if (index === 5) {
+
+      customUrl = "/seagate-product"; // For Seagate Product page
+
+      item.title = "Seagate Customers"; // Change title to SEAGATE PRODUCT
+
+    }
+        // const url =
+        //   item.url.includes('myshopify.com') ||
+        //   item.url.includes(publicStoreDomain) ||
+        //   item.url.includes(primaryDomainUrl)
+        //     ? new URL(item.url).pathname
+        //     : item.url;
+        
+    const url = customUrl.includes('myshopify.com') || 
+    customUrl.includes(publicStoreDomain) || 
+    customUrl.includes(primaryDomainUrl)
+
+    ? new URL(customUrl).pathname
+
+    : customUrl;
+
+       // Check if URL is external or internal
         const isExternal = !url.startsWith('/');
         return isExternal ? (
           <a href={url} key={item.id} rel="noopener noreferrer" target="_blank">

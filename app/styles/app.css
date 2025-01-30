@@ -1834,7 +1834,18 @@ Section-Banner CSS
   }
   
   @media (max-width: 768px) {
+    .about-text-section {
+      margin: 0 1.5rem;
+    }
     .about-text-section .text-block {
         flex: 1 1 100%; 
+    }
+
+    .about-text-section .about-text-heading{
+      text-align: left;
+      font-size: 2rem;
+    }
+    .section-banner .section-banner-heading {
+      font-size: 3rem;
     }
   }

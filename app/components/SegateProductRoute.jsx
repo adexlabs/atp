@@ -5,12 +5,13 @@ import bnnrImg from '~/assets/d-hero-seagate (1).jpg';
 import ProductPageTrustBadges from './ProductPageTrustBadges';
 import LogoSlider from './LogoSlider';
 import recover from '~/assets/d-hero2-seagate.jpg';
-const SegateProductRoute = () => {
+
+export default function SegateProductRoute () {
 
 const handleButtonClick = () => {
 setBannerText("Enjoy special discounts!");
 };
-   
+
   return (
     <>
    <NewBanner
