@@ -371,6 +371,11 @@ font-size: 1.8rem;
 * routes/collections._index.tsx
 * --------------------------------------------------
 */
+
+.collections{
+  margin-top: 170px;
+    padding: 0 3rem;
+}
 .collections-grid {
   display: grid;
   grid-gap: 1.5rem;
@@ -389,6 +394,9 @@ font-size: 1.8rem;
 @media(max-width: 767px){
   .collection{
    padding-top: 20px;
+  }
+  collections{
+    padding: 0 1.5rem;
   }
 }
 /*

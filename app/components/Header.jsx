@@ -65,17 +65,44 @@ export function HeaderMenu({
           Home
         </NavLink>
       )}
-      {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
+      {/*   {(menu || FALLBACK_HEADER_MENU).items.map((item)=>{This is Actual} */}
+      {(menu || FALLBACK_HEADER_MENU).items.map((item, index) => {
         if (!item.url) return null;
 
+         // Custom URLs based on index
+
+    let customUrl = item.url;
+
+    if (index === 1) {
+
+      customUrl = "/service-pricing";
+
+      item.title = "SERVICE PRICING";
+
+    }else if (index === 2) {
+
+      customUrl = "/about";
+
+      item.title = "ABOUT";
+
+    } else if (index === 3) {
+
+      customUrl = "/faq";
+
+      item.title = "FAQ";
+
+    }
 
         // if the url is internal, we strip the domain
         const url =
           item.url.includes('myshopify.com') ||
           item.url.includes(publicStoreDomain) ||
           item.url.includes(primaryDomainUrl)
-            ? new URL(item.url).pathname
-            : item.url;
+            // ? new URL(item.url).pathname
+            // : item.url;
+
+            ? new URL(item.customUrl).pathname
+             : item.customUrl;
         return (
           <NavLink
             className="header-menu-item"

@@ -66,7 +66,6 @@ export default function Homepage() {
     <div className="home page-width">
       <FeaturedCollection collection={data.featuredCollection} />
       <RecommendedProducts products={data.recommendedProducts} />
-      
     </div>
   );
 }
