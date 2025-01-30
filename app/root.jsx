@@ -189,7 +189,7 @@ export function Layout({children}) {
             <Routes>
             <Route path="/faq" element={<FAQ />} />
             <Route path="/aboutus" element={<About_Us />} />
-            <Route path='/seagate-product' element={<SegateProductRoute/>}/>
+
            </Routes>
            
              </PageLayout>
