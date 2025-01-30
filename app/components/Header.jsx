@@ -94,15 +94,19 @@ export function HeaderMenu({
     }
 
         // if the url is internal, we strip the domain
-        const url =
-          item.url.includes('myshopify.com') ||
-          item.url.includes(publicStoreDomain) ||
-          item.url.includes(primaryDomainUrl)
+        // const url =
+          // item.url.includes('myshopify.com') ||
+          // item.url.includes(publicStoreDomain) ||
+          // item.url.includes(primaryDomainUrl)
             // ? new URL(item.url).pathname
             // : item.url;
 
-            ? new URL(item.customUrl).pathname
-             : item.customUrl;
+            const url =
+            customUrl.includes('myshopify.com') ||
+            customUrl.includes(publicStoreDomain) ||
+            customUrl.includes(primaryDomainUrl)
+              ? new URL(customUrl).pathname
+              : customUrl;
         return (
           <NavLink
             className="header-menu-item"
