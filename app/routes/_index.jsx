@@ -35,15 +35,13 @@ async function loadCriticalData({context}) {
   ]);
 
   // Payal add this code
-   // Filter to get only 'seagate' collection by handle
-   const seagateCollection = collections.nodes.find(
-    (collection) => collection.handle === 'seagate'
-  );
+  // Get the first collection from the collections array
+  const firstCollection = collections.nodes[0]; 
 
   return {
     // featuredCollection: collections.nodes[0], <= original code
 
-    featuredCollection: seagateCollection || collections.nodes[0], // Default to first collection if 'seagate' is not found
+    featuredCollection: firstCollection, // Show first collection on homepage
  
   };
 }
