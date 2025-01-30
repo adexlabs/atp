@@ -29,7 +29,6 @@ setBannerText("Enjoy special discounts!");
 <ProductPageTrustBadges/>
 <LogoSlider/>
 
-
 <div className="text-banner">
     <NewBanner
        title="Lost your data? Don't fret."
