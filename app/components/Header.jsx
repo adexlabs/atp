@@ -72,20 +72,13 @@ export function HeaderMenu({
          // Custom URLs based on index
 
     let customUrl = item.url;
-
-    if (index === 1) {
-
-      customUrl = "/service-pricing";
-
-      item.title = "SERVICE PRICING";
-
-    }else if (index === 2) {
+     if (index === 1) {
 
       customUrl = "/aboutus";
 
       item.title = "ABOUT";
 
-    } else if (index === 3) {
+    } else if (index === 2) {
 
       customUrl = "/faq";
 
