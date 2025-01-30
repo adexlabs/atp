@@ -34,15 +34,9 @@ async function loadCriticalData({context}) {
     // Add other queries here, so that they are loaded in parallel
   ]);
 
-  // Payal add this code
-  // Get the first collection from the collections array
-  const firstCollection = collections.nodes[0]; 
-
   return {
-    // featuredCollection: collections.nodes[0], <= original code
+    featuredCollection: collections.nodes[0],
 
-    featuredCollection: firstCollection, // Show first collection on homepage
- 
   };
 }
 
@@ -71,7 +65,8 @@ export default function Homepage() {
   const data = useLoaderData();
   return (
     <div className="home page-width">
-      <FeaturedCollection collection={data.featuredCollection} />
+      {/* <FeaturedCollection collection={data.featuredCollection} /> */}
+      <FeaturedCollection collection={data.collections.nodes[0]} />
       <RecommendedProducts products={data.recommendedProducts} />
     </div>
   );
@@ -96,11 +91,7 @@ function FeaturedCollection({collection}) {
           <Image data={image} sizes="100vw" />
         </div>
       )}
-      <h1> <Link
-      className="featured-collection"
-       to={`/collection/${collection.handle}`}
-     
-    >{collection.title}</Link></h1>
+      <h1>{collection.title}</h1>
     </Link>
   );
 }
