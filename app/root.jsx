@@ -176,10 +176,11 @@ export function Layout({children}) {
             {!isProductPage && !isCollectionPage && ( <Banner />)}
             {children}
             {/* {!isCollectionPage && (isProductPage ? ( <ProductPageRoute />) : ( <HomePageRoute />))} */}
+            
+            {!isCollectionPage && !["/faq", "/aboutus"].includes(location.pathname) && (
+              isProductPage ? <ProductPageRoute /> : <HomePageRoute />
+            )}
 
-            {!isCollectionPage && !["/faq", "/aboutus"].includes(window.location.pathname) && (
-          isProductPage ? <ProductPageRoute /> : <HomePageRoute />
-        )}
             <Routes>
             <Route path="/faq" element={<FAQ />} />
             <Route path="/aboutus" element={<About_Us />} />
