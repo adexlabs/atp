@@ -66,13 +66,7 @@ function FooterMenu({menu, primaryDomainUrl, publicStoreDomain}) {
 
       item.title = "FAQ"; // Change title to FAQ
 
-    } else if (index === 5) {
-
-      customUrl = "/seagate-product"; // For Seagate Product page
-
-      item.title = "Seagate Customers"; // Change title to SEAGATE PRODUCT
-
-    }
+    } 
         // const url =
         //   item.url.includes('myshopify.com') ||
         //   item.url.includes(publicStoreDomain) ||
