@@ -81,7 +81,7 @@ export function HeaderMenu({
 
     }else if (index === 2) {
 
-      customUrl = "/about";
+      customUrl = "/aboutus";
 
       item.title = "ABOUT";
 
