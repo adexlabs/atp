@@ -155,7 +155,7 @@ export function Layout({children}) {
   const isSeagateRoute = location.pathname === "/seagate-customers";
   /** @type {RootLoader} */
   const data = useRouteLoaderData('root');
-
+  const hideOnPages = ["/faq", "/aboutus"];
   return (
     <html lang="en">
       <head>
@@ -173,14 +173,18 @@ export function Layout({children}) {
           >
             <PageLayout {...data}>
               
-            {!isProductPage && !isCollectionPage && ( <Banner />)}
-            {children}
-            {/* {!isCollectionPage && (isProductPage ? ( <ProductPageRoute />) : ( <HomePageRoute />))} */}
-            
-            {!isCollectionPage && !["/faq", "/aboutus"].includes(location.pathname) && (
-              isProductPage ? <ProductPageRoute /> : <HomePageRoute />
+            {/* {!isProductPage && !isCollectionPage && ( <Banner />)} */}
+            {!isProductPage && !isCollectionPage && !hideOnPages.includes(location.pathname) && (
+              <Banner />
             )}
 
+            {children}
+            {/* {!isCollectionPage && (isProductPage ? ( <ProductPageRoute />) : ( <HomePageRoute />))} */}
+
+            {!isCollectionPage && !hideOnPages.includes(location.pathname) && (
+              isProductPage ? <ProductPageRoute /> : <HomePageRoute />
+            )}
+            
             <Routes>
             <Route path="/faq" element={<FAQ />} />
             <Route path="/aboutus" element={<About_Us />} />
