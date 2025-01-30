@@ -34,8 +34,17 @@ async function loadCriticalData({context}) {
     // Add other queries here, so that they are loaded in parallel
   ]);
 
+  // Payal add this code
+   // Filter to get only 'seagate' collection by handle
+   const seagateCollection = collections.nodes.find(
+    (collection) => collection.handle === 'seagate'
+  );
+
   return {
-    featuredCollection: collections.nodes[0],
+    // featuredCollection: collections.nodes[0], <= original code
+
+    featuredCollection: seagateCollection || collections.nodes[0], // Default to first collection if 'seagate' is not found
+ 
   };
 }
 
@@ -89,8 +98,7 @@ function FeaturedCollection({collection}) {
           <Image data={image} sizes="100vw" />
         </div>
       )}
-      {/* <h1>{collection.title}</h1> */}
-      <h1> <Link to={`/${collection.handle}`}>{collection.title}</Link></h1>
+      <h1>{collection.title}</h1>
     </Link>
   );
 }
