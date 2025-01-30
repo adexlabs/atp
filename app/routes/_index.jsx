@@ -90,7 +90,7 @@ function FeaturedCollection({collection}) {
         </div>
       )}
       {/* <h1>{collection.title}</h1> */}
-      <h1> <Link to={`/collections/${collection.handle}`}>{collection.title}</Link></h1>
+      <h1> <Link to={`/${collection.handle}`}>{collection.title}</Link></h1>
     </Link>
   );
 }
