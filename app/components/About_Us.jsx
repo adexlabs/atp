@@ -1,6 +1,5 @@
 import React , { useState } from "react";
-import bnnrImg from '~/assets/d-hero-seagate (1).jpg';
-import bnnrImg2 from '~/assets/d-hero2-seagate.jpg';
+import bnnrImg2 from '~/assets/d-hero-seagate.jpg';
 import Section_Banner from "./Section_Banner";
 import NewBanner from "./NewBanner";
 export default function About_Us(){
@@ -16,7 +15,7 @@ export default function About_Us(){
         <>
           <Section_Banner
                 backgroundImage={bnnrImg2} 
-                height="400px"
+                height="450px"
                 text="About Us"
                 textColor="#fff"
                 textAlign="center"
