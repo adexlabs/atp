@@ -63,6 +63,11 @@ function loadDeferredData({context}) {
 export default function Homepage() {
   /** @type {LoaderReturnData} */
   const data = useLoaderData();
+  // Check if collections is available and has items
+  if (!data.collections || !data.collections.nodes.length) {
+    return <div>No featured collections available</div>;
+  }
+
   return (
     <div className="home page-width">
       {/* <FeaturedCollection collection={data.featuredCollection} /> */}
