@@ -1849,3 +1849,11 @@ Section-Banner CSS
       font-size: 3rem;
     }
   }
+
+  /* Segate Banner CSS */
+
+  .segate-banner .banner-content img{
+    width: 156px;
+    margin: 0 auto;
+    height: auto;
+  }
