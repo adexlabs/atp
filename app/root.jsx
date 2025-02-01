@@ -27,7 +27,6 @@ import HomePageRoute from './components/HomePageRoute';
 import ProductPageRoute from './components/ProductPageRoute';
 import FAQ from './components/FAQ';
 import About_Us from './components/About_Us';
-import SegateProductRoute from './components/SegateProductRoute';
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
  * @type {ShouldRevalidateFunction}
@@ -153,7 +152,6 @@ export function Layout({children}) {
   const location = useLocation();
   const isCollectionPage = location.pathname.startsWith('/collection');
   const isProductPage = location.pathname.startsWith('/products');
-  const isSeagateRoute = location.pathname === "/seagate-customers";
   /** @type {RootLoader} */
   const data = useRouteLoaderData('root');
   const hideOnPages = ["/faq", "/aboutus"];
