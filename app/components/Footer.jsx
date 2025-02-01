@@ -47,7 +47,7 @@ export function Footer({footer: footerPromise, header, publicStoreDomain}) {
 function FooterMenu({menu, primaryDomainUrl, publicStoreDomain}) {
   return (
     <nav className="footer-menu" role="navigation">
-      {(menu || FALLBACK_FOOTER_MENU).items.map((item) => {
+      {(menu || FALLBACK_FOOTER_MENU).items.map((item,index) => {
         if (!item.url) return null;
         // if the url is internal, we strip the domain
  
