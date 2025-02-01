@@ -12,6 +12,7 @@ export default function SeagateCustomers  () {
  onButtonClick={() => alert("Button Clicked!")}
  backgroundImage="https://example.com/banner.jpg"
  highlightWordCount={2}
+ image={logoImg}
 />
 
     </>
