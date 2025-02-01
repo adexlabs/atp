@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function SegateBanner({
+export default function NewBanner({
   title = "", // Default value to prevent errors
   caption,
   imageSrc, // New prop for the optional image
