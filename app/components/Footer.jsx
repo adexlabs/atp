@@ -47,26 +47,10 @@ export function Footer({footer: footerPromise, header, publicStoreDomain}) {
 function FooterMenu({menu, primaryDomainUrl, publicStoreDomain}) {
   return (
     <nav className="footer-menu" role="navigation">
-      {(menu || FALLBACK_FOOTER_MENU).items.map((item, index) => {
+      {(menu || FALLBACK_FOOTER_MENU).items.map((item) => {
         if (!item.url) return null;
         // if the url is internal, we strip the domain
-
-    let customUrl = item.url;
-    // Setting custom URLs based on index
-
-    if (index === 1) {
-
-      customUrl = "/aboutus"; // For About Us page
-
-      item.title = "About Us"; // Change title to ABOUT
-
-    } else if (index === 4) {
-
-      customUrl = "/faq"; // For FAQ page
-
-      item.title = "FAQ"; // Change title to FAQ
-
-    } 
+ 
         // const url =
         //   item.url.includes('myshopify.com') ||
         //   item.url.includes(publicStoreDomain) ||
@@ -74,6 +58,15 @@ function FooterMenu({menu, primaryDomainUrl, publicStoreDomain}) {
         //     ? new URL(item.url).pathname
         //     : item.url;
         
+
+          // URL modify karna hai specific indexes ke liye
+          let customUrl = item.url;
+
+          if (index === 2) customUrl = "/faq"; // 3rd item
+          if (index === 3) customUrl = "/contactus"; // 4th item
+          // if (index === 5) customUrl = "/segate-customers"; // 6th item
+
+
     const url = customUrl.includes('myshopify.com') || 
     customUrl.includes(publicStoreDomain) || 
     customUrl.includes(primaryDomainUrl)
