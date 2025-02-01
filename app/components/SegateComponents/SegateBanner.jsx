@@ -1,15 +1,16 @@
 import React from "react";
 
 export default function NewBanner({
-  title = "", // Default value to prevent errors
+  title = "",
   caption,
-  imageSrc, // New prop for the optional image
   buttonText,
   onButtonClick,
   bannerStyle,
   backgroundImage,
-  highlightWordCount = 0, // Default value for highlightWordCount
+  highlightWordCount = 0,
   paragraph,
+  image,
+  extraText,
 }) {
   const words = title ? title.split(" ") : [];
 
@@ -19,7 +20,7 @@ export default function NewBanner({
   // Logic to handle title and highlighted words
   const titleWithoutLastWords =
     validHighlightWordCount === 0
-      ? title // If no words are highlighted, show the full title
+      ? title
       : words.slice(0, -validHighlightWordCount).join(" ");
 
   const lastWords =
@@ -30,7 +31,7 @@ export default function NewBanner({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    flexDirection: "column", // Stack elements vertically
+    flexDirection: "column",
     height: "300px",
     backgroundColor: "#4CAF50",
     color: "white",
@@ -45,15 +46,19 @@ export default function NewBanner({
   return (
     <div className="banner-container" style={defaultBannerStyle}>
       <div className="banner-content">
+        {/* Render image above the caption if it exists */}
+        {image && <img src={image} alt="icon" style={{ width: "40px", height: "40px", marginBottom: "8px" }} />}
+
         {/* Render caption only if it exists */}
-        {caption && (
-          <div className="banner-caption" style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            {imageSrc && (
-              <img src={imageSrc} alt="Banner Icon" className="banner-image" style={{ width: "24px", height: "24px" }} />
-            )}
-            <p>{caption}</p>
+        {caption && <p className="banner-caption">{caption}</p>}
+
+        {/* Extra content */}
+        {(extraText) && (
+          <div className="extra-content" style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            {extraText && <p>{extraText}</p>}
           </div>
         )}
+
         {title && (
           <h1 className="banner-title">
             {titleWithoutLastWords}
