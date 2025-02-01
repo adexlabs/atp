@@ -61,7 +61,8 @@ function FooterMenu({menu, primaryDomainUrl, publicStoreDomain}) {
 
           // URL modify karna hai specific indexes ke liye
           let customUrl = item.url;
-
+          
+          if (index === 1) customUrl = "/contactus"; // 2nd item
           if (index === 2) customUrl = "/faq"; // 3rd item
           if (index === 3) customUrl = "/contactus"; // 4th item
           // if (index === 5) customUrl = "/segate-customers"; // 6th item
