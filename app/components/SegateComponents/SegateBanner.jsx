@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function NewBanner({
+export default function SegateBanner({
   title = "",
   caption,
   buttonText,
