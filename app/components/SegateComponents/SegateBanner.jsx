@@ -47,13 +47,17 @@ export default function SegateBanner({
     <div className="banner-container" style={defaultBannerStyle}>
       <div className="banner-content">
         {/* Render image above the caption if it exists */}
-        {image && <img src={image} alt="icon" style={{ width: "40px", height: "40px", marginBottom: "8px" }} />}
+        {image && (
+          <div style={{ marginBottom: "8px" }}>
+            <img src={image} alt="icon" style={{ width: "80px", height: "80px", objectFit: "contain" }} />
+          </div>
+        )}
 
         {/* Render caption only if it exists */}
         {caption && <p className="banner-caption">{caption}</p>}
 
         {/* Extra content */}
-        {(extraText) && (
+        {extraText && (
           <div className="extra-content" style={{ display: "flex", alignItems: "center", gap: "8px" }}>
             {extraText && <p>{extraText}</p>}
           </div>

@@ -5,15 +5,18 @@ export default function SeagateCustomers  () {
   return (
     <>
    <SegateBanner
- title="Welcome to Our Store"
- caption="Limited Time Offer"
- imageSrc="https://example.com/icon.png" // Pass an image URL here
- buttonText="Shop Now"
- onButtonClick={() => alert("Button Clicked!")}
- backgroundImage="https://example.com/banner.jpg"
+ title="Welcome to Our Service"
+ caption="Providing the best services to you!"
+ buttonText="Get Started"
+ onButtonClick={() => alert("Button clicked")}
+ backgroundImage="https://example.com/your-background-image.jpg"
+ image={logoImg}  // Image shown above the caption
+ extraText="Learn more"
  highlightWordCount={2}
- image={logoImg}
+ paragraph="Here we offer excellent services to meet your needs."
 />
+
+
 
     </>
   )
