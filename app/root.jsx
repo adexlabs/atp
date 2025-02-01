@@ -27,6 +27,7 @@ import HomePageRoute from './components/HomePageRoute';
 import ProductPageRoute from './components/ProductPageRoute';
 import FAQ from './components/FAQ';
 import About_Us from './components/About_Us';
+import SeagateCustomers from './components/SeagateCustomers';
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
  * @type {ShouldRevalidateFunction}
@@ -186,10 +187,10 @@ export function Layout({children}) {
             
             <Routes>
             <Route path="/faq" element={<FAQ />} />
-            <Route path="/aboutus" element={<About_Us />} />
-
+            <Route path="/aboutus" element={<About_Us />} />      
+           <Route path="/segate-customers" element={ <SeagateCustomers/>} />
            </Routes>
-           
+       
              </PageLayout>
           </Analytics.Provider>
         ) : (
