@@ -64,8 +64,8 @@ function FooterMenu({menu, primaryDomainUrl, publicStoreDomain}) {
           let customUrl = item.url;
 
           if (index === 1) customUrl = "/aboutus"; // 2nd item
-          if (index === 2) customUrl = "/faq"; // 3rd item
-          if (index === 3) customUrl = "/aboutus"; // 4th item
+          if (index === 3) customUrl = "/faq"; // 3rd item
+          if (index === 4) customUrl = "/aboutus"; // 4th item
           // if (index === 5) customUrl = "/segate-customers"; // 6th item
 
 
