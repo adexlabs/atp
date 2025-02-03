@@ -71,20 +71,20 @@ export function HeaderMenu({
 
          // Custom URLs based on index
 
-    let customUrl = item.url;
-     if (index === 1) {
+    // let customUrl = item.url;
+    //  if (index === 1) {
 
-      customUrl = "/aboutus";
+    //   customUrl = "/aboutus";
 
-      item.title = "ABOUT";
+    //   item.title = "ABOUT";
 
-    } else if (index === 2) {
+    // } else if (index === 2) {
 
-      customUrl = "/faq";
+    //   customUrl = "/faq";
 
-      item.title = "FAQ";
+    //   item.title = "FAQ";
 
-    }
+    // }
 
         // if the url is internal, we strip the domain
         const url =
