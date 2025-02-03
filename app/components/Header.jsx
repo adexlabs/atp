@@ -65,8 +65,8 @@ export function HeaderMenu({
           Home
         </NavLink>
       )}
-        {(menu || FALLBACK_HEADER_MENU).items.map((item)=>{
-      // {(menu || FALLBACK_HEADER_MENU).items.map((item, index) => {
+        {/* {(menu || FALLBACK_HEADER_MENU).items.map((item)=>{ */}
+       {(menu || FALLBACK_HEADER_MENU).items.map((item, index) => {
         if (!item.url) return null;
 
          // Custom URLs based on index
