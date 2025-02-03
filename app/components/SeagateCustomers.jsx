@@ -7,6 +7,10 @@ import ImageTextSection from './ImageTextSection';
 import ProductTrustBadges from './ProductTrustBadges';
 import LogoSlider from './LogoSlider';
 import TrustBadges from './TrustBadges';
+import favicon1 from '~/assets/svg_money.svg';
+import favicon2 from '~/assets/svg_award.svg';
+import favicon3 from '~/assets/svg_lock.svg';
+import favicon4 from '~/assets/svg_folder.svg';
 export default function SeagateCustomers  () {
 
   const customBadges = [
