@@ -1,7 +1,7 @@
 import React from 'react'
 import SegateBanner from './SegateComponents/SegateBanner'
 import logoImg from '~/assets/logo-seagate.png';
-
+import recover from '~/assets/d-hero2-seagate.jpg';
 import bnnrImg2 from '~/assets/d-hero-seagate.jpg';
 import ImageTextSection from './ImageTextSection';
 import ProductTrustBadges from './ProductTrustBadges';
