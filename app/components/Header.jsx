@@ -95,10 +95,10 @@ export function HeaderMenu({
             : item.url;
 
             if (index === 1) {
-              url = "/aboutus";
+              item.url = "/aboutus";
               item.title = "ABOUT";
             } else if (index === 2) {
-              url = "/faq";
+              item.url = "/faq";
               item.title = "FAQ";
             }
 
