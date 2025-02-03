@@ -33,11 +33,12 @@ async function loadCriticalData({context}) {
   const [{collections}] = await Promise.all([
     context.storefront.query(FEATURED_COLLECTION_QUERY),
     // Add other queries here, so that they are loaded in parallel
+    context.storefront.query(PRODUCTS_QUERY), 
   ]);
 
   return {
     featuredCollection: collections.nodes[0],
-    products,
+    products: products.nodes,
   };
 }
 
@@ -192,6 +193,41 @@ const RECOMMENDED_PRODUCTS_QUERY = `#graphql
     }
   }
 `;
+
+
+// CUSTOM QUERY ADDED
+
+const PRODUCTS_QUERY = `#graphql
+  fragment ProductDetails on Product {
+    id
+    title
+    handle
+    priceRange {
+      minVariantPrice {
+        amount
+        currencyCode
+      }
+    }
+    images(first: 1) {
+      nodes {
+        id
+        url
+        altText
+        width
+        height
+      }
+    }
+  }
+  query ProductsList($country: CountryCode, $language: LanguageCode)
+    @inContext(country: $country, language: $language) {
+    products(first: 10, sortKey: UPDATED_AT, reverse: true) {
+      nodes {
+        ...ProductDetails
+      }
+    }
+  }
+`;
+
 
 /** @typedef {import('@shopify/remix-oxygen').LoaderFunctionArgs} LoaderFunctionArgs */
 /** @template T @typedef {import('@remix-run/react').MetaFunction<T>} MetaFunction */
