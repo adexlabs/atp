@@ -28,6 +28,7 @@ import ProductPageRoute from './components/ProductPageRoute';
 import FAQ from './components/FAQ';
 import About_Us from './components/About_Us';
 import SeagateCustomers from './components/SeagateCustomers';
+import Collection from './routes/collections.$handle';
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
  * @type {ShouldRevalidateFunction}
@@ -184,7 +185,7 @@ export function Layout({children}) {
             {!isCollectionPage && !hideOnPages.includes(location.pathname) && (
               isProductPage ? <ProductPageRoute /> : <HomePageRoute />
             )}
-            
+            <Collection/>
             <Routes>
             <Route path="/faq" element={<FAQ />} />
             <Route path="/aboutus" element={<About_Us />} />      
