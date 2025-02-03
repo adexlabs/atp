@@ -94,6 +94,14 @@ export function HeaderMenu({
             ? new URL(item.url).pathname
             : item.url;
 
+            if (index === 1) {
+              url = "/aboutus";
+              item.title = "ABOUT";
+            } else if (index === 2) {
+              url = "/faq";
+              item.title = "FAQ";
+            }
+
             // const url =
             // customUrl.includes('myshopify.com') ||
             // customUrl.includes(publicStoreDomain) ||
