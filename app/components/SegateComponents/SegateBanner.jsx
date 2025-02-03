@@ -49,7 +49,7 @@ export default function SegateBanner({
         {/* Render image above the caption if it exists */}
         {image && (
           <div style={{ marginBottom: "8px" }}>
-            <img src={image} alt="icon" style={{ width: "150px", height: "150px", objectFit: "contain" }} />
+            <img src={image} alt="icon" style={{ width: "150px", objectFit: "contain" }} />
           </div>
         )}
 
