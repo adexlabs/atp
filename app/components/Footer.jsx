@@ -66,7 +66,7 @@ function FooterMenu({menu, primaryDomainUrl, publicStoreDomain}) {
           if (index === 1) customUrl = "/aboutus"; // 2nd item
           if (index === 3) customUrl = "/faq"; // 3rd item
           if (index === 4) customUrl = "/aboutus"; // 4th item
-          // if (index === 5) customUrl = "/segate-customers"; // 6th item
+          if (index === 5) customUrl = "/segate-customers"; // 6th item
 
 
     const url = customUrl.includes('myshopify.com') || 
