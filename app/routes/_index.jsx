@@ -38,7 +38,7 @@ async function loadCriticalData({context}) {
 
   return {
     featuredCollection: collections.nodes[0],
-    products: products.nodes,
+    products: collection ? collection.products.nodes : [],
   };
 }
 
@@ -69,7 +69,18 @@ export default function Homepage() {
 
   return (
     <div className="home page-width">
-      <Collection products={data.products} />
+      <h1>All Products</h1>
+      <div className="product-grid">
+        {data.products.map((product) => (
+          <Link key={product.id} to={`/products/${product.handle}`} className="product-card">
+            <Image data={product.images.nodes[0]} aspectRatio="1/1" sizes="(min-width: 45em) 20vw, 50vw" />
+            <h4>{product.title}</h4>
+            <small>
+              <Money data={product.priceRange.minVariantPrice} />
+            </small>
+          </Link>
+        ))}
+      </div>
       {/* <FeaturedCollection collection={data.featuredCollection} /> */}
       <RecommendedProducts products={data.recommendedProducts} />
       
