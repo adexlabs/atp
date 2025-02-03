@@ -155,7 +155,7 @@ export function Layout({children}) {
   const isProductPage = location.pathname.startsWith('/products');
   /** @type {RootLoader} */
   const data = useRouteLoaderData('root');
-  const hideOnPages = ["/faq", "/aboutus"];
+  const hideOnPages = ["/faq", "/aboutus", "/segate-customers"];
   return (
     <html lang="en">
       <head>
