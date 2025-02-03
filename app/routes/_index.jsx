@@ -2,7 +2,6 @@ import {defer} from '@shopify/remix-oxygen';
 import {Await, useLoaderData, Link} from '@remix-run/react';
 import {Suspense} from 'react';
 import {Image, Money} from '@shopify/hydrogen';
-import Collection from './collections.$handle';
 
 /**
  * @type {MetaFunction}
@@ -30,15 +29,14 @@ export async function loader(args) {
  * @param {LoaderFunctionArgs}
  */
 async function loadCriticalData({context}) {
-  const [{collections}, {products}] = await Promise.all([
+  const [{collections}] = await Promise.all([
     context.storefront.query(FEATURED_COLLECTION_QUERY),
     // Add other queries here, so that they are loaded in parallel
-    context.storefront.query(PRODUCTS_QUERY), 
+   
   ]);
 
   return {
     featuredCollection: collections.nodes[0],
-    products: collection ? collection.products.nodes : [],
   };
 }
 
@@ -69,19 +67,8 @@ export default function Homepage() {
 
   return (
     <div className="home page-width">
-      <h1>All Products</h1>
-      <div className="product-grid">
-        {data.products.map((product) => (
-          <Link key={product.id} to={`/products/${product.handle}`} className="product-card">
-            <Image data={product.images.nodes[0]} aspectRatio="1/1" sizes="(min-width: 45em) 20vw, 50vw" />
-            <h4>{product.title}</h4>
-            <small>
-              <Money data={product.priceRange.minVariantPrice} />
-            </small>
-          </Link>
-        ))}
-      </div>
-      {/* <FeaturedCollection collection={data.featuredCollection} /> */}
+     
+      <FeaturedCollection collection={data.featuredCollection} />
       <RecommendedProducts products={data.recommendedProducts} />
       
     </div>
@@ -207,39 +194,6 @@ const RECOMMENDED_PRODUCTS_QUERY = `#graphql
   }
 `;
 
-
-// CUSTOM QUERY ADDED
-
-const PRODUCTS_QUERY = `#graphql
-  fragment ProductDetails on Product {
-    id
-    title
-    handle
-    priceRange {
-      minVariantPrice {
-        amount
-        currencyCode
-      }
-    }
-    images(first: 1) {
-      nodes {
-        id
-        url
-        altText
-        width
-        height
-      }
-    }
-  }
-  query ProductsList($country: CountryCode, $language: LanguageCode)
-    @inContext(country: $country, language: $language) {
-    products(first: 10, sortKey: UPDATED_AT, reverse: true) {
-      nodes {
-        ...ProductDetails
-      }
-    }
-  }
-`;
 
 
 /** @typedef {import('@shopify/remix-oxygen').LoaderFunctionArgs} LoaderFunctionArgs */
