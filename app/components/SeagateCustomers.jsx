@@ -27,7 +27,7 @@ export default function SeagateCustomers  () {
 <LogoSlider/>
 
 <div className="text-banner">
-    <NewBanner
+    <SegateBanner
        title="Lost your data? Don't fret."
        caption=""
        buttonText="Have a Query?"
@@ -40,7 +40,7 @@ export default function SeagateCustomers  () {
     </div>
 
     <div className="digital-assets">
-<NewBanner
+<SegateBanner
   title="Recover your most important digital assets today."
   caption=""
   buttonText="Get Started"
