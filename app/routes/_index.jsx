@@ -111,8 +111,7 @@ function FeaturedCollection({collection}) {
     </Link>
   );
 }
-console.log("Collections Response:", collections);
-console.log("Products Response:", products);
+
 /**
  * @param {{
  *   products: Promise<RecommendedProductsQuery | null>;
