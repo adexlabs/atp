@@ -65,8 +65,8 @@ export function HeaderMenu({
           Home
         </NavLink>
       )}
-      {/*   {(menu || FALLBACK_HEADER_MENU).items.map((item)=>{This is Actual} */}
-      {(menu || FALLBACK_HEADER_MENU).items.map((item, index) => {
+        {(menu || FALLBACK_HEADER_MENU).items.map((item)=>{
+      // {(menu || FALLBACK_HEADER_MENU).items.map((item, index) => {
         if (!item.url) return null;
 
          // Custom URLs based on index
@@ -87,19 +87,19 @@ export function HeaderMenu({
     }
 
         // if the url is internal, we strip the domain
-        // const url =
-          // item.url.includes('myshopify.com') ||
-          // item.url.includes(publicStoreDomain) ||
-          // item.url.includes(primaryDomainUrl)
-            // ? new URL(item.url).pathname
-            // : item.url;
+        const url =
+          item.url.includes('myshopify.com') ||
+          item.url.includes(publicStoreDomain) ||
+          item.url.includes(primaryDomainUrl)
+            ? new URL(item.url).pathname
+            : item.url;
 
-            const url =
-            customUrl.includes('myshopify.com') ||
-            customUrl.includes(publicStoreDomain) ||
-            customUrl.includes(primaryDomainUrl)
-              ? new URL(customUrl).pathname
-              : customUrl;
+            // const url =
+            // customUrl.includes('myshopify.com') ||
+            // customUrl.includes(publicStoreDomain) ||
+            // customUrl.includes(primaryDomainUrl)
+            //   ? new URL(customUrl).pathname
+            //   : customUrl;
         return (
           <NavLink
             className="header-menu-item"
