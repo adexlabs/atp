@@ -1375,7 +1375,7 @@ margin-top: 30px;
   justify-content: center;
   align-items: center;
   height: 300px;
-  background-color: #4caf50;
+  background-color: rgb(246, 246, 248);
   color: white;
   text-align: center;
   padding: 20px;
@@ -1393,7 +1393,7 @@ margin-top: 30px;
     letter-spacing: .05em;
     overflow-wrap: anywhere;
     font-weight: normal;
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
 
 }
@@ -1853,7 +1853,8 @@ Section-Banner CSS
   /* Segate Banner CSS */
 
   .segate-banner .banner-content img{
-    width: 156px;
+    width: 8rem;
     margin: 0 auto;
     height: auto;
   }
+
