@@ -1,18 +1,42 @@
 import React from 'react'
 import SegateBanner from './SegateComponents/SegateBanner'
-import logoImg from '~/assets/logo-seagate.png';
+import logoImg from '~/assets/seagate-logo.png';
 import recover from '~/assets/d-hero2-seagate.jpg';
 import bnnrImg2 from '~/assets/d-hero-seagate.jpg';
 import ImageTextSection from './ImageTextSection';
 import ProductTrustBadges from './ProductTrustBadges';
 import LogoSlider from './LogoSlider';
+import TrustBadges from './TrustBadges';
 export default function SeagateCustomers  () {
+
+  const customBadges = [
+    {
+      src: favicon3,
+      alt: 'Custom SSL Secured',
+      text: 'Includes password protected return media',
+    },
+    {
+      src: favicon4,
+      alt: 'Custom PayPal Accepted',
+      text: 'Decades of data recovery experience',
+    },
+    {
+      src: favicon1,
+      alt: 'Custom Privacy Protection',
+      text: 'Fixed, up front pricing',
+    },
+    {
+      src: favicon2,
+      alt: 'Custom Privacy Protection',
+      text: '100% Money-back guarantee',
+    },
+  ];
   return (
     <>
     <div className='segate-banner'>
    <SegateBanner
- title="Welcome to Our Service"
- buttonText="Get Started"
+ title="We're Seagate's exclusive partner in data recovery"
+ buttonText="Recover Your Data"
  onButtonClick={() => alert("Button clicked")}
  bannerStyle={{ height: "520px", backgroundColor: "#5bdc74" }} // adjustable banner style
  backgroundImage={bnnrImg2}
@@ -50,6 +74,8 @@ export default function SeagateCustomers  () {
   highlightWordCount={0} 
 />
   </div>
+
+  <TrustBadges badges={customBadges} count={4} />
     </>
   )
 }
