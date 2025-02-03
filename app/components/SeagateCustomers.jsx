@@ -31,7 +31,7 @@ export default function SeagateCustomers  () {
        title="Lost your data? Don't fret."
        caption=""
        buttonText="Have a Query?"
-       onButtonClick={handleButtonClick}
+       onButtonClick={() => alert("Button clicked")}
        bannerStyle={{ height: "390px", backgroundColor: "" }} // adjustable banner style
        backgroundImage="" // Background image URL
        highlightWordCount={2} 
