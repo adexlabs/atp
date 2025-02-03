@@ -42,8 +42,7 @@ async function loadCriticalData({context}) {
   };
 }
 
-console.log("Collections Response:", collections);
-console.log("Products Response:", products);
+
 /**
  * Load data for rendering content below the fold. This data is deferred and will be
  * fetched after the initial page load. If it's unavailable, the page should still 200.
@@ -73,6 +72,7 @@ export default function Homepage() {
       <Collection products={data.products} />
       {/* <FeaturedCollection collection={data.featuredCollection} /> */}
       <RecommendedProducts products={data.recommendedProducts} />
+      
     </div>
   );
 }
@@ -100,7 +100,8 @@ function FeaturedCollection({collection}) {
     </Link>
   );
 }
-
+console.log("Collections Response:", collections);
+console.log("Products Response:", products);
 /**
  * @param {{
  *   products: Promise<RecommendedProductsQuery | null>;
