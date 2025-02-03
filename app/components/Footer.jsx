@@ -52,12 +52,12 @@ function FooterMenu({menu, primaryDomainUrl, publicStoreDomain}) {
         if (!item.url) return null;
         // if the url is internal, we strip the domain
  
-        const url =
-          item.url.includes('myshopify.com') ||
-          item.url.includes(publicStoreDomain) ||
-          item.url.includes(primaryDomainUrl)
-            ? new URL(item.url).pathname
-            : item.url;
+        // const url =
+        //   item.url.includes('myshopify.com') ||
+        //   item.url.includes(publicStoreDomain) ||
+        //   item.url.includes(primaryDomainUrl)
+        //     ? new URL(item.url).pathname
+        //     : item.url;
         
 
           // URL modify karna hai specific indexes ke liye
@@ -69,13 +69,13 @@ function FooterMenu({menu, primaryDomainUrl, publicStoreDomain}) {
           if (index === 5) customUrl = "/segate-customers"; // 6th item
 
 
-    // const url = customUrl.includes('myshopify.com') || 
-    // customUrl.includes(publicStoreDomain) || 
-    // customUrl.includes(primaryDomainUrl)
+    const url = customUrl.includes('myshopify.com') || 
+    customUrl.includes(publicStoreDomain) || 
+    customUrl.includes(primaryDomainUrl)
 
-    // ? new URL(customUrl).pathname
+    ? new URL(customUrl).pathname
 
-    // : customUrl;
+    : customUrl;
 
        // Check if URL is external or internal
         const isExternal = !url.startsWith('/');
