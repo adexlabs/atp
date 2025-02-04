@@ -29,6 +29,20 @@ export async function loader(args) {
  * @param {LoaderFunctionArgs}
  */
 async function loadCriticalData({context}) {
+
+  let allProducts = [];
+  let cursor = null;
+  let hasNextPage = true;
+
+  while (hasNextPage) {
+    const {products} = await context.storefront.query(FEATURED_PRODUCTS_QUERY, {
+      variables: {cursor},
+    });
+
+    allProducts = [...allProducts, ...products.nodes];
+    hasNextPage = products.pageInfo.hasNextPage;
+    cursor = products.pageInfo.endCursor;
+  }
   const [{collections},  {products}] = await Promise.all([
     context.storefront.query(FEATURED_COLLECTION_QUERY),
     // Add other queries here, so that they are loaded in parallel
@@ -250,15 +264,20 @@ const FEATURED_PRODUCTS_QUERY = `#graphql
       }
     }
   }
-  query FeaturedProducts($country: CountryCode, $language: LanguageCode)
+  query FeaturedProducts($country: CountryCode, $language: LanguageCode, $cursor: String) 
     @inContext(country: $country, language: $language) {
-    products(first: 4, sortKey: UPDATED_AT, reverse: true) {
+    products(first: 20, after: $cursor, sortKey: UPDATED_AT, reverse: true) { 
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
       nodes {
         ...FeaturedProduct
       }
     }
   }
 `;
+
 
 
 /** @typedef {import('@shopify/remix-oxygen').LoaderFunctionArgs} LoaderFunctionArgs */
