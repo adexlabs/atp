@@ -1920,11 +1920,12 @@ Section-Banner CSS
   font-weight: bold;
 }
 
-.swiper-button-prev:after{
-  content: "&#8249;";
+.swiper-button-prev::after {
+  content: "\2039"; /* Unicode escape for ‹ */
 }
-.swiper-button-next:after{
-  content: "&#8250;";
+
+.swiper-button-next::after {
+  content: "\203A"; /* Unicode escape for › */
 }
 /* featured-products CSS */
 
