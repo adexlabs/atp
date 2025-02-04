@@ -1899,25 +1899,11 @@ Section-Banner CSS
   z-index: 10;
 }
 
-/* Custom Navigation */
-.custom-navigation {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom: 10px; /* Space above the slider */
-}
 
-.custom-prev,
-.custom-next {
-  width: 40px;
-  height: 40px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  cursor: pointer;
-}
 
+.featured-products  .swiper-button-prev, .swiper-rtl .swiper-button-next {
+  top: 45%;
+}
 
 /* Arrow hover effect */
 .featured-products .custom-swiper .swiper-button-prev:hover,
@@ -1936,13 +1922,13 @@ Section-Banner CSS
 .featured-products .custom-swiper .swiper-button-prev::after {
   content: "\2039"; /* Unicode escape for ‹ */
   margin-top: -8px;
-  margin-left: 3px;
+  margin-left: 5px;
 }
 
 .featured-products .custom-swiper .swiper-button-next::after {
   content: "\203A"; /* Unicode escape for › */
   margin-top: -8px;
-  margin-right: 3px;
+  margin-right: 5px;
 }
 /* featured-products CSS */
 
