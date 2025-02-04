@@ -90,8 +90,8 @@ export default function Homepage() {
   return (
     <div className="home page-width">
       <FeaturedProducts products={data.featuredProducts} />
-      <FeaturedCollection collection={data.featuredCollection} />
-      <RecommendedProducts products={data.recommendedProducts} />
+      {/* <FeaturedCollection collection={data.featuredCollection} /> */}
+      {/* <RecommendedProducts products={data.recommendedProducts} /> */}
       
     </div>
   );
@@ -171,7 +171,7 @@ function FeaturedProducts({ products }) {
     <div className="featured-products">
       <h2 className='featured-products-title'>Devices We Recover</h2>
       <Swiper
-        spaceBetween={10}
+        spaceBetween={20}
         slidesPerView={2} // Mobile ke liye
         breakpoints={{
           640: { slidesPerView: 3 },

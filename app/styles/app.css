@@ -1878,10 +1878,16 @@ Section-Banner CSS
   position: relative; /* Parent container relative */
 }
 
+.swiper-pagination {
+  position: relative;
+  bottom: 0;
+  margin-top: 20px; /* Dots ke upar space dene ke liye */
+}
+
 .swiper-button-prev,
 .swiper-button-next {
   position: absolute;
-  top: -50px; /* Upar shift karne ke liye */
+  bottom: -50px; /* Dots ke niche shift karna */
   width: 40px;
   height: 40px;
   background: #000; /* Black background */
@@ -1894,11 +1900,11 @@ Section-Banner CSS
 }
 
 .swiper-button-prev {
-  right: 80px; /* Left arrow right side but slightly left */
+  left: 40%;
 }
 
 .swiper-button-next {
-  right: 30px; /* Right arrow bilkul corner pe */
+  right: 40%;
 }
 
 /* Arrow hover effect */
