@@ -1930,16 +1930,19 @@ Section-Banner CSS
 .featured-products .custom-swiper .swiper-button-next::after {
   font-size: 35px;
   font-weight: bold;
-  margin-top: -8px;
-  margin-left: 3px;
+
 }
 
 .featured-products .custom-swiper .swiper-button-prev::after {
   content: "\2039"; /* Unicode escape for ‹ */
+  margin-top: -8px;
+  margin-left: 3px;
 }
 
 .featured-products .custom-swiper .swiper-button-next::after {
   content: "\203A"; /* Unicode escape for › */
+  margin-top: -8px;
+  margin-right: 3px;
 }
 /* featured-products CSS */
 
