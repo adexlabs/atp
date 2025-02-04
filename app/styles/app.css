@@ -1928,8 +1928,10 @@ Section-Banner CSS
 /* Remove default background */
 .featured-products .custom-swiper .swiper-button-prev::after,
 .featured-products .custom-swiper .swiper-button-next::after {
-  font-size: 16px;
+  font-size: 35px;
   font-weight: bold;
+  margin-top: -8px;
+  margin-left: 3px;
 }
 
 .featured-products .custom-swiper .swiper-button-prev::after {
