@@ -1884,12 +1884,12 @@ Section-Banner CSS
   margin-top: 20px; /* Dots ke upar space dene ke liye */
 }
 
-.swiper-button-prev,
-.swiper-button-next {
+.custom-swiper .swiper-button-prev,
+.custom-swiper .swiper-button-next {
   position: absolute;
   bottom: -150px; /* Dots ke niche shift karna */
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   background: #000; /* Black background */
   color: #fff; /* White arrow color */
   border-radius: 50%;
