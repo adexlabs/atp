@@ -2,6 +2,11 @@ import {defer} from '@shopify/remix-oxygen';
 import {Await, useLoaderData, Link} from '@remix-run/react';
 import {Suspense} from 'react';
 import {Image, Money} from '@shopify/hydrogen';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 /**
  * @type {MetaFunction}
@@ -158,34 +163,44 @@ function RecommendedProducts({products}) {
 }
 
 
-function FeaturedProducts({products}) {
+
+function FeaturedProducts({ products }) {
   if (!products || products.length === 0) return null;
 
   return (
     <div className="featured-products">
       <h2>Featured Products</h2>
-      <div className="featured-products-grid">
+      <Swiper
+        spaceBetween={10}
+        slidesPerView={2} // Mobile ke liye
+        breakpoints={{
+          640: { slidesPerView: 3 },
+          1024: { slidesPerView: 4 },
+        }}
+        navigation={true} // Left/Right Arrows enable karega
+        pagination={{ clickable: true }} // Dots enable karega
+        modules={[Navigation, Pagination]}
+      >
         {products.map((product) => (
-          <Link
-            key={product.id}
-            className="featured-product"
-            to={`/products/${product.handle}`}
-          >
-            <Image
-              data={product.images.nodes[0]}
-              aspectRatio="1/1"
-              sizes="(min-width: 45em) 20vw, 50vw"
-            />
-            <h4>{product.title}</h4>
-            <small>
-              <Money data={product.priceRange.minVariantPrice} />
-            </small>
-          </Link>
+          <SwiperSlide key={product.id}>
+            <Link className="featured-product" to={`/products/${product.handle}`}>
+              <Image
+                data={product.images.nodes[0]}
+                aspectRatio="1/1"
+                sizes="(min-width: 45em) 20vw, 50vw"
+              />
+              <h4>{product.title}</h4>
+              <small>
+                <Money data={product.priceRange.minVariantPrice} />
+              </small>
+            </Link>
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
     </div>
   );
 }
+
 
 const FEATURED_COLLECTION_QUERY = `#graphql
   fragment FeaturedCollection on Collection {

@@ -1858,3 +1858,18 @@ Section-Banner CSS
     height: auto;
   }
 
+
+
+  /* CUSTOM CSS FOR SWIPER */
+
+  .swiper-button-prev,
+.swiper-button-next {
+  color: #000; /* Arrows ka color */
+  background: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.swiper-pagination-bullet {
+  background: #000 !important; /* Dots color */
+}
