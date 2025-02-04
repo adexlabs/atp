@@ -1862,7 +1862,7 @@ Section-Banner CSS
 
   /* CUSTOM CSS FOR SWIPER */
 
-  .swiper-button-prev,
+.swiper-button-prev,
 .swiper-button-next {
   color: #000; /* Arrows ka color */
   background: rgba(255, 255, 255, 0.5);
@@ -1872,4 +1872,44 @@ Section-Banner CSS
 
 .swiper-pagination-bullet {
   background: #000 !important; /* Dots color */
+}
+
+.featured-products {
+  position: relative; /* Parent container relative */
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  top: -40px; /* Slider ke upar move karne ke liye */
+  width: 35px;
+  height: 35px;
+  background: #000; /* Black background */
+  color: #fff; /* White arrow color */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.swiper-button-prev {
+  right: 60px; /* Left arrow right side me */
+}
+
+.swiper-button-next {
+  right: 20px; /* Right arrow bilkul corner pe */
+}
+
+/* Arrow hover effect */
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background: #444; /* Dark grey on hover */
+}
+
+/* Remove default background */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 16px;
+  font-weight: bold;
 }
