@@ -52,36 +52,22 @@ function FooterMenu({menu, primaryDomainUrl, publicStoreDomain}) {
         if (!item.url) return null;
         // if the url is internal, we strip the domain
  
+
+                 // URL modify karna hai specific indexes ke liye
+    //       let customUrl = item.url;
+
+          if (index === 1) item.url = "/aboutus";
+          if (index === 3) item.url = "/faq"; // 3rd item
+          if (index === 4) item.url = "/aboutus"; // 4th item
+          if (index === 5) item.url = "/segate-customers"; // 6th item
+
         const url =
           item.url.includes('myshopify.com') ||
           item.url.includes(publicStoreDomain) ||
           item.url.includes(primaryDomainUrl)
             ? new URL(item.url).pathname
             : item.url;
-        
-            if (index === 1) {
-              item.url = "/aboutus";
-              item.title = "About ATP Data services";
-            } else if (index === 3) {
-              item.url = "/faq";
-              item.title = "FAQ";
-            }else if (index === 4){
-              item.url = "/aboutus";
-              item.title = "About Us";
-            }else if (index === 4){
-              item.url = "/segate-customers";
-              item.title = "Seagate Customers";
-            }
-
-          // URL modify karna hai specific indexes ke liye
-    //       let customUrl = item.url;
-
-    //       if (index === 1) customUrl = "/aboutus"; // 2nd item
-    //       if (index === 3) customUrl = "/faq"; // 3rd item
-    //       if (index === 4) customUrl = "/aboutus"; // 4th item
-    //       if (index === 5) customUrl = "/segate-customers"; // 6th item
-
-
+       
     // const url = customUrl.includes('myshopify.com') || 
     // customUrl.includes(publicStoreDomain) || 
     // customUrl.includes(primaryDomainUrl)
