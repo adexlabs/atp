@@ -47,35 +47,48 @@ export function Footer({footer: footerPromise, header, publicStoreDomain}) {
 function FooterMenu({menu, primaryDomainUrl, publicStoreDomain}) {
   return (
     <nav className="footer-menu" role="navigation">
-      {/* {(menu || FALLBACK_FOOTER_MENU).items.map((item) => { */}  
-        {(menu?.items || []).map((item, index) => {
+      {(menu || FALLBACK_FOOTER_MENU).items.map((item, index) => {  
+        {/* {(menu?.items || []).map((item, index) => { */}
         if (!item.url) return null;
         // if the url is internal, we strip the domain
  
-        // const url =
-        //   item.url.includes('myshopify.com') ||
-        //   item.url.includes(publicStoreDomain) ||
-        //   item.url.includes(primaryDomainUrl)
-        //     ? new URL(item.url).pathname
-        //     : item.url;
+        const url =
+          item.url.includes('myshopify.com') ||
+          item.url.includes(publicStoreDomain) ||
+          item.url.includes(primaryDomainUrl)
+            ? new URL(item.url).pathname
+            : item.url;
         
+            if (index === 1) {
+              item.url = "/aboutus";
+              item.title = "About ATP Data services";
+            } else if (index === 3) {
+              item.url = "/faq";
+              item.title = "FAQ";
+            }else if (index === 4){
+              item.url = "/aboutus";
+              item.title = "About Us";
+            }else if (index === 4){
+              item.url = "/segate-customers";
+              item.title = "Seagate Customers";
+            }
 
           // URL modify karna hai specific indexes ke liye
-          let customUrl = item.url;
+    //       let customUrl = item.url;
 
-          if (index === 1) customUrl = "/aboutus"; // 2nd item
-          if (index === 3) customUrl = "/faq"; // 3rd item
-          if (index === 4) customUrl = "/aboutus"; // 4th item
-          if (index === 5) customUrl = "/segate-customers"; // 6th item
+    //       if (index === 1) customUrl = "/aboutus"; // 2nd item
+    //       if (index === 3) customUrl = "/faq"; // 3rd item
+    //       if (index === 4) customUrl = "/aboutus"; // 4th item
+    //       if (index === 5) customUrl = "/segate-customers"; // 6th item
 
 
-    const url = customUrl.includes('myshopify.com') || 
-    customUrl.includes(publicStoreDomain) || 
-    customUrl.includes(primaryDomainUrl)
+    // const url = customUrl.includes('myshopify.com') || 
+    // customUrl.includes(publicStoreDomain) || 
+    // customUrl.includes(primaryDomainUrl)
 
-    ? new URL(customUrl).pathname
+    // ? new URL(customUrl).pathname
 
-    : customUrl;
+    // : customUrl;
 
        // Check if URL is external or internal
         const isExternal = !url.startsWith('/');
