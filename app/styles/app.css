@@ -1921,11 +1921,11 @@ Section-Banner CSS
 }
 
 .featured-products .custom-swiper .swiper-button-prev::after {
-  content: "<"; /* Unicode escape for ‹ */
+  content: "&#8249"; /* Unicode escape for ‹ */
 }
 
 .featured-products .custom-swiper .swiper-button-next::after {
-  content: ">"; /* Unicode escape for › */
+  content: "&#8250"; /* Unicode escape for › */
 }
 /* featured-products CSS */
 
