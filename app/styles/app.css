@@ -1876,7 +1876,6 @@ Section-Banner CSS
 
 .featured-products {
   position: relative; /* Parent container relative */
-  padding-top: 60px; /* Upar thoda space dene ke liye */
 }
 
 .swiper-button-prev,
