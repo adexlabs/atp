@@ -1930,6 +1930,11 @@ Section-Banner CSS
   font-weight: normal;
 }
 
+@media (min-width: 768px) {
+  .swiper-pagination {
+    display: none !important;
+  }
+}
 @media(max-width:767px){
   .featured-products .featured-products-title{
     font-size: 2rem;
