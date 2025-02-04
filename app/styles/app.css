@@ -1987,3 +1987,8 @@ Section-Banner CSS
 .policy h2{
   margin-top: 20px;
 }
+
+
+.policy p strong{
+  margin-top: 15px;
+}
