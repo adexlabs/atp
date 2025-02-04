@@ -1975,3 +1975,11 @@ Section-Banner CSS
     font-size: 1.4rem;
   }
 }
+
+/* POLICY PAGE CSS */
+
+.policy{
+  padding: 0 1.5rem;
+  max-width: 1250px;
+  margin: 0 auto;
+}
