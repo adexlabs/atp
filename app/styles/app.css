@@ -1920,7 +1920,12 @@ Section-Banner CSS
   font-weight: bold;
 }
 
-
+.swiper-button-prev:after{
+  content: "&#8249;";
+}
+.swiper-button-next:after{
+  content: "&#8250;";
+}
 /* featured-products CSS */
 
 .featured-products .featured-products-title{
