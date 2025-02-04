@@ -1878,7 +1878,7 @@ Section-Banner CSS
   position: relative; /* Parent container relative */
 }
 
-.swiper-pagination {
+.featured-products .custom-swiper .swiper-pagination {
   position: relative;
   bottom: 0;
   margin-top: 20px; /* Dots ke upar space dene ke liye */
@@ -1899,32 +1899,32 @@ Section-Banner CSS
   z-index: 10;
 }
 
-.swiper-button-prev {
+.featured-products .custom-swiper .swiper-button-prev {
   left: 40%;
 }
 
-.swiper-button-next {
+.featured-products .custom-swiper .swiper-button-next {
   right: 40%;
 }
 
 /* Arrow hover effect */
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
+.featured-products .custom-swiper .swiper-button-prev:hover,
+.featured-products .custom-swiper .swiper-button-next:hover {
   background: #444; /* Dark grey on hover */
 }
 
 /* Remove default background */
-.swiper-button-prev::after,
-.swiper-button-next::after {
+.featured-products .custom-swiper .swiper-button-prev::after,
+.featured-products .custom-swiper .swiper-button-next::after {
   font-size: 16px;
   font-weight: bold;
 }
 
-.swiper-button-prev::after {
+.featured-products .custom-swiper .swiper-button-prev::after {
   content: "<"; /* Unicode escape for ‹ */
 }
 
-.swiper-button-next::after {
+.featured-products .custom-swiper .swiper-button-next::after {
   content: ">"; /* Unicode escape for › */
 }
 /* featured-products CSS */
