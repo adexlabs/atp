@@ -1888,8 +1888,8 @@ Section-Banner CSS
 .custom-swiper .swiper-button-next {
   position: absolute;
   bottom: -150px; /* Dots ke niche shift karna */
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   background: #5878ee; /* Black background */
   color: #fff; /* White arrow color */
   border-radius: 50%;
@@ -1899,13 +1899,13 @@ Section-Banner CSS
   z-index: 10;
 }
 
-.featured-products .custom-swiper .swiper-button-prev {
+/* .featured-products .custom-swiper .swiper-button-prev {
   left: 40%;
 }
 
 .featured-products .custom-swiper .swiper-button-next {
   right: 40%;
-}
+} */
 
 /* Arrow hover effect */
 .featured-products .custom-swiper .swiper-button-prev:hover,
