@@ -1947,7 +1947,21 @@ Section-Banner CSS
   font-size: 3rem;
   font-weight: normal;
 }
+.featured-products .featured-product{
+  text-decoration: none;
+}
+.featured-products .product-title{
+  font-family: DM Sans, sans-serif;
+  font-size: 1.25rem;
+  line-height: 2.5rem;
+  font-weight: 400;
+  margin-top: 15px;
+}
 
+.featured-products .product-price{
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
 @media (min-width: 768px) {
   .swiper-pagination {
     display: none !important;
@@ -1957,6 +1971,11 @@ Section-Banner CSS
   .featured-products .featured-products-title{
     font-size: 2rem;
   }
+  
+.custom-swiper .swiper-button-prev,
+.custom-swiper .swiper-button-next{
+  display: none;
+}
 }
 
 @media(max-width:549px){

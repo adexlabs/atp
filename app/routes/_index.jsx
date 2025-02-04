@@ -179,8 +179,8 @@ function FeaturedProducts({ products }) {
           640: { slidesPerView: 3 },
           1024: { slidesPerView: 4 },
         }}
-        navigation={true} // Left/Right Arrows enable karega
-        pagination={{ clickable: true }} // Dots enable karega
+        navigation={true} // Left/Right Arrows enable 
+        pagination={{ clickable: true }} // Dots enable 
         modules={[Navigation, Pagination]}
       >
         {products.map((product) => (
@@ -191,8 +191,8 @@ function FeaturedProducts({ products }) {
                 aspectRatio="1/1"
                 sizes="(min-width: 45em) 20vw, 50vw"
               />
-              <h4>{product.title}</h4>
-              <small>
+              <h4 className='product-title'>{product.title}</h4>
+              <small className='product-price'>
                 <Money data={product.priceRange.minVariantPrice} />
               </small>
             </Link>
