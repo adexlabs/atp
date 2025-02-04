@@ -1899,6 +1899,82 @@ Section-Banner CSS
   z-index: 10;
 }
 
+/* Custom Navigation */
+.custom-navigation {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px; /* Space above the slider */
+}
+
+.custom-prev,
+.custom-next {
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.custom-prev {
+  background-image: url('/path-to-your-image/prev-icon.png'); /* Change path */
+  left: -50px;
+}
+
+.custom-next {
+  background-image: url('/path-to-your-image/next-icon.png'); /* Change path */
+  right: -50px;
+}
+
+/* Hide default Swiper arrows */
+.swiper-button-prev,
+.swiper-button-next {
+  display: none;
+}
+
+/* Pagination Dots */
+.swiper-pagination {
+  position: relative;
+  bottom: -10px; /* Adjust space below */
+}
+
+/* Show dots only on mobile */
+@media (min-width: 768px) {
+  .swiper-pagination {
+    display: none;
+  }
+}
+.custom-navigation {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px; /* Adjust spacing above the slider */
+}
+
+.custom-prev,
+.custom-next {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-prev img,
+.custom-next img {
+  width: 40px; /* Adjust icon size */
+  height: auto;
+}
+
+/* Hide default Swiper arrows */
+.swiper-button-prev,
+.swiper-button-next {
+  display: none;
+}
+
+
 /* .featured-products .custom-swiper .swiper-button-prev {
   left: 40%;
 }
