@@ -1876,14 +1876,15 @@ Section-Banner CSS
 
 .featured-products {
   position: relative; /* Parent container relative */
+  padding-top: 60px; /* Upar thoda space dene ke liye */
 }
 
 .swiper-button-prev,
 .swiper-button-next {
   position: absolute;
-  top: -40px; /* Slider ke upar move karne ke liye */
-  width: 35px;
-  height: 35px;
+  top: -50px; /* Upar shift karne ke liye */
+  width: 40px;
+  height: 40px;
   background: #000; /* Black background */
   color: #fff; /* White arrow color */
   border-radius: 50%;
@@ -1894,11 +1895,11 @@ Section-Banner CSS
 }
 
 .swiper-button-prev {
-  right: 60px; /* Left arrow right side me */
+  right: 80px; /* Left arrow right side but slightly left */
 }
 
 .swiper-button-next {
-  right: 20px; /* Right arrow bilkul corner pe */
+  right: 30px; /* Right arrow bilkul corner pe */
 }
 
 /* Arrow hover effect */
@@ -1919,7 +1920,7 @@ Section-Banner CSS
 
 .featured-products .featured-products-title{
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-size: 3rem;
   font-weight: normal;
 }
