@@ -169,89 +169,89 @@ function FeaturedProducts({ products }) {
   if (!products || products.length === 0) return null;
 
   return (
-    // <div className="featured-products">
-    //   <h2 className='featured-products-title'>Devices We Recover</h2>
-    //   <Swiper
-    //   className='custom-swiper'
-    //     spaceBetween={20}
-    //     slidesPerView={2} // Mobile ke liye
-    //     breakpoints={{
-    //       640: { slidesPerView: 3 },
-    //       1024: { slidesPerView: 4 },
-    //     }}
-    //     navigation={true} // Left/Right Arrows enable karega
-    //     pagination={{ clickable: true }} // Dots enable karega
-    //     modules={[Navigation, Pagination]}
-    //   >
-    //     {products.map((product) => (
-    //       <SwiperSlide key={product.id}>
-    //         <Link className="featured-product" to={`/products/${product.handle}`}>
-    //           <Image
-    //             data={product.images.nodes[0]}
-    //             aspectRatio="1/1"
-    //             sizes="(min-width: 45em) 20vw, 50vw"
-    //           />
-    //           <h4>{product.title}</h4>
-    //           <small>
-    //             <Money data={product.priceRange.minVariantPrice} />
-    //           </small>
-    //         </Link>
-    //       </SwiperSlide>
-    //     ))}
-    //   </Swiper>
-    // </div>
     <div className="featured-products">
-    <h2 className="featured-products-title">Devices We Recover</h2>
+      <h2 className='featured-products-title'>Devices We Recover</h2>
+      <Swiper
+      className='custom-swiper'
+        spaceBetween={20}
+        slidesPerView={2} // Mobile ke liye
+        breakpoints={{
+          640: { slidesPerView: 3 },
+          1024: { slidesPerView: 4 },
+        }}
+        navigation={true} // Left/Right Arrows enable karega
+        pagination={{ clickable: true }} // Dots enable karega
+        modules={[Navigation, Pagination]}
+      >
+        {products.map((product) => (
+          <SwiperSlide key={product.id}>
+            <Link className="featured-product" to={`/products/${product.handle}`}>
+              <Image
+                data={product.images.nodes[0]}
+                aspectRatio="1/1"
+                sizes="(min-width: 45em) 20vw, 50vw"
+              />
+              <h4>{product.title}</h4>
+              <small>
+                <Money data={product.priceRange.minVariantPrice} />
+              </small>
+            </Link>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+//     <div className="featured-products">
+//     <h2 className="featured-products-title">Devices We Recover</h2>
 
-    {/* Custom Navigation Buttons */}
-    <div className="custom-navigation">
-  <div className="swiper-button-prev custom-prev">
-    <img src={left} alt="Previous" />
-  </div>
-  <div className="swiper-button-next custom-next">
-    <img src={right} alt="Next" />
-  </div>
-</div>
+//     {/* Custom Navigation Buttons */}
+//     <div className="custom-navigation">
+//   <div className="swiper-button-prev custom-prev">
+//     <img src={left} alt="Previous" />
+//   </div>
+//   <div className="swiper-button-next custom-next">
+//     <img src={right} alt="Next" />
+//   </div>
+// </div>
 
 
-    <Swiper
-      className="custom-swiper"
-      spaceBetween={20}
-      slidesPerView={2}
-      breakpoints={{
-        640: { slidesPerView: 3 },
-        1024: { slidesPerView: 4 },
-      }}
-      navigation={{
-        prevEl: ".custom-prev",
-        nextEl: ".custom-next",
-      }}
-      pagination={{
-        clickable: true,
-        el: ".swiper-pagination",
-      }}
-      modules={[Navigation, Pagination]}
-    >
-      {products.map((product) => (
-        <SwiperSlide key={product.id}>
-          <Link className="featured-product" to={`/products/${product.handle}`}>
-            <Image
-              data={product.images.nodes[0]}
-              aspectRatio="1/1"
-              sizes="(min-width: 45em) 20vw, 50vw"
-            />
-            <h4>{product.title}</h4>
-            <small>
-              <Money data={product.priceRange.minVariantPrice} />
-            </small>
-          </Link>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+//     <Swiper
+//       className="custom-swiper"
+//       spaceBetween={20}
+//       slidesPerView={2}
+//       breakpoints={{
+//         640: { slidesPerView: 3 },
+//         1024: { slidesPerView: 4 },
+//       }}
+//       navigation={{
+//         prevEl: ".custom-prev",
+//         nextEl: ".custom-next",
+//       }}
+//       pagination={{
+//         clickable: true,
+//         el: ".swiper-pagination",
+//       }}
+//       modules={[Navigation, Pagination]}
+//     >
+//       {products.map((product) => (
+//         <SwiperSlide key={product.id}>
+//           <Link className="featured-product" to={`/products/${product.handle}`}>
+//             <Image
+//               data={product.images.nodes[0]}
+//               aspectRatio="1/1"
+//               sizes="(min-width: 45em) 20vw, 50vw"
+//             />
+//             <h4>{product.title}</h4>
+//             <small>
+//               <Money data={product.priceRange.minVariantPrice} />
+//             </small>
+//           </Link>
+//         </SwiperSlide>
+//       ))}
+//     </Swiper>
 
-    {/* Pagination Dots */}
-    <div className="swiper-pagination"></div>
-  </div>
+//     {/* Pagination Dots */}
+//     <div className="swiper-pagination"></div>
+//   </div>
 );
 }
  
