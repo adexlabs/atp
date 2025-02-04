@@ -1890,7 +1890,7 @@ Section-Banner CSS
   bottom: -150px; /* Dots ke niche shift karna */
   width: 35px;
   height: 35px;
-  background: #000; /* Black background */
+  background: #5878ee; /* Black background */
   color: #fff; /* White arrow color */
   border-radius: 50%;
   display: flex;
@@ -1921,11 +1921,11 @@ Section-Banner CSS
 }
 
 .swiper-button-prev::after {
-  content: "\2039"; /* Unicode escape for ‹ */
+  content: "<"; /* Unicode escape for ‹ */
 }
 
 .swiper-button-next::after {
-  content: "\203A"; /* Unicode escape for › */
+  content: ">"; /* Unicode escape for › */
 }
 /* featured-products CSS */
 
