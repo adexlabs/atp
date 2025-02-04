@@ -1899,9 +1899,10 @@ Section-Banner CSS
   z-index: 10;
 }
 
-
-
-.featured-products  .swiper-button-prev, .swiper-rtl .swiper-button-next {
+.featured-products  .swiper-button-prev{
+  top: 45%;
+}
+.featured-products .swiper-button-next {
   top: 45%;
 }
 
