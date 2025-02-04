@@ -1918,15 +1918,15 @@ Section-Banner CSS
   cursor: pointer;
 }
 
-.custom-prev {
-  background-image: url('/path-to-your-image/prev-icon.png'); /* Change path */
+/* .custom-prev {
+  background-image: url('/path-to-your-image/prev-icon.png'); Change path
   left: -50px;
-}
+} */
 
-.custom-next {
-  background-image: url('/path-to-your-image/next-icon.png'); /* Change path */
+/* .custom-next {
+  background-image: url('/path-to-your-image/next-icon.png'); Change path
   right: -50px;
-}
+} */
 
 /* Hide default Swiper arrows */
 .swiper-button-prev,

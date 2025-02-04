@@ -213,6 +213,7 @@ function FeaturedProducts({ products }) {
   </div>
 </div>
 
+
     <Swiper
       className="custom-swiper"
       spaceBetween={20}
