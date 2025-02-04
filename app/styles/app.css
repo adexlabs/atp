@@ -1923,13 +1923,13 @@ Section-Banner CSS
 .featured-products .custom-swiper .swiper-button-prev::after {
   content: "\2039"; /* Unicode escape for ‹ */
   margin-top: -8px;
-  margin-left: 5px;
+  margin-left: 2px;
 }
 
 .featured-products .custom-swiper .swiper-button-next::after {
   content: "\203A"; /* Unicode escape for › */
   margin-top: -8px;
-  margin-right: 5px;
+  margin-right: 2px;
 }
 /* featured-products CSS */
 
