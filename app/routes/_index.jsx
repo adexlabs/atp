@@ -32,11 +32,14 @@ async function loadCriticalData({context}) {
   const [{collections}] = await Promise.all([
     context.storefront.query(FEATURED_COLLECTION_QUERY),
     // Add other queries here, so that they are loaded in parallel
+    context.storefront.query(FEATURED_PRODUCTS_QUERY),
    
   ]);
 
   return {
     featuredCollection: collections.nodes[0],
+    featuredProducts: products.nodes, // Products ko return karna
+
   };
 }
 
@@ -67,7 +70,7 @@ export default function Homepage() {
 
   return (
     <div className="home page-width">
-     
+      <FeaturedProducts products={data.featuredProducts} />
       <FeaturedCollection collection={data.featuredCollection} />
       <RecommendedProducts products={data.recommendedProducts} />
       
@@ -140,6 +143,36 @@ function RecommendedProducts({products}) {
   );
 }
 
+
+function FeaturedProducts({products}) {
+  if (!products || products.length === 0) return null;
+
+  return (
+    <div className="featured-products">
+      <h2>Featured Products</h2>
+      <div className="featured-products-grid">
+        {products.map((product) => (
+          <Link
+            key={product.id}
+            className="featured-product"
+            to={`/products/${product.handle}`}
+          >
+            <Image
+              data={product.images.nodes[0]}
+              aspectRatio="1/1"
+              sizes="(min-width: 45em) 20vw, 50vw"
+            />
+            <h4>{product.title}</h4>
+            <small>
+              <Money data={product.priceRange.minVariantPrice} />
+            </small>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 const FEATURED_COLLECTION_QUERY = `#graphql
   fragment FeaturedCollection on Collection {
     id
@@ -194,6 +227,38 @@ const RECOMMENDED_PRODUCTS_QUERY = `#graphql
   }
 `;
 
+// CUSTOM PRODUCTS ADDED
+
+const FEATURED_PRODUCTS_QUERY = `#graphql
+  fragment FeaturedProduct on Product {
+    id
+    title
+    handle
+    priceRange {
+      minVariantPrice {
+        amount
+        currencyCode
+      }
+    }
+    images(first: 1) {
+      nodes {
+        id
+        url
+        altText
+        width
+        height
+      }
+    }
+  }
+  query FeaturedProducts($country: CountryCode, $language: LanguageCode)
+    @inContext(country: $country, language: $language) {
+    products(first: 4, sortKey: UPDATED_AT, reverse: true) {
+      nodes {
+        ...FeaturedProduct
+      }
+    }
+  }
+`;
 
 
 /** @typedef {import('@shopify/remix-oxygen').LoaderFunctionArgs} LoaderFunctionArgs */
