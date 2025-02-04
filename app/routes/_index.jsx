@@ -169,7 +169,7 @@ function FeaturedProducts({ products }) {
 
   return (
     <div className="featured-products">
-      <h2>Featured Products</h2>
+      <h2 className='featured-products-title'>Devices We Recover</h2>
       <Swiper
         spaceBetween={10}
         slidesPerView={2} // Mobile ke liye
