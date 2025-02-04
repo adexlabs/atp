@@ -7,7 +7,8 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
+import left from '~/assets/left.png';
+import right from '~/assets/right.png';
 /**
  * @type {MetaFunction}
  */
@@ -205,10 +206,10 @@ function FeaturedProducts({ products }) {
     {/* Custom Navigation Buttons */}
     <div className="custom-navigation">
   <div className="swiper-button-prev custom-prev">
-    <img src="/path-to-your-image/prev-icon.png" alt="Previous" />
+    <img src={left} alt="Previous" />
   </div>
   <div className="swiper-button-next custom-next">
-    <img src="/path-to-your-image/next-icon.png" alt="Next" />
+    <img src={right} alt="Next" />
   </div>
 </div>
 
