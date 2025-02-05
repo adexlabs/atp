@@ -661,7 +661,7 @@ order: 1;
 
 /* Cart CSS */
 
-.cart-main ul LI small{
+.cart-main ul li small{
   font-size: 14px;
   line-height: 1.6;
   color: #404041;
