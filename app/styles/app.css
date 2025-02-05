@@ -311,7 +311,7 @@ button.reset:hover:not(:has(> *)) {
   justify-content: center;
   padding: 5px 5px;
   padding-left: 10px;
-
+  border: 1px solid;
 }
 
 .cart-main .cart-line-quantity .qty-count span{
