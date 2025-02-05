@@ -186,11 +186,11 @@ export function Layout({children}) {
               isProductPage ? <ProductPageRoute /> : <HomePageRoute />
             )}
         
-            <Routes>
+            {/* <Routes>
             <Route path="/faq" element={<FAQ />} />
             <Route path="/aboutus" element={<About_Us />} />      
            <Route path="/segate-customers" element={ <SeagateCustomers/>} />
-           </Routes>
+           </Routes> */}
        
              </PageLayout>
           </Analytics.Provider>
