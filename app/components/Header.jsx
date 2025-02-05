@@ -77,13 +77,13 @@ export function HeaderMenu({
             ? new URL(item.url).pathname
             : item.url;
 
-            // if (index === 1) {
-            //   item.url = "/aboutus";
-            //   item.title = "ABOUT";
-            // } else if (index === 2) {
-            //   item.url = "/faq";
-            //   item.title = "FAQ";
-            // }
+            if (index === 1) {
+              item.url = "/aboutus";
+              item.title = "ABOUT";
+            } else if (index === 2) {
+              item.url = "/faq";
+              item.title = "FAQ";
+            }
 
            
         return (
