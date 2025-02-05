@@ -75,7 +75,9 @@ function CartLineQuantity({line}) {
 
   return (
     <div className="cart-line-quantity">
-      <small className='qty-count'><span>Quantity:</span> {quantity} &nbsp;&nbsp;</small>
+      <small className='qty-text'><span>Quantity:</span> </small>
+      <div className='quantity-wrapper'>
+      <small className='qty-count'> {quantity} &nbsp;&nbsp;</small>
       <CartLineUpdateButton lines={[{id: lineId, quantity: prevQuantity}]}>
         <button
           aria-label="Decrease quantity"
@@ -97,6 +99,7 @@ function CartLineQuantity({line}) {
           <span>&#43;</span>
         </button>
       </CartLineUpdateButton>
+      </div>
       &nbsp;
       <CartLineRemoveButton lineIds={[lineId]} disabled={!!isOptimistic} />
     </div>
