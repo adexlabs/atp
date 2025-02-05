@@ -294,7 +294,7 @@ button.reset:hover:not(:has(> *)) {
 .cart-main .product-price{
   font-family: DM Sans, sans-serif;
 }
-.cart .card-drawer-heading{
+ aside header .card-drawer-heading{
   font-size: 1.36667em;
   font-family: DM Sans, sans-serif;
 }

@@ -4,6 +4,7 @@ import {Link} from '@remix-run/react';
 import {ProductPrice} from './ProductPrice';
 import {useAside} from './Aside';
 import close from '~/assets/close (2).png';
+import closeIcon from '~/assets/close.svg';
 /**
  * A single line item in the cart. It displays the product image, title, price.
  * It also provides controls to update the quantity or remove the line item.
@@ -120,7 +121,8 @@ function CartLineRemoveButton({lineIds, disabled}) {
       inputs={{lineIds}}
     >
       <button disabled={disabled} type="submit">
-        Remove
+        {/* Remove */}
+        <img src={closeIcon} alt='Close Menu'/>
       </button>
     </CartForm>
   );
