@@ -314,13 +314,10 @@ button.reset:hover:not(:has(> *)) {
   border: 1px solid;
 }
 
-.cart-main .cart-line-quantity .qty-count span{
+/* .cart-main .cart-line-quantity .qty-count span{
 display: none;
-}
+} */
 
-.cart-main .cart-line-quantity .remove-item{
-  display: none;
-}
 /*
 * --------------------------------------------------
 * components/Search
