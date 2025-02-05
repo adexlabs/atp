@@ -299,6 +299,27 @@ button.reset:hover:not(:has(> *)) {
   font-family: DM Sans, sans-serif;
 }
 
+.cart-main .cart-line-quantity {
+  display: flex;
+  gap: 5px;
+  padding-left: 20px;
+  width: 100%;
+  max-width: 100px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 5px 5px;
+  padding-left: 10px;
+
+}
+
+.cart-main .cart-line-quantity .qty-count span{
+display: none;
+}
+
+.cart-main .cart-line-quantity .remove-item{
+  display: none;
+}
 /*
 * --------------------------------------------------
 * components/Search

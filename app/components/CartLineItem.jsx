@@ -120,7 +120,7 @@ function CartLineRemoveButton({lineIds, disabled}) {
       action={CartForm.ACTIONS.LinesRemove}
       inputs={{lineIds}}
     >
-      <button disabled={disabled} type="submit">
+      <button disabled={disabled} type="submit" className='remove-item'>
         {/* Remove */}
         <img src={closeIcon} alt='Close Menu'/>
       </button>
