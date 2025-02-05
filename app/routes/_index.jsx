@@ -1,5 +1,5 @@
 import {defer} from '@shopify/remix-oxygen';
-import {Await, useLoaderData, Link} from '@remix-run/react';
+import {Await, useLoaderData, Link, data} from '@remix-run/react';
 import {Suspense} from 'react';
 import {Image, Money} from '@shopify/hydrogen';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -199,6 +199,8 @@ function FeaturedProducts({ products }) {
           </SwiperSlide>
         ))}
       </Swiper>
+
+      <RecommendedProducts products={data.recommendedProducts}/>
     </div>
 //     <div className="featured-products">
 //     <h2 className="featured-products-title">Devices We Recover</h2>
