@@ -1,7 +1,7 @@
 import React from 'react'
 import SeagateCustomers from '~/components/SeagateCustomers'
 
-export default function segatecustomers () {
+export default function segate_customers () {
   return <SeagateCustomers/>
 }
 
