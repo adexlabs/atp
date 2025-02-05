@@ -26,7 +26,8 @@ export async function loader(args) {
   // Await the critical data required to render initial state of the page
   const criticalData = await loadCriticalData(args);
 
-  return defer({...deferredData, ...criticalData});
+  return defer({...deferredData, ...criticalData ,recommendedProducts: deferredData.recommendedProducts,});
+
 }
 
 /**
@@ -90,7 +91,7 @@ export default function Homepage() {
 
   return (
     <div className="home page-width">
-      <FeaturedProducts products={data.featuredProducts} />
+      <FeaturedProducts products={data.featuredProducts} recommendedProducts={data.recommendedProducts}/>
       {/* <FeaturedCollection collection={data.featuredCollection} /> */}
       {/* <RecommendedProducts products={data.recommendedProducts} /> */}
       
@@ -199,8 +200,6 @@ function FeaturedProducts({ products }) {
           </SwiperSlide>
         ))}
       </Swiper>
-
-      <RecommendedProducts products={data.recommendedProducts}/>
     </div>
 //     <div className="featured-products">
 //     <h2 className="featured-products-title">Devices We Recover</h2>
