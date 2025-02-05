@@ -1858,7 +1858,9 @@ Section-Banner CSS
     height: auto;
   }
 
-
+  .segate-banner .banner-container{
+    margin-top: 0px;
+  }
 
   /* CUSTOM CSS FOR SWIPER */
 

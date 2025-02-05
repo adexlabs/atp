@@ -42,7 +42,7 @@ export default function SeagateCustomers  () {
  title="We're Seagate's exclusive partner in data recovery"
  buttonText="Recover Your Data"
  onButtonClick={() => alert("Button clicked")}
- bannerStyle={{ height: "520px", backgroundColor: "#5bdc74" }} // adjustable banner style
+ bannerStyle={{ height: "580px", backgroundColor: "#5bdc74" }} // adjustable banner style
  backgroundImage={bnnrImg2}
  image={logoImg}  // Image shown above the caption
  highlightWordCount={2}
