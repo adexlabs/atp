@@ -26,7 +26,7 @@ export async function loader(args) {
   // Await the critical data required to render initial state of the page
   const criticalData = await loadCriticalData(args);
 
-  return defer({...deferredData, ...criticalData ,recommendedProducts: deferredData.recommendedProducts,});
+  return defer({...deferredData, ...criticalData});
 
 }
 
@@ -91,7 +91,7 @@ export default function Homepage() {
 
   return (
     <div className="home page-width">
-      <FeaturedProducts products={data.featuredProducts} recommendedProducts={data.recommendedProducts}/>
+      <FeaturedProducts products={data.featuredProducts} />
       {/* <FeaturedCollection collection={data.featuredCollection} /> */}
       {/* <RecommendedProducts products={data.recommendedProducts} /> */}
       
