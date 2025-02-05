@@ -120,8 +120,7 @@ function CartLineRemoveButton({lineIds, disabled}) {
       inputs={{lineIds}}
     >
       <button disabled={disabled} type="submit">
-        {/* Remove */}
-        <img src={close} alt='' width="24px" height="24px"/>
+        Remove
       </button>
     </CartForm>
   );

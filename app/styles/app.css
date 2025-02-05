@@ -48,7 +48,8 @@ aside header .close {
   opacity: 0.8;
   text-decoration: none;
   transition: all 200ms;
-  width: 20px;
+  /* width: 20px; */
+  width: 32px;
 }
 
 aside header .close:hover {
@@ -269,6 +270,35 @@ button.reset:hover:not(:has(> *)) {
   align-items: center;
   display: flex;
 }
+
+/* Custom Cart CSS */
+
+.cart-main ul li small{
+  font-size: 14px;
+  line-height: 1.6;
+  color: #404041;
+  font-weight: 400;
+  font-family: DM Sans, sans-serif;
+}
+.cart-main p strong{
+  font-size: 16px;
+  line-height: 1.6;
+  color: #404041;
+  font-family: DM Sans, sans-serif;
+}
+/* .cart-main  .cart-line-quantity .qty-count{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+} */
+.cart-main .product-price{
+  font-family: DM Sans, sans-serif;
+}
+.cart .card-drawer-heading{
+  font-size: 1.36667em;
+  font-family: DM Sans, sans-serif;
+}
+
 /*
 * --------------------------------------------------
 * components/Search
@@ -657,30 +687,6 @@ order: 1;
 }
 .header .header-ctas .header-menu-mobile-toggle{
   order: 4;
-}
-
-/* Cart CSS */
-
-.cart-main ul li small{
-  font-size: 14px;
-  line-height: 1.6;
-  color: #404041;
-  font-weight: 400;
-  font-family: DM Sans, sans-serif;
-}
-.cart-main p strong{
-  font-size: 16px;
-  line-height: 1.6;
-  color: #404041;
-  font-family: DM Sans, sans-serif;
-}
-/* .cart-main  .cart-line-quantity .qty-count{
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-} */
-.cart-main .product-price{
-  font-family: DM Sans, sans-serif;
 }
 
 .header .cart-icon {  
