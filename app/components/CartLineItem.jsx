@@ -121,7 +121,7 @@ function CartLineRemoveButton({lineIds, disabled}) {
     >
       <button disabled={disabled} type="submit" className='remove-item'>
         {/* Remove */}
-        <img src={closeIcon} alt='Close Menu'/>
+        <img src={remove} alt='delete' className='delete-item'/>
       </button>
     </CartForm>
   );
