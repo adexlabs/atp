@@ -302,6 +302,10 @@ button.reset:hover:not(:has(> *)) {
 
 .cart-main .cart-line-quantity {
   display: flex;
+  flex-direction: column;
+}
+ 
+.cart-main .quantity-wrapper{
   gap: 5px;
   padding-left: 20px;
   width: 100%;
@@ -312,7 +316,8 @@ button.reset:hover:not(:has(> *)) {
   padding: 5px 5px;
   padding-left: 10px;
   border: 1px solid;
-}
+  };
+
 
 /* .cart-main .cart-line-quantity .qty-count span{
 display: none;
