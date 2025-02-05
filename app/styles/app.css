@@ -321,8 +321,9 @@ button.reset:hover:not(:has(> *)) {
   };
 
   .cart-main .qty-icon-wrapper{
-    display: flex;
-    gap: 10px;
+    display: flex ;
+    align-items: center;
+    gap: 5px;
   }
 
 /* .cart-main .cart-line-quantity .qty-count span{
