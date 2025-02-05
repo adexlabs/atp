@@ -258,6 +258,7 @@ button.reset:hover:not(:has(> *)) {
 
 .cart-line-quantity {
   display: flex;
+  margin-top: 10px;
 }
 
 .cart-discount {
