@@ -129,7 +129,7 @@ export default function FAQ () {
           
      <Section_Banner
   backgroundImage={bnnrImg} 
-  height="450px"
+  height="400px"
   text=""
   textColor="#fff"
   textAlign="center"
