@@ -270,6 +270,7 @@ button.reset:hover:not(:has(> *)) {
 .cart-subtotal {
   align-items: center;
   display: flex;
+  justify-content: space-between;
 }
 
 /* Custom Cart CSS */
@@ -2055,3 +2056,8 @@ Section-Banner CSS
 .policy p strong{
   margin-top: 15px;
 }
+
+/* ************************** */
+ {/* Hide discounts Card and GiftCard  in CartSummary Component*/}
+ 
+ /* **************************** */
