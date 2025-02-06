@@ -356,7 +356,7 @@ button.reset:hover:not(:has(> *)) {
     max-width: 233px;
   }
 
-  .cart-summary .checkout-button{
+  .cart-main .checkout-button{
   width: 100%;
   max-width: 100%;
   background-color: #55544d;
@@ -364,7 +364,7 @@ button.reset:hover:not(:has(> *)) {
   max-width: 100%;
   }
 
-  .cart-summary .checkout-button p{
+  .cart-main .checkout-button p{
     font-size: 1rem;
     letter-spacing: 0.1rem;
     color: #fff;
