@@ -364,7 +364,7 @@ button.reset:hover:not(:has(> *)) {
     max-width: 100%;
     background-color: #55544d;
     cursor: pointer;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     padding: 15px 0;
     text-decoration: none;
   }
