@@ -15,7 +15,7 @@ export default function About_Us(){
         <>
           <Section_Banner
                 backgroundImage={bnnrImg2} 
-                height="450px"
+                height="400px"
                 text="About Us"
                 textColor="#fff"
                 textAlign="center"
