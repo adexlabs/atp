@@ -166,6 +166,7 @@ button.reset:hover:not(:has(> *)) {
   z-index: 1;
 }
 
+
 .header-menu-mobile-toggle {
   @media (min-width: 48em) {
     display: none;
@@ -759,8 +760,13 @@ order: 1;
   text-transform: uppercase;
   line-height: 100%;
   letter-spacing: .1em;
+  text-decoration: none;
 }
 
+.header .header-menu-item:hover{
+  color: #5878ee;
+  font-weight: 700;
+}
 
 .header .header-ctas {
   align-items: center;
