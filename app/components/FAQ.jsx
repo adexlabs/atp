@@ -123,9 +123,9 @@ export default function FAQ () {
  
   return (
     <>
-          <Link
+          {/* <Link
       className="faq-section"
-       to={`/faq`}>
+       to={`/faq`}> */}
           
      <Section_Banner
   backgroundImage={bnnrImg} 
@@ -167,7 +167,7 @@ export default function FAQ () {
         ))}
       </div>
     </div>
-    </Link>
+    {/* </Link> */}
     </>
   );
 };
