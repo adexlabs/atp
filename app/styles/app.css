@@ -147,7 +147,7 @@ button.reset:hover:not(:has(> *)) {
 
 @media(max-width: 549px){
   aside {
-    max-width: var(--aside-width);
+    max-width: 340px;
   }
 }
 /*
@@ -241,6 +241,7 @@ button.reset:hover:not(:has(> *)) {
 .cart-line {
   display: flex;
   padding: 0.75rem 0;
+  gap: 15px;
 }
 
 .cart-line img {
@@ -336,7 +337,7 @@ button.reset:hover:not(:has(> *)) {
 
   .cart-line .product-title-price{
     display: flex;
-    gap: 30px;
+    gap: 20px;
   }
 
   .cart-line .product-type-content{
