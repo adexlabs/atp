@@ -261,7 +261,7 @@ button.reset:hover:not(:has(> *)) {
   padding-top: 0.75rem;
   position: absolute;
   /* width: calc(var(--aside-width) - 40px); */
-  width: calc(var(--aside-width) - -8%);
+  width: calc(var(--aside-width) - -14%);
 }
 
 .cart-line-quantity {
@@ -337,7 +337,7 @@ button.reset:hover:not(:has(> *)) {
 
   .cart-line .product-title-price{
     display: flex;
-    gap: 20px;
+    gap: 10px;
   }
 
   .cart-line .product-type-content{
