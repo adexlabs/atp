@@ -335,6 +335,10 @@ button.reset:hover:not(:has(> *)) {
     gap: 5px;
   }
 
+  .cart-line h4{
+    display: none;
+  }
+
   .cart-line .product-title-price{
     display: flex;
     gap: 10px;
