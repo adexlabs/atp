@@ -28,6 +28,7 @@ aside {
   right: calc(-1 * var(--aside-width));
   top: 0;
   transition: transform 200ms ease-in-out;
+  max-width: 450px;
 }
 
 aside header {
@@ -2058,6 +2059,7 @@ Section-Banner CSS
 }
 
 /* ************************** */
- {/* Hide discounts Card and GiftCard  in CartSummary Component*/}
- 
+ /* Hide discounts Card and GiftCard  in CartSummary Component*/
+
  /* **************************** */
+
