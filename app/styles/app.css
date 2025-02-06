@@ -372,7 +372,14 @@ button.reset:hover:not(:has(> *)) {
 
   .cart-line-quantity .quantity-main-div{
    display: flex;
-   gap: 10px;
+   gap: 5px;
+   align-items: center;
+  }
+  .cart-line-quantity .cart-line-qty-rm-btn{
+   margin-top: 12px;
+  }
+  .cart-line-quantity .cart-line-qty-rm-btn{
+    width: 20px;
   }
 
 /*

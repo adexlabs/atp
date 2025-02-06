@@ -106,7 +106,7 @@ function CartLineQuantity({line}) {
       </CartLineUpdateButton>
       </div>
       &nbsp;
-      <CartLineRemoveButton lineIds={[lineId]} disabled={!!isOptimistic} />
+      <CartLineRemoveButton lineIds={[lineId]} disabled={!!isOptimistic} className="cart-line-qty-rm-btn"/>
       </div>
     </div>
   );
