@@ -356,19 +356,28 @@ button.reset:hover:not(:has(> *)) {
     max-width: 233px;
   }
 
-  .cart-main .checkout-button{
-  width: 100%;
-  max-width: 100%;
-  background-color: #55544d;
-  cursor: pointer;
-  max-width: 100%;
+  .cart-main .checkout-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    background-color: #55544d;
+    cursor: pointer;
+    margin-bottom: 20px;
+    padding: 15px 0;
+    text-decoration: none;
+    border-radius: 5px;
   }
-
-  .cart-main .checkout-button p{
+  
+  .cart-main .checkout-button p {
     font-size: 1rem;
     letter-spacing: 0.1rem;
     color: #fff;
+    text-align: center;
+    margin: 0;
   }
+  
 
   .cart-line-quantity .quantity-main-div{
    display: flex;

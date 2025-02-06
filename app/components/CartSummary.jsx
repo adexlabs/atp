@@ -35,12 +35,12 @@ function CartCheckoutActions({checkoutUrl}) {
   if (!checkoutUrl) return null;
 
   return (
-    <a href={checkoutUrl} target="_self"> <div className='checkout-button'>
-      <a href={checkoutUrl} target="_self">
+   <div>
+      <a href={checkoutUrl} target="_self"  className='checkout-button'>
         <p>Continue to Checkout &rarr;</p>
       </a>
       <br />
-    </div> </a>
+    </div> 
   );
 }
 
