@@ -375,10 +375,10 @@ button.reset:hover:not(:has(> *)) {
    gap: 5px;
    align-items: center;
   }
-  .cart-line-quantity .cart-line-qty-rm-btn{
+  .cart-line-quantity .remove-item{
    margin-top: 12px;
   }
-  .cart-line-quantity .cart-line-qty-rm-btn{
+  .cart-line-quantity .remove-item img{
     width: 20px;
   }
 
