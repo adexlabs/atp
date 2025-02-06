@@ -340,10 +340,10 @@ button.reset:hover:not(:has(> *)) {
     gap: 5px;
   }
 
-  .cart-summary .cart-summary-heading{
+  .cart-main .cart-summary .cart-summary-heading{
     display: none;
   }
-  .cart-summary .cart-subtotal .subtotal-heading{
+  .cart-main .cart-summary .cart-subtotal .subtotal-heading{
   font-size: 1.1rem;
   font-weight: normal;
   }
