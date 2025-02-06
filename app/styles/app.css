@@ -367,7 +367,6 @@ button.reset:hover:not(:has(> *)) {
     margin-bottom: 20px;
     padding: 15px 0;
     text-decoration: none;
-    border-radius: 5px;
   }
   
   .cart-main .checkout-button p {
