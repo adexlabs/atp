@@ -2065,10 +2065,14 @@ Section-Banner CSS
 /* featured-products CSS */
 
 .featured-products .featured-products-title{
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-size: 3rem;
-  font-weight: normal;
+  font-size: 1.8rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  margin-top: 30px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
 }
 .featured-products .featured-product{
   text-decoration: none;
@@ -2092,7 +2096,7 @@ Section-Banner CSS
 }
 @media(max-width:767px){
   .featured-products .featured-products-title{
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
   
 .custom-swiper .swiper-button-prev,
