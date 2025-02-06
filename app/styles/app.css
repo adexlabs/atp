@@ -264,6 +264,11 @@ button.reset:hover:not(:has(> *)) {
   width: calc(var(--aside-width) - -14%);
 }
 
+@media(max-width: 549px){
+  .cart-summary-aside {
+    width: calc(var(--aside-width) - 14%);
+  }
+}
 .cart-line-quantity {
   display: flex;
   margin-top: 10px;
