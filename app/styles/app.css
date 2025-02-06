@@ -335,10 +335,13 @@ button.reset:hover:not(:has(> *)) {
     gap: 5px;
   }
 
-  .cart-line h4{
+  .cart-summary .cart-summary-heading{
     display: none;
   }
-
+  .cart-summary .cart-subtotal .subtotal-heading{
+  font-size: 1.1rem;
+  font-weight: normal;
+  }
   .cart-line .product-title-price{
     display: flex;
     gap: 10px;
@@ -347,9 +350,20 @@ button.reset:hover:not(:has(> *)) {
   .cart-line .product-type-content{
     max-width: 233px;
   }
-/* .cart-main .cart-line-quantity .qty-count span{
-display: none;
-} */
+
+  .cart-summary .checkout-button{
+  width: 100%;
+  max-width: 100%;
+  background-color: #55544d;
+  cursor: pointer;
+  max-width: 100%;
+  }
+
+  .cart-summary .checkout-button p{
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    color: #fff;
+  }
 
 /*
 * --------------------------------------------------
