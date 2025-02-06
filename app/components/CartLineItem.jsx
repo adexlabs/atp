@@ -32,6 +32,7 @@ export function CartLineItem({layout, line}) {
       )}
 
       <div>
+        <div className='product-title-price'>
         <Link
           prefetch="intent"
           to={lineItemUrl}
@@ -46,7 +47,8 @@ export function CartLineItem({layout, line}) {
           </p>
         </Link>
         <ProductPrice price={line?.cost?.totalAmount} />
-        <ul>
+        </div>
+        <ul className='product-type-content'>
           {selectedOptions.map((option) => (
             <li key={option.name}>
               <small>
