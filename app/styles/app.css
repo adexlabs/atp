@@ -1236,9 +1236,11 @@ components/Footer.CSS
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  padding: 0 3rem;
-  margin-bottom: 50px;
-  margin-top: 50px;
+  padding: 0 4rem;
+  margin-bottom: 70px;
+  margin-top: 70px;
+  background-color: rgb(246, 246, 248);
+  padding: 1.5rem 3.5rem;
   }
   .image-text-wrapper .imageText{
   display: flex;
