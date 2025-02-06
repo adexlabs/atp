@@ -367,6 +367,7 @@ button.reset:hover:not(:has(> *)) {
     /* margin-bottom: 20px; */
     padding: 15px 0;
     text-decoration: none;
+    border-radius: 50px;
   }
   
   .cart-main .checkout-button p {
@@ -376,7 +377,9 @@ button.reset:hover:not(:has(> *)) {
     text-align: center;
     margin: 0;
   }
-  
+  .cart-main .product-type-content li small{
+    display: none;
+  }
 
   .cart-line-quantity .quantity-main-div{
    display: flex;
@@ -1972,7 +1975,12 @@ Section-Banner CSS
   }
 
   /* Segate Banner CSS */
-
+  .segate-banner .badges{
+  background-color: rgb(246, 246, 248);
+  padding: 1.5rem 3.5rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
   .segate-banner .banner-content img{
     width: 8rem;
     margin: 0 auto;
