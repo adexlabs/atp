@@ -765,6 +765,7 @@ order: 1;
 
 .header .header-menu-item:hover{
   color: #5878ee!important;
+  font-weight: 700;
 }
 
 .header .header-ctas {
