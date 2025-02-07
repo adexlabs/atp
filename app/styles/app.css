@@ -745,7 +745,7 @@ font-size: 1.8rem;
   @media (min-width: 48em) {
     display: flex;
     grid-gap: 1rem;
-    /* margin-left: 3rem; */
+    margin-left: 3rem;
   }
 }
 
@@ -765,7 +765,7 @@ order: 1;
 
 .header .header-menu-item:hover{
   color: #5878ee!important;
-  font-weight: 700;
+  /* font-weight: 700; */
 }
 
 .header .header-ctas {
