@@ -13,6 +13,18 @@ img {
   border-radius: 4px;
 }
 
+@font-face {
+  font-family: 'Nord-Bold';
+  src: url('https://cdn.shopify.com/s/files/1/0584/8688/2388/files/Nord-Bold.eot?v=1738933777');
+  src: url('https://cdn.shopify.com/s/files/1/0584/8688/2388/files/Nord-Bold.eot?v=1738933777?#iefix') format('embedded-opentype'),
+      url('https://cdn.shopify.com/s/files/1/0584/8688/2388/files/Nord-Bold.woff2?v=1738933776') format('woff2'),
+      url('https://cdn.shopify.com/s/files/1/0584/8688/2388/files/Nord-Bold.woff?v=1738933776') format('woff'),
+      url('https://cdn.shopify.com/s/files/1/0584/8688/2388/files/Nord-Bold.ttf?v=1738933777') format('truetype');
+  
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
 /*
 * --------------------------------------------------
 * components/Aside
