@@ -985,7 +985,6 @@ display: flex;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(.4,0,.2,1);
   transition-duration: .15s;
-  font-weight: 700;
 }
 
 
@@ -1304,7 +1303,6 @@ components/Footer.CSS
     transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
     transition-timing-function: cubic-bezier(.4,0,.2,1);
     transition-duration: .15s;
-    font-weight: 700;
   }
 
   .image-text-wrapper .color-text{
@@ -1553,7 +1551,6 @@ margin-top: 30px;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-top: 50px;
-  font-weight: 700;
 }
 /* 
 .banner-container .banner-button:hover {
