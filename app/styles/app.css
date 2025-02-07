@@ -745,7 +745,7 @@ font-size: 1.8rem;
   @media (min-width: 48em) {
     display: flex;
     grid-gap: 1rem;
-    margin-left: 3rem;
+    /* margin-left: 3rem; */
   }
 }
 
