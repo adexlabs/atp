@@ -204,6 +204,9 @@ button.reset:hover:not(:has(> *)) {
   flex-direction: column;
   grid-gap: 1rem;
 }
+.header-menu-mobile a{
+text-transform: uppercase;
+}
 
 .header-menu-desktop {
   display: none;
