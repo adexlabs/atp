@@ -1332,6 +1332,7 @@ components/Footer.CSS
   @media(max-width: 850px){
     .image-text-wrapper{
       grid-template-columns: 1fr;
+      padding: 1.5rem;
       }
   }
   
