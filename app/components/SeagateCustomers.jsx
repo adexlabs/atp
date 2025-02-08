@@ -46,6 +46,7 @@ export default function SeagateCustomers  () {
  backgroundImage={bnnrImg2}
  image={logoImg}  // Image shown above the caption
  highlightWordCount={2}
+ opacity="90%"
 /></div>
 
 <ImageTextSection/>

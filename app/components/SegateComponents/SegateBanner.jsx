@@ -11,6 +11,7 @@ export default function SegateBanner({
   paragraph,
   image,
   extraText,
+  opacity = 1,
 }) {
   const words = title ? title.split(" ") : [];
 
@@ -40,6 +41,7 @@ export default function SegateBanner({
     backgroundImage: backgroundImage ? `url(${backgroundImage})` : null,
     backgroundSize: "cover",
     backgroundPosition: "center",
+    opacity: opacity, 
     ...bannerStyle,
   };
 
