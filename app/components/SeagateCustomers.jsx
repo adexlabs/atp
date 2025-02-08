@@ -36,7 +36,7 @@ export default function SeagateCustomers  () {
     },
   ];
   return (
-    <>
+    <div className='segate-routes'>
     <div className='segate-banner'>
    <SegateBanner
  title="We're Seagate's exclusive partner in data recovery"
@@ -81,7 +81,7 @@ export default function SeagateCustomers  () {
   </div>
 
   <TrustBadges badges={customBadges} count={4} />
-    </>
+    </div>
   )
 }
 
