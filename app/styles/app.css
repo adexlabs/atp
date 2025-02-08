@@ -631,7 +631,6 @@ font-size: 1.8rem;
   color: #fff;
   background-color: #5878ee;
   border-color: #5878ee;
-  font-family: DM Mono, sans-serif;
   font-size: .875rem;
   line-height: 1.25rem;
   line-height: 100%;
@@ -988,7 +987,6 @@ display: flex;
 
 .banner-text button {
   background: #5878ee;
-  font-family: DM Mono, sans-serif;
   font-size: .875rem;
   line-height: 1.25rem;
   line-height: 100%;
@@ -1290,7 +1288,6 @@ components/Footer.CSS
     gap: 10px;
   }
   .image-text-wrapper .caption{
-    font-family: DM Mono, sans-serif;
     font-size: .75rem;
     line-height: 1rem;
     text-transform: uppercase;
@@ -1306,7 +1303,6 @@ components/Footer.CSS
   }
   .image-text-wrapper .img-text-btn {
     background: #5878ee;
-    font-family: DM Mono, sans-serif;
     font-size: .875rem;
     color: #fff;
     line-height: 1.25rem;
