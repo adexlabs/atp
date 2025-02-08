@@ -975,12 +975,13 @@ display: flex;
 
 
 .banner-text h2 {
-  font-size: 3.75rem;
+  font-size: 3rem;
   line-height: 1.2;
   margin-bottom: 40px;
   letter-spacing: .05em;
   overflow-wrap: anywhere;
  font-weight: normal;
+ font-family: 'Helvetica';
 }
 
 
@@ -1375,6 +1376,8 @@ components/Footer.CSS
     margin-bottom: 1rem;
     text-transform: uppercase;
     margin-top: 30px;
+    font-family: 'Helvetica-Bold';
+    letter-spacing: 0.5px;
 }
 .custom .slider {
   width: 100%;
@@ -1478,6 +1481,7 @@ margin-top: 30px;
  margin-bottom: 30px;
  font-size: 4.5rem;
  letter-spacing: normal;
+ font-family: 'Helvetica';
 }
 
 .text-banner .banner-container .banner-content p{
@@ -1555,7 +1559,7 @@ margin-top: 30px;
     font-weight: normal;
   max-width: 800px;
   margin: 0 auto;
-
+  font-family: 'Helvetica';
 }
 
 .banner-container .banner-content p {
@@ -2110,6 +2114,8 @@ Section-Banner CSS
   font-weight: 700;
   text-align: center;
   margin-bottom: 30px;
+  font-family: 'Helvetica-Bold';
+  letter-spacing: 0.5px;
 }
 .featured-products .featured-product{
   text-decoration: none;
