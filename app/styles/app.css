@@ -247,6 +247,7 @@ button.reset:hover:not(:has(> *)) {
 
 .footer-menu a {
   color: var(--color-light);
+  font-family: 'Helvetica';
 }
 
 /*
@@ -1164,12 +1165,14 @@ components/Footer.CSS
   max-width: 215px;
   word-spacing: 2px;
   letter-spacing: 1px;
+  font-family: 'Helvetica';
 }
 .footer .footer-address{
   line-height: 4;
 }
 .footer .footer-address .foot-email{
   color: #fff;
+  font-family: 'Helvetica';
 }
 
 
@@ -1750,6 +1753,7 @@ margin-top: 30px;
   
   .trust-badge-wrapper .badge-text{
     font-size: 1rem;
+    font-family: 'Helvetica';
     /* max-width: 275px;
     margin: 0 auto; */
   }
