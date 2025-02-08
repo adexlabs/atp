@@ -77,6 +77,7 @@ export default function SeagateCustomers  () {
   bannerStyle={{ height: "520px", backgroundColor: "#f6f6f8" }} // adjustable banner style
   backgroundImage={recover} 
   highlightWordCount={0} 
+  opacity="90%"
 />
   </div>
 
