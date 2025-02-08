@@ -2041,6 +2041,10 @@ Section-Banner CSS
     margin-top: 0px;
   }
 
+  .segate-banner .image-text-wrapper{
+    background-color: #fff;
+  }
+
   /* CUSTOM CSS FOR SWIPER */
 
 .swiper-button-prev,
