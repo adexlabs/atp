@@ -25,6 +25,13 @@ img {
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: 'Helvetica';
+  src: url('https://cdn.shopify.com/s/files/1/0584/8688/2388/files/Helvetica.ttf?v=1738994493') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 /*
 * --------------------------------------------------
 * components/Aside
