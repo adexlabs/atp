@@ -32,6 +32,13 @@ img {
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: 'Helvetica-Bold';
+  src: url('https://cdn.shopify.com/s/files/1/0584/8688/2388/files/Helvetica-Bold.ttf?v=1738994507') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
 /*
 * --------------------------------------------------
 * components/Aside
@@ -782,7 +789,7 @@ order: 1;
   text-transform: uppercase;
   line-height: 100%;
   letter-spacing: .1em;
-  font-family: 'Nord-Bold';
+  font-family: 'Helvetica-Bold';
 }
 
 .header .header-menu-item:hover{
