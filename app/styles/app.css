@@ -1905,9 +1905,18 @@ position: sticky;
   
 }
 @media(max-width: 549px){
-
+  .faq-container {
+    margin: 30px auto;
+  }
   .faq-container .faq-question {
     font-size: 18px;
+  }
+  .faq-container .faq-question span{
+    max-width: 290px;
+  }
+  .faq-container .faq-heading{
+    margin-bottom: 1rem;
+    margin-top: 1rem;
   }
 }
 
