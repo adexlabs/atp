@@ -9,6 +9,22 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import left from '~/assets/left.png';
 import right from '~/assets/right.png';
+import AllCollections from '~/components/AllCollections';
+
+export async function loader({context, request}) {
+  const paginationVariables = getPaginationVariables(request, { pageBy: 8 });
+
+  const defaultCollectionHandle = "summer-collection"; // 🟢 Default collection
+
+  const [{collection}] = await Promise.all([
+    context.storefront.query(COLLECTION_QUERY, {
+      variables: {handle: defaultCollectionHandle, ...paginationVariables},
+    }),
+  ]);
+
+  return defer({collection});
+}
+
 /**
  * @type {MetaFunction}
  */
@@ -36,7 +52,7 @@ export async function loader(args) {
  * @param {LoaderFunctionArgs}
  */
 async function loadCriticalData({context}) {
-
+  const defaultCollectionHandle = "segate"; // 🟢 Default collection
   let allProducts = [];
   let cursor = null;
   let hasNextPage = true;
@@ -95,6 +111,14 @@ export default function Homepage() {
       {/* <FeaturedCollection collection={data.featuredCollection} /> */}
       {/* <RecommendedProducts products={data.recommendedProducts} /> */}
       
+      <div>
+      {/* 🔹 Sabhi collections ka component */}
+      <AllCollections />
+
+      <h1>{collection.title}</h1>
+      <p>{collection.description}</p>
+      {/* 🔹 Yahan pe selected collection ke products honge */}
+    </div>
     </div>
   );
 }
@@ -349,6 +373,18 @@ const FEATURED_PRODUCTS_QUERY = `#graphql
   }
 `;
 
+
+const COLLECTION_QUERY = `#graphql
+  query Collection($handle: String!, $country: CountryCode, $language: LanguageCode, $first: Int, $last: Int, $startCursor: String, $endCursor: String) 
+  @inContext(country: $country, language: $language) {
+    collection(handle: $handle) {
+      id
+      handle
+      title
+      description
+    }
+  }
+`;
 
 
 /** @typedef {import('@shopify/remix-oxygen').LoaderFunctionArgs} LoaderFunctionArgs */
