@@ -1100,9 +1100,11 @@ components/Footer.CSS
 }
 
 
-/* .footer .footer-menu a {
-  color: var(--color-light);
-} */
+.footer .footer-menu a {
+  /* color: var(--color-light); */
+  text-transform: uppercase;
+  font-size: 14px;
+}
 
 
 .footer .footer-menu-columns {
