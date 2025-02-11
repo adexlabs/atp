@@ -176,17 +176,17 @@ export function Layout({children}) {
             <PageLayout {...data}>
               
             {/* {!isProductPage && !isCollectionPage && ( <Banner />)} */}
-            {!isProductPage && !isCollectionPage && !hideOnPages.includes(location.pathname) && (
+            {/* {!isProductPage && !isCollectionPage && !hideOnPages.includes(location.pathname) && (
               <Banner />
-            )}
+            )} */}
 
             {children}
             {/* {!isCollectionPage && (isProductPage ? ( <ProductPageRoute />) : ( <HomePageRoute />))} */}
 
-            { !isCollectionPage && !hideOnPages.includes(location.pathname) && (
+            {/* { !isCollectionPage && !hideOnPages.includes(location.pathname) && (
               isProductPage ? <ProductPageRoute /> : <HomePageRoute />
             )}
-        
+         */}
             {/* <Routes>
             <Route path="/faq" element={<FAQ />} />
             <Route path="/aboutus" element={<About_Us />} />      

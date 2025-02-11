@@ -9,7 +9,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import left from '~/assets/left.png';
 import right from '~/assets/right.png';
-
+import HomePageRoute from '~/components/HomePageRoute';
+import Banner from '~/components/Banner';
 
 /**
  * @type {MetaFunction}
@@ -92,9 +93,11 @@ export default function Homepage() {
 
   return (
     <div className="home page-width">
+     
       <FeaturedProducts products={data.featuredProducts} />
       {/* <FeaturedCollection collection={data.featuredCollection} /> */}
       {/* <RecommendedProducts products={data.recommendedProducts} /> */}
+      <HomePageRoute/>
     </div>
   );
 }
