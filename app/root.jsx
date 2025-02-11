@@ -152,12 +152,15 @@ function loadDeferredData({context}) {
 export function Layout({children}) {
   const nonce = useNonce();
   const location = useLocation();
-  const isCollectionPage = location.pathname.startsWith('/collection');
+  // const isCollectionPage = location.pathname.startsWith('/collection');
   const isProductPage = location.pathname.startsWith('/products');
-  const isCollectionsPage = location.pathname.startsWith('/collections');
+  const isCollectionPage = location.pathname.startsWith('/collections');
   /** @type {RootLoader} */
   const data = useRouteLoaderData('root');
-  const hideOnPages = ["/faq", "/aboutus", "/segatecustomers", "/policies/privacy-policy", "/policies/terms-of-service","/collections/"];
+  const hideOnPages = ["/faq", "/aboutus", "/segatecustomers", "/policies/privacy-policy", "/policies/terms-of-service","/collections"];
+
+  const isHiddenPage = hideOnPages.includes(location.pathname) || isCollectionPage;
+
   return (
     <html lang="en">
       <head>
