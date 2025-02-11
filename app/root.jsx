@@ -186,14 +186,14 @@ export function Layout({children}) {
             <PageLayout {...data}>
               
             {/* {!isProductPage && !isCollectionPage && ( <Banner />)} */}
-            {!isCollectionsPage && !isProductPage && !isCollectionPage && !hideOnPages.includes(location.pathname) && (
+            {!isProductPage && !isCollectionPage && !hideOnPages.includes(location.pathname) && (
               <Banner />
             )}
 
             {children}
             {/* {!isCollectionPage && (isProductPage ? ( <ProductPageRoute />) : ( <HomePageRoute />))} */}
 
-            {!isCollectionsPage && !isCollectionPage && !hideOnPages.includes(location.pathname) && (
+            { !isCollectionPage && !hideOnPages.includes(location.pathname) && (
               isProductPage ? <ProductPageRoute /> : <HomePageRoute />
             )}
         
