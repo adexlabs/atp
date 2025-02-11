@@ -781,7 +781,7 @@ font-size: 1.8rem;
   grid-gap: 1rem;
 }
 
-.header-menu-mobile:hover{
+.header-menu-mobile a:hover{
   color: #5878ee!important;
   text-decoration: none;
 }
