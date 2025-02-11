@@ -2019,7 +2019,7 @@ Section-Banner CSS
   
   @media (max-width: 768px) {
     .about-text-section {
-      margin: 0 1.5rem;
+      padding: 0 1.5rem;
     }
     .about-text-section .text-block {
         flex: 1 1 100%; 
