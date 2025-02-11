@@ -11,6 +11,7 @@ import favicon1 from '~/assets/svg_money.svg';
 import favicon2 from '~/assets/svg_award.svg';
 import favicon3 from '~/assets/svg_lock.svg';
 import favicon4 from '~/assets/svg_folder.svg';
+import Collection from '~/routes/collections.$handle';
 export default function SeagateCustomers  () {
 
   const customBadges = [
@@ -49,6 +50,7 @@ export default function SeagateCustomers  () {
  opacity="90%"
 /></div>
 
+<Collection/>
 <ImageTextSection/>
 
 <ProductTrustBadges/>
