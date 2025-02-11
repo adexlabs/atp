@@ -95,7 +95,6 @@ export default function Homepage() {
       <FeaturedProducts products={data.featuredProducts} />
       {/* <FeaturedCollection collection={data.featuredCollection} /> */}
       {/* <RecommendedProducts products={data.recommendedProducts} /> */}
-      {collection ? <CollectionList collection={data.collection} /> : <p>Loading...</p>}
    
     </div>
   );
@@ -106,27 +105,25 @@ export default function Homepage() {
  *   collection: FeaturedCollectionFragment;
  * }}
  */
-// function FeaturedCollection({collection}) {
-// //   if (!collection) return null;
-// //   const image = collection?.image;
-// //   return (
-// //     <Link
-// //       className="featured-collection"
-// //        to={`/collections/${collection.handle}`}
+function FeaturedCollection({collection}) {
+  if (!collection) return null;
+  const image = collection?.image;
+  return (
+    <Link
+      className="featured-collection"
+       to={`/collections/${collection.handle}`}
      
-// //     >
-// //       {image && (
-// //         <div className="featured-collection-image">
-// //           <Image data={image} sizes="100vw" />
-// //         </div>
-// //       )}
-// //       <h1>{collection.title}</h1>
-// //     </Link>
-// //   );
-// // }
+    >
+      {image && (
+        <div className="featured-collection-image">
+          <Image data={image} sizes="100vw" />
+        </div>
+      )}
+      <h1>{collection.title}</h1>
+    </Link>
+  );
+}
 
-// // Update the featured collection link
-// }
 
 /**
  * @param {{
@@ -210,31 +207,6 @@ function FeaturedProducts({ products }) {
 );
 }
 
-// Custom Added
-
-export default function CollectionList({ collection }) {
-  if (!collection) return <p>Collection not found.</p>;
-
-  return (
-    <div className="collection-page page-width">
-      <h1>{collection.title}</h1>
-      {collection.image && (
-        <Image data={collection.image} sizes="100vw" className="collection-banner" />
-      )}
-      <div className="collection-products">
-        {collection.products.nodes.map((product) => (
-          <Link key={product.id} className="collection-product" to={`/products/${product.handle}`}>
-            <Image data={product.images.nodes[0]} aspectRatio="1/1" sizes="(min-width: 45em) 20vw, 50vw" />
-            <h4 className='product-title'>{product.title}</h4>
-            <small className='product-price'>
-              <Money data={product.priceRange.minVariantPrice} />
-            </small>
-          </Link>
-        ))}
-      </div>
-    </div>
-  );
-}
 
  
 const FEATURED_COLLECTION_QUERY = `#graphql
@@ -329,56 +301,7 @@ const FEATURED_PRODUCTS_QUERY = `#graphql
 `;
 
 
-// CUSTOM ADDED
-const COLLECTION_PRODUCTS_QUERY = `#graphql
-query CollectionProducts($handle: String!) {
-  collection(handle: $handle) {
-    id
-    title
-    descriptionHtml # Adds collection description
-    image {
-      url
-      altText
-      width
-      height
-    }
-    products(first: 20) {
-      nodes {
-        id
-        title
-        handle
-        descriptionHtml # Adds product description
-        totalInventory # Shows total inventory count
-        priceRange {
-          minVariantPrice {
-            amount
-            currencyCode
-          }
-        }
-        variants(first: 3) { # Fetch first 3 variants
-          nodes {
-            id
-            title
-            price {
-              amount
-              currencyCode
-            }
-            availableForSale
-          }
-        }
-        images(first: 1) {
-          nodes {
-            url
-            altText
-            width
-            height
-          }
-        }
-      }
-    }
-  }
-}
-`;
+
 
 
 /** @typedef {import('@shopify/remix-oxygen').LoaderFunctionArgs} LoaderFunctionArgs */
