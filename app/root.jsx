@@ -154,12 +154,19 @@ export function Layout({children}) {
   const location = useLocation();
   // const isCollectionPage = location.pathname.startsWith('/collection');
   const isProductPage = location.pathname.startsWith('/products');
-  const isCollectionPage = location.pathname.startsWith('/collections');
+  const isCollectionPage = location.pathname.startsWith('/collection');
   /** @type {RootLoader} */
   const data = useRouteLoaderData('root');
-  const hideOnPages = ["/faq", "/aboutus", "/segatecustomers", "/policies/privacy-policy", "/policies/terms-of-service","/collections"];
+  const hideOnPages = ["/faq", "/aboutus", "/segatecustomers", "/policies/privacy-policy", "/policies/terms-of-service"];
 
-  const isHiddenPage = hideOnPages.includes(location.pathname) || isCollectionPage;
+  const [isCollectionsPage, setIsCollectionPage] = useState(false);
+
+  useEffect(() => {
+    // Check if `.collection-page` exists in the DOM
+    setIsCollectionPage(document.querySelector(".collection-page") !== null);
+  }, [location.pathname]);
+
+
 
   return (
     <html lang="en">
@@ -179,14 +186,14 @@ export function Layout({children}) {
             <PageLayout {...data}>
               
             {/* {!isProductPage && !isCollectionPage && ( <Banner />)} */}
-            {!isProductPage && !isCollectionPage && !hideOnPages.includes(location.pathname) && (
+            {!isCollectionsPage && !isProductPage && !isCollectionPage && !hideOnPages.includes(location.pathname) && (
               <Banner />
             )}
 
             {children}
             {/* {!isCollectionPage && (isProductPage ? ( <ProductPageRoute />) : ( <HomePageRoute />))} */}
 
-            {!isCollectionPage && !hideOnPages.includes(location.pathname) && (
+            {!isCollectionsPage && !isCollectionPage && !hideOnPages.includes(location.pathname) && (
               isProductPage ? <ProductPageRoute /> : <HomePageRoute />
             )}
         
