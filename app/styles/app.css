@@ -245,7 +245,7 @@ text-transform: uppercase;
   align-items: center;
   display: flex;
   grid-gap: 1rem;
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 
 .footer-menu a {
@@ -1097,6 +1097,7 @@ components/Footer.CSS
   grid-gap: 8px;
   /* padding: 1rem; */
   flex-direction: column;
+  line-height: 1.8;
 }
 
 
