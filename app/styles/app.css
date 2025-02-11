@@ -781,6 +781,10 @@ font-size: 1.8rem;
   grid-gap: 1rem;
 }
 
+.header-menu-mobile:hover{
+  color: #5878ee!important;
+  text-decoration: none;
+}
 
 .header-menu-desktop {
   display: none;
