@@ -106,27 +106,27 @@ export default function Homepage() {
  *   collection: FeaturedCollectionFragment;
  * }}
  */
-function FeaturedCollection({collection}) {
-//   if (!collection) return null;
-//   const image = collection?.image;
-//   return (
-//     <Link
-//       className="featured-collection"
-//        to={`/collections/${collection.handle}`}
+// function FeaturedCollection({collection}) {
+// //   if (!collection) return null;
+// //   const image = collection?.image;
+// //   return (
+// //     <Link
+// //       className="featured-collection"
+// //        to={`/collections/${collection.handle}`}
      
-//     >
-//       {image && (
-//         <div className="featured-collection-image">
-//           <Image data={image} sizes="100vw" />
-//         </div>
-//       )}
-//       <h1>{collection.title}</h1>
-//     </Link>
-//   );
-// }
+// //     >
+// //       {image && (
+// //         <div className="featured-collection-image">
+// //           <Image data={image} sizes="100vw" />
+// //         </div>
+// //       )}
+// //       <h1>{collection.title}</h1>
+// //     </Link>
+// //   );
+// // }
 
-// Update the featured collection link
-}
+// // Update the featured collection link
+// }
 
 /**
  * @param {{
