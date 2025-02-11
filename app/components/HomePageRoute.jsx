@@ -41,6 +41,7 @@ export default function HomePageRoute() {
       
   return (
     <>
+    <Banner/>
 <ImageTextSection/>
 <LogoSlider/>
 <div className="text-banner">
