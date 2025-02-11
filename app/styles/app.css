@@ -2071,6 +2071,7 @@ Section-Banner CSS
 
 .featured-products {
   position: relative; /* Parent container relative */
+  padding: 0 1.5rem;
 }
 
 .featured-products .custom-swiper .swiper-pagination {
