@@ -154,9 +154,10 @@ export function Layout({children}) {
   const location = useLocation();
   const isCollectionPage = location.pathname.startsWith('/collection');
   const isProductPage = location.pathname.startsWith('/products');
+  const isCollectionsPage = location.pathname.startsWith('/collections');
   /** @type {RootLoader} */
   const data = useRouteLoaderData('root');
-  const hideOnPages = ["/faq", "/aboutus", "/segatecustomers", "/policies/privacy-policy", "/policies/terms-of-service","/collections/:handle"];
+  const hideOnPages = ["/faq", "/aboutus", "/segatecustomers", "/policies/privacy-policy", "/policies/terms-of-service","/collections/"];
   return (
     <html lang="en">
       <head>
