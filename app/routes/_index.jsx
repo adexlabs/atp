@@ -9,7 +9,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import left from '~/assets/left.png';
 import right from '~/assets/right.png';
-import SearchCollections from '~/components/SearchCollection';
 
 /**
  * @type {MetaFunction}
@@ -56,7 +55,6 @@ async function loadCriticalData({context}) {
     context.storefront.query(FEATURED_COLLECTION_QUERY),
     // Add other queries here, so that they are loaded in parallel
     context.storefront.query(FEATURED_PRODUCTS_QUERY),
-    context.storefront.query(COLLECTIONS_QUERY),
   ]);
 
   return {
@@ -96,8 +94,6 @@ export default function Homepage() {
       <FeaturedProducts products={data.featuredProducts} />
       {/* <FeaturedCollection collection={data.featuredCollection} /> */}
       {/* <RecommendedProducts products={data.recommendedProducts} /> */}
-      <SearchCollections collections={collections} />
-      <CollectionsList collections={collections} />
     </div>
   );
 }
@@ -303,17 +299,6 @@ const FEATURED_PRODUCTS_QUERY = `#graphql
 `;
 
 
-const COLLECTIONS_QUERY = gql`
-  query GetCollections {
-    collections(first: 10) {
-      nodes {
-        id
-        handle
-        title
-      }
-    }
-  }
-`;
 
 
 /** @typedef {import('@shopify/remix-oxygen').LoaderFunctionArgs} LoaderFunctionArgs */

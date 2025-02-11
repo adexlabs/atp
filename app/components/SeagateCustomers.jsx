@@ -50,7 +50,6 @@ export default function SeagateCustomers  () {
  opacity="90%"
 /></div>
 
-<Collection/>
 <ImageTextSection/>
 
 <ProductTrustBadges/>
