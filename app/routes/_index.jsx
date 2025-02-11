@@ -92,7 +92,8 @@ export default function Homepage() {
   const data = useLoaderData();
 
   return (
-    <div className="home page-width">
+    // <div className="home page-width">
+    <div className="home">
          <Banner/>
       <FeaturedProducts products={data.featuredProducts} />
       {/* <FeaturedCollection collection={data.featuredCollection} /> */}
