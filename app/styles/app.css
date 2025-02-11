@@ -541,7 +541,11 @@ font-size: 1.8rem;
 .collection{
   padding: 5rem 1.5rem;
 }
+.collection h1{
+  font-size: 2.2rem
+ }
 
+ 
 @media(max-width: 767px){
   .collection{
    padding-top: 20px;
@@ -549,6 +553,9 @@ font-size: 1.8rem;
   collections{
     padding: 0 1.5rem;
   }
+  .collection h1{
+    font-size: 1.6rem
+   }
 }
 /*
 * --------------------------------------------------
