@@ -2216,6 +2216,9 @@ Section-Banner CSS
  }
 
  @media(max-width: 767px){
+  .collection-page{
+    margin-top: 0;
+  }
   .collection-page h1{
     font-size: 1.6rem
    }
