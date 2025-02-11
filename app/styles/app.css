@@ -1280,7 +1280,7 @@ components/Footer.CSS
       font-size: 14px;
     }
     .footer .footer-menu{
-      margin-top: 15px;
+      padding-top: 15px;
     }
 }
 
