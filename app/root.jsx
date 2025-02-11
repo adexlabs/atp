@@ -158,16 +158,6 @@ export function Layout({children}) {
   /** @type {RootLoader} */
   const data = useRouteLoaderData('root');
   const hideOnPages = ["/faq", "/aboutus", "/segatecustomers", "/policies/privacy-policy", "/policies/terms-of-service"];
-
-  const [isCollection, setIsCollection] = useState(false);
-
-  useEffect(() => {
-    // Check if `.collection-page` exists in the DOM
-    setIsCollection(document.querySelector(".collection-page") !== null);
-  }, [location.pathname]);
-
-
-
   return (
     <html lang="en">
       <head>
@@ -186,14 +176,14 @@ export function Layout({children}) {
             <PageLayout {...data}>
               
             {/* {!isProductPage && !isCollectionPage && ( <Banner />)} */}
-            {!isProductPage && !isCollection && !hideOnPages.includes(location.pathname) && (
+            {!isProductPage && !isCollectionPage && !hideOnPages.includes(location.pathname) && (
               <Banner />
             )}
 
             {children}
             {/* {!isCollectionPage && (isProductPage ? ( <ProductPageRoute />) : ( <HomePageRoute />))} */}
 
-            { !isCollection && !hideOnPages.includes(location.pathname) && (
+            { !isCollectionPage && !hideOnPages.includes(location.pathname) && (
               isProductPage ? <ProductPageRoute /> : <HomePageRoute />
             )}
         
