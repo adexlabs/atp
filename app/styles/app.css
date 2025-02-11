@@ -2189,3 +2189,20 @@ Section-Banner CSS
 
  /* **************************** */
 
+
+
+ /* Collection Page CSS */
+
+ .collection-page{
+  padding: 0 1.5rem;
+ }
+
+ .collection-page h1{
+  font-size: 2.2rem
+ }
+
+ @media(max-width: 767px){
+  .collection-page h1{
+    font-size: 1.6rem
+   }
+ }
