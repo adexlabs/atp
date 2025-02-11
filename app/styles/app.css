@@ -927,10 +927,7 @@ display: flex;
 .banner CSS
 
 */
-.page-width .main-banner{
-padding-right: 0;
-padding-left: 0;
-}
+
 .main-banner {
   position: relative;
   display: flex;
