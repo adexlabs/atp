@@ -9,7 +9,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import left from '~/assets/left.png';
 import right from '~/assets/right.png';
-
+import { useShopQuery } from "@shopify/hydrogen";
+import { gql } from "graphql";
 /**
  * @type {MetaFunction}
  */
