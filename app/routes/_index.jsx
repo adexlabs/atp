@@ -96,14 +96,6 @@ export default function Homepage() {
       {/* <FeaturedCollection collection={data.featuredCollection} /> */}
       {/* <RecommendedProducts products={data.recommendedProducts} /> */}
       
-      <div>
-      {/* 🔹 Sabhi collections ka component */}
-      <AllCollections />
-
-      <h1>{collection.title}</h1>
-      <p>{collection.description}</p>
-      {/* 🔹 Yahan pe selected collection ke products honge */}
-    </div>
     </div>
   );
 }
