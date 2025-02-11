@@ -93,7 +93,7 @@ export default function Homepage() {
   return (
     <div className="home page-width">
       <FeaturedProducts products={data.featuredProducts} />
-      {/* <FeaturedCollection collection={data.featuredCollection} /> */}
+      <FeaturedCollection collection={data.featuredCollection} />
       {/* <RecommendedProducts products={data.recommendedProducts} /> */}
       
     </div>
