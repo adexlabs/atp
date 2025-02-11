@@ -1279,7 +1279,7 @@ components/Footer.CSS
     .footer .footer-address-text {
       font-size: 14px;
     }
-    .footer .footer-menu a{
+    .footer .footer-menu{
       margin-top: 15px;
     }
 }
