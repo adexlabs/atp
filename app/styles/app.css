@@ -253,6 +253,16 @@ text-transform: uppercase;
   font-family: 'Helvetica';
 }
 
+@media(max-width: 549px){
+  .footer-menu{
+    margin-top: 15px;
+   line-height: 1.6;
+  }
+
+  .footer .footer-menu-column nav a {
+    font-size: 13px;
+  }
+}
 /*
 * --------------------------------------------------
 * components/Cart
