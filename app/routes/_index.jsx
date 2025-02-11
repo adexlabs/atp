@@ -9,8 +9,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import left from '~/assets/left.png';
 import right from '~/assets/right.png';
-import { useShopQuery } from "@shopify/hydrogen";
-import { gql } from "graphql";
+
 /**
  * @type {MetaFunction}
  */
@@ -224,37 +223,6 @@ function FeaturedProducts({ products }) {
 );
 }
  
-// CUSTOM ADDED THIS FUNCTION
-
-export default function CollectionList() {
-  const { collection } = useLoaderData();
-
-  if (!collection) return <p>Collection not found.</p>;
-
-  return (
-    <div className="collection-page page-width">
-      <h1>{collection.title}</h1>
-      {collection.image && (
-        <Image data={collection.image} sizes="100vw" className="collection-banner" />
-      )}
-      <div className="collection-products">
-        {collection.products.nodes.map((product) => (
-          <Link key={product.id} className="collection-product" to={`/products/${product.handle}`}>
-            <Image data={product.images.nodes[0]} aspectRatio="1/1" sizes="(min-width: 45em) 20vw, 50vw" />
-            <h4 className='product-title'>{product.title}</h4>
-            <small className='product-price'>
-              <Money data={product.priceRange.minVariantPrice} />
-            </small>
-          </Link>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-
-
-
 const FEATURED_COLLECTION_QUERY = `#graphql
   fragment FeaturedCollection on Collection {
     id
@@ -346,43 +314,6 @@ const FEATURED_PRODUCTS_QUERY = `#graphql
   }
 `;
 
-//Custom Added
-
-const COLLECTION_PRODUCTS_QUERY = `#graphql
-  query CollectionProducts($handle: String!) {
-    collection(handle: $handle) {
-      id
-      title
-      image {
-        url
-        altText
-        width
-        height
-      }
-      products(first: 20) {
-        nodes {
-          id
-          title
-          handle
-          priceRange {
-            minVariantPrice {
-              amount
-              currencyCode
-            }
-          }
-          images(first: 1) {
-            nodes {
-              url
-              altText
-              width
-              height
-            }
-          }
-        }
-      }
-    }
-  }
-`;
 
 
 
