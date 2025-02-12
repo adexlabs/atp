@@ -2272,7 +2272,8 @@ Section-Banner CSS
  ***********/
 
  .image-slider{
-padding: 4rem 1.5rem;
+padding: 1.5rem;
+margin-top: 40px;
  }
 
  .image-slider .swiper-button-prev,
@@ -2306,4 +2307,19 @@ padding: 4rem 1.5rem;
   content: "\203A"; /* Unicode escape for › */
   margin-top: -8px;
   margin-right: 2px;
+}
+
+.image-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;  /* Ensure full width */
+  height: 250px; /* Set a fixed height (adjust as needed) */
+}
+
+.image-slide img {
+  width: 100%; /* Make images fully responsive */
+  height: 100%; /* Ensure all images are of equal height */
+  object-fit: cover; /* Crop images to fit properly */
+  border-radius: 10px; /* Optional: Add rounded corners */
 }
