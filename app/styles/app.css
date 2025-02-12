@@ -2314,7 +2314,7 @@ margin-top: 40px;
   justify-content: center;
   align-items: center;
   width: 100%;  /* Ensure full width */
-  height: 350px; /* Set a fixed height (adjust as needed) */
+  height: 320px; /* Set a fixed height (adjust as needed) */
 }
 
 .image-slide img {
@@ -2337,16 +2337,18 @@ margin-top: 40px;
 
 }
 
-@media (min-width: 768px) {
+@media(max-width:767px){
   .image-slider .swiper-pagination {
     display: none !important;
   }
-}
-@media(max-width:767px){
 
   .image-slider .swiper-button-prev,
   .image-slider .swiper-button-next{
   display: none;
+}
+
+.image-slider .swiper-slide{
+width: 100%;
 }
 }
 
