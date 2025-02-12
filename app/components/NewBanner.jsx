@@ -54,9 +54,11 @@ export default function NewBanner({
         )}
         {paragraph && <p>{paragraph}</p>}
         {buttonText && (
-          <button onClick={onButtonClick} className="banner-button">
+           <Link
+           to="/products/solid-state-drive-data-recovery-service-for-seagate-customers?Encryption+Type=Bitlocker+-+Windows+and+Linux+Compatible&Delivery=Standard">
+             <button className="banner-button">
             {buttonText}
-          </button>
+          </button></Link>
         )}
       </div>
     </div>
