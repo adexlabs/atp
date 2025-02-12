@@ -11,7 +11,6 @@ import left from '~/assets/left.png';
 import right from '~/assets/right.png';
 import HomePageRoute from '~/components/HomePageRoute';
 import Banner from '~/components/Banner';
-import ImageSlider from '~/components/ImageSlider';
 /**
  * @type {MetaFunction}
  */
@@ -92,19 +91,12 @@ export default function Homepage() {
  
   /** @type {LoaderReturnData} */
   const data = useLoaderData();
-  const images = [
-    { src: {left}, alt: "Image 1" },
-    { src: {right}, alt: "Image 1" },
-    { src: {left}, alt: "Image 1" },
-    { src: {right}, alt: "Image 1" },
-    { src: {left}, alt: "Image 1" },
-    { src: {right}, alt: "Image 1" },
-  ];
+
   return (
     // <div className="home page-width">
     <div className="home">
          <Banner/>
-         <ImageSlider images={images} />
+         {/* <ImageSlider images={images} /> */}
       {/* <FeaturedProducts products={data.featuredProducts} /> */}
       {/* <FeaturedCollection collection={data.featuredCollection} /> */}
       {/* <RecommendedProducts products={data.recommendedProducts} /> */}
