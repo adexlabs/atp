@@ -1738,7 +1738,7 @@ margin-top: 30px;
     /* text-align: center; */
   padding-top: 30px;
   padding-bottom: 30px;
-  background-color: rgb(246, 246, 248);
+  /* background-color: rgb(246, 246, 248); */
   }
   
    .trust-badges {
@@ -1746,8 +1746,8 @@ margin-top: 30px;
     /* justify-content: space-between; */
     grid-template-columns: 1fr 1fr 1fr 1fr;
     /* justify-content: center; */
-    gap: 10px; /* Adjusts spacing between badges */
-    flex-wrap: wrap;
+    column-gap: 20px; /* Adjusts spacing between badges */
+    /* flex-wrap: wrap; */
     row-gap: 20px;
     /* max-width: 1300px;
     margin: 0 auto; */
@@ -1796,6 +1796,7 @@ margin-top: 30px;
   @media(max-width: 549px){
     .trust-badges {
       grid-template-columns: 1fr;
+      row-gap: 30px;
     }
   .trust-badge-wrapper .badge-text{
     font-size: 1rem;
@@ -1803,6 +1804,7 @@ margin-top: 30px;
   .trust-badge {
     width: 38px;
   }
+
   }
   
   /***********Product-page Trust Badges CSS ***********/
