@@ -96,12 +96,12 @@ function loadDeferredData({context}) {
 export default function Homepage() {
 
   const images = [
-    { src: "{img1}", alt: "Image 1" },
-    { src: "{img2}", alt: "Image 1" },
-    { src: "{img3}", alt: "Image 1" },
-    { src: "{img4}", alt: "Image 1" },
-    { src: "{img5}", alt: "Image 1" },
-    { src: "{img6}", alt: "Image 1" },
+    { src: {img1}, alt: "Image 1" },
+    { src: {img2}, alt: "Image 1" },
+    { src: {img3}, alt: "Image 1" },
+    { src: {img4}, alt: "Image 1" },
+    { src: {img5}, alt: "Image 1" },
+    { src: {img6}, alt: "Image 1" },
   ]
 
   
