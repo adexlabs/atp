@@ -2323,3 +2323,30 @@ margin-top: 40px;
   object-fit: cover; /* Crop images to fit properly */
   border-radius: 10px; /* Optional: Add rounded corners */
 }
+
+.image-slider .swiper-button-prev:hover,
+.image-slider .swiper-button-next:hover {
+  background: #444; /* Dark grey on hover */
+}
+
+/* Remove default background */
+.image-slider .swiper-button-prev::after,
+.image-slider .swiper-button-next::after {
+  font-size: 35px;
+  font-weight: bold;
+
+}
+
+@media (min-width: 768px) {
+  .image-slider .swiper-pagination {
+    display: none !important;
+  }
+}
+@media(max-width:767px){
+
+  .image-slider .swiper-button-prev,
+  .image-slider .swiper-button-next{
+  display: none;
+}
+}
+
