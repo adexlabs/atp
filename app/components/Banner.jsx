@@ -1,3 +1,4 @@
+import { Link } from '@remix-run/react';
 import React from 'react';
 
 
@@ -29,7 +30,9 @@ export default function Banner() {
         {/* <p>ATP DATA RECOVERY SERVICES</p> */}
         <h2>Some memories just can't be <span className='blueWord text-[#5878ee]'>recreated</span></h2>
         <div>
-          <button onClick={handleButtonClick} type="button">Recover Your Data</button>
+        <Link
+      to="/products/solid-state-drive-data-recovery-service-for-seagate-customers?Encryption+Type=Bitlocker+-+Windows+and+Linux+Compatible&Delivery=Standard">
+      <button onClick={handleButtonClick} type="button">Recover Your Data</button></Link>
         </div>
       </div>
     </div>
