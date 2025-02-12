@@ -15,7 +15,7 @@ export function Footer({footer: footerPromise, header, publicStoreDomain}) {
               {/* Logo and Address Section */}
               <FooterLogoAddress
                 logoUrl={LOGO}
-                address="6525 N Meridian Avenue Ste 150 Oklahoma City, OK 73116"
+                address="611 Hundred Oaks Drive STE 140 Edmond, OK 73013"
               /></div>
 
 

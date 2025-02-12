@@ -182,11 +182,11 @@ export function Layout({children}) {
 
             {children}
             {/* {!isCollectionPage && (isProductPage ? ( <ProductPageRoute />) : ( <HomePageRoute />))} */}
-
-            {/* { !isCollectionPage && !hideOnPages.includes(location.pathname) && (
+{/* 
+            { !isCollectionPage && !hideOnPages.includes(location.pathname) && (
               isProductPage ? <ProductPageRoute /> : <HomePageRoute />
-            )}
-         */}
+            )} */}
+        { !isCollectionPage && !hideOnPages.includes(location.pathname) && isProductPage && <ProductPageRoute /> }
             {/* <Routes>
             <Route path="/faq" element={<FAQ />} />
             <Route path="/aboutus" element={<About_Us />} />      

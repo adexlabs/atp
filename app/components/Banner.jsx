@@ -21,7 +21,7 @@ export default function Banner() {
 
       {/* Banner Text */}
       <div className="banner-text page-width">
-        <p>ATP DATA RECOVERY SERVICES</p>
+        {/* <p>ATP DATA RECOVERY SERVICES</p> */}
         <h2>Some memories just can't be <span className='blueWord text-[#5878ee]'>recreated</span></h2>
         <div>
           <button type="button">Recover Your Data</button>

@@ -994,7 +994,7 @@ display: flex;
 
 
 .banner-text h2 {
-  font-size: 3.75rem;
+  font-size: 4.75rem;
   line-height: 1.2;
   margin-bottom: 40px;
   letter-spacing: .05em;
@@ -1035,7 +1035,7 @@ display: flex;
 
 @media (max-width: 990px){
   .banner-text h2 {
-    font-size: 2.75rem;
+    font-size: 3.75rem;
   }
 
 }
