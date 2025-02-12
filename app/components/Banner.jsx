@@ -4,14 +4,7 @@ import React from 'react';
 
 
 export default function Banner() {
-  const handleButtonClick = () => {
-    const url =
-      "https://atp-data-services-f522238e01ad7f0190f8.o2.myshopify.dev/products/solid-state-drive-data-recovery-service-for-seagate-customers?Encryption+Type=Bitlocker+-+Windows+and+Linux+Compatible&Delivery=Standard";
-  
-    setBannerText("Enjoy special discounts!");
-    window.open(url, "_blank");
-  };
-
+ 
   return (
     <div className="main-banner">
       {/* Banner Image */}
