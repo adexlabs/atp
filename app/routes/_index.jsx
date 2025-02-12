@@ -12,7 +12,7 @@ import right from '~/assets/right.png';
 import HomePageRoute from '~/components/HomePageRoute';
 import Banner from '~/components/Banner';
 import img1 from '~/assets/slide1.jpg';
-import img2 from '~/assets/slide2.jpg';
+// import img2 from '~/assets/slide2.jpg';
 import img3 from '~/assets/slide3.jpg';
 import img4 from '~/assets/slide4.jpg';
 import img5 from '~/assets/slide5.jpg';
@@ -100,7 +100,7 @@ export default function Homepage() {
   const data = useLoaderData();
   const images = [
     { src: {img1}, alt: "Image 1" },
-    { src: {img2}, alt: "Image 1" },
+    { src: {img5}, alt: "Image 1" },
     { src: {img3}, alt: "Image 1" },
     { src: {img4}, alt: "Image 1" },
     { src: {img5}, alt: "Image 1" },
