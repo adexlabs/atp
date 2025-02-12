@@ -3,8 +3,13 @@ import React from 'react';
 
 
 export default function Banner() {
-  console.log('Banner component rendered');
-
+  const handleButtonClick = () => {
+    const url =
+      "https://atp-data-services-f522238e01ad7f0190f8.o2.myshopify.dev/products/solid-state-drive-data-recovery-service-for-seagate-customers?Encryption+Type=Bitlocker+-+Windows+and+Linux+Compatible&Delivery=Standard";
+  
+    setBannerText("Enjoy special discounts!");
+    window.open(url, "_blank");
+  };
 
   return (
     <div className="main-banner">
@@ -24,7 +29,7 @@ export default function Banner() {
         {/* <p>ATP DATA RECOVERY SERVICES</p> */}
         <h2>Some memories just can't be <span className='blueWord text-[#5878ee]'>recreated</span></h2>
         <div>
-          <button type="button">Recover Your Data</button>
+          <button onClick={handleButtonClick} type="button">Recover Your Data</button>
         </div>
       </div>
     </div>

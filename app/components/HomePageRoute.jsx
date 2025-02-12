@@ -12,9 +12,13 @@ import favicon4 from '~/assets/svg_folder.svg';
 import { Route, Routes } from '@remix-run/react';
 import FAQ from './FAQ';
 export default function HomePageRoute() {
-    const handleButtonClick = () => {
-        setBannerText("Enjoy special discounts!");
-      };
+  const handleButtonClick = () => {
+    const url =
+      "https://atp-data-services-f522238e01ad7f0190f8.o2.myshopify.dev/products/solid-state-drive-data-recovery-service-for-seagate-customers?Encryption+Type=Bitlocker+-+Windows+and+Linux+Compatible&Delivery=Standard";
+  
+    setBannerText("Enjoy special discounts!");
+    window.open(url, "_blank");
+  };
     
       const customBadges = [
         {
@@ -61,7 +65,7 @@ export default function HomePageRoute() {
   title="Recover your most important digital assets today."
   caption=""
   buttonText="Get Started"
-  onButtonClick={() => alert("Button clicked")}
+  onButtonClick={() => {handleButtonClick}}
   bannerStyle={{ height: "520px", backgroundColor: "#f6f6f8" }} // adjustable banner style
   backgroundImage={recover} 
   highlightWordCount={0} 
