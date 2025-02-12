@@ -11,6 +11,7 @@ import left from '~/assets/left.png';
 import right from '~/assets/right.png';
 import HomePageRoute from '~/components/HomePageRoute';
 import Banner from '~/components/Banner';
+import ImageSlider from '~/components/ImageSlider';
 /**
  * @type {MetaFunction}
  */
@@ -87,7 +88,14 @@ function loadDeferredData({context}) {
 }
 
 export default function Homepage() {
-
+  const images = [
+    { src: "https://cdn.shopify.com/s/files/1/0584/8688/2388/files/atp_seagate_pdp_01.jpg?v=1724163211", alt: "Image 1" },
+    { src: "https://cdn.shopify.com/s/files/1/0584/8688/2388/files/atp_seagate_pdp_03.jpg?v=1724163239", alt: "Image 2" },
+    { src: "https://cdn.shopify.com/s/files/1/0584/8688/2388/files/atp_seagate_pdp_02.jpg?v=1724163620", alt: "Image 3" },
+    { src: "https://cdn.shopify.com/s/files/1/0584/8688/2388/files/atp_seagate_pdp_01.jpg?v=1724163211", alt: "Image 1" },
+    { src: "https://cdn.shopify.com/s/files/1/0584/8688/2388/files/atp_seagate_pdp_03.jpg?v=1724163239", alt: "Image 2" },
+    { src: "https://cdn.shopify.com/s/files/1/0584/8688/2388/files/atp_seagate_pdp_02.jpg?v=1724163620", alt: "Image 3" },
+  ];
  
   /** @type {LoaderReturnData} */
   const data = useLoaderData();
@@ -96,7 +104,7 @@ export default function Homepage() {
     // <div className="home page-width">
     <div className="home">
          <Banner/>
-         {/* <ImageSlider images={images} /> */}
+         <ImageSlider images={images} />
       {/* <FeaturedProducts products={data.featuredProducts} /> */}
       {/* <FeaturedCollection collection={data.featuredCollection} /> */}
       {/* <RecommendedProducts products={data.recommendedProducts} /> */}
