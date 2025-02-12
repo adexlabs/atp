@@ -11,13 +11,7 @@ import left from '~/assets/left.png';
 import right from '~/assets/right.png';
 import HomePageRoute from '~/components/HomePageRoute';
 import Banner from '~/components/Banner';
-import ImageSlider from '~/components/ImageSlider';
-import img1 from '~/assets/slide1.jpg';
-import img2 from '~/assets/slide2.png';
-import img3 from '~/assets/slide3.png';
-import img4 from '~/assets/slide4.jpg';
-import img5 from '~/assets/slide5.jpg';
-import img6 from '~/assets/slide6.png';
+
 /**
  * @type {MetaFunction}
  */
@@ -95,16 +89,7 @@ function loadDeferredData({context}) {
 
 export default function Homepage() {
 
-  const images = [
-    { src: {img1}, alt: "Image 1" },
-    { src: {img2}, alt: "Image 1" },
-    { src: {img3}, alt: "Image 1" },
-    { src: {img4}, alt: "Image 1" },
-    { src: {img5}, alt: "Image 1" },
-    { src: {img6}, alt: "Image 1" },
-  ]
-
-  
+ 
   /** @type {LoaderReturnData} */
   const data = useLoaderData();
 
@@ -112,11 +97,11 @@ export default function Homepage() {
     // <div className="home page-width">
     <div className="home">
          <Banner/>
-         <ImageSlider images={images} />
+         {/* <ImageSlider images={images} /> */}
       {/* <FeaturedProducts products={data.featuredProducts} /> */}
       {/* <FeaturedCollection collection={data.featuredCollection} /> */}
       {/* <RecommendedProducts products={data.recommendedProducts} /> */}
-      <HomePageRoute/>
+         <HomePageRoute/>
     </div>
   );
 }
