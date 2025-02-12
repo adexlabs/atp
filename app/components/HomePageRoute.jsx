@@ -52,7 +52,6 @@ export default function HomePageRoute() {
        title="Lost your data? Don't fret."
        caption=""
        buttonText="Get Help Now?"
-       onButtonClick={handleButtonClick}
        bannerStyle={{ height: "405px", backgroundColor: "#f6f6f8" }} // adjustable banner style
        backgroundImage="" // Background image URL
        highlightWordCount={2} 
