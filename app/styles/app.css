@@ -1003,7 +1003,6 @@ display: flex;
  font-family: 'Helvetica';
 }
 
-
 .banner-text button {
   background: #5878ee;
   font-size: .875rem;
@@ -1049,12 +1048,16 @@ display: flex;
     font-size: 14px;
   }
   .banner-text h2 {
-    font-size: 3.8rem;
+    font-size: 3rem;
     line-height: normal;
     margin-top: 0;
   }
 
-
+  @media(max-width: 549px){
+    .banner-text .h2{
+      font-size: 3.8rem;
+    }
+  }
   /* .banner-text button {
     max-width: 155px;
     height: 40px;

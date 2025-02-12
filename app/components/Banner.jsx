@@ -28,7 +28,7 @@ export default function Banner() {
       {/* Banner Text */}
       <div className="banner-text page-width">
         {/* <p>ATP DATA RECOVERY SERVICES</p> */}
-        <h2>Some memories just can't be <span className='blueWord text-[#5878ee]'>recreated</span></h2>
+        <h2 className='banner-heading'>Some memories just can't be <span className='blueWord text-[#5878ee]'>recreated</span></h2>
         <div>
         <Link
       to="/products/solid-state-drive-data-recovery-service-for-seagate-customers?Encryption+Type=Bitlocker+-+Windows+and+Linux+Compatible&Delivery=Standard">
