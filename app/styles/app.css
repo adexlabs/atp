@@ -1662,7 +1662,8 @@ margin-top: 30px;
 /* RECOVER DIGITAL ASSETS */
 
 .digital-assets .banner-container .banner-content .banner-title{
-  max-width: 900PX;
+  max-width: 900px;
+  line-height: 1.4;
 }
 
 .digital-assets .banner-container .banner-button {
@@ -1791,6 +1792,9 @@ margin-top: 30px;
       /* flex-direction: column; */
       grid-template-columns: 1fr 1fr 1fr;
     }
+    .trust-badge-wrapper .badge-text{
+      font-size: 1.1rem;
+    }
   }
   @media(max-width: 767px){
     .trust-badges {
@@ -1803,9 +1807,7 @@ margin-top: 30px;
       grid-template-columns: 1fr;
       row-gap: 30px;
     }
-  .trust-badge-wrapper .badge-text{
-    font-size: 1rem;
-  }
+  
   .trust-badge {
     width: 38px;
   }
