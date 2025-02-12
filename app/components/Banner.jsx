@@ -25,7 +25,7 @@ export default function Banner() {
         <div>
         <Link
       to="/products/solid-state-drive-data-recovery-service-for-seagate-customers?Encryption+Type=Bitlocker+-+Windows+and+Linux+Compatible&Delivery=Standard">
-      <button onClick={handleButtonClick} type="button">Recover Your Data</button></Link>
+      <button type="button">Recover Your Data</button></Link>
         </div>
       </div>
     </div>
