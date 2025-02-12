@@ -9,7 +9,7 @@ export default function ImageSlider({ images }) {
 
   return (
     <div className="image-slider">
-      <h2 className="image-slider-title">Our Gallery</h2>
+      {/* <h2 className="image-slider-title">Our Gallery</h2> */}
       <Swiper
         className="custom-swiper"
         spaceBetween={20}

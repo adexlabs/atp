@@ -92,9 +92,9 @@ export default function Homepage() {
     { src: "https://cdn.shopify.com/s/files/1/0584/8688/2388/files/atp_seagate_pdp_01.jpg?v=1724163211", alt: "Image 1" },
     { src: "https://cdn.shopify.com/s/files/1/0584/8688/2388/files/atp_seagate_pdp_03.jpg?v=1724163239", alt: "Image 2" },
     { src: "https://cdn.shopify.com/s/files/1/0584/8688/2388/files/atp_seagate_pdp_02.jpg?v=1724163620", alt: "Image 3" },
-    { src: "https://cdn.shopify.com/s/files/1/0584/8688/2388/files/atp_seagate_pdp_01.jpg?v=1724163211", alt: "Image 1" },
-    { src: "https://cdn.shopify.com/s/files/1/0584/8688/2388/files/atp_seagate_pdp_03.jpg?v=1724163239", alt: "Image 2" },
-    { src: "https://cdn.shopify.com/s/files/1/0584/8688/2388/files/atp_seagate_pdp_02.jpg?v=1724163620", alt: "Image 3" },
+    { src: "https://cdn.shopify.com/s/files/1/0584/8688/2388/files/slide2.png?v=1739362275", alt: "Image 1" },
+    { src: "https://cdn.shopify.com/s/files/1/0584/8688/2388/files/slide3.png?v=1739362279", alt: "Image 2" },
+    { src: "https://cdn.shopify.com/s/files/1/0584/8688/2388/files/slide6.png?v=1739362294", alt: "Image 3" },
   ];
  
   /** @type {LoaderReturnData} */

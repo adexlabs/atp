@@ -2121,17 +2121,17 @@ Section-Banner CSS
 .featured-products .custom-swiper .swiper-pagination {
   position: relative;
   bottom: 0;
-  margin-top: 20px; /* Dots ke upar space dene ke liye */
+  margin-top: 20px; 
 }
 
 .custom-swiper .swiper-button-prev,
 .custom-swiper .swiper-button-next {
   position: absolute;
-  bottom: -150px; /* Dots ke niche shift karna */
+  bottom: -150px; 
   width: 40px;
   height: 40px;
-  background: #5878ee; /* Black background */
-  color: #fff; /* White arrow color */
+  background: #5878ee; 
+  color: #fff; 
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -2265,3 +2265,45 @@ Section-Banner CSS
     font-size: 1.6rem
    }
  }
+
+
+ /*************
+ Image Slider CSS
+ ***********/
+
+ .image-slider{
+padding: 0 1.5rem;
+ }
+
+ .image-slider .swiper-button-prev,
+ .image-slider .swiper-button-next {
+  position: absolute;
+  bottom: -150px; 
+  width: 40px;
+  height: 40px;
+  background: #5878ee; 
+  color: #fff; 
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.image-slider  .swiper-button-prev{
+  top: 45%;
+}
+.image-slider .swiper-button-next {
+  top: 45%;
+}
+.image-slider .swiper-button-prev::after {
+  content: "\2039"; /* Unicode escape for ‹ */
+  margin-top: -8px;
+  margin-left: 2px;
+}
+
+.image-slider .swiper-button-next::after {
+  content: "\203A"; /* Unicode escape for › */
+  margin-top: -8px;
+  margin-right: 2px;
+}
