@@ -94,8 +94,7 @@ function loadDeferredData({context}) {
 }
 
 export default function Homepage() {
-  /** @type {LoaderReturnData} */
-  const data = useLoaderData();
+
   const images = [
     { src: "{img1}", alt: "Image 1" },
     { src: "{img2}", alt: "Image 1" },
@@ -104,6 +103,11 @@ export default function Homepage() {
     { src: "{img5}", alt: "Image 1" },
     { src: "{img6}", alt: "Image 1" },
   ]
+
+  
+  /** @type {LoaderReturnData} */
+  const data = useLoaderData();
+
   return (
     // <div className="home page-width">
     <div className="home">
