@@ -15,7 +15,7 @@ export default function ImageTextSection  () {
   <div className='image-content'>
     <p className='caption'>price transparency</p >
     <h2 className='image-heading'>Our fixed-price recovery model means no hidden fees or price increases.</h2>
-   <button className='img-text-btn'>Read More</button>
+   {/* <button className='img-text-btn'>Read More</button> */}
     </div> 
 </div>
 

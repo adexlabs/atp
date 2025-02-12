@@ -12,7 +12,7 @@ export default function ProductPageRoute (){
        title="Lost your data? Don't fret."
        caption=""
        buttonText="Get Help Now?"
-       onButtonClick={handleButtonClick}
+       onButtonClick=""
        bannerStyle={{ height: "395px", backgroundColor: "#f6f6f8" }} // adjustable banner style
        backgroundImage="" // Background image URL
        highlightWordCount={2} 
