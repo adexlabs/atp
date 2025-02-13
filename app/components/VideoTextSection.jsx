@@ -1,8 +1,9 @@
 import { useRef, useEffect, useState } from "react";
 
-export default function VideoTextSection () {
+export default function VideoTextSection({ videoUrl, coverImage }) {
   const videoRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     setIsMobile(/Mobi|Android/i.test(navigator.userAgent));
@@ -11,12 +12,14 @@ export default function VideoTextSection () {
   const handleMouseEnter = () => {
     if (!isMobile && videoRef.current) {
       videoRef.current.play();
+      setIsPlaying(true);
     }
   };
 
   const handleMouseLeave = () => {
     if (!isMobile && videoRef.current) {
       videoRef.current.pause();
+      setIsPlaying(false);
     }
   };
 
@@ -24,8 +27,10 @@ export default function VideoTextSection () {
     if (isMobile && videoRef.current) {
       if (videoRef.current.paused) {
         videoRef.current.play();
+        setIsPlaying(true);
       } else {
         videoRef.current.pause();
+        setIsPlaying(false);
       }
     }
   };
@@ -36,13 +41,56 @@ export default function VideoTextSection () {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={handleVideoClick}
+      style={{ position: "relative", cursor: "pointer", width: "100%", maxWidth: "600px" }}
     >
-      <video ref={videoRef} muted loop>
-        <source src="https://cdn.shopify.com/videos/c/o/v/ce8714bb41f042428c3dfa9e499eaaa2.mp4" type="video/mp4" />
+      {/* Cover Image (Shows when video is paused) */}
+      {!isPlaying && (
+        <img
+          src={coverImage}
+          alt="Video Cover"
+          style={{
+            width: "100%",
+            height: "auto",
+            position: "absolute",
+            top: 0,
+            left: 0,
+            zIndex: 1,
+          }}
+        />
+      )}
+
+      {/* Play Button (Shows when video is paused) */}
+      {!isPlaying && (
+        <div
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            background: "rgba(0, 0, 0, 0.6)",
+            borderRadius: "50%",
+            padding: "20px",
+            zIndex: 2,
+          }}
+        >
+          ▶️
+        </div>
+      )}
+
+      {/* Video */}
+      <video
+        ref={videoRef}
+        muted
+        loop
+        style={{
+          width: "100%",
+          height: "auto",
+          display: isPlaying ? "block" : "none", // Hide video when paused
+        }}
+      >
+        <source src={videoUrl} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>
   );
-};
-
-
+}

@@ -108,7 +108,10 @@ export default function Homepage() {
     <div className="home">
          <Banner/>
          <ImageSlider images={images} />
-         {/* <VideoTextSection/> */}
+         <VideoTextSection
+        videoUrl="https://cdn.shopify.com/videos/c/o/v/ce8714bb41f042428c3dfa9e499eaaa2.mp4"
+        coverImage="https://via.placeholder.com/600x300.png?text=Cover+Image"
+      />
       {/* <FeaturedProducts products={data.featuredProducts} /> */}
       {/* <FeaturedCollection collection={data.featuredCollection} /> */}
       {/* <RecommendedProducts products={data.recommendedProducts} /> */}
