@@ -1735,8 +1735,9 @@ padding: 1.5rem;
   .badges .product-badge-wrapper {
     flex: 0 1 calc(100% - 20px);
   }
-  .badges {
-    padding: 0 1.5rem;
+  .badges .badges-wrapper{
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 }
 
@@ -2480,7 +2481,7 @@ Video Section CSS
 }
 
 @media(max-width: 549px){
-  .video-wrapper {
+ .video-wrapper {
  grid-template-columns: 1fr;
  gap: 0;
   }
