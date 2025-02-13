@@ -1854,6 +1854,9 @@ padding: 1.5rem;
   padding-bottom: 30px;
   }
 @media(max-width: 549px){
+  .product-badges .trust-badges-container {
+    display: none;
+  }
   .product-badges .trust-badge-wrapper .badge-text {
     font-size: 0.9rem;
   }
@@ -2461,7 +2464,7 @@ Video Section CSS
   padding-top: 20px;
   padding-bottom: 20px;
 }
-.video-text .v-content,.address{
+.video-text .v-address{
   padding-bottom: 20px;
   padding-top: 20px;
   max-width: 570px;

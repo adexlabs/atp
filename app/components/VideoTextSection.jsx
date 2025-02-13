@@ -20,7 +20,7 @@ export default function VideoTextSection () {
       />
      <p className='v-content'>They really understood my work was super, duper important. 
             That makes you feel like someone is really taking care of you, that someone has your back.</p>
-        <h4 className='v-content address'>- Theresa Debono, Photographer, Malta</h4>
+        <h4 className='v-address'>- Theresa Debono, Photographer, Malta</h4>
       </div>
       <div className='video-text-wrap'>
         <Video
@@ -31,7 +31,7 @@ export default function VideoTextSection () {
 <p className='v-content'>Consumers and even professionals who buy something like a hard drive 
             probably expect it will work forever.  There are occasions when things fail.  
             I was happy to call the client and say it's handled, we have your files and are ready to go.</p>
-        <h4 className='v-content address'>- Dave Prunty, Videographer, Montana, United States</h4>
+        <h4 className='v-address'>- Dave Prunty, Videographer, Montana, United States</h4>
       </div>
         </div>
     </div>
