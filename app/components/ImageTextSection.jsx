@@ -1,6 +1,6 @@
 import React from 'react'
-import bnnrImg1 from '~/assets/money_guarantee.png';
-import bnnrImg2 from '~/assets/price_transparency.png';
+import bnnrImg1 from '~/assets/money_guarantee-new.jpg';
+import bnnrImg2 from '~/assets/price_transparency_new.jpg';
 export default function ImageTextSection  () {
     const handleClick = () => {
         alert('Button clicked!');

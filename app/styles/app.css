@@ -1113,7 +1113,7 @@ components/Footer.CSS
   grid-gap: 8px;
   /* padding: 1rem; */
   flex-direction: column;
-  line-height: 2.1;
+  line-height: 3.1;
 }
 
 
@@ -1285,6 +1285,9 @@ components/Footer.CSS
     }
     .footer .footer-menu{
       padding-top: 15px;
+    }
+    .footer .footer-menu {
+      line-height: 2.7;
     }
 }
 
