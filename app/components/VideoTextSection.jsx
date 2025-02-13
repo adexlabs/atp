@@ -25,9 +25,9 @@ export default function VideoTextSection () {
         videoUrl="https://cdn.shopify.com/videos/c/o/v/ce8714bb41f042428c3dfa9e499eaaa2.mp4"
         coverImage={videocoverimg2}
       />
- <div className='video-content'>
-<p className='v-content'>Consumers and even professionals who buy something like a hard drive 
-            probably expect it will work forever.  There are occasions when things fail.  
+      <div className='video-content'>
+        <p className='v-content'>Consumers and even professionals who buy something like a hard drive 
+            probably expect it will work forever. There are occasions when things fail.  
             I was happy to call the client and say it's handled, we have your files and are ready to go.</p>
         <h4 className='v-address'>- Dave Prunty, Videographer, Montana, United States</h4></div>
       </div>

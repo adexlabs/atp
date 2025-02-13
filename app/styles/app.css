@@ -2465,6 +2465,10 @@ Video Section CSS
   padding-bottom: 20px;
 }
 .video-text .v-address{
+  max-width: 570px;
+}
+
+.video-text .v-address{
   padding-bottom: 20px;
   padding-top: 20px;
   max-width: 570px;
