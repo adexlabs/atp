@@ -6,6 +6,8 @@ import VideoTextSection from "~/components/VideoTextSection";
 import SegateBanner from "~/components/SegateComponents/SegateBanner";
 import bnnrImg2 from '~/assets/SEAGATE_Back-up_screen-MAC_Lo-Res.jpg';
 import logoImg from '~/assets/seagate-logo.png';
+import LogoSlider from "~/components/LogoSlider";
+import ProductTrustBadges from "~/components/ProductTrustBadges";
 /**
  * @param {LoaderFunctionArgs} args
  */
@@ -69,6 +71,8 @@ export default function CollectionPage() {
       </PaginatedResourceSection>
 
       <VideoTextSection/>
+      <ProductTrustBadges/>
+      <LogoSlider/>
     </div>
   );
 }
