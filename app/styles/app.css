@@ -2443,11 +2443,12 @@ Video Section CSS
 .video-text .v-content-title2{
   font-size: 1.6rem;
   line-height: 1.4;
-  margin-bottom: 1rem;
+  margin-bottom: 40px;
   text-transform: capitalize;
   margin-top: 30px;
   font-family: Helvetica;
   letter-spacing: .5px;
+  font-weight: 100;
 }
 
 .video-text .v-content{
