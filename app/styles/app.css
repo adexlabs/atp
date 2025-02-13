@@ -1835,6 +1835,13 @@ margin-top: 30px;
     padding: 0;
   }
   .product-badges .trust-badge-wrapper .badge-text {
+    font-size: 1.1rem;
+  }
+  
+  .product-badges  .trust-badge {
+      width: 30px;
+  }
+  .product-badges .trust-badge-wrapper .badge-text {
     max-width: none;
     margin: 0;
   }

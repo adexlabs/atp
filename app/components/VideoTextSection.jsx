@@ -1,18 +1,21 @@
 import React from "react";
+import "./VideoTextSection.css"; // Normal CSS import kiya hai
 
 const VideoTextSection = () => {
   return (
-    <div className="w-full max-w-5xl mx-auto p-4">
-      {/* Top Text Section */}
-      <h2 className="text-2xl font-bold text-center mb-4">Our Video Showcase</h2>
+    <div className="video-section">
+      <h2 className="main-heading">What Customers are Saying</h2>
+      <p className="sub-text">Watch Customer Videos</p>
 
-      {/* Bottom Video Section */}
-      <div className="flex flex-col md:flex-row gap-4">
-        <video className="w-full md:w-1/2 rounded-lg shadow-lg" controls>
+      <h3 className="video-heading">Data Recovery Stories</h3>
+
+      {/* Video Section */}
+      <div className="video-container">
+        <video className="video-item" controls>
           <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <video className="w-full md:w-1/2 rounded-lg shadow-lg" controls>
+        <video className="video-item" controls>
           <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
