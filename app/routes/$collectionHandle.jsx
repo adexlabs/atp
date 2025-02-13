@@ -5,6 +5,7 @@ import { PaginatedResourceSection } from "~/components/PaginatedResourceSection"
 import VideoTextSection from "~/components/VideoTextSection";
 import SegateBanner from "~/components/SegateComponents/SegateBanner";
 import bnnrImg2 from '~/assets/d-hero-seagate.jpg';
+import logoImg from '~/assets/seagate-logo.png';
 /**
  * @param {LoaderFunctionArgs} args
  */
@@ -52,7 +53,6 @@ export default function CollectionPage() {
    <SegateBanner
  title="We're Seagate's exclusive partner in data recovery"
  buttonText="Recover Your Data"
- onButtonClick={() => alert("Button clicked")}
  bannerStyle={{ height: "580px", backgroundColor: "" }} // adjustable banner style
  backgroundImage={bnnrImg2}
  image={logoImg}  // Image shown above the caption
