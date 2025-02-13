@@ -2407,8 +2407,9 @@ Video Section CSS
 }
 
 .video-wrapper{
-display: flex;
-gap: 30px;
+  display: grid;
+  gap: 25px;
+  grid-template-columns: 1fr 1fr;
 }
 .video-text{
   padding: 0 1.5rem;
@@ -2452,14 +2453,15 @@ gap: 30px;
   padding-bottom: 20px;
 }
 .video-text .v-content,.address{
-  margin-bottom: 20px;
-  margin-top: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  max-width: 550px;
+  margin: 0 auto;
 }
 
 @media(max-width: 549px){
   .video-wrapper {
-    flex-direction: column;
-    gap: 25px;
+ grid-template-columns: 1fr;
   }
   .video-text .v-content-title2 {
     font-size: 1.4rem;
