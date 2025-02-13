@@ -13,7 +13,7 @@ import HomePageRoute from '~/components/HomePageRoute';
 import Banner from '~/components/Banner';
 import ImageSlider from '~/components/ImageSlider';
 import ImageTextSection from '~/components/ImageTextSection';
-import VideoTextSection from '~/components/VideoTextSection';
+import VideoTextSection from '~/components/VideoSection';
 
 /**
  * @type {MetaFunction}

@@ -2406,3 +2406,7 @@ Video Section CSS
   cursor: pointer;
 }
 
+.video-wrapper{
+display: flex;
+gap: 20px;
+}
