@@ -38,7 +38,7 @@ export default function VideoTextSection () {
       onClick={handleVideoClick}
     >
       <video ref={videoRef} muted loop>
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+        <source src="https://cdn.shopify.com/videos/c/o/v/ce8714bb41f042428c3dfa9e499eaaa2.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </div>
