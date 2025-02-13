@@ -1171,17 +1171,13 @@ components/Footer.CSS
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-
-
 }
-
 
 .footer .footer-logo-image {
   max-width: 150px;
   height: auto;
   display: block;
 }
-
 
 .footer .footer-address-text {
   font-size: 1rem;
@@ -2274,7 +2270,9 @@ Section-Banner CSS
   padding: 0 1.5rem;
   margin-top: 117px;
  }
-
+ .collection-page .segate-banner{
+  padding: 0;
+ }
  .collection-page h1{
   font-size: 2.2rem
  }
