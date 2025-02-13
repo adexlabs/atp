@@ -14,6 +14,7 @@ import Banner from '~/components/Banner';
 import ImageSlider from '~/components/ImageSlider';
 import ImageTextSection from '~/components/ImageTextSection';
 import VideoTextSection from '~/components/VideoTextSection';
+
 /**
  * @type {MetaFunction}
  */

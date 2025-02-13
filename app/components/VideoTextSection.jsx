@@ -9,16 +9,22 @@ export default function VideoTextSection () {
       <h3 className="video-heading">Data Recovery Stories</h3>
 
       {/* Video Section */}
+ 
+    <div className="video-section">
       <div className="video-container">
-        <video className="video-item" controls>
-          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <video className="video-item" controls>
-          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+        <video autoPlay loop muted playsInline className="video">
+          <source src="video1.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
+      <div className="video-container">
+        <video autoPlay loop muted playsInline className="video">
+          <source src="video2.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
     </div>
   );
 };
