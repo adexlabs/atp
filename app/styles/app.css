@@ -2482,6 +2482,7 @@ Video Section CSS
 @media(max-width: 549px){
   .video-wrapper {
  grid-template-columns: 1fr;
+ gap: 0;
   }
   .video-text .v-content-title2 {
     font-size: 1.4rem;
