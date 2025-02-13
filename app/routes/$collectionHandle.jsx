@@ -78,7 +78,6 @@ function ProductItem({ product, index }) {
       <h5>{product.title}</h5>
       <p>${product.priceRange.minVariantPrice.amount}</p>
     </Link>
-    <VideoTextSection/>
     </>
   );
 }
