@@ -2363,11 +2363,13 @@ margin-top: 40px;
   font-weight: bold;
 
 }
-
-@media(max-width:767px){
-  /* .image-slider .swiper-pagination {
+@media (min-width: 768px) {
+  .image-slider .swiper-pagination {
     display: none !important;
-  } */
+  }
+}
+@media(max-width:767px){
+
   .image-slide{
     height: auto;
   }
