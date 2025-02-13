@@ -21,7 +21,15 @@ export function Footer({footer: footerPromise, header, publicStoreDomain}) {
 
              <div className='footer-map'>
                 {/* <img src="https://cdn.shopify.com/s/files/1/0584/8688/2388/files/map.webp?v=1734591783" alt='Address'/> */}
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3120.2936738078797!2d-97.49552102450251!3d35.63411293256141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b21ef744c9a595%3A0x91e4e26c747da41a!2s611%20Hundred%20Oaks%20Dr%2C%20Edmond%2C%20OK%2073013%2C%20USA!5e1!3m2!1sen!2sin!4v1739443879515!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+               <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3120.2936738078797!2d-97.49552102450251!3d35.63411293256141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b21ef744c9a595%3A0x91e4e26c747da41a!2s611%20Hundred%20Oaks%20Dr%2C%20Edmond%2C%20OK%2073013%2C%20USA!5e1!3m2!1sen!2sin!4v1739443879515!5m2!1sen!2sin"
+    width="600"
+    height="450"
+    style={{ border: 0 }} // ✅ Fix: Style is now an object
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+  ></iframe>
               </div>
             {footer?.menu && header.shop.primaryDomain?.url && (
               <FooterMenu
