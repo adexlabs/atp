@@ -52,7 +52,7 @@ export default function CollectionPage() {
         <div className='segate-banner'>
    <SegateBanner
  title="We're Seagate's exclusive partner in data recovery"
- bannerStyle={{ height: "580px", backgroundColor: "" }} // adjustable banner style
+ bannerStyle={{ height: "450px", backgroundColor: "" }} // adjustable banner style
  backgroundImage={bnnrImg2}
  image={logoImg}  // Image shown above the caption
  highlightWordCount={2}

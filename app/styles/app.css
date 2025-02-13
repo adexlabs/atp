@@ -2267,13 +2267,10 @@ Section-Banner CSS
  /* Collection Page CSS */
 
  .collection-page{
-  padding: 0 1.5rem;
+  /* padding: 0 1.5rem; */
   /* margin-top: 117px; */
  }
- .collection-page .segate-banner{
-  padding: 0px;
- }
-
+ 
  .collection-page h1{
   font-size: 2.2rem;
   display: none;
