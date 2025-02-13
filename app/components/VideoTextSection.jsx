@@ -10,11 +10,11 @@ export default function VideoTextSection () {
         <h2 className='v-content-title1'>What Customers are Saying</h2>
         <p className='v-content'>They really understood my work was super, duper important. 
             That makes you feel like someone is really taking care of you, that someone has your back.</p>
-        <p className='v-content'>- Theresa Debono, Photographer, Malta</p>
+        <p className='v-content address'>- Theresa Debono, Photographer, Malta</p>
         <p className='v-content'>Consumers and even professionals who buy something like a hard drive 
             probably expect it will work forever.  There are occasions when things fail.  
             I was happy to call the client and say it's handled, we have your files and are ready to go.</p>
-        <p className='v-content'>- Dave Prunty, Videographer, Montana, United States</p>
+        <p className='v-content address'>- Dave Prunty, Videographer, Montana, United States</p>
         <h2 className='v-content-title2'>Watch Customer Videos</h2>
         </div>
         <div className='video-wrapper'>

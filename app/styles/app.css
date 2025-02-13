@@ -2445,7 +2445,13 @@ gap: 20px;
 }
 
 .video-text .video-content{
-  max-width: 900px;
+  max-width: 850px;
   margin: 0 auto;
   text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.video-text .v-content,.address{
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
