@@ -1,6 +1,7 @@
 import React from 'react'
 import videocoverimg1 from '~/assets/coverimg1.jpeg';
 import videocoverimg2 from '~/assets/coverimg2.jpeg';
+import Video from './Video';
 export default function VideoTextSection () {
   return (
     <>
@@ -13,11 +14,11 @@ export default function VideoTextSection () {
         <h2>Watch Customer Videos</h2>
 
         <div className='video-wrapper'>
-        <VideoSection
+        <Video
         videoUrl="https://cdn.shopify.com/videos/c/o/v/ce8714bb41f042428c3dfa9e499eaaa2.mp4"
         coverImage={videocoverimg1}
       />
-          <VideoSection
+          <Video
         videoUrl="https://cdn.shopify.com/videos/c/o/v/ce8714bb41f042428c3dfa9e499eaaa2.mp4"
         coverImage={videocoverimg2}
       />

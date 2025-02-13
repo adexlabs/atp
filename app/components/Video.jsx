@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 
-export default function VideoSection({ coverImage, videoUrl }) {
+export default function Video({ coverImage, videoUrl }) {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
