@@ -3,7 +3,8 @@ import { defer } from "@shopify/remix-oxygen";
 import { getPaginationVariables, Image } from "@shopify/hydrogen";
 import { PaginatedResourceSection } from "~/components/PaginatedResourceSection";
 import VideoTextSection from "~/components/VideoTextSection";
-
+import SegateBanner from "~/components/SegateComponents/SegateBanner";
+import bnnrImg2 from '~/assets/d-hero-seagate.jpg';
 /**
  * @param {LoaderFunctionArgs} args
  */
@@ -47,6 +48,17 @@ export default function CollectionPage() {
 
   return (
     <div className="collection-page">
+        <div className='segate-banner'>
+   <SegateBanner
+ title="We're Seagate's exclusive partner in data recovery"
+ buttonText="Recover Your Data"
+ onButtonClick={() => alert("Button clicked")}
+ bannerStyle={{ height: "580px", backgroundColor: "" }} // adjustable banner style
+ backgroundImage={bnnrImg2}
+ image={logoImg}  // Image shown above the caption
+ highlightWordCount={2}
+ opacity="90%"
+/></div>
       <h1>{collection.title}</h1>
       <PaginatedResourceSection
         connection={collection.products}
