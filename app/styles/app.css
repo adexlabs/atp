@@ -2268,16 +2268,24 @@ Section-Banner CSS
 
  .collection-page{
   padding: 0 1.5rem;
-  margin-top: 117px;
+  /* margin-top: 117px; */
  }
  .collection-page .segate-banner{
-  padding: 0;
+  padding: 0px;
  }
+
  .collection-page h1{
-  font-size: 2.2rem
+  font-size: 2.2rem;
+  display: none;
  }
  .collection-page .video-text{
 padding-top: 30px;
+ }
+
+ .collection-page .products-grid .product-item{
+  max-width: 421px;
+  margin: 0 auto;
+
  }
  @media(max-width: 767px){
   .collection-page{
