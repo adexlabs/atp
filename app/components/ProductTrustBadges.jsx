@@ -11,7 +11,7 @@ const badges = [
     src: favicon1,
     alt: 'SSL Secured',
     text: 'Non-Seagate callout placeholder',
-    para: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
+    para: "Custom fixed price - including a password-protected return media."
   },
   {
     src: favicon2,
