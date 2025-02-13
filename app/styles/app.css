@@ -2363,7 +2363,7 @@ margin-top: 40px;
   font-weight: bold;
 
 }
-@media (min-width: 768px) {
+@media (min-width: 549px) {
   .image-slider .swiper-pagination {
     display: none !important;
   }
