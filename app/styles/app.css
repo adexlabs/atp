@@ -1303,9 +1303,9 @@ components/Footer.CSS
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   padding: 0 4rem;
-  margin-bottom: 70px;
-  margin-top: 70px;
-  padding: 3.5rem;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  padding: 1.5rem 3.5rem;
   background-color: #f6f6f8;
   }
   .image-text-wrapper .imageText{
@@ -2278,7 +2278,9 @@ Section-Banner CSS
  .collection-page h1{
   font-size: 2.2rem
  }
-
+ .collection-page .video-text{
+padding-top: 30px;
+ }
  @media(max-width: 767px){
   .collection-page{
     margin-top: 0;
