@@ -2440,7 +2440,12 @@ gap: 20px;
 .video-text .v-content{
   font-size: 1rem;
   line-height: 1rem;
-  text-transform: capitalize;
-  line-height: 100%;
+  line-height: 1.4;
   letter-spacing: .1em;
+}
+
+.video-text .video-content{
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
 }
