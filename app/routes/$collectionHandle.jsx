@@ -56,6 +56,8 @@ export default function CollectionPage() {
           <ProductItem key={product.id} product={product} index={index} />
         )}
       </PaginatedResourceSection>
+
+      <VideoTextSection/>
     </div>
   );
 }

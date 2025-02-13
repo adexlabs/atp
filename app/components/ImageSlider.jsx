@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -9,18 +9,18 @@ export default function ImageSlider({ images }) {
 
   return (
     <div className="image-slider">
-      {/* <h2 className="image-slider-title">Our Gallery</h2> */}
       <Swiper
         className="custom-swiper"
         spaceBetween={20}
-        slidesPerView={2} // Mobile view
+        slidesPerView={1} // Mobile view
         breakpoints={{
           640: { slidesPerView: 3 },
           1024: { slidesPerView: 4 },
         }}
         navigation={true} // Enable arrows
         pagination={{ clickable: true }} // Enable dots
-        modules={[Navigation, Pagination]}
+        autoplay={{ delay: 3000, disableOnInteraction: false }} // Autoplay enabled
+        modules={[Navigation, Pagination, Autoplay]}
       >
         {images.map((image, index) => (
           <SwiperSlide key={index}>
