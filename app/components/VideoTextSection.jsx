@@ -1,7 +1,6 @@
 import React from "react";
-import "./VideoTextSection.css"; // Normal CSS import kiya hai
 
-const VideoTextSection = () => {
+export default function VideoTextSection () {
   return (
     <div className="video-section">
       <h2 className="main-heading">What Customers are Saying</h2>
@@ -24,4 +23,4 @@ const VideoTextSection = () => {
   );
 };
 
-export default VideoTextSection;
+
