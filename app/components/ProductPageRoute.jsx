@@ -6,8 +6,8 @@ import VideoTextSection from './VideoTextSection'
 export default function ProductPageRoute (){
   return (
     <>
-<VideoTextSection/>
     <ProductTrustBadges/>
+    <VideoTextSection/>
     <LogoSlider/>
     </>
   )
