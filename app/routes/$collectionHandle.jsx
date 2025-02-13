@@ -2,6 +2,7 @@ import { useLoaderData, Link } from "@remix-run/react";
 import { defer } from "@shopify/remix-oxygen";
 import { getPaginationVariables, Image } from "@shopify/hydrogen";
 import { PaginatedResourceSection } from "~/components/PaginatedResourceSection";
+import VideoTextSection from "~/components/VideoTextSection";
 
 /**
  * @param {LoaderFunctionArgs} args
@@ -64,6 +65,7 @@ export default function CollectionPage() {
  */
 function ProductItem({ product, index }) {
   return (
+    <>
     <Link className="product-item" to={`/products/${product.handle}`} prefetch="intent">
       {product?.featuredImage && (
         <Image
@@ -76,6 +78,8 @@ function ProductItem({ product, index }) {
       <h5>{product.title}</h5>
       <p>${product.priceRange.minVariantPrice.amount}</p>
     </Link>
+    <VideoTextSection/>
+    </>
   );
 }
 
