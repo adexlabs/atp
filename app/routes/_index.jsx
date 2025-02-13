@@ -12,6 +12,7 @@ import right from '~/assets/right.png';
 import HomePageRoute from '~/components/HomePageRoute';
 import Banner from '~/components/Banner';
 import ImageSlider from '~/components/ImageSlider';
+import ImageTextSection from '~/components/ImageTextSection';
 /**
  * @type {MetaFunction}
  */
@@ -105,6 +106,7 @@ export default function Homepage() {
     <div className="home">
          <Banner/>
          <ImageSlider images={images} />
+         <ImageTextSection/>
       {/* <FeaturedProducts products={data.featuredProducts} /> */}
       {/* <FeaturedCollection collection={data.featuredCollection} /> */}
       {/* <RecommendedProducts products={data.recommendedProducts} /> */}

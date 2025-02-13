@@ -2314,7 +2314,7 @@ margin-top: 40px;
   justify-content: center;
   align-items: center;
   width: 100%;  /* Ensure full width */
-  height: 320px; /* Set a fixed height (adjust as needed) */
+  height: 300px; /* Set a fixed height (adjust as needed) */
 }
 
 .image-slide img {
@@ -2338,10 +2338,12 @@ margin-top: 40px;
 }
 
 @media(max-width:767px){
-  .image-slider .swiper-pagination {
+  /* .image-slider .swiper-pagination {
     display: none !important;
+  } */
+  .image-slide{
+    height: auto;
   }
-
   .image-slider .swiper-button-prev,
   .image-slider .swiper-button-next{
   display: none;
