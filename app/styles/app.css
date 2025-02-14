@@ -2292,6 +2292,9 @@ padding-top: 30px;
  .collection-page .products-grid p {
   font-size: 1.2rem;
  }
+ .collection-page  .badges{
+  margin-top: 0;
+ }
  @media(max-width: 767px){
   .collection-page{
     margin-top: 0;
