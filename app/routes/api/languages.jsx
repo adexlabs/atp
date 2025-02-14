@@ -1,20 +1,20 @@
+import { json } from '@shopify/remix-oxygen';
+
 export async function loader({ context }) {
-    const { storefront } = context;
-  
-    const { localization } = await storefront.query(
-      `#graphql
-      query Localization {
-        localization {
-          availableLanguages {
-            isoCode
-            name
-          }
+  console.log("🛠 Fetching Available Languages...");
+
+  // Storefront API se Localization Query Call karni hai
+  const { storefront } = context;
+  const { data } = await storefront.query(`
+    query Localization {
+      localization {
+        availableLanguages {
+          isoCode
+          name
         }
-      }`
-    );
-  
-    return new Response(JSON.stringify(localization.availableLanguages), {
-      headers: { 'Content-Type': 'application/json' },
-    });
-  }
-  
+      }
+    }
+  `);
+
+  return json(data.localization.availableLanguages);
+}
