@@ -5,10 +5,6 @@ import LOGO from '~/assets/Footer-logo.svg';
  * @param {FooterProps}
  */
 export function Footer({footer: footerPromise, header, publicStoreDomain}) {
-
-  const { localization } = useLoaderData(); // Get country data from loader
-  const availableCountries = localization.availableCountries;
-  const currentCountry = localization.country.isoCode;
   return (
     <Suspense>
       <Await resolve={footerPromise}>
