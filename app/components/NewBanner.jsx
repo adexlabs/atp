@@ -48,10 +48,10 @@ export default function NewBanner({
         {/* Render caption only if it exists */}
         {caption && <p className="banner-caption">{caption}</p>}
         {title && (
-          <h1 className="banner-title">
+          <h2 className="banner-title">
             {titleWithoutLastWords}
             {lastWords && <span style={{ color: "rgb(88, 120, 238)" }}> {lastWords}</span>}
-          </h1>
+          </h2>
         )}
         {paragraph && <p>{paragraph}</p>}
         {buttonText && (
