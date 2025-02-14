@@ -2443,7 +2443,7 @@ Video Section CSS
 
 .video-wrapper{
   display: grid;
-  gap: 25px;
+  /* gap: 25px; */
   grid-template-columns: 1fr 1fr;
 }
 .video-text{
