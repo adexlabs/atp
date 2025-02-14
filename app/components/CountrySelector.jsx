@@ -1,47 +1,22 @@
-import { useLocalization } from "@shopify/hydrogen-react"; // ✅ Correct Import
-import gql from "graphql-tag";
-import { useQuery } from "@tanstack/react-query";
+import { useLocalization, useCountry } from "@shopify/hydrogen-react";
 
-const COUNTRIES_QUERY = gql`
-  query {
-    localization {
-      availableCountries {
-        isoCode
-        name
-      }
-      country {
-        isoCode
-      }
-    }
-  }
-`;
+export default function CountrySelector() {
+  const { countries } = useLocalization(); // Shopify से देश लाने का सही तरीका
+  const { country: currentCountry, setCountry } = useCountry(); // Current selected country
 
-export function CountrySelector() {
-  const { country } = useLocalization();
-
-  const { data } = useQuery({
-    queryKey: ["countries"],
-    queryFn: async () => {
-      const response = await fetch("/api/countries");
-      return response.json();
-    },
-  });
-
-  if (!data) return <p>Loading...</p>;
-
-  const availableCountries = data.availableCountries;
-  const currentCountry = country.isoCode;
+  const handleChange = (event) => {
+    setCountry(event.target.value); // Shopify के in-built function से country update
+  };
 
   return (
-    <form method="POST" action="/localization">
-      <select name="country" defaultValue={currentCountry}>
-        {availableCountries.map((country) => (
+    <form>
+      <select name="country" value={currentCountry.isoCode} onChange={handleChange}>
+        {countries.map((country) => (
           <option key={country.isoCode} value={country.isoCode}>
             {country.name}
           </option>
         ))}
       </select>
-      <button type="submit">Change</button>
     </form>
   );
 }
