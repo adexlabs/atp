@@ -77,7 +77,11 @@ export function HeaderMenu({
             ? new URL(item.url).pathname
             : item.url;
 
-            if (index === 1) {
+            
+            if (index === 0) {
+              item.url = "/seagate";
+              item.title = "Service Pricing";
+            } else if (index === 1) {
               item.url = "/aboutus";
               item.title = "ABOUT";
             } else if (index === 2) {

@@ -14,7 +14,8 @@ export default function ImageSlider({ images }) {
         spaceBetween={20}
         slidesPerView={1} // Mobile view
         breakpoints={{
-          640: { slidesPerView: 3 },
+          549: { slidesPerView: 2 },
+          767: { slidesPerView: 3 },
           1024: { slidesPerView: 4 },
         }}
         navigation={true} // Enable arrows

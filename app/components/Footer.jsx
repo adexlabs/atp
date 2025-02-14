@@ -57,10 +57,10 @@ function FooterMenu({menu, primaryDomainUrl, publicStoreDomain}) {
                  // URL modify karna hai specific indexes ke liye
     //       let customUrl = item.url;
 
-          if (index === 1) item.url = "/aboutus";
-          if (index === 3) item.url = "/faq"; // 3rd item
-          if (index === 4) item.url = "/aboutus"; // 4th item
-          if (index === 5) item.url = "/seagatecustomers"; // 6th item
+          // if (index === 1) item.url = "/aboutus";
+          if (index === 1) item.url = "/faq"; // 3rd item
+          // if (index === 4) item.url = "/aboutus"; // 4th item
+          // if (index === 5) item.url = "/seagatecustomers"; // 6th item
 
         const url =
           item.url.includes('myshopify.com') ||
