@@ -40,14 +40,14 @@ export const action = async ({request, context}) => {
 
 async function updateCartBuyerIdentity({storefront}, {cartId, buyerIdentity}) {
   const data = await storefront.mutate<{
-    cartBuyerIdentityUpdate: {cart},
+    cartBuyerIdentityUpdate: {cart};
   }>(UPDATE_CART_BUYER_COUNTRY, {
     variables: {
       cartId,
       buyerIdentity,
   },
 });
-}
+
 const UPDATE_CART_BUYER_COUNTRY = `#graphql
   mutation CartBuyerIdentityUpdate(
     $cartId: ID!
