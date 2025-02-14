@@ -1,6 +1,7 @@
 import {Suspense} from 'react';
 import {Await, NavLink} from '@remix-run/react';
 import LOGO from '~/assets/Footer-logo.svg';
+import { CountrySelector } from './CountrySelector';
 
 /**
  * @param {FooterProps}
@@ -30,6 +31,7 @@ export function Footer({footer: footerPromise, header, publicStoreDomain}) {
                 publicStoreDomain={publicStoreDomain}
               />
 )}
+<CountrySelector/>
           </footer>
         )}
       </Await>
