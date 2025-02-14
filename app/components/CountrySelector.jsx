@@ -1,17 +1,20 @@
-import { useLocalization, useCountry } from "@shopify/hydrogen-react";
+import { useShop } from "@shopify/hydrogen";
 
-export default function CountrySelector() {
-  const { countries } = useLocalization(); // Shopify से देश लाने का सही तरीका
-  const { country: currentCountry, setCountry } = useCountry(); // Current selected country
+export function CountrySelector() {
+  const { localization } = useShop(); 
+
+  const availableCountries = localization?.availableCountries || [];
+  const currentCountry = localization?.country?.isoCode || "US"; // Default US
 
   const handleChange = (event) => {
-    setCountry(event.target.value); // Shopify के in-built function से country update
+    document.cookie = `shopify_country=${event.target.value}; path=/; max-age=31536000`; 
+    window.location.reload(); 
   };
 
   return (
     <form>
-      <select name="country" value={currentCountry.isoCode} onChange={handleChange}>
-        {countries.map((country) => (
+      <select name="country" value={currentCountry} onChange={handleChange}>
+        {availableCountries.map((country) => (
           <option key={country.isoCode} value={country.isoCode}>
             {country.name}
           </option>
