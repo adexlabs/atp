@@ -10,12 +10,6 @@ import {
 } from '~/components/SearchFormPredictive';
 import {SearchResultsPredictive} from '~/components/SearchResultsPredictive';
 
-
-export async function loader({ context }) {
-  const { localization } = await context.storefront.query(COUNTRIES_QUERY);
-  return json({ localization });
-}
-
 /**
  * @param {PageLayoutProps}
  */
