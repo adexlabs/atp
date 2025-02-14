@@ -44,7 +44,6 @@ export function PageLayout({
       )}
       <main>{children}</main>
       <Footer
-      localization={localization}
         footer={footer}
         header={header}
         publicStoreDomain={publicStoreDomain}
