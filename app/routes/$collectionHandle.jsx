@@ -62,7 +62,7 @@ export default function CollectionPage() {
       
       />
     </div>
-      <h1>{collection.title}</h1>
+      <h1 className="collection-page-title">{collection.title}</h1>
       <PaginatedResourceSection
         connection={collection.products}
         resourcesClassName="products-grid"
