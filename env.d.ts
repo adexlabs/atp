@@ -17,7 +17,7 @@ declare global {
    * A global `process` object is only available during build to access NODE_ENV.
    */
   const process: {env: {NODE_ENV: 'production' | 'development'}};
-
+  PUBLIC_CHECKOUT_DOMAIN=atp-data-services.myshopify.com
   interface Env extends HydrogenEnv {
     // declare additional Env parameter use in the fetch handler and Remix loader context here
   }
