@@ -1,62 +1,24 @@
-import {redirect} from '@shopify/remix-oxygen';
-import invariant from 'tiny-invariant';
-import {countries} from '~/data/countries';
+import { useEffect, useState } from 'react';
 
-export const action = async ({request, context}) => {
-  const {session} = context;
-  const formData = await request.formData();
+export default function LanguageSelector() {
+  const [languages, setLanguages] = useState([]);
 
-  // Make sure the form request is valid
-  const languageCode = formData.get('language');
-  invariant(languageCode, 'Missing language');
+  useEffect(() => {
+    fetch('/api/languages')
+      .then((res) => res.json())
+      .then((data) => setLanguages(data));
+  }, []);
 
-  const countryCode = formData.get('country');
-  invariant(countryCode, 'Missing country');
-
-  // determine where to redirect to relative to where user navigated from
-  // ie. hydrogen.shop/collections -> ca.hydrogen.shop/collections
-  const path = formData.get('path');
-  const toLocale = countries[`${languageCode}-${countryCode}`.toLowerCase()];
-
-  const cartId = await session.get('cartId');
-
-  // Update cart buyer's country code if there is a cart id
-  if (cartId) {
-    await updateCartBuyerIdentity(context, {
-      cartId,
-      buyerIdentity: {
-        countryCode,
-      },
-    });
-  }
-
-  const redirectUrl = new URL(
-    `${toLocale.pathPrefix || ''}${path}`,
-    `https://${toLocale.host}`
+  return (
+    <div>
+      <h2>Choose Language</h2>
+      <select>
+        {languages.map((lang) => (
+          <option key={lang.isoCode} value={lang.isoCode}>
+            {lang.name} ({lang.isoCode})
+          </option>
+        ))}
+      </select>
+    </div>
   );
-
-  return redirect(redirectUrl, 302);
-};
-
-async function updateCartBuyerIdentity({storefront}, {cartId, buyerIdentity}) {
-  const data = await storefront.mutate<{
-    cartBuyerIdentityUpdate: {cart}
-  }>(UPDATE_CART_BUYER_COUNTRY, {
-    variables: {
-      cartId,
-      buyerIdentity,
-  },
-});
-
-const UPDATE_CART_BUYER_COUNTRY = `#graphql
-  mutation CartBuyerIdentityUpdate(
-    $cartId: ID!
-    $buyerIdentity: CartBuyerIdentityInput!
-  ) {
-    cartBuyerIdentityUpdate(cartId: $cartId, buyerIdentity: $buyerIdentity) {
-      cart {
-        id
-      }
-    }
-  }
-`}
+}

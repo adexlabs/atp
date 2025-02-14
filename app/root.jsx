@@ -68,7 +68,7 @@ export function links() {
 /**
  * @param {LoaderFunctionArgs} args
  */
-export async function loader({args , context, request}) {
+export async function loader(args) {
   // Start fetching non-critical data without blocking time to first byte
   const deferredData = loadDeferredData(args);
 
@@ -79,9 +79,7 @@ export async function loader({args , context, request}) {
   return defer({
     ...deferredData,
     ...criticalData,
-    // custom added
-    selectedLocale: await getLocaleFromRequest(request),
-
+   
     publicStoreDomain: env.PUBLIC_STORE_DOMAIN,
     shop: getShopAnalytics({
       storefront,
@@ -159,7 +157,6 @@ export function Layout({children}) {
   const isCollectionPage = location.pathname.startsWith('/collections');
   /** @type {RootLoader} */
   const data = useRouteLoaderData('root');
-  const locale = data.selectedLocale;
   const hideOnPages = ["/faq", "/aboutus", "/segatecustomers", "/policies/privacy-policy", "/policies/terms-of-service", "/collections/{handle}"];
   return (
     <html lang="en">
@@ -176,7 +173,7 @@ export function Layout({children}) {
             shop={data.shop}
             consent={data.consent}
           >
-            <PageLayout {...data}  key={`${locale.language}-${locale.country}`}>
+            <PageLayout {...data}>
               
             {/* {!isProductPage && !isCollectionPage && ( <Banner />)} */}
             {/* {!isProductPage && !isCollectionPage && !hideOnPages.includes(location.pathname) && (
