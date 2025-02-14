@@ -3,11 +3,12 @@ import { defer } from "@shopify/remix-oxygen";
 import { getPaginationVariables, Image } from "@shopify/hydrogen";
 import { PaginatedResourceSection } from "~/components/PaginatedResourceSection";
 import VideoTextSection from "~/components/VideoTextSection";
+import LogoSlider from "~/components/LogoSlider";
+import ProductTrustBadges from "~/components/ProductTrustBadges";
 import SegateBanner from "~/components/SegateComponents/SegateBanner";
 import bnnrImg2 from '~/assets/SEAGATE_Back-up_screen-MAC_Lo-Res.jpg';
 import logoImg from '~/assets/seagate-logo.png';
-import LogoSlider from "~/components/LogoSlider";
-import ProductTrustBadges from "~/components/ProductTrustBadges";
+
 /**
  * @param {LoaderFunctionArgs} args
  */
@@ -51,15 +52,16 @@ export default function CollectionPage() {
 
   return (
     <div className="collection-page">
-        <div className='segate-banner'>
-   <SegateBanner
- title="We're Seagate's exclusive partner in data recovery"
- bannerStyle={{ height: "450px", backgroundColor: "" }} // adjustable banner style
- backgroundImage={bnnrImg2}
- image={logoImg}  // Image shown above the caption
- highlightWordCount={2}
- opacity="90%"
-/></div>
+      <div className='segate-banner'>
+      <SegateBanner
+        title="We're Seagate's exclusive partner in data recovery"
+        bannerStyle={{ height: "450px", backgroundColor: "" }} // adjustable banner style
+        backgroundImage={bnnrImg2}
+        image={logoImg}  // Image shown above the caption
+        highlightWordCount={2}
+        opacity="90%"
+      />
+    </div>
       <h1>{collection.title}</h1>
       <PaginatedResourceSection
         connection={collection.products}
