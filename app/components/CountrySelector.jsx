@@ -1,4 +1,5 @@
-import { useShopQuery, gql, CacheLong } from "@shopify/hydrogen";
+import { useShopQuery, CacheLong } from "@shopify/hydrogen";
+import gql from "graphql-tag"; // ✅ Correct import
 
 const COUNTRIES_QUERY = gql`
   query {
