@@ -80,6 +80,7 @@ export async function loader(args) {
   return defer({
     ...deferredData,
     ...criticalData,
+    localization,
     publicStoreDomain: env.PUBLIC_STORE_DOMAIN,
     shop: getShopAnalytics({
       storefront,
@@ -234,6 +235,21 @@ export function ErrorBoundary() {
   );
 }
 
+  // 🆕 Localization Query
+  const localization = await storefront.query(
+    `query Localization {
+      localization {
+        availableCountries {
+          isoCode
+          name
+        }
+        country {
+          isoCode
+        }
+      }
+    }`
+  );
+  
 /** @typedef {LoaderReturnData} RootLoader */
 
 /** @typedef {import('@shopify/remix-oxygen').LoaderFunctionArgs} LoaderFunctionArgs */
