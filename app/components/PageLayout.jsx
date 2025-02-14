@@ -21,8 +21,6 @@ export function PageLayout({
   isLoggedIn,
   publicStoreDomain,
 }) {
-
-  const localization = useLoaderData();
   return (
     <Aside.Provider>
       <CartAside cart={cart} />
