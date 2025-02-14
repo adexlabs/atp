@@ -34,7 +34,6 @@ export function Footer({footer: footerPromise, header, publicStoreDomain}) {
                 publicStoreDomain={publicStoreDomain}
               />
          )}
-          <CountrySelector/>
           </footer>
         )}
       </Await>
