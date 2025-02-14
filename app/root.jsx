@@ -76,11 +76,9 @@ export async function loader(args) {
   const criticalData = await loadCriticalData(args);
 
   const {storefront, env} = args.context;
-  const localizationPromise = fetchLocalization();
   return defer({
     ...deferredData,
     ...criticalData,
-    localization: await localizationPromise, 
     publicStoreDomain: env.PUBLIC_STORE_DOMAIN,
     shop: getShopAnalytics({
       storefront,
@@ -235,20 +233,6 @@ export function ErrorBoundary() {
   );
 }
 
-  // 🆕 Localization Query
-  const localization = await storefront.query(
-    `query Localization {
-      localization {
-        availableCountries {
-          isoCode
-          name
-        }
-        country {
-          isoCode
-        }
-      }
-    }`
-  );
 
 /** @typedef {LoaderReturnData} RootLoader */
 
