@@ -1,6 +1,7 @@
 import {Suspense} from 'react';
 import {Await, NavLink} from '@remix-run/react';
 import LOGO from '~/assets/Footer-logo.svg';
+import LanguageSelector from './LanguageSelector';
 /**
  * @param {FooterProps}
  */
@@ -191,7 +192,7 @@ function FooterLogoAddress({ logoUrl, address }) {
       <div className="footer-address">
         <p className="footer-address-text text-white text-sm">{address}</p>
         <a href='#' className='foot-email text-sm'><span>info@dataservices.com</span></a>
- 
+ <LanguageSelector/>
       </div>
     </div>
   );
