@@ -59,7 +59,7 @@ export default function CollectionPage() {
         backgroundImage={bnnrImg2}
         image={logoImg}  // Image shown above the caption
         highlightWordCount={2}
-        opacity="90%"
+      
       />
     </div>
       <h1>{collection.title}</h1>
