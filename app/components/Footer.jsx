@@ -33,8 +33,8 @@ export function Footer({footer: footerPromise, header, publicStoreDomain}) {
                 primaryDomainUrl={header.shop.primaryDomain.url}
                 publicStoreDomain={publicStoreDomain}
               />
-)}
-   <CountrySelector/>
+         )}
+          <CountrySelector/>
           </footer>
         )}
       </Await>
