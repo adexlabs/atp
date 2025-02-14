@@ -76,11 +76,11 @@ export async function loader(args) {
   const criticalData = await loadCriticalData(args);
 
   const {storefront, env} = args.context;
-
+  const localizationPromise = fetchLocalization();
   return defer({
     ...deferredData,
     ...criticalData,
-    localization,
+    localization: await localizationPromise, 
     publicStoreDomain: env.PUBLIC_STORE_DOMAIN,
     shop: getShopAnalytics({
       storefront,
@@ -249,7 +249,7 @@ export function ErrorBoundary() {
       }
     }`
   );
-  
+
 /** @typedef {LoaderReturnData} RootLoader */
 
 /** @typedef {import('@shopify/remix-oxygen').LoaderFunctionArgs} LoaderFunctionArgs */
