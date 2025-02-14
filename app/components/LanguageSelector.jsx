@@ -7,6 +7,14 @@ export function loader() {
 export default function LanguageSelector() {
   const languages = useLoaderData();
 
+  // ✅ Debugging
+  console.log("Fetched Languages:", languages);
+
+  // ✅ Ensure it's an array
+  if (!Array.isArray(languages)) {
+    return <p>⚠️ No languages available</p>;
+  }
+
   return (
     <div>
       <h3>🌍 Select Language</h3>
