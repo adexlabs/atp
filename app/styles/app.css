@@ -2280,6 +2280,10 @@ padding-top: 30px;
   margin: 0 auto;
 
  }
+ .collection-page .products-grid{
+
+  padding-top: 50px;
+ }
  @media(max-width: 767px){
   .collection-page{
     margin-top: 0;
