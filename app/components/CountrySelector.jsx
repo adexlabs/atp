@@ -1,25 +1,49 @@
-import { useShop } from "@shopify/hydrogen";
+import { json } from "@shopify/remix-oxygen";
+import { useLoaderData, Form } from "@remix-run/react";
 
-export function CountrySelector() {
-  const { localization } = useShop(); 
+export async function loader({ context }) {
+  const { localization } = await context.storefront.query(COUNTRIES_QUERY);
+  return json({ localization });
+}
 
-  const availableCountries = localization?.availableCountries || [];
-  const currentCountry = localization?.country?.isoCode || "US"; // Default US
+const COUNTRIES_QUERY = `#graphql
+  query {
+    localization {
+      availableCountries {
+        isoCode
+        name
+      }
+      country {
+        isoCode
+      }
+    }
+  }
+`;
 
-  const handleChange = (event) => {
-    document.cookie = `shopify_country=${event.target.value}; path=/; max-age=31536000`; 
-    window.location.reload(); 
-  };
+export default function Index() {
+  const { localization } = useLoaderData();
+  const availableCountries = localization.availableCountries;
+  const currentCountry = localization.country.isoCode;
 
   return (
-    <form>
-      <select name="country" value={currentCountry} onChange={handleChange}>
+    <main>
+      <h1>Welcome to My Shopify Store</h1>
+      <CountrySelector availableCountries={availableCountries} currentCountry={currentCountry} />
+    </main>
+  );
+}
+
+function CountrySelector({ availableCountries, currentCountry }) {
+  return (
+    <Form method="POST" action="/localization">
+      <select name="country" defaultValue={currentCountry}>
         {availableCountries.map((country) => (
           <option key={country.isoCode} value={country.isoCode}>
             {country.name}
           </option>
         ))}
       </select>
-    </form>
+      <button type="submit">Change</button>
+    </Form>
   );
 }
