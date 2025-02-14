@@ -2288,7 +2288,9 @@ padding-top: 30px;
   font-size: 1.3rem;
   line-height: 1.4;
  }
-
+ .collection-page .banner-container{
+margin-bottom: 0;
+ }
  .collection-page .products-grid p {
   font-size: 1.2rem;
  }
