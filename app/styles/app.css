@@ -2281,8 +2281,16 @@ padding-top: 30px;
 
  }
  .collection-page .products-grid{
-
   padding-top: 50px;
+ }
+
+ .collection-page .products-grid h5{
+  font-size: 1.3rem;
+  line-height: 1.4;
+ }
+
+ .collection-page .products-grid p {
+  font-size: 1.2rem;
  }
  @media(max-width: 767px){
   .collection-page{
