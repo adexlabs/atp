@@ -4,11 +4,19 @@ import {Aside} from '~/components/Aside';
 import {Footer} from '~/components/Footer';
 import {Header, HeaderMenu} from '~/components/Header';
 import {CartMain} from '~/components/CartMain';
+import { json } from "@shopify/remix-oxygen";
+import { Outlet, useLoaderData } from "@remix-run/react";
 import {
   SEARCH_ENDPOINT,
   SearchFormPredictive,
 } from '~/components/SearchFormPredictive';
 import {SearchResultsPredictive} from '~/components/SearchResultsPredictive';
+
+
+export async function loader({ context }) {
+  const { localization } = await context.storefront.query(COUNTRIES_QUERY);
+  return json({ localization });
+}
 
 /**
  * @param {PageLayoutProps}
@@ -21,6 +29,8 @@ export function PageLayout({
   isLoggedIn,
   publicStoreDomain,
 }) {
+
+  const localization = useLoaderData();
   return (
     <Aside.Provider>
       <CartAside cart={cart} />
@@ -36,6 +46,7 @@ export function PageLayout({
       )}
       <main>{children}</main>
       <Footer
+      localization={localization}
         footer={footer}
         header={header}
         publicStoreDomain={publicStoreDomain}
@@ -165,6 +176,20 @@ function MobileMenuAside({header, publicStoreDomain}) {
   );
 }
 
+
+const COUNTRIES_QUERY = `#graphql
+  query {
+    localization {
+      availableCountries {
+        isoCode
+        name
+      }
+      country {
+        isoCode
+      }
+    }
+  }
+`;
 /**
  * @typedef {Object} PageLayoutProps
  * @property {Promise<CartApiQueryFragment|null>} cart
