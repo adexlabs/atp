@@ -13,7 +13,7 @@ export default function VideoTextSection () {
         <div className='video-wrapper'>
             <div className='video-text-wrap'>
         <Video
-        videoUrl="https://cdn.shopify.com/videos/c/o/v/ce8714bb41f042428c3dfa9e499eaaa2.mp4"
+        videoUrl=""
         coverImage={videocoverimg1}
       />
    <div className='content'> <p className='v-content'>They really understood my work was super, duper important. 
@@ -22,7 +22,7 @@ export default function VideoTextSection () {
       </div>
       <div className='video-text-wrap'>
         <Video
-        videoUrl="https://cdn.shopify.com/videos/c/o/v/ce8714bb41f042428c3dfa9e499eaaa2.mp4"
+        videoUrl=""
         coverImage={videocoverimg2}
       />
       <div className='content'>
