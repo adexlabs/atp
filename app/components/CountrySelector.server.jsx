@@ -1,7 +1,7 @@
-import { fetchSync, graphql } from "@shopify/hydrogen";
+import { useShopQuery, CacheLong, gql } from "@shopify/hydrogen";
 import CountrySelectorClient from "./CountrySelectorClient";
 
-const GET_COUNTRIES = graphql(`
+const GET_COUNTRIES = gql`
   query GetAvailableCountries {
     localization {
       availableCountries {
@@ -10,14 +10,16 @@ const GET_COUNTRIES = graphql(`
       }
     }
   }
-`);
+`;
 
 export default function CountrySelector() {
-  const { data } = fetchSync({ query: GET_COUNTRIES });
+    console.log("Countries data:", JSON.stringify(data, null, 2));
+  const { data } = useShopQuery({
+    query: GET_COUNTRIES,
+    cache: CacheLong(), // Cache response for better performance
+  });
 
-  if (!data || !data.localization || !data.localization.availableCountries) {
-    return <p>Loading countries...</p>;
-  }
+  const countries = data?.localization?.availableCountries || [];
 
-  return <CountrySelectorClient countries={data.localization.availableCountries} />;
+  return <CountrySelectorClient countries={countries} />;
 }
