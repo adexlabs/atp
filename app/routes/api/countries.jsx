@@ -12,6 +12,9 @@ export async function loader({ context }) {
 
   const { data, errors } = await context.storefront.query(query);
 
+  console.log("Fetched Countries Data:", JSON.stringify(data, null, 2));
+  console.log("GraphQL Errors:", errors);
+
   if (errors) {
     return new Response(JSON.stringify({ error: errors }), {
       status: 500,
@@ -19,7 +22,7 @@ export async function loader({ context }) {
     });
   }
 
-  return new Response(JSON.stringify(data.localization.availableCountries), {
+  return new Response(JSON.stringify(data?.localization?.availableCountries || []), {
     status: 200,
     headers: { "Content-Type": "application/json" },
   });

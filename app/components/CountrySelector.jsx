@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import CountrySelectorClient from "./CountrySelectorClient";
-import localCountries from "../data/countries.json"; // Local JSON fallback
+import localCountries from "../data/countries.json"; // Fallback JSON
 
 export default function CountrySelector() {
   const [countries, setCountries] = useState([]);
@@ -9,15 +9,13 @@ export default function CountrySelector() {
     fetch("/api/countries")
       .then((res) => res.json())
       .then((data) => {
-        // Ensure China is in the list
-        const hasChina = data.some((c) => c.isoCode === "CN");
-        if (!hasChina) {
-          data.push({ isoCode: "CN", name: "China" });
+        if (!data || data.length === 0) {
+          setCountries(localCountries); // Fallback
+        } else {
+          setCountries(data);
         }
-
-        setCountries(data.length > 0 ? data : localCountries);
       })
-      .catch(() => setCountries(localCountries));
+      .catch(() => setCountries(localCountries)); // Handle errors
   }, []);
 
   return <CountrySelectorClient countries={countries} />;
