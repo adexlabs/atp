@@ -25,7 +25,7 @@ export default function CountrySelector2() {
   if (!countries.length) return <p>No countries available</p>;
 
   return (
-    <div>
+    <div className="country-selector">
       <h3>Select Your Country</h3>
       <select
         value={selectedCountry?.code}
@@ -34,7 +34,7 @@ export default function CountrySelector2() {
         }
       >
         {countries.map((country) => (
-          <option key={country.code} value={country.code}>
+          <option className="dropdown-menu" key={country.code} value={country.code}>
             {country.name} ({country.currency})
           </option>
         ))}

@@ -2519,3 +2519,11 @@ Video Section CSS
     font-size: 0.9rem;
   }
 }
+
+/*****************
+ Country Selector 
+ ****************/
+
+.country-selector .dropdown-menu{
+  color: #000;
+}
