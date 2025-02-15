@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import CountrySelectorClient from "./CountrySelectorClient";
-import localCountries from "../data/countries.json"; // Fallback JSON
+import localCountries from "../data/countries"; // Fallback JSON
 
 export default function CountrySelector() {
   const [countries, setCountries] = useState([]);
