@@ -3,7 +3,6 @@ import {Await, NavLink} from '@remix-run/react';
 import LOGO from '~/assets/Footer-logo.svg';
 import CountrySelectorClient from './CountrySelectorClient';
 import CountrySelector2 from './CountrySelector2';
-import CountriesApiRoute from '~/routes/app/routes/($locale).api.countries';
 /**
  * @param {FooterProps}
  */
