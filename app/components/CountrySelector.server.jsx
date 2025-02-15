@@ -1,26 +1,17 @@
-import { useShopQuery, CacheLong, gql } from "@shopify/hydrogen";
+import { useEffect, useState } from "react";
 import CountrySelectorClient from "./CountrySelectorClient";
 
-const GET_COUNTRIES = gql`
-  query GetAvailableCountries {
-    localization {
-      availableCountries {
-        isoCode
-        name
-      }
-    }
-  }
-`;
-
 export default function CountrySelector() {
-  const { data } = useShopQuery({
-    query: GET_COUNTRIES,
-    cache: CacheLong(),
-  });
+  const [countries, setCountries] = useState([]);
 
-  console.log("Fetched Countries Data:", data); // 🔍 Debugging: Check if data is coming
-
-  const countries = data?.localization?.availableCountries || [];
+  useEffect(() => {
+    fetch("/api/countries")
+      .then((res) => res.json())
+      .then((data) => {
+        setCountries(data || []);
+      })
+      .catch((error) => console.error("Error fetching countries:", error));
+  }, []);
 
   return <CountrySelectorClient countries={countries} />;
 }

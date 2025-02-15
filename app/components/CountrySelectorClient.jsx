@@ -3,18 +3,16 @@ import { useState } from "react";
 export default function CountrySelectorClient({ countries }) {
   const [selectedCountry, setSelectedCountry] = useState("");
 
-  // Ensure countries is an array before using .length
   if (!Array.isArray(countries) || countries.length === 0) {
-    return <p>No countries available. Please try again later.</p>;
+    return <p>Loading countries...</p>;
   }
-
-  const handleCountryChange = (event) => {
-    setSelectedCountry(event.target.value);
-  };
 
   return (
     <div>
-      <select value={selectedCountry} onChange={handleCountryChange}>
+      <select
+        value={selectedCountry}
+        onChange={(e) => setSelectedCountry(e.target.value)}
+      >
         <option value="">Select a country</option>
         {countries.map((country) => (
           <option key={country.isoCode} value={country.isoCode}>
