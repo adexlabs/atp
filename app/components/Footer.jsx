@@ -197,7 +197,7 @@ function FooterLogoAddress({ logoUrl, address }) {
  {/* <CountrySelectorClient/> */}
 
  <CountrySelector2/>
- <CountriesApiRoute/>
+
       </div>
     </div>
   );
