@@ -2,6 +2,8 @@ import {Suspense} from 'react';
 import {Await, NavLink} from '@remix-run/react';
 import LOGO from '~/assets/Footer-logo.svg';
 import CountrySelectorClient from './CountrySelectorClient';
+import CountrySelector2 from './CountrySelector2';
+import CountriesApiRoute from '~/routes/app/routes/($locale).api.countries';
 /**
  * @param {FooterProps}
  */
@@ -192,7 +194,10 @@ function FooterLogoAddress({ logoUrl, address }) {
       <div className="footer-address">
         <p className="footer-address-text text-white text-sm">{address}</p>
         <a href='#' className='foot-email text-sm'><span>info@dataservices.com</span></a>
- <CountrySelectorClient/>
+ {/* <CountrySelectorClient/> */}
+
+ <CountrySelector2/>
+ <CountriesApiRoute/>
       </div>
     </div>
   );
