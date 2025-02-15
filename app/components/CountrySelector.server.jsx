@@ -1,4 +1,4 @@
-import { graphql } from "@shopify/hydrogen";
+import { fetchSync, graphql } from "@shopify/hydrogen";
 import CountrySelectorClient from "./CountrySelectorClient";
 
 const GET_COUNTRIES = graphql(`
@@ -12,8 +12,12 @@ const GET_COUNTRIES = graphql(`
   }
 `);
 
-export default async function CountrySelector() {
-  const { data } = await fetchSync({ query: GET_COUNTRIES });
+export default function CountrySelector() {
+  const { data } = fetchSync({ query: GET_COUNTRIES });
+
+  if (!data || !data.localization || !data.localization.availableCountries) {
+    return <p>Loading countries...</p>;
+  }
 
   return <CountrySelectorClient countries={data.localization.availableCountries} />;
 }

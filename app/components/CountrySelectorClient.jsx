@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function CountrySelectorClient({ countries }) {
   const [selectedCountry, setSelectedCountry] = useState("");
+
+  if (!countries || countries.length === 0) {
+    return <p>Loading countries...</p>;
+  }
 
   const handleCountryChange = (event) => {
     setSelectedCountry(event.target.value);
