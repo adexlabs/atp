@@ -13,11 +13,12 @@ const GET_COUNTRIES = gql`
 `;
 
 export default function CountrySelector() {
-    console.log("Countries data:", JSON.stringify(data, null, 2));
   const { data } = useShopQuery({
     query: GET_COUNTRIES,
-    cache: CacheLong(), // Cache response for better performance
+    cache: CacheLong(),
   });
+
+  console.log("Fetched Countries Data:", data); // 🔍 Debugging: Check if data is coming
 
   const countries = data?.localization?.availableCountries || [];
 

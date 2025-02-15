@@ -3,8 +3,9 @@ import { useState } from "react";
 export default function CountrySelectorClient({ countries }) {
   const [selectedCountry, setSelectedCountry] = useState("");
 
-  if (!countries.length) {
-    return <p>Failed to load countries. Please try again.</p>;
+  // Ensure countries is an array before using .length
+  if (!Array.isArray(countries) || countries.length === 0) {
+    return <p>No countries available. Please try again later.</p>;
   }
 
   const handleCountryChange = (event) => {
