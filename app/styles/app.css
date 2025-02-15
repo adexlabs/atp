@@ -1569,7 +1569,7 @@ margin-top: 30px;
   background-position: center; /* Centers the background image */
   background-repeat: no-repeat; /* Prevents background image from repeating */
   margin-top: 30px;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 
 .banner-container .banner-content .banner-title {
@@ -1655,7 +1655,7 @@ margin-top: 30px;
 /* RECOVER DIGITAL ASSETS */
 .digital-assets{
   padding-top: 20px;
-  padding-bottom: 20px;
+  /* padding-bottom: 20px; */
 
 }
 .digital-assets .banner-container .banner-content .banner-title{
@@ -2266,7 +2266,9 @@ Section-Banner CSS
   /* padding: 0 1.5rem; */
   /* margin-top: 117px; */
  }
- 
+ .collection-page .banner-title{
+  display: block;
+ }
  .collection-page h1{
   font-size: 2.2rem;
   display: none;
