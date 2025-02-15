@@ -1,46 +1,54 @@
-import { useEffect, useState } from "react";
-import CountrySelectorClient from "./CountrySelectorClient";
-import localCountries from "../data/countries"; // Fallback JSON
+import { useEffect, useState, useRef } from 'react';
+import { useFetcher } from '@remix-run/react';
 
-export default function CountrySelector() {
+export function CountrySelector() {
+  const fetcher = useFetcher();
   const [countries, setCountries] = useState([]);
+  const [selectedCountry, setSelectedCountry] = useState('Loading...');
+  const dropdownRef = useRef(null);
 
   useEffect(() => {
-    console.log("Fetching countries...");
+    if (!fetcher.data) {
+      fetcher.load('/api/countries');
+    }
+  }, [fetcher]);
 
-    fetch("/api/countries")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("API Response:", data);
+  useEffect(() => {
+    if (fetcher.data) {
+      setCountries(fetcher.data);
+      setSelectedCountry(fetcher.data[0]?.label || 'Select Country');
+    }
+  }, [fetcher.data]);
 
-        if (!data || data.length === 0) {
-          console.log("Using Fallback JSON Data");
-          setCountries(localCountries); // Fallback
-        } else {
-          setCountries(data);
-        }
-      })
-      .catch((err) => {
-        console.error("Error fetching countries:", err);
-        setCountries(localCountries);
-      });
-  }, []);
+  const toggleDropdown = () => {
+    dropdownRef.current?.classList.toggle('hidden');
+  };
 
-  console.log("Countries in state:", countries);
+  const selectCountry = (country) => {
+    setSelectedCountry(country.label);
+    dropdownRef.current?.classList.add('hidden');
+  };
 
   return (
-    <div>
-      {countries.length === 0 ? (
-        <p>Loading countries...</p>
-      ) : (
-        <select>
-          {countries.map((country) => (
-            <option key={country.isoCode} value={country.isoCode}>
-              {country.name}
-            </option>
-          ))}
-        </select>
-      )}
+    <div className="relative w-64">
+      <button onClick={toggleDropdown} className="w-full p-2 border rounded">
+        {selectedCountry}
+      </button>
+      <ul ref={dropdownRef} className="absolute left-0 w-full bg-white border rounded hidden max-h-40 overflow-y-auto">
+        {countries.length > 0 ? (
+          countries.map((country) => (
+            <li
+              key={country.country}
+              onClick={() => selectCountry(country)}
+              className="p-2 cursor-pointer hover:bg-gray-200"
+            >
+              {country.label}
+            </li>
+          ))
+        ) : (
+          <li className="p-2 text-gray-500">Loading...</li>
+        )}
+      </ul>
     </div>
   );
 }
