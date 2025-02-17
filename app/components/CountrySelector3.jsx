@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useQuery } from "@shopify/hydrogen";  // Use useQuery from Hydrogen to fetch data
 import { FOOTER_QUERY } from "../lib/fragments/FOOTER_QUERY";  // Use existing query
 
-export default function CountrySelector() {
+export default function CountrySelector3() {
   const language = "en";  // Set the language (can be dynamic)
   const footerMenuHandle = "footer-menu";  // Set the footer menu handle (can be dynamic)
   
