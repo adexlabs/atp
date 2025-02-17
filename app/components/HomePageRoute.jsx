@@ -12,6 +12,8 @@ import favicon4 from '~/assets/svg_folder.svg';
 import { Route, Routes } from '@remix-run/react';
 import FAQ from './FAQ';
 import FormBuilder from './FormBuilder';
+import VideoTextSection from './VideoTextSection';
+import { Video } from '@shopify/hydrogen';
 export default function HomePageRoute() {
   
       const customBadges = [
@@ -68,6 +70,8 @@ export default function HomePageRoute() {
         <FormBuilder/>
 
       </div>
+
+      <Video/>
   <TrustBadges badges={customBadges} count={4} />
  
     </>
