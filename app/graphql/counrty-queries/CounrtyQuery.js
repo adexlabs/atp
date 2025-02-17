@@ -1,6 +1,6 @@
-import { gql } from "@shopify/hydrogen";
+import { graphql } from "@shopify/hydrogen";
 
-export const COUNTRIES_QUERY = gql`
+export const COUNTRIES_QUERY = graphql`
   {
     localization {
       availableCountries {
