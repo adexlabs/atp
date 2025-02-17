@@ -194,7 +194,7 @@ function FooterLogoAddress({ logoUrl, address }) {
       </div>
 
       <div className='contact-form'>
-      <div class="globo-formbuilder" data-id="NzY2NTU="></div>
+      <div class="globo-formbuilder" data-id="NzY2NTU=">form</div>
       </div>
     </div>
   );
