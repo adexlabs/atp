@@ -64,9 +64,9 @@ export default function HomePageRoute() {
 />
   </div>
   <div className='contact-form'>
-      <div class="globo-formbuilder" data-id="NzY2NTU=">
+    
         <FormBuilder/>
-      </div>
+
       </div>
   <TrustBadges badges={customBadges} count={4} />
  
