@@ -1,10 +1,6 @@
 import {Suspense} from 'react';
 import {Await, NavLink} from '@remix-run/react';
 import LOGO from '~/assets/Footer-logo.svg';
-import CountrySelectorClient from './CountrySelectorClient';
-import CountrySelector2 from './CountrySelector2';
-import CountrySelector3 from './CountrySelector3';
-import LangSelector from './LangSelector';
 /**
  * @param {FooterProps}
  */

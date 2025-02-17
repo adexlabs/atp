@@ -13,7 +13,6 @@ import HomePageRoute from '~/components/HomePageRoute';
 import Banner from '~/components/Banner';
 import ImageSlider from '~/components/ImageSlider';
 import ImageTextSection from '~/components/ImageTextSection';
-import CountrySelector3 from '~/components/CountrySelector3';
 
 /**
  * @type {MetaFunction}
