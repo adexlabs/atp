@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useLoaderData } from "@shopify/hydrogen"; // To access loader data
-import { COUNTRIES_QUERY } from "../graphql/country-queries/CountryQuery"; // Import query
+import { COUNTRIES_QUERY } from "../graphql/CountryLang/CountryQuery"; // Import query
 
 export default function CountrySelector() {
   // Get data from the loader function
