@@ -188,7 +188,7 @@ export function Layout({children}) {
               isProductPage ? <ProductPageRoute /> : <HomePageRoute />
             )} */}
         { !isCollectionPage && !hideOnPages.includes(location.pathname) && isProductPage && <ProductPageRoute /> }
-        <FormBuilder/>
+      
             {/* <Routes>
             <Route path="/faq" element={<FAQ />} />
             <Route path="/aboutus" element={<About_Us />} />      
