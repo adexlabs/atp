@@ -13,7 +13,7 @@ import { Route, Routes } from '@remix-run/react';
 import FAQ from './FAQ';
 import FormBuilder from './FormBuilder';
 import VideoTextSection from './VideoTextSection';
-import { Video } from '@shopify/hydrogen';
+import Video from './Video';
 export default function HomePageRoute() {
   
       const customBadges = [
@@ -71,7 +71,8 @@ export default function HomePageRoute() {
 
       </div>
 
-      <Video/>
+
+<Video/>
   <TrustBadges badges={customBadges} count={4} />
  
     </>
