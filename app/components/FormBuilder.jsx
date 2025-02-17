@@ -5,7 +5,7 @@ export default function FormBuilder() {
   useEffect(() => {
     // Dynamically load the script needed to initialize the form
     const script = document.createElement("script");
-    script.src = "https://app.powerfulform.com/js/formbuilder.js"; // Replace with the correct script URL if needed
+    script.src = "https://app.powerfulform.com/api/front/form/76655/send"; // Replace with the correct script URL if needed
     script.async = true;
 
     // Append the script to the body of the document
