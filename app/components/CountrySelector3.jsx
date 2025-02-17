@@ -1,13 +1,12 @@
-import { useShopQuery, CacheLong } from "@shopify/hydrogen";
+// app/components/CountrySelector.jsx
+
 import { useState, useEffect } from "react";
-import { COUNTRIES_QUERY } from "../graphql/CountryLang/CountryQuery"; // ✅ Correct import
+import { useLoaderData } from "@shopify/hydrogen"; // To access loader data
+import { COUNTRIES_QUERY } from "../graphql/country-queries/CountryQuery"; // Import query
 
-export default function CountrySelector3() {
-  const { data, error } = useShopQuery({
-    query: COUNTRIES_QUERY,
-    cache: CacheLong(),
-  });
-
+export default function CountrySelector() {
+  // Get data from the loader function
+  const data = useLoaderData();
   const [countries, setCountries] = useState([]);
   const [selectedCountry, setSelectedCountry] = useState(null);
 
@@ -18,7 +17,6 @@ export default function CountrySelector3() {
     }
   }, [data]);
 
-  if (error) return <p>Error fetching countries</p>;
   if (!countries.length) return <p>Loading countries...</p>;
 
   return (
