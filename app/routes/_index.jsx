@@ -108,7 +108,7 @@ export default function Homepage() {
     <div className="home">
          <Banner/>
          <ImageSlider images={images} />
-       <CountrySelector3/>
+ 
       {/* <FeaturedProducts products={data.featuredProducts} /> */}
       {/* <FeaturedCollection collection={data.featuredCollection} /> */}
       {/* <RecommendedProducts products={data.recommendedProducts} /> */}
