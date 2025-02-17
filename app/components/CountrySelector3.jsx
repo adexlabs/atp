@@ -1,23 +1,36 @@
 // app/components/CountrySelector.jsx
 
 import { useState, useEffect } from "react";
-import { useLoaderData } from "@shopify/hydrogen"; // To access loader data
-import { COUNTRIES_QUERY } from "../graphql/CountryLang/CountryQuery"; // Import query
+import { useQuery } from "@shopify/hydrogen";  // Use useQuery from Hydrogen to fetch data
+import { FOOTER_QUERY } from "../lib/fragments/FOOTER_QUERY";  // Use existing query
 
 export default function CountrySelector() {
-  // Get data from the loader function
-  const data = useLoaderData();
+  const language = "en";  // Set the language (can be dynamic)
+  const footerMenuHandle = "footer-menu";  // Set the footer menu handle (can be dynamic)
+  
+  // Use useQuery to fetch countries and menu data
+  const { data, error, loading } = useQuery({
+    query: FOOTER_QUERY,
+    variables: {
+      language, 
+      footerMenuHandle,
+      country: null,  // Fetch without country filter initially (can be dynamic)
+    },
+  });
+
   const [countries, setCountries] = useState([]);
   const [selectedCountry, setSelectedCountry] = useState(null);
 
   useEffect(() => {
-    if (data?.localization?.availableCountries) {
-      setCountries(data.localization.availableCountries);
-      setSelectedCountry(data.localization.availableCountries[0]); // Default first country select
+    if (data?.menu?.countries) {
+      const countryData = data.menu.countries;  // Assuming the query returns countries
+      setCountries(countryData);
+      setSelectedCountry(countryData[0]);  // Default to the first country
     }
   }, [data]);
 
-  if (!countries.length) return <p>Loading countries...</p>;
+  if (loading) return <p>Loading countries...</p>;
+  if (error) return <p>Error fetching countries</p>;
 
   return (
     <div className="country-selector">
