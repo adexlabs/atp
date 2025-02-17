@@ -73,9 +73,9 @@ export default function HomePageRoute() {
       </div>
 
 
-<Video
+{/* <Video
       videoUrl="https://cdn.shopify.com/videos/c/o/v/bfe170899e5a45cf93d65c0610d03eda.mp4"
-      coverImage={videocoverimg2}/>
+      coverImage={videocoverimg2}/> */}
   <TrustBadges badges={customBadges} count={4} />
  
     </>
