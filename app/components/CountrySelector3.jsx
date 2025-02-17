@@ -1,8 +1,8 @@
 import { useShopQuery } from "@shopify/hydrogen";
 import { useState, useEffect } from "react";
-import { COUNTRIES_QUERY } from "../graphql/country-queries/CountryQuery";
+import { COUNTRIES_QUERY } from "../graphql/counrty-queries/CounrtyQuery";
 
-export default function CountrySelector() {
+export default function CountrySelector3() {
   const { data, error } = useShopQuery({
     query: COUNTRIES_QUERY,
   });
