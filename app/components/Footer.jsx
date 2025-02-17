@@ -3,6 +3,7 @@ import {Await, NavLink} from '@remix-run/react';
 import LOGO from '~/assets/Footer-logo.svg';
 import CountrySelectorClient from './CountrySelectorClient';
 import CountrySelector2 from './CountrySelector2';
+import CountrySelector3 from './CountrySelector3';
 /**
  * @param {FooterProps}
  */
@@ -195,8 +196,9 @@ function FooterLogoAddress({ logoUrl, address }) {
         <a href='#' className='foot-email text-sm'><span>info@dataservices.com</span></a>
  {/* <CountrySelectorClient/> */}
 
- <CountrySelector2/>
+ {/* <CountrySelector2/> */}
 
+<CountrySelector3/>
 
       </div>
     </div>
