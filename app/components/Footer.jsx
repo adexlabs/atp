@@ -191,8 +191,6 @@ function FooterLogoAddress({ logoUrl, address }) {
       <div className="footer-address">
         <p className="footer-address-text text-white text-sm">{address}</p>
         <a href='#' className='foot-email text-sm'><span>info@dataservices.com</span></a>
-
-        <Link to="/sitemap.xml" target="_blank">Sitemap</Link>
       </div>
 
 
