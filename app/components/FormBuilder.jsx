@@ -7,7 +7,7 @@ export default function FormBuilder() {
   useEffect(() => {
     const fetchFormData = async () => {
       try {
-        const response = await fetch("https://formbuilderapp.com/api/forms");
+        const response = await fetch("https://app.powerfulform.com//api/front/form/76655/send");
         const data = await response.json();
         setFormData(data);
       } catch (error) {
