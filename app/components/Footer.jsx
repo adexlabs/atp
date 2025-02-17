@@ -193,9 +193,7 @@ function FooterLogoAddress({ logoUrl, address }) {
         <a href='#' className='foot-email text-sm'><span>info@dataservices.com</span></a>
       </div>
 
-      <div className='contact-form'>
-      <div class="globo-formbuilder" data-id="NzY2NTU=">form</div>
-      </div>
+   
     </div>
   );
 }
