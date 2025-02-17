@@ -193,7 +193,7 @@ function FooterLogoAddress({ logoUrl, address }) {
         <p className="footer-address-text text-white text-sm">{address}</p>
         <a href='#' className='foot-email text-sm'><span>info@dataservices.com</span></a>
  
-<LangSelector/>
+      <LangSelector/>
 
       </div>
     </div>
