@@ -29,6 +29,7 @@ import FAQ from './components/FAQ';
 import About_Us from './components/About_Us';
 import SeagateCustomers from './components/SeagateCustomers';
 import Collection from './routes/collections.$handle';
+import FormBuilder from './components/FormBuilder';
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
  * @type {ShouldRevalidateFunction}
@@ -187,6 +188,7 @@ export function Layout({children}) {
               isProductPage ? <ProductPageRoute /> : <HomePageRoute />
             )} */}
         { !isCollectionPage && !hideOnPages.includes(location.pathname) && isProductPage && <ProductPageRoute /> }
+        <FormBuilder/>
             {/* <Routes>
             <Route path="/faq" element={<FAQ />} />
             <Route path="/aboutus" element={<About_Us />} />      
