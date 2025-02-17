@@ -16,7 +16,7 @@ export default function FormBuilder() {
   return (
     <div>
       {/* Form Builder's Targeted Div */}
-      <div className="globo-formbuilder" data-id="NzY2NTU="></div>
+      <div className="globo-formbuilder" data-id="NzY2NTU=">Form</div>
     </div>
   );
 }
