@@ -1,7 +1,18 @@
 import {defer} from '@shopify/remix-oxygen';
-import {Await, useLoaderData, Link} from '@remix-run/react';
+import {Await, useLoaderData, Link, data} from '@remix-run/react';
 import {Suspense} from 'react';
 import {Image, Money} from '@shopify/hydrogen';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import left from '~/assets/left.png';
+import right from '~/assets/right.png';
+import HomePageRoute from '~/components/HomePageRoute';
+import Banner from '~/components/Banner';
+import ImageSlider from '~/components/ImageSlider';
+import ImageTextSection from '~/components/ImageTextSection';
 
 /**
  * @type {MetaFunction}
@@ -21,6 +32,7 @@ export async function loader(args) {
   const criticalData = await loadCriticalData(args);
 
   return defer({...deferredData, ...criticalData});
+
 }
 
 /**
@@ -29,15 +41,33 @@ export async function loader(args) {
  * @param {LoaderFunctionArgs}
  */
 async function loadCriticalData({context}) {
-  const [{collections}] = await Promise.all([
+ 
+  let allProducts = [];
+  let cursor = null;
+  let hasNextPage = true;
+
+  while (hasNextPage) {
+    const {products} = await context.storefront.query(FEATURED_PRODUCTS_QUERY, {
+      variables: {cursor},
+    });
+
+    allProducts = [...allProducts, ...products.nodes];
+    hasNextPage = products.pageInfo.hasNextPage;
+    cursor = products.pageInfo.endCursor;
+  }
+  const [{collections},  {products}] = await Promise.all([
     context.storefront.query(FEATURED_COLLECTION_QUERY),
     // Add other queries here, so that they are loaded in parallel
+    context.storefront.query(FEATURED_PRODUCTS_QUERY),
   ]);
 
   return {
     featuredCollection: collections.nodes[0],
+    featuredProducts: products.nodes, // Products ko return karna
+
   };
 }
+
 
 /**
  * Load data for rendering content below the fold. This data is deferred and will be
@@ -60,12 +90,28 @@ function loadDeferredData({context}) {
 }
 
 export default function Homepage() {
+  const images = [
+    { src: "https://cdn.shopify.com/s/files/1/0584/8688/2388/files/atp_seagate_pdp_01.jpg?v=1724163211", alt: "Image 1" },
+    { src: "https://cdn.shopify.com/s/files/1/0584/8688/2388/files/atp_seagate_pdp_03.jpg?v=1724163239", alt: "Image 2" },
+    { src: "https://cdn.shopify.com/s/files/1/0584/8688/2388/files/atp_seagate_pdp_02.jpg?v=1724163620", alt: "Image 3" },
+    { src: "https://cdn.shopify.com/s/files/1/0584/8688/2388/files/slide2.png?v=1739362275", alt: "Image 1" },
+    { src: "https://cdn.shopify.com/s/files/1/0584/8688/2388/files/slide3.png?v=1739362279", alt: "Image 2" },
+    { src: "https://cdn.shopify.com/s/files/1/0584/8688/2388/files/slide6.png?v=1739362294", alt: "Image 3" },
+  ];
+ 
   /** @type {LoaderReturnData} */
   const data = useLoaderData();
+
   return (
-    <div className="home page-width">
-      <FeaturedCollection collection={data.featuredCollection} />
-      <RecommendedProducts products={data.recommendedProducts} />
+    // <div className="home page-width">
+    <div className="home">
+         <Banner/>
+         <ImageSlider images={images} />
+
+      {/* <FeaturedProducts products={data.featuredProducts} /> */}
+      {/* <FeaturedCollection collection={data.featuredCollection} /> */}
+      {/* <RecommendedProducts products={data.recommendedProducts} /> */}
+         <HomePageRoute/>
     </div>
   );
 }
@@ -81,7 +127,8 @@ function FeaturedCollection({collection}) {
   return (
     <Link
       className="featured-collection"
-      to={`/collections/${collection.handle}`}
+       to={`/collections/${collection.handle}`}
+     
     >
       {image && (
         <div className="featured-collection-image">
@@ -93,6 +140,7 @@ function FeaturedCollection({collection}) {
   );
 }
 
+
 /**
  * @param {{
  *   products: Promise<RecommendedProductsQuery | null>;
@@ -101,7 +149,7 @@ function FeaturedCollection({collection}) {
 function RecommendedProducts({products}) {
   return (
     <div className="recommended-products">
-      <h2>Recommended Products</h2>
+      <h2 className='recommended-products-heading'>Recommended Products</h2>
       <Suspense fallback={<div>Loading...</div>}>
         <Await resolve={products}>
           {(response) => (
@@ -134,6 +182,47 @@ function RecommendedProducts({products}) {
   );
 }
 
+
+
+function FeaturedProducts({ products }) {
+  if (!products || products.length === 0) return null;
+
+  return (
+    <div className="featured-products">
+      <h2 className='featured-products-title'>Devices We Recover</h2>
+      <Swiper
+      className='custom-swiper'
+        spaceBetween={20}
+        slidesPerView={2} // Mobile ke liye
+        breakpoints={{
+          640: { slidesPerView: 3 },
+          1024: { slidesPerView: 4 },
+        }}
+        navigation={true} // Left/Right Arrows enable 
+        pagination={{ clickable: true }} // Dots enable 
+        modules={[Navigation, Pagination]}
+      >
+        {products.map((product) => (
+          <SwiperSlide key={product.id}>
+            <Link className="featured-product" to={`/products/${product.handle}`}>
+              <Image
+                data={product.images.nodes[0]}
+                aspectRatio="1/1"
+                sizes="(min-width: 45em) 20vw, 50vw"
+              />
+              <h4 className='product-title'>{product.title}</h4>
+              <small className='product-price'>
+                <Money data={product.priceRange.minVariantPrice} />
+              </small>
+            </Link>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+
+);
+}
+ 
 const FEATURED_COLLECTION_QUERY = `#graphql
   fragment FeaturedCollection on Collection {
     id
@@ -156,6 +245,7 @@ const FEATURED_COLLECTION_QUERY = `#graphql
     }
   }
 `;
+
 
 const RECOMMENDED_PRODUCTS_QUERY = `#graphql
   fragment RecommendedProduct on Product {
@@ -187,6 +277,47 @@ const RECOMMENDED_PRODUCTS_QUERY = `#graphql
     }
   }
 `;
+
+
+// CUSTOM PRODUCTS ADDED
+
+const FEATURED_PRODUCTS_QUERY = `#graphql
+  fragment FeaturedProduct on Product {
+    id
+    title
+    handle
+    priceRange {
+      minVariantPrice {
+        amount
+        currencyCode
+      }
+    }
+    images(first: 1) {
+      nodes {
+        id
+        url
+        altText
+        width
+        height
+      }
+    }
+  }
+  query FeaturedProducts($country: CountryCode, $language: LanguageCode, $cursor: String) 
+    @inContext(country: $country, language: $language) {
+    products(first: 20, after: $cursor, sortKey: UPDATED_AT, reverse: true) { 
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+      nodes {
+        ...FeaturedProduct
+      }
+    }
+  }
+`;
+
+
+
 
 /** @typedef {import('@shopify/remix-oxygen').LoaderFunctionArgs} LoaderFunctionArgs */
 /** @template T @typedef {import('@remix-run/react').MetaFunction<T>} MetaFunction */

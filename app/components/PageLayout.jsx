@@ -165,6 +165,7 @@ function MobileMenuAside({header, publicStoreDomain}) {
   );
 }
 
+
 /**
  * @typedef {Object} PageLayoutProps
  * @property {Promise<CartApiQueryFragment|null>} cart

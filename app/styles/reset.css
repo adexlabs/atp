@@ -10,7 +10,8 @@ body {
     Cantarell,
     'Open Sans',
     'Helvetica Neue',
-    sans-serif;
+    sans-serif,
+   'Helvetica';
   margin: 0;
   padding: 0;
 }
@@ -50,11 +51,13 @@ h5 {
 p {
   font-size: 1rem;
   line-height: 1.4;
+  font-family: 'Helvetica';
 }
 
 a {
   color: #000;
   text-decoration: none;
+  font-family: 'Helvetica';
 }
 
 a:hover {
@@ -76,6 +79,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-family: 'Helvetica';
 }
 
 body > main {
@@ -137,4 +141,7 @@ code {
   border-radius: 4px;
   font-family: monospace;
   padding: 0.25rem;
+}
+button{
+  font-family: 'Helvetica';
 }

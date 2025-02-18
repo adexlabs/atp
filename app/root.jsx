@@ -9,6 +9,10 @@ import {
   useRouteLoaderData,
   ScrollRestoration,
   isRouteErrorResponse,
+  useLocation,
+  Routes,
+  Route,
+  Link,
 } from '@remix-run/react';
 import favicon from '~/assets/favicon.svg';
 import resetStyles from '~/styles/reset.css?url';
@@ -17,6 +21,15 @@ import {PageLayout} from '~/components/PageLayout';
 import {FOOTER_QUERY, HEADER_QUERY} from '~/lib/fragments';
 import tailwindCss from './styles/tailwind.css?url';
 import Banner from './components/Banner';
+import ImageTextSection from './components/ImageTextSection';
+import LogoSlider from './components/LogoSlider';
+import HomePageRoute from './components/HomePageRoute';
+import ProductPageRoute from './components/ProductPageRoute';
+import FAQ from './components/FAQ';
+import About_Us from './components/About_Us';
+import SeagateCustomers from './components/SeagateCustomers';
+import Collection from './routes/collections.$handle';
+import FormBuilder from './components/FormBuilder';
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
  * @type {ShouldRevalidateFunction}
@@ -62,12 +75,12 @@ export async function loader(args) {
 
   // Await the critical data required to render initial state of the page
   const criticalData = await loadCriticalData(args);
-
+// 
   const {storefront, env} = args.context;
-
   return defer({
     ...deferredData,
     ...criticalData,
+   
     publicStoreDomain: env.PUBLIC_STORE_DOMAIN,
     shop: getShopAnalytics({
       storefront,
@@ -139,9 +152,13 @@ function loadDeferredData({context}) {
  */
 export function Layout({children}) {
   const nonce = useNonce();
+  const location = useLocation();
+  // const isCollectionPage = location.pathname.startsWith('/collection');
+  const isProductPage = location.pathname.startsWith('/products');
+  const isCollectionPage = location.pathname.startsWith('/collections');
   /** @type {RootLoader} */
   const data = useRouteLoaderData('root');
-
+  const hideOnPages = ["/faq", "/aboutus", "/segatecustomers", "/policies/privacy-policy", "/policies/terms-of-service", "/collections/{handle}"];
   return (
     <html lang="en">
       <head>
@@ -158,9 +175,27 @@ export function Layout({children}) {
             consent={data.consent}
           >
             <PageLayout {...data}>
-            <Banner/>
+              
+            {/* {!isProductPage && !isCollectionPage && ( <Banner />)} */}
+            {/* {!isProductPage && !isCollectionPage && !hideOnPages.includes(location.pathname) && (
+              <Banner />
+            )} */}
+
             {children}
-            </PageLayout>
+            {/* {!isCollectionPage && (isProductPage ? ( <ProductPageRoute />) : ( <HomePageRoute />))} */}
+{/* 
+            { !isCollectionPage && !hideOnPages.includes(location.pathname) && (
+              isProductPage ? <ProductPageRoute /> : <HomePageRoute />
+            )} */}
+        { !isCollectionPage && !hideOnPages.includes(location.pathname) && isProductPage && <ProductPageRoute /> }
+      
+            {/* <Routes>
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/aboutus" element={<About_Us />} />      
+           <Route path="/segate-customers" element={ <SeagateCustomers/>} />
+           </Routes> */}
+       
+             </PageLayout>
           </Analytics.Provider>
         ) : (
           children
@@ -200,6 +235,7 @@ export function ErrorBoundary() {
     </div>
   );
 }
+
 
 /** @typedef {LoaderReturnData} RootLoader */
 

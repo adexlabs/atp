@@ -3,7 +3,7 @@ import {useVariantUrl} from '~/lib/variants';
 import {Link} from '@remix-run/react';
 import {ProductPrice} from './ProductPrice';
 import {useAside} from './Aside';
-
+import remove from '~/assets/trash.png';
 /**
  * A single line item in the cart. It displays the product image, title, price.
  * It also provides controls to update the quantity or remove the line item.
@@ -32,6 +32,7 @@ export function CartLineItem({layout, line}) {
       )}
 
       <div>
+        <div className='product-title-price'>
         <Link
           prefetch="intent"
           to={lineItemUrl}
@@ -46,7 +47,8 @@ export function CartLineItem({layout, line}) {
           </p>
         </Link>
         <ProductPrice price={line?.cost?.totalAmount} />
-        <ul>
+        </div>
+        <ul className='product-type-content'>
           {selectedOptions.map((option) => (
             <li key={option.name}>
               <small>
@@ -75,7 +77,12 @@ function CartLineQuantity({line}) {
 
   return (
     <div className="cart-line-quantity">
-      <small>Quantity: {quantity} &nbsp;&nbsp;</small>
+      <small className='qty-text'><span>Quantity:</span> </small>
+
+
+<div className='quantity-main-div'>
+      <div className='quantity-wrapper'>
+      <small className='qty-count'> {quantity} &nbsp;&nbsp;</small>
       <CartLineUpdateButton lines={[{id: lineId, quantity: prevQuantity}]}>
         <button
           aria-label="Decrease quantity"
@@ -97,8 +104,10 @@ function CartLineQuantity({line}) {
           <span>&#43;</span>
         </button>
       </CartLineUpdateButton>
+      </div>
       &nbsp;
-      <CartLineRemoveButton lineIds={[lineId]} disabled={!!isOptimistic} />
+      <CartLineRemoveButton lineIds={[lineId]} disabled={!!isOptimistic} className="cart-line-qty-rm-btn"/>
+      </div>
     </div>
   );
 }
@@ -119,8 +128,9 @@ function CartLineRemoveButton({lineIds, disabled}) {
       action={CartForm.ACTIONS.LinesRemove}
       inputs={{lineIds}}
     >
-      <button disabled={disabled} type="submit">
-        Remove
+      <button disabled={disabled} type="submit" className='remove-item'>
+        {/* Remove */}
+        <img src={remove} alt='delete' className='delete-item' width={24} height={24}/>
       </button>
     </CartForm>
   );

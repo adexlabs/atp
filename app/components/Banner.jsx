@@ -1,11 +1,10 @@
+import { Link } from '@remix-run/react';
 import React from 'react';
 
 
 
 export default function Banner() {
-  console.log('Banner component rendered');
-
-
+ 
   return (
     <div className="main-banner">
       {/* Banner Image */}
@@ -21,10 +20,12 @@ export default function Banner() {
 
       {/* Banner Text */}
       <div className="banner-text page-width">
-        <p>ATP DATA RECOVERY SERVICES</p>
-        <h2>Some memories just can't be <span className='blueWord text-[#5878ee]'>recreated</span></h2>
+        {/* <p>ATP DATA RECOVERY SERVICES</p> */}
+        <h2 className='banner-heading'>Some memories just can't be <span className='blueWord text-[#5878ee]'>recreated</span></h2>
         <div>
-          <button type="button">Recover Your Data</button>
+        <Link
+      to="/products/solid-state-drive-data-recovery-service-for-seagate-customers?Encryption+Type=Bitlocker+-+Windows+and+Linux+Compatible&Delivery=Standard">
+      <button type="button">Recover Your Data</button></Link>
         </div>
       </div>
     </div>

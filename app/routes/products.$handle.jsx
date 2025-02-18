@@ -10,7 +10,10 @@ import {getVariantUrl} from '~/lib/variants';
 import {ProductPrice} from '~/components/ProductPrice';
 import {ProductImage} from '~/components/ProductImage';
 import {ProductForm} from '~/components/ProductForm';
-
+import favicon1 from '~/assets/svg_money.svg';
+import favicon2 from '~/assets/svg_award.svg';
+import favicon3 from '~/assets/svg_lock.svg';
+import TrustBadges from '~/components/TrustBadges';
 /**
  * @type {MetaFunction<typeof loader>}
  */
@@ -136,7 +139,24 @@ export default function Product() {
   );
 
   const {title, descriptionHtml} = product;
-
+  const customBadges = [
+    {
+      src: favicon1,
+      alt: 'Custom SSL Secured',
+      text: 'Custom fixed price - including a password-protected return media',
+    },
+    {
+      src: favicon2,
+      alt: 'Custom PayPal Accepted',
+      text: 'Custom 100% money-back guarantee',
+    },
+    {
+      src: favicon3,
+      alt: 'Custom Privacy Protection',
+      text: 'Custom safe & secure process',
+    },
+  ];
+  
   return (
     <div className="product">
       <ProductImage image={selectedVariant?.image} />
@@ -177,6 +197,9 @@ export default function Product() {
         <br />
         <div dangerouslySetInnerHTML={{__html: descriptionHtml}} />
         <br />
+        <div className='product-badges'>
+        <TrustBadges badges={customBadges} count={3} />
+        </div>
       </div>
       <Analytics.ProductView
         data={{

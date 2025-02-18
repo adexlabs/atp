@@ -9,7 +9,9 @@ import close_Icon from '~/assets/closeIcon.svg';
 /**
  * @param {HeaderProps}
  */
+
 export function Header({header, isLoggedIn, cart, publicStoreDomain}) {
+ 
   const {shop, menu} = header;
   return (
     <header className="header page-width custom-header">
@@ -26,8 +28,6 @@ export function Header({header, isLoggedIn, cart, publicStoreDomain}) {
         </div>
       </NavLink>
       </div>
-      
-       
       <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
     </header>
   );
@@ -65,9 +65,9 @@ export function HeaderMenu({
           Home
         </NavLink>
       )}
-      {(menu || FALLBACK_HEADER_MENU).items.map((item) => {
+        {/* {(menu || FALLBACK_HEADER_MENU).items.map((item)=>{ */}
+       {(menu || FALLBACK_HEADER_MENU).items.map((item, index) => {
         if (!item.url) return null;
-
 
         // if the url is internal, we strip the domain
         const url =
@@ -76,6 +76,20 @@ export function HeaderMenu({
           item.url.includes(primaryDomainUrl)
             ? new URL(item.url).pathname
             : item.url;
+
+            
+            if (index === 0) {
+              item.url = "/seagate";
+              item.title = "Service Pricing";
+            } else if (index === 1) {
+              item.url = "/aboutus";
+              item.title = "ABOUT";
+            } else if (index === 2) {
+              item.url = "/faq";
+              item.title = "FAQ";
+            }
+
+           
         return (
           <NavLink
             className="header-menu-item"
@@ -91,6 +105,9 @@ export function HeaderMenu({
         );
       })}
     </nav>
+
+  
+
   );
 }
 
@@ -122,9 +139,6 @@ function HeaderCtas({isLoggedIn, cart}) {
   );
 }
 
-
-
-
 function HeaderMenuMobileToggle() {
   const {open} = useAside();
   return (
@@ -146,10 +160,6 @@ function SearchToggle() {
     </button>
   );
 }
-
-
-
-
 
 
 /**
@@ -240,7 +250,7 @@ const FALLBACK_HEADER_MENU = {
       type: 'PAGE',
       url: '/pages/about',
       items: [],
-    },
+    }
   ],
 };
 
