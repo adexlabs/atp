@@ -21,7 +21,7 @@ export default function Video({ coverImage, videoUrl }) {
       {!isPlaying && (
         <img src={coverImage} alt="Video Cover" className="cover-image" />
       )}
-      <video ref={videoRef} className={`video ${isPlaying ? "playing" : ""}`} muted loop>
+      <video ref={videoRef} className={`video ${isPlaying ? "playing" : ""}`} controls loop>
         <source src={videoUrl} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
