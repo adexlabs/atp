@@ -2,7 +2,7 @@ export async function action({ request }) {
   const body = await request.json();
 
   // Shopify App Proxy URL for form submission
-  const formApiUrl = "https://yourstore.myshopify.com/apps/powerfulform/submit"; // Replace with your actual store URL
+  const formApiUrl = "hhttps://atp-data-services.myshopify.com/apps/powerfulform"; // Replace with your actual store URL
 
   const response = await fetch(formApiUrl, {
     method: "POST",

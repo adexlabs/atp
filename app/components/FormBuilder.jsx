@@ -4,7 +4,7 @@ export default function FormBuilder() {
   useEffect(() => {
     // Load the script for the form builder dynamically
     const script = document.createElement("script");
-    script.src = "https://yourstore.myshopify.com/apps/powerfulform/embed.js"; // Replace with actual script URL
+    script.src = "https://atp-data-services.myshopify.com/apps/powerfulform"; // Replace with actual script URL
     script.async = true;
     document.body.appendChild(script);
 
