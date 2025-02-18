@@ -67,11 +67,7 @@ export default function HomePageRoute() {
   highlightWordCount={0} 
 />
   </div>
-  <div className='contact-form'>
-    
-<FormBuilder/>
 
-      </div>
 
 
 {/* <Video
@@ -79,6 +75,11 @@ export default function HomePageRoute() {
       coverImage={videocoverimg2}/> */}
   <TrustBadges badges={customBadges} count={4} />
  
+
+  <div className='contact-form'>
+    
+<FormBuilder/>
+    </div>
     </>
   )
 }

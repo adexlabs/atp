@@ -2,9 +2,9 @@ import { useEffect } from "react";
 
 export default function FormBuilder() {
   useEffect(() => {
-    // Dynamically load the script needed to render the form
+    // Load the script for the form builder dynamically
     const script = document.createElement("script");
-    script.src = "https://globo-formbuilder.js"; // Replace with actual script URL
+    script.src = "https://yourstore.myshopify.com/apps/powerfulform/embed.js"; // Replace with actual script URL
     script.async = true;
     document.body.appendChild(script);
 
