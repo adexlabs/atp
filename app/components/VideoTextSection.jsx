@@ -1,7 +1,6 @@
 import React from 'react'
 import videocoverimg1 from '~/assets/coverimg1.jpeg';
 import videocoverimg2 from '~/assets/coverimg2.jpeg';
-import Video from './VideoGallery';
 import VideoGallery from './VideoGallery';
 export default function VideoTextSection () {
   return (

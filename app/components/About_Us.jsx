@@ -3,7 +3,7 @@ import bnnrImg2 from '~/assets/d-hero-seagate.jpg';
 import Section_Banner from "./Section_Banner";
 import NewBanner from "./NewBanner";
 import aboutcover from '~/assets/about-img.jpg';
-import Video from "./VideoGallery";
+import VideoGallery from "./VideoGallery";
 export default function About_Us(){
  
   const [bannerText, setBannerText] = useState("Welcome to our store!");
