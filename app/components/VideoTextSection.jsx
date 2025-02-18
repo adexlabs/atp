@@ -2,6 +2,7 @@ import React from 'react'
 import videocoverimg1 from '~/assets/coverimg1.jpeg';
 import videocoverimg2 from '~/assets/coverimg2.jpeg';
 import VideoSection from './VideoSection';
+import Video from './Video';
 export default function VideoTextSection () {
   return (
     <>
@@ -12,7 +13,7 @@ export default function VideoTextSection () {
         </div>
         <div className='video-wrapper'>
             <div className='video-text-wrap'>
-        <VideoGallery
+        <Video
         videoUrl="https://cdn.shopify.com/videos/c/o/v/dd1de37d3a9e45c095ab5d4ad37d7e34.mp4"
         coverImage={videocoverimg1}
       />
@@ -21,7 +22,7 @@ export default function VideoTextSection () {
         <h4 className='v-address'>- Theresa Debono, Photographer, Malta</h4></div>
       </div>
       <div className='video-text-wrap'>
-        <VideoGallery
+        <Video
         videoUrl="https://cdn.shopify.com/videos/c/o/v/da21d90dfe014d4cb7db92ea09cd15d4.mp4"
         coverImage={videocoverimg2}
       />
