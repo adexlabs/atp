@@ -13,14 +13,19 @@ export default function About_Us(){
 
     return(
         <>
-          <Section_Banner
+
+    <Video
+        videoUrl="https://cdn.shopify.com/videos/c/o/v/bfe170899e5a45cf93d65c0610d03eda.mp4"
+        coverImage=""
+        />
+          {/* <Section_Banner
                 backgroundImage={bnnrImg2} 
                 height="400px"
                 text="About Us"
                 textColor="#fff"
                 textAlign="center"
                 opacity={0.1}
-            />
+            /> */}
             <div className="about-text-section">
             <h2 className="about-text-heading">There are 2 distinct categories of data loss</h2>
             <div className="two-text-section">
@@ -40,9 +45,6 @@ export default function About_Us(){
         </ul>
         </div>
 
-    
-   
-   
         </>
     )
 }
