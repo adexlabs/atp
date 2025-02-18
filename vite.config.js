@@ -15,11 +15,6 @@ export default defineConfig({
         v3_relativeSplatPath: true,
         v3_throwAbortReason: true
       },
-      //custom Added
-      define: {
-        'process.env.PUBLIC_CHECKOUT_DOMAIN': JSON.stringify(process.env.PUBLIC_CHECKOUT_DOMAIN),
-      },
-      //
     }),
     tsconfigPaths(),
   ],
