@@ -12,7 +12,7 @@ export default function VideoTextSection () {
         <h2 className='v-content-title2'>Watch Customer Videos</h2>
         </div>
         <div className='video-wrapper'>
-            {/* <div className='video-text-wrap'>
+            <div className='video-text-wrap'>
         <Video
         videoUrl="https://cdn.shopify.com/videos/c/o/v/dd1de37d3a9e45c095ab5d4ad37d7e34.mp4"
         coverImage={videocoverimg1}
@@ -31,8 +31,8 @@ export default function VideoTextSection () {
             probably expect it will work forever. There are occasions when things fail.  
             I was happy to call the client and say it's handled, we have your files and are ready to go.</p>
         <h4 className='v-address'>- Dave Prunty, Videographer, Montana, United States</h4></div>
-      </div> */}
-
+      </div>
+{/* 
 <VideoSection
   videos={[
     { 
@@ -48,7 +48,7 @@ export default function VideoTextSection () {
       secondTitle: "- Dave Prunty, Videographer, Montana, United States"
     }
   ]}
-/>
+/> */}
 
         </div>
     </div>
