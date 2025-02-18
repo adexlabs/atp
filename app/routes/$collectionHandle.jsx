@@ -7,7 +7,7 @@ import LogoSlider from "~/components/LogoSlider";
 import ProductTrustBadges from "~/components/ProductTrustBadges";
 import SegateBanner from "~/components/SegateComponents/SegateBanner";
 import bnnrImg2 from '~/assets/SEAGATE_Back-up_screen-MAC_Lo-Res.jpg';
-import logoImg from '~/assets/logo2.png';
+import logoImg from '~/assets/logo-seagate.png';
 
 /**
  * @param {LoaderFunctionArgs} args
