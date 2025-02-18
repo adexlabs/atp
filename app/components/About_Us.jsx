@@ -2,6 +2,7 @@ import React , { useState } from "react";
 import bnnrImg2 from '~/assets/d-hero-seagate.jpg';
 import Section_Banner from "./Section_Banner";
 import NewBanner from "./NewBanner";
+import Video from "./Video";
 export default function About_Us(){
  
   const [bannerText, setBannerText] = useState("Welcome to our store!");
