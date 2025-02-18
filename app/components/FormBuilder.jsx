@@ -2,15 +2,21 @@ import { useEffect } from "react";
 
 export default function FormBuilder() {
   useEffect(() => {
+    // Dynamically load the script needed to render the form
     const script = document.createElement("script");
-    script.src = "https://cdn.shopify.com/extensions/f857f4b4-ed37-4c79-9176-61b82fb0b7d8/v3.4.23/assets/final.js";
+    script.src = "https://globo-formbuilder.js"; // Replace with actual script URL
     script.async = true;
     document.body.appendChild(script);
 
     return () => {
-      document.body.removeChild(script); // Cleanup script when component unmounts
+      document.body.removeChild(script);
     };
   }, []);
 
-  return <div className="globo-formbuilder" data-id="NzY2NTU="></div>;
+  return (
+    <div>
+      {/* Embed the Powerful Form Builder's predefined structure */}
+      <div className="globo-formbuilder" data-id="NzY2NTU="></div>
+    </div>
+  );
 }

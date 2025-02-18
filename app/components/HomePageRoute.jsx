@@ -15,6 +15,7 @@ import FormBuilder from './FormBuilder';
 import VideoTextSection from './VideoTextSection';
 import Video from './Video';
 import videocoverimg2 from '~/assets/coverimg2.jpeg';
+import ContactPage from './ContactPage';
 export default function HomePageRoute() {
   
       const customBadges = [
@@ -68,7 +69,7 @@ export default function HomePageRoute() {
   </div>
   <div className='contact-form'>
     
-        <FormBuilder/>
+<ContactPage/>
 
       </div>
 
