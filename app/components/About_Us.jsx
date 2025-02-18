@@ -15,6 +15,16 @@ export default function About_Us(){
 
     return(
         <>
+
+          <Section_Banner
+                backgroundImage={bnnrImg2} 
+                height="400px"
+                text="About Us"
+                textColor="#fff"
+                textAlign="center"
+                opacity={0.1}
+            />
+
 <div className="video-section">
 
 <VideoGallery
@@ -22,14 +32,6 @@ export default function About_Us(){
         coverImage={aboutcover}
       />
         </div>
-          {/* <Section_Banner
-                backgroundImage={bnnrImg2} 
-                height="400px"
-                text="About Us"
-                textColor="#fff"
-                textAlign="center"
-                opacity={0.1}
-            /> */}
             <div className="about-text-section">
             <h2 className="about-text-heading">There are 2 distinct categories of data loss</h2>
             <div className="two-text-section">
