@@ -2,7 +2,8 @@ import React , { useState } from "react";
 import bnnrImg2 from '~/assets/d-hero-seagate.jpg';
 import Section_Banner from "./Section_Banner";
 import NewBanner from "./NewBanner";
-import Video from "./Video";
+import aboutcover from '~/assets/about-img.jpg';
+import Video from "./VideoGallery";
 export default function About_Us(){
  
   const [bannerText, setBannerText] = useState("Welcome to our store!");
@@ -14,11 +15,21 @@ export default function About_Us(){
 
     return(
         <>
+<div className="video-section">
 
-    <Video
-        videoUrl="https://cdn.shopify.com/videos/c/o/v/bfe170899e5a45cf93d65c0610d03eda.mp4"
-        coverImage=""
-        />
+<VideoGallery
+  videos={[
+    { 
+      coverImage={aboutcover}, 
+      videoUrl: "https://cdn.shopify.com/videos/c/o/v/bfe170899e5a45cf93d65c0610d03eda.mp4",
+      firstParagraph: "",
+      secondTitle: ""
+    },
+   
+  ]}
+/>
+
+        </div>
           {/* <Section_Banner
                 backgroundImage={bnnrImg2} 
                 height="400px"

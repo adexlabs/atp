@@ -13,7 +13,7 @@ import { Route, Routes } from '@remix-run/react';
 import FAQ from './FAQ';
 import FormBuilder from './FormBuilder';
 import VideoTextSection from './VideoTextSection';
-import Video from './Video';
+import Video from './VideoGallery';
 import videocoverimg2 from '~/assets/coverimg2.jpeg';
 export default function HomePageRoute() {
   

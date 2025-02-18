@@ -72,7 +72,7 @@ export default function CollectionPage() {
         )}
       </PaginatedResourceSection>
 
-      <VideoTextSection/>
+      {/* <VideoTextSection/> */}
       <ProductTrustBadges/>
       <LogoSlider/>
     </div>
