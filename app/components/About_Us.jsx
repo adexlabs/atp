@@ -22,10 +22,7 @@ export default function About_Us(){
     { 
       coverImage={aboutcover}, 
       videoUrl: "https://cdn.shopify.com/videos/c/o/v/bfe170899e5a45cf93d65c0610d03eda.mp4",
-      firstParagraph: "",
-      secondTitle: ""
-    },
-   
+    }   
   ]}
 />
 
