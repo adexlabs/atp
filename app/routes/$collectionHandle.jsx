@@ -7,7 +7,7 @@ import LogoSlider from "~/components/LogoSlider";
 import ProductTrustBadges from "~/components/ProductTrustBadges";
 import SegateBanner from "~/components/SegateComponents/SegateBanner";
 import bnnrImg2 from '~/assets/SEAGATE_Back-up_screen-MAC_Lo-Res.jpg';
-import logoImg from '~/assets/seagate-logo.png';
+import logoImg from '~/assets/logo2.png';
 
 /**
  * @param {LoaderFunctionArgs} args
@@ -54,7 +54,7 @@ export default function CollectionPage() {
     <div className="collection-page">
       <div className='segate-banner'>
       <SegateBanner
-        title="We're Seagate's exclusive partner in data recovery"
+        title="Data Recovery Services for Seagate Customers"
         bannerStyle={{ height: "450px", backgroundColor: "" }} // adjustable banner style
         backgroundImage={bnnrImg2}
         image={logoImg}  // Image shown above the caption
