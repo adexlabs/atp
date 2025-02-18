@@ -2272,10 +2272,7 @@ Section-Banner CSS
 
  /* Collection Page CSS */
 
- .collection-page{
-  /* padding: 0 1.5rem; */
-  /* margin-top: 117px; */
- }
+
  .collection-page .banner-title{
   display: block;
  }
