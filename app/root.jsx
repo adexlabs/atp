@@ -30,6 +30,9 @@ import About_Us from './components/About_Us';
 import SeagateCustomers from './components/SeagateCustomers';
 import Collection from './routes/collections.$handle';
 import FormBuilder from './components/FormBuilder';
+// Custom Added
+import {useChangeLanguage} from 'remix-i18next';
+import {useTranslation} from 'react-i18next';
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
  * @type {ShouldRevalidateFunction}
@@ -65,6 +68,14 @@ export function links() {
     {rel: 'icon', type: 'image/svg+xml', href: favicon},
   ];
 }
+// Custom Added
+export const handle = {
+  // In the handle export, we can add a i18n key with namespaces our route
+  // will need to load. This key can be a single string or an array of strings.
+  // TIP: In most cases, you should set this to your defaultNS from your i18n config
+  // or if you did not set one, set it to the i18next default namespace "translation"
+  i18n: 'common',
+  };
 
 /**
  * @param {LoaderFunctionArgs} args
@@ -80,7 +91,7 @@ export async function loader(args) {
   return defer({
     ...deferredData,
     ...criticalData,
-   
+    locale: storefront.i18n.language.toLowerCase(),
     publicStoreDomain: env.PUBLIC_STORE_DOMAIN,
     shop: getShopAnalytics({
       storefront,
@@ -153,6 +164,11 @@ function loadDeferredData({context}) {
 export function Layout({children}) {
   const nonce = useNonce();
   const location = useLocation();
+
+  // Custom Added
+  const {i18n} = useTranslation();
+  useChangeLanguage(data.locale);
+  // End
   // const isCollectionPage = location.pathname.startsWith('/collection');
   const isProductPage = location.pathname.startsWith('/products');
   const isCollectionPage = location.pathname.startsWith('/collections');
@@ -160,7 +176,8 @@ export function Layout({children}) {
   const data = useRouteLoaderData('root');
   const hideOnPages = ["/faq", "/aboutus", "/segatecustomers", "/policies/privacy-policy", "/policies/terms-of-service", "/collections/{handle}"];
   return (
-    <html lang="en">
+    // <html lang="en">
+    <html lang={data.locale} dir={i18n.dir()}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -209,6 +226,7 @@ export function Layout({children}) {
 
 export default function App() {
   return <Outlet />;
+  
 }
 
 export function ErrorBoundary() {

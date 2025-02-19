@@ -1,3 +1,5 @@
+import {useTranslation} from 'react-i18next';
+import i18next from '~/i18next.server';
 /**
  * @param {LoaderFunctionArgs}
  */
