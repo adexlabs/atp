@@ -78,7 +78,7 @@ export default function HomePageRoute() {
 
   <div className='contact-form'>
     
-<FormBuilder/>
+<ContactPage/>
     </div>
     </>
   )
