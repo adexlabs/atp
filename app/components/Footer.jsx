@@ -1,7 +1,6 @@
 import {Suspense} from 'react';
 import {Await, Link, NavLink} from '@remix-run/react';
 import LOGO from '~/assets/Footer-logo.svg';
-import { CountrySelector } from './CountrySelector';
 /**
  * @param {FooterProps}
  */
@@ -194,7 +193,7 @@ function FooterLogoAddress({ logoUrl, address }) {
         <a href='#' className='foot-email text-sm'><span>info@dataservices.com</span></a>
       </div>
 
-<CountrySelector/>
+
    
     </div>
   );
