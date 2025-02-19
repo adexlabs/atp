@@ -176,8 +176,7 @@ export function Layout({children}) {
   const data = useRouteLoaderData('root');
   const hideOnPages = ["/faq", "/aboutus", "/segatecustomers", "/policies/privacy-policy", "/policies/terms-of-service", "/collections/{handle}"];
   return (
-    // <html lang="en">
-    <html lang={data.locale} dir={i18n.dir()}>
+    <html lang="en">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
