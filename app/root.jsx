@@ -30,9 +30,7 @@ import About_Us from './components/About_Us';
 import SeagateCustomers from './components/SeagateCustomers';
 import Collection from './routes/collections.$handle';
 import FormBuilder from './components/FormBuilder';
-// Custom Added
-import {useChangeLanguage} from 'remix-i18next';
-import {useTranslation} from 'react-i18next';
+
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
  * @type {ShouldRevalidateFunction}
@@ -91,8 +89,7 @@ export async function loader(args) {
   return defer({
     ...deferredData,
     ...criticalData,
-    locale: storefront.i18n.language.toLowerCase(),
-    publicStoreDomain: env.PUBLIC_STORE_DOMAIN,
+  
     shop: getShopAnalytics({
       storefront,
       publicStorefrontId: env.PUBLIC_STOREFRONT_ID,
@@ -164,11 +161,6 @@ function loadDeferredData({context}) {
 export function Layout({children}) {
   const nonce = useNonce();
   const location = useLocation();
-
-  // Custom Added
-  const {i18n} = useTranslation();
-  useChangeLanguage(data.locale);
-  // End
   // const isCollectionPage = location.pathname.startsWith('/collection');
   const isProductPage = location.pathname.startsWith('/products');
   const isCollectionPage = location.pathname.startsWith('/collections');
