@@ -119,7 +119,7 @@ function HeaderCtas({isLoggedIn, cart}) {
   return (
     <nav className="header-ctas" role="navigation">
       <HeaderMenuMobileToggle />
-      <NavLink prefetch="intent" to="/account" style={activeLinkStyle}>
+      {/* <NavLink prefetch="intent" to="/account" style={activeLinkStyle}>
         <Suspense fallback="Sign in">
           <Await resolve={isLoggedIn} errorElement="Sign in">
             {(isLoggedIn) => (isLoggedIn ? 'Account' : <img
@@ -130,7 +130,28 @@ function HeaderCtas({isLoggedIn, cart}) {
     />)}
           </Await>
         </Suspense>
-      </NavLink>
+      </NavLink> */}
+
+<NavLink prefetch="intent" to="/account" style={activeLinkStyle}>
+  <Suspense fallback="Sign in">
+    <Await resolve={isLoggedIn} errorElement="Sign in">
+      {(isLoggedIn) => (
+        isLoggedIn ? (
+          'Account'
+        ) : (
+          <img
+            src={userIcon}
+            alt="Sign In"
+            width="24"
+            height="24"
+            style={{ cursor: 'pointer' }}
+          />
+        )
+      )}
+    </Await>
+  </Suspense>
+</NavLink>
+
       <SearchToggle />
  
       <CartToggle cart={cart} />
