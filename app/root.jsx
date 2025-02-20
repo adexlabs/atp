@@ -14,7 +14,7 @@ import {
   Route,
   Link,
 } from '@remix-run/react';
-import favicon from '~/assets/Footer-logo.svg';
+import favicon from '~/assets/Footer-logo-NEW.svg';
 import resetStyles from '~/styles/reset.css?url';
 import appStyles from '~/styles/app.css?url';
 import {PageLayout} from '~/components/PageLayout';
