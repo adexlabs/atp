@@ -104,15 +104,19 @@ export default {
 
       let response = await handleRequest(request);
 
+      // Clone the response before modifying headers
+      response = new Response(response.body, {
+        status: response.status,
+        statusText: response.statusText,
+        headers: new Headers(response.headers), // Clone existing headers
+      });
+
       // Set Content Security Policy (CSP) Headers
-      response = new Response(response.body, response);
       response.headers.set(
         'Content-Security-Policy',
-        `
-        default-src 'self' https://cdn.shopify.com https://shopify.com 'unsafe-inline';
-        connect-src 'self' https://monorail-edge.shopifysvc.com https://atp-data-services.myshopify.com https://api.okendo.io;
-        font-src 'self' data:;
-        `
+        `default-src 'self' https://cdn.shopify.com https://shopify.com 'unsafe-inline';
+         connect-src 'self' https://monorail-edge.shopifysvc.com https://atp-data-services.myshopify.com https://api.okendo.io;
+         font-src 'self' data:;`
       );
 
       if (appLoadContext.session.isPending) {
@@ -123,11 +127,6 @@ export default {
       }
 
       if (response.status === 404) {
-        /**
-         * Check for redirects only when there's a 404 from the app.
-         * If the redirect doesn't exist, then `storefrontRedirect`
-         * will pass through the 404 response.
-         */
         return storefrontRedirect({
           request,
           response,
@@ -137,9 +136,8 @@ export default {
 
       return response;
     } catch (error) {
-      // eslint-disable-next-line no-console
-      console.error(error);
-      return new Response('An unexpected error occurred', {status: 500});
+      console.error('Server error:', error);
+      return new Response('An unexpected error occurred', { status: 500 });
     }
   },
 };
