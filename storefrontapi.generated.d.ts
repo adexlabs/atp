@@ -3,20 +3,6 @@
 /* eslint-disable */
 import type * as StorefrontAPI from '@shopify/hydrogen/storefront-api-types';
 
-export type LoginCustomerMutationVariables = StorefrontAPI.Exact<{
-  email: StorefrontAPI.Scalars['String']['input'];
-  password: StorefrontAPI.Scalars['String']['input'];
-}>;
-
-export type LoginCustomerMutation = {
-  customerAccessTokenCreate?: StorefrontAPI.Maybe<{
-    customerAccessToken?: StorefrontAPI.Maybe<
-      Pick<StorefrontAPI.CustomerAccessToken, 'accessToken' | 'expiresAt'>
-    >;
-    customerUserErrors: Array<Pick<StorefrontAPI.CustomerUserError, 'message'>>;
-  }>;
-};
-
 export type MoneyFragment = Pick<
   StorefrontAPI.MoneyV2,
   'currencyCode' | 'amount'
@@ -1356,12 +1342,7 @@ interface GeneratedQueryTypes {
   };
 }
 
-interface GeneratedMutationTypes {
-  '\n  mutation LoginCustomer($email: String!, $password: String!) {\n    customerAccessTokenCreate(input: { email: $email, password: $password }) {\n      customerAccessToken {\n        accessToken\n        expiresAt\n      }\n      customerUserErrors {\n        message\n      }\n    }\n  }\n': {
-    return: LoginCustomerMutation;
-    variables: LoginCustomerMutationVariables;
-  };
-}
+interface GeneratedMutationTypes {}
 
 declare module '@shopify/hydrogen' {
   interface StorefrontQueries extends GeneratedQueryTypes {}
