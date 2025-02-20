@@ -16,7 +16,6 @@ import VideoTextSection from './VideoTextSection';
 import Video from './Video';
 import videocoverimg2 from '~/assets/coverimg2.jpeg';
 import ContactPage from './ContactPage';
-import ProductPage from './ProductPage';
 export default function HomePageRoute() {
   
       const customBadges = [
