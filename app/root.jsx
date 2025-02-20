@@ -64,7 +64,7 @@ export function links() {
       rel: 'preconnect',
       href: 'https://shop.app',
     },
-    {rel: 'icon', type: 'image/svg+xml', href: "/asset/Footer-logo.svg"},
+    {rel: 'icon', type: 'image/svg+xml', href: LOGO},
   ];
 }
 
