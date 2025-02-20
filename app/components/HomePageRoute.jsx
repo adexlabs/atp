@@ -76,7 +76,7 @@ export default function HomePageRoute() {
       coverImage={videocoverimg2}/> */}
   <TrustBadges badges={customBadges} count={4} />
  
-<ProductPage/>
+
   {/* <div className='contact-form'>
     
 <ContactPage/>
