@@ -78,18 +78,23 @@ export function HeaderMenu({
             : item.url;
 
             
-            if (index === 0) {
-              item.url = "/seagate";
-              item.title = "Service Pricing";
-            } else if (index === 1) {
-              item.url = "/aboutus";
-              item.title = "ABOUT";
-            } else if (index === 2) {
-              item.url = "/faq";
-              item.title = "FAQ";
-            }
+            // if (index === 0) {
+            //   item.url = "/seagate";
+            //   item.title = "Service Pricing";
+            // } else if (index === 1) {
+            //   item.url = "/aboutus";
+            //   item.title = "ABOUT";
+            // } else if (index === 2) {
+            //   item.url = "/faq";
+            //   item.title = "FAQ";
+            // }
 
-           
+            if (index === 0) {
+              item.url = "/faq";
+                item.title = "FAQ";
+              }
+
+              
         return (
           <NavLink
             className="header-menu-item"

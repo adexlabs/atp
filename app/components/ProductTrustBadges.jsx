@@ -1,28 +1,28 @@
 import React from 'react';
-import favicon1 from '~/assets/svg_money.svg';
-import favicon2 from '~/assets/svg_handshake.svg';
-import favicon3 from '~/assets/svg_folder.svg';
-import favicon4 from '~/assets/svg_award.svg';
-import favicon5 from '~/assets/svg_smile (1).svg';
-import favicon6 from '~/assets/svg_lock.svg';
+import favicon1 from '~/assets/turst-img-1.svg';
+import favicon2 from '~/assets/trust-img-2.svg';
+import favicon3 from '~/assets/trust-img-3.svg';
+import favicon4 from '~/assets/trust-img-4.svg';
+import favicon5 from '~/assets/trust-img-5.svg';
+import favicon6 from '~/assets/trust-img-6.svg';
 export default function ProductTrustBadges (){
 const badges = [
   {
     src: favicon1,
     alt: 'SSL Secured',
-    text: 'Non-Seagate callout placeholder',
-    para: "Custom fixed price - including a password-protected return media."
+    text: 'Special Rate',
+    para: "As an exclusive data recovery services partner for Seagate, we have negotiated special rates for Seagate customers!  When you submit your case via the online form, please make sure you enter the promo code the Seagate customer service agent provided you with for Seagate hard disk drives that are out of warranty."
   },
   {
     src: favicon2,
     alt: 'PayPal Accepted',
-    text: 'Expertise you can trust',
-    para: "As a former in-house data recovery service provider for Seagate, we have years of close relationships working alongside Seagate's hard disk drive's design, research and development organizations so we understand every aspect of a Seagate hard disk drive." },
+    text: 'Expertise You Can Trust',
+    para: "Our team members were once part of the in-house data recovery services at Seagate.  We have years of close relationships working alongside Seagate's hard disk drive's design, research and development organizations so we understand every aspect of a Seagate hard disk drive." },
   {
     src: favicon3,
     alt: 'Privacy Protection',
-    text: 'Best recover success rate',
-    para: "Thanks to our long-standing relationship with Seagate, we have access to the latest and greatest firmware and tools to repair your Seagate hard disk drive so that we can successfully recover the data that is stored on it.  No one else in the industry has this access."
+    text: 'Best Recovery Success Rate',
+    para: "Thanks to our long-standing, close relationship with Seagate, we have access to the latest and greatest firmware and tools to repair your Seagate hard disk drive so that we can successfully recover the data that is stored on it.  No one else in the industry has this access."
  
   },
   {
@@ -34,15 +34,15 @@ const badges = [
   {
     src: favicon5,
     alt: 'Privacy Protection',
-    text: 'We make it easy',
+    text: 'We Make It Easy',
     para: "We understand that losing your data is stressful enough so we make it easy for you to go through the process of recovering your data.  Take a vacation, we'll keep you posted via email throughout the whole process so you won't miss a beat no matter where you are in the world."
  
   },
   {
     src: favicon6,
     alt: 'Visa & Mastercard Accepted',
-    text: 'We keep it secure',
-    para: "Your data privacy is most important to us. We take every measure to keep your data safe from the time it enters our data recovery lab to the time we ship the recovered data back to you, safely encrypted."}
+    text: 'We Keep It Secure',
+    para: "Your data privacy is most important to us.  We take every measure to keep your data safe from the time it enters our data recovery lab to the time we ship the recovered data back to you, safely encrypted."}
 ];
 
 
