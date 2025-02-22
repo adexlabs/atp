@@ -2357,17 +2357,33 @@ margin-top: 40px;
 .image-slider .swiper-button-next {
   top: 45%;
 }
+.image-slider .swiper-button-prev,
+.image-slider .swiper-button-next {
+  color: #fff; /* Change arrow color */
+  font-size: 24px; /* Adjust icon size */
+  width: 40px; 
+  height: 40px;
+  background: 5878ee; /* Light background */
+  border-radius: 50%; /* Circular button */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .image-slider .swiper-button-prev::after {
-  content: "\2039"; /* Unicode escape for ‹ */
-  margin-top: -8px;
-  margin-left: 2px;
+  content: "\2039"; /* ‹ (Left Arrow) */
+  font-size: 24px; /* Adjust size */
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
 .image-slider .swiper-button-next::after {
-  content: "\203A"; /* Unicode escape for › */
-  margin-top: -8px;
-  margin-right: 2px;
+  content: "\203A"; /* › (Right Arrow) */
+  font-size: 24px; /* Adjust size */
+  font-weight: bold;
+  margin-bottom: 8px;
 }
+
 
 .image-slide {
   display: flex;
