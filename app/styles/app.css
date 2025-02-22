@@ -1706,7 +1706,24 @@ margin-top: 30px;
   width: 35px;
   height: auto;
 }
+.badges .product-badge-wrapper  .badge-icon img{
+  width: 40px;
+}
 
+.badges .product-badge-wrapper  .badge-icon{
+  width: 50px;
+  height: 50px;
+}
+
+.badges .product-badge-wrapper  .badge-icon svg{
+  width: 40px;
+  height: 40px;
+}
+
+
+.badges .product-badge-wrapper  .badge-icon svg path{
+  fill: #000;
+}
 @media(max-width: 990px){
   .badges .badges-wrapper {
     grid-template-columns: 1fr 1fr;

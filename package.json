@@ -15,6 +15,7 @@
   "dependencies": {
     "@apollo/client": "^3.12.6",
     "@okendo/shopify-hydrogen": "^2.3.2",
+    "@react-google-maps/api": "^2.20.6",
     "@remix-run/react": "^2.13.1",
     "@remix-run/server-runtime": "^2.13.1",
     "@shopify/hydrogen": "2024.10.0",

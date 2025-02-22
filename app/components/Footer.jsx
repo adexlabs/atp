@@ -1,6 +1,7 @@
 import {Suspense} from 'react';
 import {Await, Link, NavLink} from '@remix-run/react';
 import LOGO from '~/assets/Footer-logo.svg';
+import StoreLocator from './StoreLocator';
 /**
  * @param {FooterProps}
  */
@@ -20,6 +21,7 @@ export function Footer({footer: footerPromise, header, publicStoreDomain}) {
 
              <div className='footer-map'>
                 <img src="https://cdn.shopify.com/s/files/1/0584/8688/2388/files/map.webp?v=1734591783" alt='Address'/>
+              
               </div>
             {footer?.menu && header.shop.primaryDomain?.url && (
               <FooterMenu
