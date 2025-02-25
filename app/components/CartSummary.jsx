@@ -1,12 +1,67 @@
 import {CartForm, Money} from '@shopify/hydrogen';
-import {useRef} from 'react';
+import {useRef, useState} from 'react';
 
 /**
  * @param {CartSummaryProps}
  */
+// export function CartSummary({cart, layout}) {
+//   const className =
+//     layout === 'page' ? 'cart-summary-page' : 'cart-summary-aside';
+
+//     const [isChecked, setIsChecked] = useState(false);
+//   return (
+    // <div aria-labelledby="cart-summary" className={className}>
+    //   <h4 className='cart-summary-heading'>Totals</h4>
+    //   <dl className="cart-subtotal">
+    //     <dt className='subtotal-heading'>Subtotal</dt>
+    //     <dd>
+    //       {cart.cost?.subtotalAmount?.amount ? (
+    //         <Money data={cart.cost?.subtotalAmount} />
+    //       ) : (
+    //         '-'
+    //       )}
+    //     </dd>
+    //   </dl>
+    //   {/* Hide discounts Card and GiftCard */}
+    //   {/* <CartDiscounts discountCodes={cart.discountCodes} /> */}
+    //   {/* <CartGiftCard giftCardCodes={cart.appliedGiftCards} /> */}
+    //   <CartCheckoutActions checkoutUrl={cart.checkoutUrl} />
+    // </div>
+
+
+
+//     {/* Checkout Button (Disabled until checkbox is checked) */}
+//     <CartCheckoutActions checkoutUrl={cart.checkoutUrl} disabled={!isChecked} />
+//   </div>
+//   );
+// }
+
+
+// /**
+//  * @param {{checkoutUrl?: string}}
+//  */
+// function CartCheckoutActions({checkoutUrl}) {
+//   if (!checkoutUrl) return null;
+
+//   return (
+//    <div className='ckechout-button'>
+//       <a href={checkoutUrl} target="_self"  className='checkout-button'>
+//         <p>Continue to Checkout &rarr;</p>
+//       </a>
+//       <br />
+//     </div> 
+//   );
+// }
+
+
+// custom added
+
+
 export function CartSummary({cart, layout}) {
   const className =
     layout === 'page' ? 'cart-summary-page' : 'cart-summary-aside';
+
+  const [isChecked, setIsChecked] = useState(false);
 
   return (
     <div aria-labelledby="cart-summary" className={className}>
@@ -21,28 +76,55 @@ export function CartSummary({cart, layout}) {
           )}
         </dd>
       </dl>
-      {/* Hide discounts Card and GiftCard */}
-      {/* <CartDiscounts discountCodes={cart.discountCodes} /> */}
-      {/* <CartGiftCard giftCardCodes={cart.appliedGiftCards} /> */}
-      <CartCheckoutActions checkoutUrl={cart.checkoutUrl} />
+
+      {/* Checkbox to Enable/Disable Checkout Button */}
+      <div className="terms-checkbox">
+        <input 
+          type="checkbox" 
+          id="agreeTerms" 
+          checked={isChecked} 
+          onChange={() => setIsChecked(!isChecked)}
+        />
+        <label htmlFor="agreeTerms"> I agree to the terms and conditions</label>
+      </div>
+
+      {/* Checkout Button (Disabled Until Checkbox is Checked) */}
+      <CartCheckoutActions checkoutUrl={cart.checkoutUrl} isChecked={isChecked} />
     </div>
   );
 }
+
 /**
- * @param {{checkoutUrl?: string}}
+ * CartCheckoutActions Component (Handles Button State)
  */
-function CartCheckoutActions({checkoutUrl}) {
+function CartCheckoutActions({checkoutUrl, isChecked}) {
   if (!checkoutUrl) return null;
 
   return (
-   <div>
-      <a href={checkoutUrl} target="_self"  className='checkout-button'>
+    <a 
+        href={isChecked ? checkoutUrl : '#'} 
+        className="checkout-link"
+      >  <div 
+      className={`checkout-button ${!isChecked ? 'disabled' : ''}`}
+      onClick={(e) => {
+        if (!isChecked) {
+          e.preventDefault();
+          e.stopPropagation(); // Stop event from propagating
+        }
+      }}
+    >
+      <a 
+        href={isChecked ? checkoutUrl : '#'} 
+        className="checkout-link"
+      >
         <p>Continue to Checkout &rarr;</p>
       </a>
-      <br />
-    </div> 
+    </div> </a>
   );
 }
+
+
+// custom endded
 
 /**
  * @param {{

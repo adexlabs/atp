@@ -13,7 +13,7 @@ img {
   border-radius: 4px;
 }
 
-@font-face {
+ @font-face {
   font-family: 'Nord-Bold';
   src: url('https://cdn.shopify.com/s/files/1/0584/8688/2388/files/Nord-Bold.eot?v=1738933777');
   src: url('https://cdn.shopify.com/s/files/1/0584/8688/2388/files/Nord-Bold.eot?v=1738933777?#iefix') format('embedded-opentype'),
@@ -38,7 +38,7 @@ img {
   font-weight: bold;
   font-style: normal;
   font-display: swap;
-}
+} 
 /*
 * --------------------------------------------------
 * components/Aside
@@ -400,13 +400,14 @@ text-transform: uppercase;
     width: 100%;
     max-width: 100%;
     background-color: #5878ee;
-    cursor: pointer;
     /* margin-bottom: 20px; */
     padding: 15px 0;
     text-decoration: none;
     border-radius: 50px;
+    margin-bottom: 30px;
+    margin-top: 10px;
   }
-  
+ 
   .cart-main .checkout-button p {
     font-size: 1rem;
     letter-spacing: 0.1rem;
@@ -429,7 +430,33 @@ text-transform: uppercase;
   .cart-line-quantity .remove-item img{
     width: 20px;
   }
+  .cart-summary .checkout-button a:hover{
+    text-decoration: none;
+  }
+  .cart-summary .checkout-button a{
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #000;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      text-align: center;
+      transition: 0.3s;
+    }
+    .cart-main .checkout-button.disabled {
+      background-color: #ccc;
+      pointer-events: none;
+      text-decoration: none;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
 
+    
+    /* custom......... */
+
+  
+    
+   
 /*
 * --------------------------------------------------
 * components/Search
@@ -2273,6 +2300,10 @@ Section-Banner CSS
   margin-top: 15px;
 }
 
+.policy a{
+  text-decoration: underline;
+}
+
 /* ************************** */
  /* Hide discounts Card and GiftCard  in CartSummary Component*/
 
@@ -2668,3 +2699,50 @@ VideoGallary CSS
     padding-top: 50px;
     padding-bottom: 20px;
   }
+
+
+  /*************
+   ImageWithButton section CSS 
+   *****************/
+
+  .img-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 1.5rem;
+    margin-top: 30px;
+  }
+  
+  .img-text-container .image {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .img-text-container .button {
+    padding: 15px 60px;
+    font-size: 0.875rem;
+    background-color: rgb(88, 120, 238);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background 0.3s ease;
+  }
+  
+  .img-text-container .button:hover {
+    background-color: #333;
+  }
+  
+  @media (max-width: 768px) {
+    .img-text-container .button {
+      padding: 15px 50px;
+      font-size: 0.775rem;
+    }
+  }
+  

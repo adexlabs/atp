@@ -106,7 +106,7 @@ export default function Homepage() {
     // <div className="home page-width">
     <div className="home">
          <Banner/>
-         <ImageSlider images={images} />
+         {/* <ImageSlider images={images} /> */}
 
       {/* <FeaturedProducts products={data.featuredProducts} /> */}
       {/* <FeaturedCollection collection={data.featuredCollection} /> */}
