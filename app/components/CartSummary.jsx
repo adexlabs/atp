@@ -102,10 +102,8 @@ function CartCheckoutActions({checkoutUrl, isChecked}) {
 
   return (
     <a 
-        href={isChecked ? checkoutUrl : '#'} 
-        className="checkout-link"
-      >  <div 
-      className={`checkout-button ${!isChecked ? 'disabled' : ''}`}
+      href={isChecked ? checkoutUrl : '#'} 
+      className={`checkout-button ${!isChecked ? 'disabled' : ''}`} 
       onClick={(e) => {
         if (!isChecked) {
           e.preventDefault();
@@ -113,13 +111,8 @@ function CartCheckoutActions({checkoutUrl, isChecked}) {
         }
       }}
     >
-      <a 
-        href={isChecked ? checkoutUrl : '#'} 
-        className="checkout-link"
-      >
-        <p>Continue to Checkout &rarr;</p>
-      </a>
-    </div> </a>
+      <p>Continue to Checkout &rarr;</p>
+    </a>
   );
 }
 
