@@ -20,7 +20,7 @@ export default function legal () {
       The following terms and conditions (“Terms”) govern your access, use, and receipt of data recovery services (“Services”) which are made available by ATP Data Services LLC, with offices at with offices at 611 Hundred Oaks Drive STE 140, Edmond, OK, 73013, USA, and its affiliated companies (“ATP”, “we”, “us” or “our”). Following receipt of a Services request under these terms ATP will designate the applicable company representatives to perform the Services. By creating an account or using the Services, you represent that you are of legal age and capable of forming a binding contract with ATP. If you are accepting these Terms on behalf of a company or other entity, then you represent that you are an agent of that company or entity, authorized to agree to these Terms on behalf of that company or entity, and in that case, “You” refers to your company or entity. ATP reserves the right to make changes to these Terms at any time.
       </p>
       
-      <h3 className="legal-subheading">Submit Your Device for Services: </h3>
+      <h3 className="legal-subheading">Use of this Site and Your Account: </h3>
       <p className="legal-paragraph">
       By using the ATP website, you are subject to and agree to be bound by the privacy policy found at  
       <a href="/policies/privacy-policy" className="legal-link"> https://www.atpdataservices.com/site-policy </a>and   
