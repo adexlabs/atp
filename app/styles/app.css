@@ -2525,7 +2525,7 @@ Video Section CSS
 
 .video-wrapper{
   display: grid;
-  gap: 30px;
+  gap: 40px;
   width: 100%;
   max-width: 100%;
   grid-template-columns: 1fr 1fr;
@@ -2534,8 +2534,8 @@ Video Section CSS
   padding: 0 1.5rem;
   padding-top: 20px;
  padding-bottom: 20px;
-  max-width: 1350px;
-  margin: 0 auto;
+  /* max-width: 1350px; */
+  /* margin: 0 auto; */
 }
 .video-text .v-content-title1{
   font-size: 1.6rem;
