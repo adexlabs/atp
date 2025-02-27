@@ -2868,9 +2868,11 @@ VideoGallary CSS
   .legal-container {
     max-width: 1150px;
     margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .legal-container h1{
     padding-top: 120px;
   }
-  
   .legal-heading {
     font-size: 24px;
     font-weight: bold;
@@ -2892,3 +2894,8 @@ VideoGallary CSS
     text-decoration: underline;
   }
   
+  @media(max-width: 767px){
+    .legal-container h1{
+      padding-top: 0;
+    }
+  }
