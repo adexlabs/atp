@@ -1116,7 +1116,7 @@ display: flex;
 @media (min-width: 767px) {
   .main-banner .banner-text {
       max-width: 900px;
-      bottom: 20%;
+    
   }
 }
 

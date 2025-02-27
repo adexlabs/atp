@@ -85,7 +85,7 @@ export function CartSummary({cart, layout}) {
           checked={isChecked} 
           onChange={() => setIsChecked(!isChecked)}
         />
-        <label htmlFor="agreeTerms"> I agree to the terms and conditions</label>
+        <label htmlFor="agreeTerms"> I agree to the terms and conditions.</label>
       </div>
 
       {/* Checkout Button (Disabled Until Checkbox is Checked) */}
