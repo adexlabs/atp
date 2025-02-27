@@ -1159,6 +1159,7 @@ components/Footer.CSS
   /* color: var(--color-light); */
   text-transform: uppercase;
   font-size: 14px;
+  text-decoration: none;
 }
 
 .footer .footer-menu a:hover{
