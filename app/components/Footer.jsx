@@ -61,7 +61,7 @@ function FooterMenu({menu, primaryDomainUrl, publicStoreDomain}) {
 
           // if (index === 1) item.url = "/aboutus";
           if (index === 1) item.url = "/faq"; // 3rd item
-          // if (index === 4) item.url = "/aboutus"; // 4th item
+          if (index === 3) item.url = "/legal"; // 4th item
           // if (index === 5) item.url = "/seagatecustomers"; // 6th item
 
         const url =

@@ -2802,24 +2802,24 @@ VideoGallary CSS
     background: rgb(12, 60, 96);
     padding: 40px 0;
   }
-  .contact-form .contact-form-content {
+  .contact-form-content {
     max-width: 700px;
     width: 100%;
     margin: auto;
   }
-  .contact-form .row {
+  .contact-form-content .row {
     display: flex;
     gap: 15px;
     margin-bottom: 20px;
   }
   
-  .contact-form .row input {
+  .contact-form-content .row input {
     flex: 1;
     max-width: 100%; /* Ensure it does not exceed the container */
   }
   
-  .contact-form input,
-  .contact-form textarea {
+  .contact-form-content input,
+  .contact-form-content textarea {
     font-size: 16px;
     border-radius: 1000px;
     padding: 16px 20px;
@@ -2835,14 +2835,14 @@ VideoGallary CSS
     color: #fff;
   }
   
-  .contact-form textarea {
+  .contact-form-content textarea {
     border-radius: 30px;
     font-size: 16px;
     padding: 16px 20px;
     margin-bottom: 30px;
   }
   
-.contact-form button {
+  .contact-form-content button {
     background-color: #5878ee !important; /* Change to your desired color */
     color: white !important; /* Ensure text color is visible */
     border: none;
@@ -2858,7 +2858,37 @@ VideoGallary CSS
     display: flex;
   }
   
-  .contact-form button:hover {
+  .contact-form-content button:hover {
     background-color: rgb(12,60,96)e65c00 !important; /* Darker shade on hover */
+  }
+  
+
+  /* CSS FOR Legal Page */
+
+  .legal-container {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding-top: 130px;
+  }
+  
+  .legal-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  .legal-subheading {
+    font-size: 20px;
+    
+    margin-top: 20px;
+    margin-bottom: 8px;
+  }
+  
+  .legal-paragraph {
+    margin-bottom: 16px;
+  }
+  
+  .legal-link {
+    text-decoration: underline;
   }
   

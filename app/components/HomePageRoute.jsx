@@ -16,6 +16,7 @@ import VideoTextSection from './VideoTextSection';
 import Video from './Video';
 import videocoverimg2 from '~/assets/coverimg2.jpeg';
 import ImageWithButton from './ImageWithButton';
+import ContactForm from './ContactForm';
 
 export default function HomePageRoute() {
   
@@ -76,7 +77,7 @@ export default function HomePageRoute() {
       videoUrl="https://cdn.shopify.com/videos/c/o/v/bfe170899e5a45cf93d65c0610d03eda.mp4"
       coverImage={videocoverimg2}/> */}
   <TrustBadges badges={customBadges} count={4} />
- 
+  {/* <ContactForm/> */}
 {/* <EmailLogin/> */}
 
     </>

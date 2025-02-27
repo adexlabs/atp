@@ -18,21 +18,23 @@ export default function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Submitting...");
-
+  
     const response = await fetch("/api/subscribe", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     });
-
+  
     if (response.ok) {
-      setStatus("Success! Your message has been sent.");
+      setStatus("Success! You have been subscribed.");
     } else {
-      setStatus("Error submitting the form. Please try again.");
+      setStatus("Error subscribing. Please try again.");
     }
   };
+  
 
   return (
+    <div className="contact-form">
     <form onSubmit={handleSubmit} className="contact-form-content ">
          <div class="row">
       <input type="text" name="firstName" placeholder="First Name" onChange={handleChange} required />
@@ -45,8 +47,7 @@ export default function ContactForm() {
       <button type="submit">Submit</button>
       {status && <p>{status}</p>}
     </form>
+    </div>
   );
 }
-
-
 
