@@ -112,6 +112,7 @@ export default function Homepage() {
       {/* <FeaturedCollection collection={data.featuredCollection} /> */}
       {/* <RecommendedProducts products={data.recommendedProducts} /> */}
          <HomePageRoute/>
+     
     </div>
   );
 }

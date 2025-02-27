@@ -444,7 +444,6 @@ text-transform: uppercase;
       transition: 0.3s;
     }
     .cart-main .checkout-button.disabled {
-      background-color: #ccc;
       pointer-events: none;
       text-decoration: none;
       cursor: not-allowed;
@@ -2470,7 +2469,7 @@ Video Section CSS
 .video-container {
   position: relative;
   width: 100%;
-  max-width: 600px;
+  /* max-width: 600px; */
   cursor: pointer;
 }
 
@@ -2510,7 +2509,9 @@ Video Section CSS
 
 .video-wrapper{
   display: grid;
-  /* gap: 25px; */
+  gap: 30px;
+  width: 100%;
+  max-width: 100%;
   grid-template-columns: 1fr 1fr;
 }
 .video-text{
@@ -2553,7 +2554,7 @@ Video Section CSS
   text-align: center;
 }
 .video-text .content{
-  max-width: 570px;
+  max-width: 630px;
   /* margin: 0 auto; */
   padding-top: 20px;
   padding-bottom: 20px;
@@ -2744,5 +2745,104 @@ VideoGallary CSS
       padding: 15px 50px;
       font-size: 0.775rem;
     }
+  }
+  
+
+  /* Contact And Login Form CSS */
+
+ .email-login {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 300px;
+    margin: auto;
+  }
+  
+  .email-login input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .email-login button {
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .email-login button:hover {
+    background-color: darkblue;
+  }
+  
+
+  /* Contact Form CSS */
+
+  .contact-form {
+    width: 100%;
+    background: rgb(12, 60, 96);
+    padding: 40px 0;
+  }
+  .contact-form .contact-form-content {
+    max-width: 700px;
+    width: 100%;
+    margin: auto;
+  }
+  .contact-form .row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .contact-form .row input {
+    flex: 1;
+    max-width: 100%; /* Ensure it does not exceed the container */
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 16px;
+    border-radius: 1000px;
+    padding: 16px 20px;
+    display: block;
+    border: 1px solid #e6e6e6;
+    width: 100%;
+    line-height: normal;
+    resize: none;
+    transition: border-color 0.1s ease-in-out;
+    background: transparent;
+    outline: none;
+    max-width: 100%;
+    color: #fff;
+  }
+  
+  .contact-form textarea {
+    border-radius: 30px;
+    font-size: 16px;
+    padding: 16px 20px;
+    margin-bottom: 30px;
+  }
+  
+.contact-form button {
+    background-color: #5878ee !important; /* Change to your desired color */
+    color: white !important; /* Ensure text color is visible */
+    border: none;
+    padding: 12px 120px;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    max-width: 40%;
+    margin: 0 auto;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+  }
+  
+  .contact-form button:hover {
+    background-color: rgb(12,60,96)e65c00 !important; /* Darker shade on hover */
   }
   

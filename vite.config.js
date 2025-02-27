@@ -16,6 +16,7 @@ export default defineConfig({
         v3_throwAbortReason: true
       },
     }),
+ 
     tsconfigPaths(),
   ],
   build: {

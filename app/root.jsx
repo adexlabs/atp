@@ -83,19 +83,7 @@ export async function loader(args) {
   return defer({
     ...deferredData,
     ...criticalData,
-  
-    shop: getShopAnalytics({
-      storefront,
-      publicStorefrontId: env.PUBLIC_STOREFRONT_ID,
-    }),
-    consent: {
-      checkoutDomain: env.PUBLIC_CHECKOUT_DOMAIN,
-      storefrontAccessToken: env.PUBLIC_STOREFRONT_API_TOKEN,
-      withPrivacyBanner: false,
-      // localize the privacy banner
-      country: args.context.storefront.i18n.country,
-      language: args.context.storefront.i18n.language,
-    },
+ 
   });
 }
 
@@ -176,7 +164,7 @@ export function Layout({children}) {
             shop={data.shop}
             consent={data.consent}
           >
-            <PageLayout {...data}>
+            <PageLayout {...data} >
               
             {/* {!isProductPage && !isCollectionPage && ( <Banner />)} */}
             {/* {!isProductPage && !isCollectionPage && !hideOnPages.includes(location.pathname) && (
@@ -227,6 +215,7 @@ export function ErrorBoundary() {
   }
 
   return (
+
     <div className="route-error">
       <h1>Oops</h1>
       <h2>{errorStatus}</h2>

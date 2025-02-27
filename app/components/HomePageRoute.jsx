@@ -15,8 +15,8 @@ import FormBuilder from './FormBuilder';
 import VideoTextSection from './VideoTextSection';
 import Video from './Video';
 import videocoverimg2 from '~/assets/coverimg2.jpeg';
-import ContactPage from './ContactPage';
 import ImageWithButton from './ImageWithButton';
+
 export default function HomePageRoute() {
   
       const customBadges = [
@@ -77,11 +77,8 @@ export default function HomePageRoute() {
       coverImage={videocoverimg2}/> */}
   <TrustBadges badges={customBadges} count={4} />
  
+{/* <EmailLogin/> */}
 
-  {/* <div className='contact-form'>
-    
-<ContactPage/>
-    </div> */}
     </>
   )
 }
