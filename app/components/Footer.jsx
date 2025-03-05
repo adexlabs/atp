@@ -4,6 +4,7 @@ import LOGO from '~/assets/Footer-logo.svg';
 import StoreMap from './StoreMap';
 import LocalizationPage from './LocalizationPage';
 import LanguageSelector from './LanguageSelector.client';
+import StoreLocator from './StoreLocator';
 
 /**
  * @param {FooterProps}
@@ -25,6 +26,7 @@ export function Footer({footer: footerPromise, header, publicStoreDomain}) {
              <div className='footer-map'>
                 <img src="https://cdn.shopify.com/s/files/1/0584/8688/2388/files/map.webp?v=1734591783" alt='Address'/>
        {/* <StoreMap/> */}
+       <StoreLocator/>
               </div>
             {footer?.menu && header.shop.primaryDomain?.url && (
               <FooterMenu
