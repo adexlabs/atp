@@ -1,20 +1,47 @@
-import React, { useEffect } from "react";
-import { useLoadGoogleMaps } from "../hooks/useLoadGoogleMaps";
+import React, { useEffect, useState } from "react";
 
-export default function StoreMap() {
-  const apiKey = "AIzaSyBdWYbcKRkNZSnnlpVxXpv45fu0F8B2MVI"; // Replace with your actual API key
-  const loaded = useLoadGoogleMaps(apiKey);
+export default function StoreMap (){
+  const [mapLoaded, setMapLoaded] = useState(false);
+  const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY; // API Key from .env file
 
   useEffect(() => {
-    if (loaded) {
-      new google.maps.Map(document.getElementById("map"), {
-        center: { lat: 28.6139, lng: 77.2090 }, // Change to your coordinates
+    const loadGoogleMaps = () => {
+      if (window.google) {
+        initMap();
+      } else {
+        const script = document.createElement("script");
+        script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`;
+        script.async = true;
+        script.defer = true;
+        document.body.appendChild(script);
+
+        script.onload = () => {
+          initMap();
+          setMapLoaded(true);
+        };
+
+        script.onerror = () => {
+          console.error("Google Maps API failed to load.");
+        };
+      }
+    };
+
+    window.initMap = () => {
+      new window.google.maps.Map(document.getElementById("map"), {
+        center: { lat: 28.6139, lng: 77.2090 }, // Example: Delhi
         zoom: 10,
       });
-    }
-  }, [loaded]);
+    };
 
-  return <div id="map" style={{ width: "100%", height: "400px" }} />;
+    loadGoogleMaps();
+  }, [apiKey]);
+
+  return (
+    <div>
+      {mapLoaded ? <p>Map Loaded Successfully!</p> : <p>Loading Map...</p>}
+      <div id="map" style={{ width: "100%", height: "400px" }} />
+    </div>
+  );
 };
 
 
