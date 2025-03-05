@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function ContactForm() {
+export default function ContactForm({ onSubmit }) {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -9,45 +9,23 @@ export default function ContactForm() {
     message: "",
   });
 
-  const [status, setStatus] = useState(null);
-
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setStatus("Submitting...");
-  
-    const response = await fetch("/api/subscribe", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
-  
-    if (response.ok) {
-      setStatus("Success! You have been subscribed.");
-    } else {
-      setStatus("Error subscribing. Please try again.");
-    }
+    onSubmit(formData);
   };
-  
 
   return (
-    <div className="contact-form">
-    <form onSubmit={handleSubmit} className="contact-form-content ">
-         <div class="row">
-      <input type="text" name="firstName" placeholder="First Name" onChange={handleChange} required />
-      <input type="text" name="lastName" placeholder="Last Name" onChange={handleChange} required />
-      </div> <div class="row">
+    <form onSubmit={handleSubmit} className="contact-form">
+      <input name="firstName" placeholder="First Name" onChange={handleChange} required />
+      <input name="lastName" placeholder="Last Name" onChange={handleChange} required />
       <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
-      <input type="text" name="contact" placeholder="Contact Number" onChange={handleChange} required />
-      </div>
-      <textarea name="message" placeholder="Your Message" onChange={handleChange} required></textarea>
+      <input name="contact" placeholder="Phone Number" onChange={handleChange} required />
+      <textarea name="message" placeholder="Your Message" onChange={handleChange} required />
       <button type="submit">Submit</button>
-      {status && <p>{status}</p>}
     </form>
-    </div>
   );
 }
-

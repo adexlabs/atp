@@ -1,21 +1,20 @@
 import React, { useEffect } from "react";
+import { useLoadGoogleMaps } from "../hooks/useLoadGoogleMaps";
 
-export default function StoreMap (){
+export default function StoreMap() {
+  const apiKey = "AIzaSyBdWYbcKRkNZSnnlpVxXpv45fu0F8B2MVI"; // Replace with your actual API key
+  const loaded = useLoadGoogleMaps(apiKey);
+
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = `https://maps.googleapis.com/maps/api/js?key=https://maps.app.goo.gl/URtS8wWZkue4Py588&callback=initMap`;
-    script.async = true;
-    document.body.appendChild(script);
-
-    window.initMap = function () {
-      new window.google.maps.Map(document.getElementById("map"), {
-        center: { lat: 40.7128, lng: -74.006 }, // Set to your location
+    if (loaded) {
+      new google.maps.Map(document.getElementById("map"), {
+        center: { lat: 28.6139, lng: 77.2090 }, // Change to your coordinates
         zoom: 10,
       });
-    };
-  }, []);
+    }
+  }, [loaded]);
 
-  return <div id="map" style={{ width: "100%", height: "400px" }}></div>;
+  return <div id="map" style={{ width: "100%", height: "400px" }} />;
 };
 
 

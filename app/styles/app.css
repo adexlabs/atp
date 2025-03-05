@@ -2899,3 +2899,11 @@ VideoGallary CSS
       padding-top: 0;
     }
   }
+
+  /* StoreMap css  */
+
+ .g-map {
+    min-height: 50px;
+    min-width: 50px;
+    background: lightgray;
+  }

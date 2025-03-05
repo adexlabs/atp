@@ -17,8 +17,9 @@ import Video from './Video';
 import videocoverimg2 from '~/assets/coverimg2.jpeg';
 import ImageWithButton from './ImageWithButton';
 import ContactForm from './ContactForm';
+import StoreMap from './StoreMap';
 
-export default function HomePageRoute() {
+export default function HomePageRoute({customer}) {
   
       const customBadges = [
         {
@@ -79,7 +80,6 @@ export default function HomePageRoute() {
   <TrustBadges badges={customBadges} count={4} />
   {/* <ContactForm/> */}
 {/* <EmailLogin/> */}
-
     </>
   )
 }

@@ -18,6 +18,12 @@ export const countries = {
       country: 'US',
       currency: 'USD',
     },
+    '/zh-cn': {
+  label: 'China (CNY ¥)',
+  language: 'ZH',
+  country: 'CN',
+  currency: 'CNY',
+   },
     '/en-ad': {
       label: 'Andorra (EUR €)',
       language: 'EN',

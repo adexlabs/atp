@@ -14,6 +14,7 @@ import Banner from '~/components/Banner';
 import ImageSlider from '~/components/ImageSlider';
 import ImageTextSection from '~/components/ImageTextSection';
 
+
 /**
  * @type {MetaFunction}
  */
@@ -101,7 +102,6 @@ export default function Homepage() {
  
   /** @type {LoaderReturnData} */
   const data = useLoaderData();
-
   return (
     // <div className="home page-width">
     <div className="home">
@@ -112,7 +112,7 @@ export default function Homepage() {
       {/* <FeaturedCollection collection={data.featuredCollection} /> */}
       {/* <RecommendedProducts products={data.recommendedProducts} /> */}
          <HomePageRoute/>
-     
+         {/* <CountryBar countries={localization.availableCountries}/> */}
     </div>
   );
 }

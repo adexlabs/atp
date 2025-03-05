@@ -40,6 +40,7 @@ export function PageLayout({
         header={header}
         publicStoreDomain={publicStoreDomain}
       />
+   
     </Aside.Provider>
   );
 }

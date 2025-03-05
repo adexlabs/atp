@@ -75,6 +75,7 @@ export function links() {
 export async function loader(args) {
   // Start fetching non-critical data without blocking time to first byte
   const deferredData = loadDeferredData(args);
+  
 
   // Await the critical data required to render initial state of the page
   const criticalData = await loadCriticalData(args);
@@ -83,7 +84,7 @@ export async function loader(args) {
   return defer({
     ...deferredData,
     ...criticalData,
- 
+
   });
 }
 
@@ -164,13 +165,13 @@ export function Layout({children}) {
             shop={data.shop}
             consent={data.consent}
           >
-            <PageLayout {...data} >
+            <PageLayout {...data}>
               
             {/* {!isProductPage && !isCollectionPage && ( <Banner />)} */}
             {/* {!isProductPage && !isCollectionPage && !hideOnPages.includes(location.pathname) && (
               <Banner />
             )} */}
-
+         
             {children}
             {/* {!isCollectionPage && (isProductPage ? ( <ProductPageRoute />) : ( <HomePageRoute />))} */}
 {/* 
@@ -198,8 +199,8 @@ export function Layout({children}) {
 }
 
 export default function App() {
+
   return <Outlet />;
-  
 }
 
 export function ErrorBoundary() {
@@ -227,6 +228,8 @@ export function ErrorBoundary() {
     </div>
   );
 }
+
+
 
 
 /** @typedef {LoaderReturnData} RootLoader */
