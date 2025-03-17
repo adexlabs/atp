@@ -12,7 +12,7 @@
 img {
   border-radius: 4px;
 }
-/* 
+
  @font-face {
   font-family: 'Nord-Bold';
   src: url('https://cdn.shopify.com/s/files/1/0584/8688/2388/files/Nord-Bold.eot?v=1738933777');
@@ -38,7 +38,7 @@ img {
   font-weight: bold;
   font-style: normal;
   font-display: swap;
-}  */
+} 
 /*
 * --------------------------------------------------
 * components/Aside
@@ -1139,7 +1139,7 @@ components/Footer.CSS
 .footer .footer-map{
   border-right: 1px solid #4c555f;
   border-left: 1px solid #4c555f;
- 
+  padding: 0 40px;
 }
 .footer .footer-map img{
   padding-left: 6rem;
@@ -1242,7 +1242,7 @@ components/Footer.CSS
 @media (max-width: 1200px){
   .footer{
     grid-template-columns: 25% auto 45%;
-    padding: 3rem 1rem;
+    padding: 2rem 1rem;
     gap: 20px;
   }
   /* .footer .footer-menu-columns {
@@ -1258,6 +1258,8 @@ components/Footer.CSS
     order: 3;
     border-right: none;
     border-left: none;
+    margin-top: 30px;
+    padding: 25px 0;
     /* max-width: 600px; */
   }
 
