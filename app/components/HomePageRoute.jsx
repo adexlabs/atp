@@ -11,13 +11,10 @@ import favicon3 from '~/assets/svg_lock.svg';
 import favicon4 from '~/assets/svg_folder.svg';
 import { Route, Routes } from '@remix-run/react';
 import FAQ from './FAQ';
-import FormBuilder from './FormBuilder';
 import VideoTextSection from './VideoTextSection';
 import Video from './Video';
 import videocoverimg2 from '~/assets/coverimg2.jpeg';
 import ImageWithButton from './ImageWithButton';
-import ContactForm from './ContactForm';
-import StoreMap from './StoreMap';
 
 export default function HomePageRoute({customer}) {
   
@@ -73,13 +70,9 @@ export default function HomePageRoute({customer}) {
   </div>
 
 
-
-{/* <Video
-      videoUrl="https://cdn.shopify.com/videos/c/o/v/bfe170899e5a45cf93d65c0610d03eda.mp4"
-      coverImage={videocoverimg2}/> */}
   <TrustBadges badges={customBadges} count={4} />
-  {/* <ContactForm/> */}
-{/* <EmailLogin/> */}
+ 
+
     </>
   )
 }

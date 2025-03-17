@@ -13,6 +13,7 @@ import HomePageRoute from '~/components/HomePageRoute';
 import Banner from '~/components/Banner';
 import ImageSlider from '~/components/ImageSlider';
 import ImageTextSection from '~/components/ImageTextSection';
+import NewGoogleMap from '~/components/NewGoogleMap';
 
 
 /**
@@ -112,6 +113,7 @@ export default function Homepage() {
       {/* <FeaturedCollection collection={data.featuredCollection} /> */}
       {/* <RecommendedProducts products={data.recommendedProducts} /> */}
          <HomePageRoute/>
+      <NewGoogleMap/>
          {/* <CountryBar countries={localization.availableCountries}/> */}
     </div>
   );

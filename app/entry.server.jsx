@@ -17,25 +17,40 @@ export default async function handleRequest(
   remixContext,
   context,
 ) {
-  const {nonce, header, NonceProvider} = createContentSecurityPolicy({
+  let {nonce, header, NonceProvider} = createContentSecurityPolicy({
+
+    scriptSrc: [
+      "'self'",
+      'https://cdn.shopify.com',
+      'https://shopify.com',
+      'https://www.google.com',
+      'https://maps.googleapis.com',
+      'https://maps.gstatic.com',
+      'https://goo.gle/js-api-loading',
+    ],
+    connectSrc: [
+      "'self'",
+      'https://cdn.shopify.com',
+      'https://shopify.com',
+      'https://maps.googleapis.com',
+      'https://maps.gstatic.com',
+      'https://*.googleapis.com',
+      'https://www.google.com',
+      'https://monorail-edge.shopifysvc.com', 
+      'https://atp-data-services.myshopify.com',
+    ],
+    styleSrc: [
+      "'self'",
+      'https://cdn.shopify.com',
+      'http://localhost:*',
+    ],
     
-    shop: {
-      checkoutDomain: context.env.PUBLIC_CHECKOUT_DOMAIN,
-      storeDomain: context.env.PUBLIC_STORE_DOMAIN,
-    },
-  // Custom Added
+  shop: {
+    checkoutDomain: context.env.PUBLIC_CHECKOUT_DOMAIN,
+    storeDomain: context.env.PUBLIC_STORE_DOMAIN,
+  },
 
-  scriptSrc: [
-    'self',
-    'https://cdn.shopify.com',
-    'https://shopify.com',
-    'https://www.google-analytics.com',
-    'https://www.googletagmanager.com',
-    ...(process.env.NODE_ENV !== 'production' ? ['http://localhost:*'] : []),
-  ],
-  
-  });
-
+});
 
   
   const body = await renderToReadableStream(
@@ -57,8 +72,10 @@ export default async function handleRequest(
     await body.allReady;
   }
 
+  header = header.replace('https://cdn.shopify.com', 'https://maps.googleapis.com https://fonts.gstatic.com' );
   responseHeaders.set('Content-Type', 'text/html');
-  responseHeaders.set('Content-Security-Policy', header);
+  
+responseHeaders.set('Content-Security-Policy', header);
 
   return new Response(body, {
     headers: responseHeaders,
@@ -70,3 +87,6 @@ export default async function handleRequest(
 /** @typedef {import('@shopify/remix-oxygen').EntryContext} EntryContext */
 /** @typedef {import('@shopify/remix-oxygen').AppLoadContext} AppLoadContext */
 
+
+
+// Add Custom Code

@@ -12,6 +12,12 @@ import {useAside} from '~/components/Aside';
  */
 export function ProductForm({product, selectedVariant, variants}) {
   const {open} = useAside();
+
+    // define atc ***
+    const handleAtc = function () {
+      trackAddedToCart(product)
+    }
+  
   return (
     <div className="product-form">
       <VariantSelector
@@ -27,6 +33,8 @@ export function ProductForm({product, selectedVariant, variants}) {
       <AddToCartButton
         disabled={!selectedVariant || !selectedVariant.availableForSale}
         onClick={() => {
+             // Add our newly created click handler ***
+             handleAtc();
           open('cart');
         }}
         lines={

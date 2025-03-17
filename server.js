@@ -34,10 +34,11 @@ export default {
       });
 
       const response = await handleRequest(request);
-
+      
       if (appLoadContext.session.isPending) {
         response.headers.set(
           'Set-Cookie',
+          
           await appLoadContext.session.commit(),
         );
       }

@@ -30,7 +30,7 @@ import FAQ from './components/FAQ';
 import About_Us from './components/About_Us';
 import SeagateCustomers from './components/SeagateCustomers';
 import Collection from './routes/collections.$handle';
-import FormBuilder from './components/FormBuilder';
+
 
 /**
  * This is important to avoid re-fetching root queries on sub-navigations
@@ -68,7 +68,6 @@ export function links() {
   ];
 }
 
-
 /**
  * @param {LoaderFunctionArgs} args
  */
@@ -84,7 +83,6 @@ export async function loader(args) {
   return defer({
     ...deferredData,
     ...criticalData,
-
   });
 }
 
@@ -145,11 +143,11 @@ export function Layout({children}) {
   const nonce = useNonce();
   const location = useLocation();
   // const isCollectionPage = location.pathname.startsWith('/collection');
-  const isProductPage = location.pathname.startsWith('/products');
-  const isCollectionPage = location.pathname.startsWith('/collections');
+  // const isProductPage = location.pathname.startsWith('/products');
+  // const isCollectionPage = location.pathname.startsWith('/collections');
   /** @type {RootLoader} */
   const data = useRouteLoaderData('root');
-  const hideOnPages = ["/faq", "/aboutus", "/segatecustomers", "/policies/privacy-policy", "/policies/terms-of-service", "/collections/{handle}"];
+  // const hideOnPages = ["/faq", "/aboutus", "/segatecustomers", "/policies/privacy-policy", "/policies/terms-of-service", "/collections/{handle}"];
   return (
     <html lang="en">
       <head>
@@ -166,7 +164,8 @@ export function Layout({children}) {
             consent={data.consent}
           >
             <PageLayout {...data}>
-              
+          
+
             {/* {!isProductPage && !isCollectionPage && ( <Banner />)} */}
             {/* {!isProductPage && !isCollectionPage && !hideOnPages.includes(location.pathname) && (
               <Banner />
@@ -178,7 +177,7 @@ export function Layout({children}) {
             { !isCollectionPage && !hideOnPages.includes(location.pathname) && (
               isProductPage ? <ProductPageRoute /> : <HomePageRoute />
             )} */}
-        { !isCollectionPage && !hideOnPages.includes(location.pathname) && isProductPage && <ProductPageRoute /> }
+        {/* { !isCollectionPage && !hideOnPages.includes(location.pathname) && isProductPage && <ProductPageRoute /> } */}
       
             {/* <Routes>
             <Route path="/faq" element={<FAQ />} />
@@ -201,6 +200,7 @@ export function Layout({children}) {
 export default function App() {
 
   return <Outlet />;
+  
 }
 
 export function ErrorBoundary() {
@@ -216,7 +216,8 @@ export function ErrorBoundary() {
   }
 
   return (
-
+    <Layout {...root.data}>
+   
     <div className="route-error">
       <h1>Oops</h1>
       <h2>{errorStatus}</h2>
@@ -225,7 +226,12 @@ export function ErrorBoundary() {
           <pre>{errorMessage}</pre>
         </fieldset>
       )}
+
+     <ScrollRestoration nonce={nonce} />
+        <Scripts nonce={nonce} />
+        <LiveReload nonce={nonce} />
     </div>
+    </Layout>
   );
 }
 
@@ -237,3 +243,4 @@ export function ErrorBoundary() {
 /** @typedef {import('@shopify/remix-oxygen').LoaderFunctionArgs} LoaderFunctionArgs */
 /** @typedef {import('@remix-run/react').ShouldRevalidateFunction} ShouldRevalidateFunction */
 /** @typedef {import('@shopify/remix-oxygen').SerializeFrom<typeof loader>} LoaderReturnData */
+
