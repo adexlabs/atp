@@ -24,8 +24,8 @@ export default async function handleRequest(
       'https://cdn.shopify.com',
       'https://shopify.com',
       'https://www.google.com',
-      'https://maps.googleapis.com',
-      'https://maps.gstatic.com',
+      'https://maps.googleapis.com',  // Required for Google Maps API
+      'https://maps.gstatic.com', // Google Maps styles
       'https://goo.gle/js-api-loading',
     ],
     connectSrc: [
@@ -42,7 +42,26 @@ export default async function handleRequest(
     styleSrc: [
       "'self'",
       'https://cdn.shopify.com',
+      'https://maps.gstatic.com',  // Google Maps styles
       'http://localhost:*',
+      "'unsafe-inline'", // Required for inline styles
+    ],
+    imgSrc: [
+      "'self'",
+      'https://cdn.shopify.com',
+      'https://shopify.com',
+      'https://maps.googleapis.com',
+      'https://maps.gstatic.com',
+      'https://*.googleusercontent.com',
+      'data:',
+      'blob:',
+    ],
+    frameSrc: [
+      "'self'",
+      'https://www.google.com',
+      'https://maps.googleapis.com',
+      'https://maps.gstatic.com',
+      'https://*.google.com', // Allow embedded Google Maps
     ],
     
   shop: {
