@@ -7,11 +7,12 @@ const NewGoogleMap = () => {
   useEffect(() => {
     if (window.google && mapRef.current) {
       const map = new window.google.maps.Map(mapRef.current, {
-        center: { lat: 51.508742, lng: -0.12085 },
-        zoom: 5,
+        center: { lat:  22.6942665, lng: -7.0574914 },
+        zoom: 1.5,
       });
     }
   }, []);
+
 
   return (
     <div>
