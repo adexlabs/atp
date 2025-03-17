@@ -113,7 +113,7 @@ export default function Homepage() {
       {/* <FeaturedCollection collection={data.featuredCollection} /> */}
       {/* <RecommendedProducts products={data.recommendedProducts} /> */}
          <HomePageRoute/>
-      <NewGoogleMap/>
+      {/* <NewGoogleMap/> */}
          {/* <CountryBar countries={localization.availableCountries}/> */}
     </div>
   );
